@@ -1,0 +1,223 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load static %}
+    <div class="container-fluid">
+           
+            <div class="row p-t-b-20">
+               <div class="col-md-12">
+                  <!-- <div class="card no-b"> -->
+				  <div class="login-form-card edit">
+                   <!--  <div class="login-form-content"> -->
+                        <form action="{{BASE_URL}}user-story-view/add-user-story-view" method="POST">
+                        	{% csrf_token %}
+                                   <div class="row">
+                                      <div class="col-md-8"></div>
+                                      <div class="col-md-6">
+                                     <!-- start login -->
+                                     <div class="form-group">
+                                     	<label>{{author}}</label>
+                                        <label>Owner</label>
+                                        {{ar_user_story_form.owner}}
+                                        <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="" name="login">         -->
+                                </div>
+                                <div class="form-group">
+                                        <label>AR User</label>
+                                        {{ar_user_story_form.ar_user}}
+                                        <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="" name="login">         -->
+                                </div>
+                                <div class="form-group">
+                                        <label>Title</label>
+                                        {{ar_user_story_form.title}}
+                                        <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="" name="login">         -->
+                                </div>
+                                <div class="form-group">
+                                        <label>User Story Type</label>
+                                        {{ar_user_story_form.user_story_type}}
+                                        <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="" name="login">         -->
+                                </div>
+                                <div class="form-group">
+                                        <label>Story Tri Part Text</label>
+                                        {{ar_user_story_form.story_tri_part_text}}
+                                        <!-- <input type="text" class="form-control login-frm-input" placeholder="">         -->
+                                </div>
+								<div class="form-group">
+									<label>&nbsp;</label>
+									{{ar_user_story_form.owner}}
+									<input type="text" class="form-control login-frm-input" id="fillinput" readonly="readonly"/>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label>As a</label>
+											{{ar_user_story_form.owner}}
+
+											<select class="form-control selectbox" name="" id="">
+												<option value="">Select</option>
+												<option value="Role">Role1</option>
+                        <option value="Role">Role2</option>
+                        <option value="Role">Role3</option>
+                        <option value="Role">Role4</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label>I want to</label>
+											{{ar_user_story_form.owner}}
+
+											<select class="form-control selectbox">
+												<option value="">Select</option>
+												<option value="Goal">Goal1</option>
+                        <option value="Goal">Goal2</option>
+                        <option value="Goal">Goal3</option>
+                        <option value="Goal">Goal4</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label>So that</label><button type="submit" class="btn all-btn" style="float: right;">Save</button>
+
+											{{ar_user_story_form.owner}}
+											<select class="form-control selectbox">
+												<option value="">Select</option>
+												<option value="Benefit">Benefit</option>
+                        <option value="Benefit">Benefit1</option>
+                        <option value="Benefit">Benefit2</option>
+                        <option value="Benefit">Benefit3</option>
+                        <option value="Benefit">Benefit4</option>
+											</select>
+										</div>
+									</div>
+								</div>
+                                <div class="form-group">
+                                        <label>Epic Capability</label>
+
+                                        {{ar_user_story_form.epic_capability}}
+                                        <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="" name="login">         -->
+                                </div>
+                                <div class="form-group "style="margin-bottom: 0rem; margin-top: -10px;">
+                                        <label>AutoScoring</label>
+                                        {{ar_user_story_form.autoscoring_on}}
+                                        <!-- <input class="login-frm-input" type="checkbox" value="" placeholder="" aid="login" name="login"> -->
+                                </div>
+                                
+
+                                </div>
+                              <div class="col-md-6">
+                                     <div class="form-group">
+                                        <label>Acceptance Criteria</label>
+                                        {{ar_user_story_form.acceptance_criteria}}
+                                        <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="" name="login">         -->
+                                </div>
+                                <div class="form-group">
+                                        <label>Ac Readability Score</label>
+                                        {{ar_user_story_form.ac_readability_score}}
+                                        <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="" name="login">         -->
+                                </div>
+                                <div class="form-group">
+                                        <label>Attachments</label>
+                                        {{ar_user_story_form.attachments}}
+                                        <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="" name="login">         -->
+                                </div>
+                                <div class="form-group">
+                                        <label>Convo Readability Score</label>
+                                        {{ar_user_story_form.convo_readability_score}}
+                                        <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="" name="login">         -->
+                                </div>
+                                    <div class="form-group">
+                                        <label>Conversations</label>
+                                        {{ar_user_story_form.conversation}}
+                                        <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="" name="login">         -->
+                                </div>
+                                <div class="form-group">
+                                        <label>Backlogs Parents</label>
+                                        {{ar_user_story_form.backlog_parent}}
+                                        <!-- <select class="form-control" name="list" placeholder="select Team Member"> -->
+                                 <!-- <option>Link Backlogs Here</option> -->
+                              <!-- </select> -->
+                                </div>
+                              <div class="form-group">
+                                        <label>Readiness Quality Score</label>
+                                        {{ar_user_story_form.readiness_quality_score}}
+                                        <!-- <input class="form-control login-frm-input"  placeholder=""> -->
+                                </div>
+								
+                                <div class="form-group">
+                                        <label>Features</label>
+                                        {{ar_user_story_form.feature}}
+                                        <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="" name="login">         -->
+                                </div>
+                                <div class="form-group">
+                                        <label>User Story Status</label>
+
+                                        {{ar_user_story_form.user_story_status}}
+                                        <!-- <select class="form-control" name="list" placeholder="select Team Member"> -->
+                                 <!-- <option>Ideation</option>
+                                 <option>Not Ready</option>
+                                 <option>Refinement</option>
+                                 <option>Ready</option>
+                                 <option>In Progress</option>
+                                 <option>Accepted</option>
+                                 <option>Archived</option>
+                              </select> -->
+                                        
+                                </div>
+                                
+                                <div class="form-group">
+                                        <label>Story Point</label>
+                                        {{ar_user_story_form.story_points}}
+                                        <!-- <select class="form-control" name="list" placeholder="select Team Member">
+                                 <option>Size</option>
+                              </select> -->
+                                </div>
+                                <div class="form-group" style="margin-bottom: 0rem; margin-top: -10px;">
+                                        <label>Archive Indicator</label>
+                                        {{ar_user_story_form.archive_indicator}}
+                                        <!-- <input class="login-frm-input" type="checkbox" value="" placeholder="" aid="login" name="login"> -->
+                                </div>
+                              </div>
+                            </div>
+                                <div class="row">
+                                  <div class="col-md-6 text-center">
+                                    <button type="submit" class="btn btn-block btn-white all-btn" onclick="goBack()">Cancel</button>
+                                  </div>
+                                 <div class="col-md-6">
+                                    <button type="submit" class="btn btn-block btn-white all-btn">Add</button>
+                                  </div>
+                               
+                             </div>
+                             </div>  
+                         </form>
+                       <!-- </div> -->
+             </div>
+				  <!-- </div> -->
+               </div>
+			    </div>
+         </div>
+      </div>
+   </div>
+</div>
+    
+<script src="assets/js/app.js"></script>
+<script src="assets/js/sidebar-accordian.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+<script>
+function goBack() {
+  window.history.back()
+}
+
+$(document).ready(function(e) {
+    $(".selectbox").change(function(){
+        var textval = $(":selected",this).val();
+        $('#fillinput').val(textval);
+    })
+});
+</script>
+{% endblock %}

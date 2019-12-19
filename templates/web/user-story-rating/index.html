@@ -1,0 +1,118 @@
+{% extends 'web/base-template.html' %}
+{% block content %}
+{% load static %}
+   <main>
+     <section>
+         <div class="xv-slider-wrap text-white">
+            <div class="container-fluid">
+                     <div class="row"><img src="{{BASE_URL}}media/img/dummy/b1.jpg" class="img-responsive center" alt="SS"></div>
+                  </div>
+         </div>
+      </section>
+      <section class="p-t-b-40 animatedParent animateOnce responsive">
+         <div class="container">
+            <div class="row">
+               <div class="col-12 col-lg-12">
+                  <div class="service-featured-content p-t-b-40">
+                     <h3 class="fadeInUpShort animated text-center">User Story Rating</h3>
+                     <p class="mid-txt">A properly formatted User Story has three parts, Role, Goal and Benefit. This format has become the de-facto standard in Agile development. Agile ready calls this a three part or tri-part statement adopting a widely used term.
+
+Agile Ready measure how good a user story is against this de-facto standard. How close is the user story in question to this format, “As a "Role" I want "Goal" so that "Benefit”.
+<span id="dots">...</span><span id="more">
+<br>For example look at the two user stories below: Which user story is clearer and would foster a quicker more meaningful conversation between the business and the team?</span></p>
+<button onclick="myFunction()" id="myBtn" class=" btn btn-primary">Read more</button>
+                  </div>
+               </div>
+               <!-- <div class="col-12 col-lg-6">
+                  <button class="bad-button">Bad User Story</button>
+               </div>
+               <div class="col-12 col-lg-6"><button class="bad-button">Good User Story</button>
+               </div> -->
+            </div>
+         </div>
+      </section>
+
+  <section class="p-t-b-40 service-blocks animatedParent bounceIn animateOnce">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 plan">
+                        <h4 class="head">Example Of Story Users</h4>
+                    <table>
+                      <tr>
+                        <th>Bad User Story</th>
+                        <th>Good User Story</th>
+                      </tr>
+                      <tr>
+                        <td>Create a Best Restaurant List Page</td>
+                        <td>As a Restaurant Inspector I want to<br>
+                         find top-reviewed restaurants within 5<br>
+                          miles of my location so that I can list<br> inspection candidates</td>
+                      </tr>
+                      
+                    </table>
+               </div>
+
+            </div>
+         </div>
+      </section>
+      <section class="p-t-b-40 service-blocks animatedParent animateOnce">
+         <div class="container">
+            <div class="row">
+                  <h3 class="table-border">Rating System</h3>
+                  <div class="fix-container">
+                     <div class="count">
+                     <div class="recommened-reading cell-three">
+                        <div class="reading-border">
+                           <div class="reading-box mobile_des2 block bounceIn animated">
+                              <div class="box-top">
+                                 <h6><a href="">Readliness Quality Score</a></h6>
+                              </div>
+                              <p align="justify">The Agile Ready Rating System scores each component of the User Story, each component’s relevance to other components, and its overall wordiness. A maximum score is available for a compliant-to-standard User Story. The higher the Readiness Quality Score the more READY the story is to be worked on.</p>
+                              <!--<a href="" class="text-link">Read More</a> -->
+                           </div>
+                           <div class="reading-box mobile_des2 block bounceIn animated">
+                              <div class="box-top">
+                                 <h6><a href="">Backlog Score</a></h6>
+                              </div>
+                              <p>Likewise a Backlog Score is computed from the individual user story scores belonging to the Backlog. The Backlog Score rises when all user stories scores rise. Thus a Backlog’s Goodness Score tells you the quality of the user stories in the backlog. </p>
+                              <!--<a href=""class="text-link">Read More</a> -->
+                           </div>
+                           <div class="reading-box mobile_des2 block bounceIn animated">
+                              <div class="box-top">
+                                 <h6><a href="">Product Score</a></h6>
+                              </div>
+                              <p>Likewise a Product Score is computed from multiple backlogs belonging to a Product. The Product Score rise when all Backlog scores rise. Thus a Product’s Goodness Score tells you about the quality of the product based on the quality of the backlogs. </p>
+                              <!--<a href=""class="text-link">Read More</a> -->
+                           </div>
+                        </div>
+                        </div>
+                        <div class="clear"></div>
+                     </div>
+                  </div>
+               </div>
+         </div>
+      </section>
+      
+      <!--<section class="clients">
+         <div class="container">
+            <header class="section-heading">
+               <h3>Trusted Clients</h3>
+               <p>Our Clients love our application here are some clients</p>
+            </header>
+            <div class="clients-slider">
+               <ul class="lightSlider" data-item="5" data-controls="false" data-auto="true" data-item-lg="4" data-item-md="3" data-item-sm="2">
+                  <li> <img src="assets/img/dummy/c1.png" alt=""></li>
+                  <li> <img src="assets/img/dummy/c2.png" alt=""></li>
+                  <li> <img src="assets/img/dummy/c3.png" alt=""></li>
+                  <li> <img src="assets/img/dummy/c4.png" alt=""></li>
+                  <li> <img src="assets/img/dummy/c5.png" alt=""></li>
+                  <li> <img src="assets/img/dummy/c1.png" alt=""></li>
+               </ul>
+            </div>
+         </div>
+      </section>-->
+   </main>
+
+
+
+{% endblock %}

@@ -1,0 +1,449 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from xvelopers.com/demos/html/paper-1.8.2/dashboard3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Sep 2019 10:27:27 GMT -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="{% static "img/basic/favicon.png" %}" type="image/x-icon">
+<title>Agile | DashBoard</title>
+<link rel="stylesheet" href="{% static "css/panel.css" %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
+
+{% block cssstyle %}
+    {% endblock %}
+    <style type="text/css">
+    .navbar {
+    position: relative;
+    min-height: 67px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    height: 93px !important;
+}
+
+   #example_wrapper{
+    margin-left: -27px;
+    margin-bottom: 30px;
+  }
+   .dataTables_length{
+      float: left;
+   }
+   .dataTables_filter input{
+    border: 1px solid #e1e8ee;
+    box-shadow: none;
+    border-radius: 3px;
+    transition: all .2s ease-in-out;
+    min-height: 3rem;
+    padding: 0 .85rem;
+    font-weight: 300;
+   }
+   .dataTables_length select{
+    border: 1px solid #e1e8ee;
+    box-shadow: none;
+    border-radius: 3px;
+    transition: all .2s ease-in-out;
+    min-height: 3rem;
+    padding: 0 .85rem;
+    font-weight: 300;
+ }
+   .dataTables_filter{
+      float: right;
+   }
+   .dataTables_info{
+      float:left;
+   }
+   /*.paginate_button{
+    font-family: 'Montserrat', sans-serif;
+      float: right;
+      border-radius: 5px;
+      padding: 10px;
+      border:1px solid #e0dfdf;
+   }*/
+   .table th, .table td {
+    font-weight: normal;
+    white-space: nowrap;}
+
+
+thead input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+</style>
+</head>
+<body>
+
+<div id="app" class="paper-loading"><a href="#" data-toggle="offcanvas" class="paper-nav-toggle fixed left"><i></i></a>
+   <aside class="main-sidebar fixed offcanvas scroll">
+      <section class="sidebar">
+    <div class="jquery-accordion-menu-header text-center"><a href="dashboard.html"><img src="{% static "img/basic/logo.png" %}"></a></div>
+     <ul class="sidebar-menu scroll sp-menu">
+
+      <li class="treeview"><a class="active" href="dashboard.html"><span>Dashboard</span><i class="icon icon-angle-left pull-right"></i></a>
+                  <ul class="treeview-menu">
+                     <li><a href="product-view.html"><i class="fa fa-cog"></i>Product View</a></li>
+                     <li><a href="backlog-view.html"><i class="fa fa-cog"></i>Backlog View </a></li>
+                     <li><a href="{{BASE_URL}}user-story-view"><i class="fa fa-cog"></i>User Story View</a></li>
+                     <li><a href="iteration-view.html"><i class="fa fa-cog"></i>Iteration View</a></li>
+                  </ul>
+                </li>
+
+            <li class="treeview"><a href="manageacct.html"> <span>Manage Account</span><i class="icon icon-angle-left pull-right"></i></a>
+
+
+
+      <ul class="treeview-menu active">
+                        <li><a href="manageusers.html"><i class="fa fa-cog"></i><span>Manage Users</span> <i class="icon icon-angle-left pull-right"></i></a>
+                          <ul class="treeview-menu">
+                                <li><a href="manageuserrolespermissions.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage User Profile</a></li>
+                                <li><a href="{{BASE_URL}}invite-user"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Invite New User</a>
+                                </li>
+                    </ul></li>
+                    <li><a href="manageenv.html"><i class="fa fa-cog"></i><span>Manage Environment</span> <i class="icon icon-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu active">
+                        <li><a href="manageenv-capabilities.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Epic Capability</a></li>
+                        <li><a href="manageenv-feature.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Features </a></li>
+                        <li><a href="{{BASE_URL}}manage-products"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Products</a></li>
+                        <li><a href="manageenv-teams.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Teams</a></li>
+                        <li><a href="manageenv-team-member.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Team Members</a></li>
+                        <li ><a href="manageenv-backlog.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Backlogs</a></li>
+                        <li><a href="manageenv-Iterations.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Iterations</a></li>
+                        <li><a href="manageenv-roles.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Roles</a></li>
+                        <li><a href="manageenv-goals.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Goals</a></li>
+                        <li><a href="manageenv-benefits.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Benefits</a></li>
+                        <li><a href="manageenv-userstory.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage User Story Points</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="dataxfer.html"><i class="fa fa-cog"></i><span>Data Exchange</span> <i class="icon icon-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="import-data.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Import Data</a></li>
+                        <li><a href="export-data.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Export Data</a></li>
+                    </ul>
+                    </li>
+                  </ul>
+
+
+            </li>
+
+         </ul>
+
+
+
+      </section>
+   </aside>
+   <div class="page offcanvas-page">
+      <div class="pos-f-t">
+         <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+               <div class="search-bar">
+                  <input class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50" type="text" placeholder="start typing...">
+               </div>
+               <a href="#" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" class="paper-nav-toggle paper-nav-white active "><i></i></a></div>
+         </div>
+      </div>
+      <div>
+         <header class="blue accent-3 relative">
+            <div class="navbar navbar-expand navbar-dark d-flex justify-content-end bd-navbar" style="float: right;">
+               <ul class="navbar-nav p-t-10">
+                  <li class="nav-item liwht">
+                     <a href="" class="nav-item nav-link" title="Help" data-toggle="modal" data-target="#help1"><i class="icon-help"></i></a>
+                  </li>
+                <li class="nav-item liwht"><a href="" class="nav-item nav-link" title="Feedback" data-toggle="modal" data-target="#feedback1"><i class="icon-list"></i></a>
+                </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-item nav-link  mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-user-circle" style="font-size: 25px; color: #fff;"></i></a>
+                     <div class="dropdown-menu dropdown-menu-right b-0 shadow1">
+                        <a class="dropdown-item" href="{{BASE_URL}}dashboard"><i class="icon-dashboard"></i>Dashboard</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{BASE_URL}}account-settings"><i class="icon-cog"></i> Account Settings</a>
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{BASE_URL}}dashboard/logout"><i class="icon-power-off"></i> Logout</a></div>
+                  </li>
+               </ul>
+            </div>
+            <div class="container-fluid text-white">
+               <div class="row p-t-b-10 ">
+                  <div class="col">
+                     <h1>Dashboard ({{user_name}})</h1>
+                  </div>
+               </div>
+            </div>
+         </header>
+         {% block content %}
+	     {% endblock %}
+      </div>
+   </div>
+
+</div>
+        <!------------FeedBack messege Modal Popup Start------->
+<div class="modal fade in sp-map" id="feedback1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title">We value your Feedback</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span>
+          </button>
+
+      </div>
+      <div class="modal-body">
+        <div class="paper">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="container-fluid">
+
+                                   <!--  <div class="login-form-content"> -->
+                <form action="javascript:(0);">
+                  <div class="row">
+                     <div class="col-md-6">
+                      <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tr>
+                    <td align="left" valign="top">User Name:</td>
+                    <td align="left" valign="top">Jeo Smith</td>
+                   </tr>
+                   <tr>
+                    <td align="left" valign="top">Date/Time:</td>
+                    <td align="left" valign="top">11/10/2019</td>
+                   </tr>
+                </table>
+             </div>
+             <div class="col-md-6"></div>
+          </div>
+          <div class="row">
+             <div class="col-md-5">
+               <label>Feedback Nature:</label>
+             </div>
+             <div class="col-md-7 p-t-10">
+                 <select class="form-control" >
+                    <option>Irritating Bug</option>
+                    <option>Tolerance for a while Bug</option>
+                    <option>Fix It Now Bug!</option>
+                    <option>Suggestion</option>
+                    <option>Complaint</option>
+                    <option>Other</option>
+                 </select>
+             </div>
+          </div>
+          <div class="row">
+             <div class="col-md-12">
+                <label>Feedback Information:</label>
+                <textarea class="form-control" style="height: 150px!important;"></textarea>
+             </div>
+             <div class="col-md-12">
+               <label>Attachments:</label>
+               <div class="attach">
+
+                    <form action="upload.php" method="POST">
+
+                        <input type="file" multiple>
+                        <p><i class="icon-upload"></i><br>Drag your files here or Click here</p>
+                    </form>
+               </div>
+             </div>
+             <div class="col-md-12 p-t-b-20">
+               <span>Fix It Now Bugs will get immediate attention.Please give the Agile Ready Team 24 to 72  hours to provide and initial response to all  other  feedback.</span>
+             </div>
+                  <div class="col-md-4 offset-md-4">
+                        <button type="submit" class="btn-block btn btn-white all-btn" >Submit</button>
+                    </div>
+          </div>
+                 </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!--------------------FeedBack Message Modal Ends---------------->
+                <!------------Help messege Modal Popup Start------->
+<div class="modal fade in sp-map" id="help1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title">Help</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span>
+          </button>
+
+      </div>
+      <div class="modal-body">
+        <div class="paper">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="container-fluid">
+                                   <!--  <div class="login-form-content"> -->
+                <form action="javascript:(0);">
+                 <div class="table-responsive">
+                                     <!-- start Table -->
+                                     <table id="example4" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+                                       <thead>
+            <tr class="dnd-moved">
+              <th align="left" valign="top" class="itrid">Titles</th>
+                <th align="left" valign="top" class="itrds">Details</th>
+             </tr>
+          </thead>
+        <tbody>
+            <tr>
+                <td align="left" valign="top">Topic</td>
+                <td align="left" valign="top">Dashboard</td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">Description</td>
+                <td align="left" valign="top">Dashboard Page</td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">Information</td>
+                <td align="left" valign="top">This Page Provides All Details.</td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">Useful Links</td>
+                <td align="left" valign="top">
+                   <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tr>
+                    <td align="left" valign="top">Link 1 </td>
+                   </tr>
+                   <tr>
+                   <td align="left" valign="top">Link 2</td>
+                   </tr>
+                   <tr>
+                   <td align="left" valign="top">Link 3 </td>
+                   </tr>
+                </table>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+                                     <!---Table Ends---->
+</div>
+
+
+
+
+                </form>
+              </div>
+            </div>
+
+                       <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!--------------------Help Message Modal Ends---------------->
+
+<script src="{% static "js/app.js" %}"></script>
+<script src="{% static "js/sidebar-accordian.js" %}"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+   $('.count').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 4000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
+</script>
+<!--<script type="text/javascript">-->
+<!--$(document).ready(function() {-->
+<!--    $('#example4').DataTable();-->
+<!--} );-->
+<!--</script>-->
+<script type="text/javascript">
+   $(document).ready(function(){
+  $('.attach input').change(function () {
+    $('.attach p').text(this.files.length + " file(s) selected");
+  });
+});
+
+
+
+ function remove_product(urls,message,done,fail)
+ {
+   swal({
+      title: "Are you sure?",
+      text: message,
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+       window.location.href = urls;           
+        // swal(done, {
+        //   icon: "success",
+        // });
+      } else {
+        swal(fail);
+      }
+    });
+ }  
+
+
+// datatables JS START========================================
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    // $('table thead th').each( function () {
+    //     var title = $(this).text();
+    //     $(this).html( '<input type="text" placeholder="'+title+'" />' );
+    // } );
+ 
+    // DataTable
+    $('table').DataTable();
+    // var table = $('table').DataTable();
+ 
+    // Apply the search
+    // table.columns().every( function () {
+    //     var that = this;
+ 
+    //     $( 'input', this.footer() ).on( 'keyup change clear', function () {
+    //         if ( that.search() !== this.value ) {
+    //             that
+    //                 .search( this.value )
+    //                 .draw();
+    //         }
+    //     } );
+    // } );
+
+
+
+
+} );
+// datatables JS END========================================
+
+ 
+
+</script>
+
+{% block script %}
+      {% endblock %}
+</body>
+<!-- Mirrored from xvelopers.com/demos/html/paper-1.8.2/dashboard3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Sep 2019 10:27:28 GMT -->
+</html>
