@@ -1,0 +1,500 @@
+{% load static %}
+
+<!--Header Start-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href='{% static "img/basic/favicon.png" %}' type="image/x-icon">
+<title>Agile | Home</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href='{% static "css/app.css" %}'>
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+   <style type="text/css">
+    
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+   display: none;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999999;
+  background: url({{BASE_URL}}media/img/demo/loader3.gif) center no-repeat rgba(0,0,0,0.5);
+}
+   </style>
+</head>
+<body>
+  <div class="se-pre-con"></div>
+<div id="app">
+   <div class="nav-sticky white">
+      <nav class="mainnav navbar navbar-default justify-content-between">
+         <div class="container relative" style="display: flex;"><a class="offcanvas dl-trigger paper-nav-toggle" type="button" data-toggle="offcanvas" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><i></i></a> <a class="navbar-brand" href="/"><img class="d-inline-block align-top" alt="" src='{% static "img/basic/logo2.png" %}'></a>
+            <div class="paper_menu">
+               <div id="dl-menu" class="xv-menuwrapper responsive-menu">
+                  <ul class="dl-menu align-items-center">
+                     <li class="parent"><a class="{{home_active}}" href="http://203.190.153.20">Home</a></li>
+                     <li class="parent"><a class="{{whyar_active}}" href="http://203.190.153.20/ar-whyar">Why Agile Ready</a>
+                     </li>
+
+                     <li class="parent"><a class="{{company_active}}" href="http://203.190.153.20/ar-company">Company</a></li>
+                     <li class="parent"><a class="{{subscription_active}}" href="http://203.190.153.20/subscription">Subscriptions</a></li>
+                        
+                     </li>
+                     <li class="parent"><a class="{{usrating_active}}" href="http://203.190.153.20/ar-usrating">User Story Rating</a>
+                        
+                     </li>
+                     {% if user.username == ""  %}
+                     <li> <a href="#" data-toggle="modal" class="btn btn-primary nav-btn" data-target="#modalLogin">Sign In </a></li>
+                     <li><a href="#" class="btn btn-primary nav-btn" data-toggle="modal" data-target="#modalSignUp">Sign Up</a></li>
+                     {% else %}
+                     <li><a href="http://203.190.153.20/dashboard" class="btn btn-primary nav-btn" >Go To Dashboard</a></li>
+                     {% endif %}
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </nav>
+   </div>
+<!--Header End-->
+
+<!--Body Call Start-->
+	{% block content %}
+	{% endblock %}
+<!--Body Call End-->
+
+<!--Footer Start-->
+   <footer>
+      <section class="p-t-b-20 service-blocks animatedParent animateOnce">
+      <div class="container">
+         <div class="row">
+            <!-- <div class=" col-lg-2 col-xl-3 col-12 responsive-phone"> <a href="#" class="brand"><img src="assets/img/basic/logo.png" alt="Knowledge"><span class="circle"></span></a></div> -->
+
+         <!-- <div class="container">
+            <div class="row"> -->
+               <div class="col-lg-4 ">
+                  <div class="service-block clearfix">
+                     <div class="service-icon"><i class="icon icon-dollar"></i></div>
+                     <div class="service-content">
+                        <h3><a href="#">Reduce User Story Lifecycle Costs</a></h3>
+                        <p>Drop your user story lifecycle costs 33% to 70%. Save time (thus money) getting stories ready faster.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4">
+                  <div class="service-block">
+                     <div class="service-icon"><i class="icon icon-graduation"></i></div>
+                     <div class="service-content">
+                        <h3><a href="#">Save on Training Costs</a></h3>
+                        <p>On-Board new Product Owners faster. Continuous rating system feedback tutors everyone on good user story writing.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4">
+                  <div class="service-block clearfix">
+                     <div class="service-icon"><i class="icon icon-cloud-upload"></i></div>
+                     <div class="service-content">
+                        <h3><a href="#">Import/Export</a></h3>
+                        <p>Import user stories and rate them. Export Backlogs and their user stories. Export to external systems such as Rally, Jira and VersionOne.</p>
+                     </div>
+                  </div>
+               </div>
+           <!--  </div>
+         </div> -->
+         </div>
+      </div>
+   </section>
+   </footer>
+
+   <div class="modal fade" id="varification_ling" style="z-index: 9999999;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog width-400" role="document">
+         <div class="modal-content no-r "><a href="#" data-dismiss="modal" aria-label="Close" class="paper-nav-toggle active"><i></i></a>
+            <div class="modal-body no-p">
+               <div class="text-center p-40 p-b-0">
+                  <h2 class=" text-center">Activate Link</h2>
+               </div>
+               <div class="light p-40" id="set_message_done">
+
+                      <div  id="set_error_message"></div>
+                     <div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                        <input type="email" name="email" class="form-control form-control-lg" id="email_get" placeholder="Email Address">
+                     </div>
+
+                     <input type="button" class="btn btn-primary btn-lg btn-block" id="call_send_link_function" value="Get Link">
+
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+<div class="modal fade" id="forgate_password_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog width-400" role="document">
+         <div class="modal-content no-r "><a href="#" data-dismiss="modal" aria-label="Close" class="paper-nav-toggle active"><i></i></a>
+            <div class="modal-body no-p">
+               <div class="text-center p-40 p-b-0">
+                  <h2 class=" text-center">Forgot Password</h2>
+               </div>
+               <div class="light p-40" id="set_message_done_forgate_password">
+
+                      <div  id="set_error_message_forgate_password"></div>
+                     <div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                        <input type="email" name="email" class="form-control form-control-lg" id="email_get_forgate_password" placeholder="Enter Register Email Address">
+                     </div>
+
+                     <input type="button" class="btn btn-primary btn-lg btn-block" id="call_forgate_password_function" value="Submit">
+
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+
+
+      <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog width-400" role="document">
+         <div class="modal-content no-r "><a href="#" data-dismiss="modal" aria-label="Close" class="paper-nav-toggle active"><i></i></a>
+            <div class="modal-body no-p">
+               <div class="text-center p-40 p-b-0"> <img src="http://203.190.153.20/media/img/dummy/u4.png" alt="">
+                  <h2 class=" text-center">Login</h2>
+               </div>
+               <div class="light p-40">
+
+                  <form id="login_form">
+                     <span id="show_login_form_error"></span>
+                     <div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                        <input type="text" required="" name="email" class="form-control form-control-lg" placeholder="Email Address">
+                     </div>
+                     <div class="form-group has-icon"><i class="icon-user-secret"></i>
+                        <input type="password" required="" name="password" class="form-control form-control-lg" placeholder="Password">
+                     </div>
+                     <button type="submit" id="login_form_button" class="btn btn-primary btn-lg btn-block">Log In</button>
+                     <small class="forget-pass" ><a href="http://203.190.153.20/password_reset">Did you forgot your password ?</a></small>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+         <div class="modal-content no-r "><a href="#" data-dismiss="modal" aria-label="Close" class="paper-nav-toggle active"><i></i></a>
+            <div class="modal-body no-p">
+               <div class="row">
+                  <div class="col-lg-12">
+
+                    <form action="http://203.190.153.20/account/register" method="POST" id="sign_up_data">
+                  <div class="col-lg-12">
+                     <div class="p-t-b-40">
+                        <div class="p-10"  id="show_message_dome_when_registration_is_done">
+                           <h2 class="p-b-20 text-center">Create New User Account</h2>
+                              <div class="row"><div class="col-md-6 float-left"><div class="form-group has-icon"><i class="icon-user-circle"></i>
+                                 <input type="text" name="yourname" required="" class="form-control form-control-lg" placeholder="Your Name">
+                              </div></div>
+                              <div class="col-md-6 float-right"><div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                                 <input type="email" name="user_email" required="" class="form-control form-control-lg" placeholder="Email Address">
+                              </div></div></div>
+
+							  <div class="row"><div class="col-md-6 float-left"><div class="form-group has-icon"><i class="icon-user-circle"></i>
+                                 <input type="password" name="password" required="" class="form-control form-control-lg" placeholder="Password">
+                              </div></div>
+                              <div class="col-md-6 float-right"><div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                                 <input type="text" name="city" required="" class="form-control form-control-lg" placeholder="Your City">
+                              </div></div></div>
+
+							  <div class="row"><div class="col-md-6 float-left"><div class="form-group has-icon"><i class="icon-user-circle"></i>
+                                 <input type="text" name="state" required="" class="form-control form-control-lg" placeholder="Your state">
+                              </div></div>
+                              <div class="col-md-6 float-right"><div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                                 <input type="text" name="zip_code" required="" class="form-control form-control-lg" placeholder="Zip code">
+                              </div></div></div>
+
+							  <div class="row"><div class="col-md-6 float-left"><div class="form-group has-icon"><i class="icon-user-circle"></i>
+                                 <input type="text" name="country" required="" class="form-control form-control-lg" placeholder="Country">
+                              </div></div>
+                              <div class="col-md-6 float-right"><div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                                 <input type="text" name="number" maxlength="12" required="" class="form-control form-control-lg" placeholder="Phone number">
+                              </div></div></div>
+
+                              <div class="row"><div class="col-md-6 float-left"><div class="form-group has-icon"><i class="icon-user-circle"></i>
+                                 <input type="text" name="organization" required="" class="form-control form-control-lg" placeholder="Organization Name">
+                              </div></div>
+                              <div class="col-md-6 float-right"><div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                                 <input type="text" name="organization_url" onkeyup="check_url_pettorn(this.value)" class="form-control form-control-lg" placeholder="organization site URL">
+                              </div></div></div>
+
+							  <div class="row">
+                              <div class="col-md-8" id="show_message">
+
+                              </div>
+                              <div class="col-md-4 ">
+                                 <button type="submit" class="btn btn-primary btn-lg btn-block" id="set_sign_up_button" >Sign Up Now</button>
+<!--                                 <input type="submit" class="btn btn-primary btn-lg btn-block" id="set_sign_up_button" value="Sign Up Now"></div>-->
+							  </div>
+
+                        </div>
+                     </div>
+                  </div>
+				  </form>
+
+
+               </div></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<script src='{% static "js/app.js" %}'></script>
+
+{% if set_login == "do_login" %}
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#modalLogin").modal("show");
+  });
+</script>
+{% endif %}
+
+<script type="text/javascript">
+var base_url = '{{BASE_URL}}';
+if(base_url == "")
+{
+  base_url = 'http://203.190.153.20/';
+}
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
+<script type="text/javascript">
+   $(document).ready(function(){
+  $('.attach input').change(function () {
+    $('.attach p').text(this.files.length + " file(s) selected");
+  });
+});
+</script>
+
+<!-- user_registartion CODE START -->
+<script type="text/javascript">
+
+
+// ===========================forgate password code start ======================
+$(document).on("click","#open_model_forgate_password",function(){
+$("#modalLogin").modal("hide");
+$("#forgate_password_modal").modal("show");
+});
+
+
+$(document).on("click","#call_forgate_password_function",function(){
+var email=$("#email_get_forgate_password").val();
+$("#set_error_message_forgate_password").html('');
+if(email=="")
+{
+ $("#set_error_message_forgate_password").html('<span class="label label-danger" style="color:red;">Enter register E-mail.</span>');
+}
+else
+{
+    $("#open_model_forgate_password").prop("disabled", true);
+     $.ajax({
+        method:"POST",
+        url:base_url+"account/send_forgate_password_link",
+        data:{"email":email},
+        dataTyep:"json",
+        success:function(data)
+        {
+        if(data.status=="1")
+        {
+         $("#set_message_done_forgate_password").html('<span class="label label-danger" style="color:green;">'+data.message+'</span>');
+        }
+        else
+        {
+           $("#set_error_message_forgate_password").html('<span class="label label-danger" style="color:red;">'+data.message+'</span>');
+        }
+          $("#open_model_forgate_password").prop("disabled", false);
+        }
+     });
+}
+
+});
+// ===========================forgate password code END ======================
+
+
+
+function check_url_pettorn(value)
+{
+var value_in_array=value.split(".");
+console.log(value_in_array);
+
+
+$("#show_message").html('');
+$("#set_sign_up_button").prop("disabled", false);
+
+if(value.search("www") != -1)
+{
+ $("#show_message").html('<div class="alert alert-danger"><strong><i class="icon-close"></i></strong> Remove "www" in organization URL</div>');
+ $("#set_sign_up_button").prop("disabled", true);
+}
+
+if(value.search("http") != -1)
+{
+ $("#show_message").html('<div class="alert alert-danger"><strong><i class="icon-close"></i></strong> Remove "http" in organization URL</div>');
+ $("#set_sign_up_button").prop("disabled", true);
+}
+
+if(value.search("/") != -1)
+{
+ $("#show_message").html('<div class="alert alert-danger"><strong><i class="icon-close"></i></strong> Remove "/" in organization URL</div>');
+ $("#set_sign_up_button").prop("disabled", true);
+}
+
+if(value !="")
+{
+if(value_in_array["0"]=="")
+{
+ $("#show_message").html('<div class="alert alert-danger"><strong><i class="icon-close"></i></strong> Remove "." in organization URL from start</div>');
+ $("#set_sign_up_button").prop("disabled", true);
+}
+
+if(value_in_array.length<2 || value_in_array[value_in_array.length-1]=="")
+{
+ $("#show_message").html('<div class="alert alert-danger"><strong><i class="icon-close"></i></strong> You have to add domain type like .com .in .eud and etc</div>');
+ $("#set_sign_up_button").prop("disabled", true);
+}
+
+if(value.search(" ") != -1)
+{
+ $("#show_message").html('<div class="alert alert-danger"><strong><i class="icon-close"></i></strong>Remove the &#60;space&#62; between URL</div>');
+ $("#set_sign_up_button").prop("disabled", true);
+}
+
+}
+
+
+}
+
+
+$(document).on("click","#call_send_link_function",function(){
+var email=$("#email_get").val();
+ $("#set_error_message").html('');
+if(email=="")
+{
+ $("#set_error_message").html('<span class="label label-danger" style="color:red;">Enter register E-mail.</span>');
+}
+else
+{
+  $(".se-pre-con").css("display","block");
+ $("#call_send_link_function").prop("disabled", true);
+ $.ajax({
+    method:"POST",
+    url:base_url+"account/send_varification_link",
+    data:{"email":email},
+    dataTyep:"json",
+    success:function(data)
+    {
+      $(".se-pre-con").css("display","none");
+    if(data.status=="1")
+    {
+     $("#set_message_done").html('<span class="label label-danger" style="color:green;">'+data.message+'</span>');
+    }
+    else
+    {
+       $("#set_error_message").html('<span class="label label-danger" style="color:red;">'+data.message+'</span>');
+    }
+      $("#call_send_link_function").prop("disabled", false);
+    }
+ });
+}
+
+});
+
+
+   $(document).ready(function(){
+
+
+
+$("#login_form").submit(function(event) {
+  $(".se-pre-con").css("display","block");
+event.preventDefault();
+$("#login_form_button").prop("disabled", true);
+$("#set_sign_up_button").html('<img src="http://voq-ptc.com/voq/assets/download2.gif"/>');
+ $.ajax({
+               method:"POST",
+               url:base_url+"account/login",
+               data:$('#login_form').serializeArray(),
+               dataTyep:"json",
+               success:function(data)
+               {
+                $(".se-pre-con").css("display","none");
+               $("#set_sign_up_button").prop("disabled", false);
+                 if(data.status=="0")
+                 {
+                    $("#show_login_form_error").html('<span class="label label-danger" style="color:red;">'+data.message+'</span>');
+                 }
+                 else
+                 {
+                   window.location.href = base_url+"dashboard"
+                 }
+                 $("#login_form_button").prop("disabled", false);
+                 $("#set_sign_up_button").text('Sign Up Now');
+                }
+              });
+});
+
+
+     $("#sign_up_data").submit(function(event) {
+      $(".se-pre-con").css("display","block");
+       event.preventDefault();
+       $("#set_sign_up_button").prop("disabled", true);
+
+            $.ajax({
+               method:"POST",
+               url:base_url+"account/register",
+               data:$('#sign_up_data').serializeArray(),
+               dataTyep:"json",
+               success:function(data)
+               {
+                $(".se-pre-con").css("display","none");
+               $("#set_sign_up_button").prop("disabled", false);
+                 if(data.status=="0")
+                 {
+                    $("#show_message").html('<div class="alert alert-danger"><strong><i class="icon-close"></i></strong> '+data.message+'</div>');
+                 }
+                 else
+                 {
+                   $("#show_message_dome_when_registration_is_done").html('<div class="alert alert-success"><strong><i class="icon-check"></i></strong> '+data.message+'</div>');
+
+                 }
+                }
+              });
+     });
+   });
+</script>
+<!-- user_registartion CODE end -->
+
+</body>
+</html>
+
+<!--Footer End-->
