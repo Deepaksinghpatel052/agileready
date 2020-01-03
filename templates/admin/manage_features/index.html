@@ -1,0 +1,715 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load static %}
+<div class="container-fluid text-white">
+               <div class="row p-t-b-10 ">
+                  <div class="col">
+                     <h1>Manage Feature({{user_name}})</h1>
+                  </div>
+               </div>
+            </div>
+            </header>
+<div class="container-fluid">
+<!--    <div class="row p-t-b-20">
+      <div class="col-md-12"> -->
+        
+         <!--------------------------------------  --------------------------->
+         <div class="row p-t-b-20">
+            <div class="col-md-12">
+                {% if messages %}
+         {% for message in messages %}
+         {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+         <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>{{message}}</strong>
+         </div>
+         {% endif %}
+         {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+         <div class="alert alert-danger alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Erorr</strong> {{message}}
+         </div>
+         {% endif %}
+         {% endfor %}
+         {% endif %}
+               <!-- <div class="card no-b"> -->
+               <div class="login-form-card">
+                  <!-- <div class="login-form-content"> -->
+                  <form action="javascript:(0);">
+                     <div class="table-responsive">
+                        <button class="btn-success add-data"><a href="{{BASE_URL}}manage-feature/add-feature">Add Feature</a></button>
+                        <!-- <button class="btn-primary import-data">Export</button> -->
+                        <!-- start Table -->
+                        <table id="example" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+                           <thead>
+                              <tr>
+                                 <th align="left" valign="top">Feature Key</th>
+                                 <th align="left" valign="top">Feature Description</th>
+                                 <th align="left" valign="top">Capability List</th>
+                                 <th align="left" valign="top">Action</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              {% for ar_feature_data in ar_feature %}
+                              <tr>
+                                 <td align="left" valign="top">{{ar_feature_data.Feature_key}}</td>
+                                 <td align="left" valign="top">{{ar_feature_data.Feature_desc}}</td>
+                                 <td align="left" valign="top">{{ar_feature_data.CE_ID}}</td>
+                                 <td align="left" valign="top">
+                                    <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                                       <tr>
+                                          <td align="center" valign="top"><a href="{{BASE_URL}}manage-feature/edit-feature/{{ar_feature_data.id}}"><i class="icon-pencil"></i></a></td>
+                                          <td align="center" valign="top">
+                                             <a href="javascript:;" onclick="remove_product('{{BASE_URL}}manage-feature/delete-feature/{{ar_feature_data.id}}','Do you want to remove features.','Features removed successfully','Features not removed.');"><i class="icon-delete"></i>
+                                             <a>
+                                          </td>
+                                       </tr>
+                                    </table>
+                                 </td>
+                              </tr>
+                              {% endfor %}
+                           </tbody>
+                        </table>
+                        <!---Table Ends---->
+                     </div>
+                  </form>
+                  <!--  </div> -->
+               </div>
+               <!-- </div> -->
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+<!------------Modal Popup------->
+<div class="modal fade in sp-map" id="modal-default">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">Manage Feature</h4>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true" style="font-size: 32px;">×</span></button>
+</div>
+<div class="modal-body">
+<div class="paper">
+<div class="row">
+<div class="col-md-12">
+<div class="container-fluid">
+<!-- <div class="card no-b"> -->
+<!-- <div class="login-form-card"> -->
+<div class="login-form-content">
+<form action="javascript:(0);">
+<div class="row">
+<div class="col-md-6"></div>
+<div class="col-md-3">
+<button class="all-btn btn">Add New</button>
+</div>
+<div class="col-md-3">
+<button class="all-btn btn">Delete</button>
+</div>
+<div class="col-md-12">
+<!-- start login -->
+<div class="form-group">
+<label>Feature</label>
+<select class="form-control" name="list" placeholder="dashboard" >
+<option>Dashboard</option>
+<option>Reports</option>
+<option>Export</option>
+<option>Imports</option>
+<option>Lists</option>
+<option>Summary</option>
+<option>BookScanner</option>
+<option>LocatePOD</option>
+<option>Store</option>
+<option>Catalog</option>
+</select>
+</div>
+<div class="form-group">
+<label>Description</label>
+<textarea class="form-control login-frm-input" style="height: 100px;    padding: 11px;" placeholder="Description"></textarea>
+</div>
+<div class="form-group">
+<label>Capability (select ONE capability this features belongs to from existing list)</label>
+<select class="form-control selectpicker" id="select-country" data-live-search="true">
+<option value="" disabled="" selected="">Select Capability</option>
+<option data-tokens="Capability 1" value="tb1">Capability 1</option>
+<option data-tokens="Capability 2" value="tb2">Capability 2</option>
+<option data-tokens="Capability 3" value="tb3">Capability 3</option>
+</select>
+<!-- <select id="table-select" class="form-control" name="list" placeholder="dashboard">
+   <option value="" disabled="" selected="" >Select Capability</option>
+   <option value="tb1">Capability 1</option>
+   <option value="tb2">Capability 2</option>
+   <option value="tb3">Capability 3</option>
+   <option value="tb4">Capability 4</option>
+   </select> -->
+<div id="tbl_div">
+<div id="tb1">
+<table id="example" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+<tr>
+<td>Capability 1</td>
+<td>Description</td>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="tb2">
+<table id="example" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+<tr>
+<td>Capability 2</td>
+<td>Description</td>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="tb3">
+<table id="example" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+<tr>
+<td>Capability 3</td>
+<td>Description</td>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="tb4">
+<table id="example" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+<tr>
+<td>Capability 4</td>
+<td>Description</td>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="form-group">
+<div class="table-responsive">
+<label>User Stories Associated with this Feature</label>
+<table id="example1" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+<thead>
+<tr>
+<th align="left" valign="top">User Stories</th>
+<th align="left" valign="top">Capability</th>
+<th align="left" valign="top" style="width: 60px!important;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" valign="top">User Story 1</td>
+<td align="left" valign="top">Capability</td>
+<td align="left" valign="top">
+<table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">User Story 2</td>
+<td align="left" valign="top">Capability</td>
+<td align="left" valign="top">
+<table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">User Story 3</td>
+<td align="left" valign="top">Capability</td>
+<td align="left" valign="top">
+<table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">User Story 4</td>
+<td align="left" valign="top">Capability</td>
+<td align="left" valign="top">
+<table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<button type="submit" class="btn-block btn btn-white all-btn" data-dismiss="modal">Cancel</button>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<button type="submit" class="btn-block btn btn-white all-btn">Update</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- </div>
+   </div> -->
+<!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<!---------------------------Modal Ends---------------->
+<!-----------2nd-Modal Popup------->
+<div class="modal fade in sp-map" id="modal-default1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">Add Feature</h4>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true" style="font-size: 32px;">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="paper">
+<div class="row">
+<div class="col-md-12">
+<div class="container-fluid">
+<div class="login-form-content">
+<form action="javascript:(0);">
+<div class="row">
+<div class="col-md-12">
+<div class="form-group">
+<label>Feature</label>
+<select class="form-control" name="list" placeholder="dashboard" >
+<option>Dashboard</option>
+<option>Reports</option>
+<option>Export</option>
+<option>Imports</option>
+<option>Lists</option>
+<option>Summary</option>
+<option>BookScanner</option>
+<option>LocatePOD</option>
+<option>Store</option>
+<option>Catalog</option>
+</select>
+</div>
+<div class="form-group">
+<label>Description</label>
+<textarea class="form-control login-frm-input" style="height: 100px;    padding: 11px;" placeholder="Description"></textarea>
+</div>
+<div class="form-group">
+<label>Capability (select ONE capability this features belongs to from existing list)</label>
+<select class="form-control selectpicker" id="select-country" data-live-search="true">
+<option value="" disabled="" selected="">Select Capability</option>
+<option data-tokens="Capability 1" value="tb1">Capability 1</option>
+<option data-tokens="Capability 2" value="tb2">Capability 2</option>
+<option data-tokens="Capability 3" value="tb3">Capability 3</option>
+</select>
+<!-- <select id="table-select" class="form-control" name="list" placeholder="dashboard">
+   <option value="" disabled="" selected="" >Select Capability</option>
+   <option value="tb1">Capability 1</option>
+   <option value="tb2">Capability 2</option>
+   <option value="tb3">Capability 3</option>
+   <option value="tb4">Capability 4</option>
+   </select> -->
+<div id="tbl_div">
+<div id="tb1">
+<table id="example" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+<tr>
+<td>Capability 1</td>
+<td>Description</td>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="tb2">
+<table id="example" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+<tr>
+<td>Capability 2</td>
+<td>Description</td>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="tb3">
+<table id="example" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+<tr>
+<td>Capability 3</td>
+<td>Description</td>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="tb4">
+<table id="example" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+<tr>
+<td>Capability 4</td>
+<td>Description</td>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="form-group">
+<div class="table-responsive">
+<label>User Stories Associated with this Feature</label>
+<table id="example1" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+<thead>
+<tr>
+<th align="left" valign="top">User Stories</th>
+<th align="left" valign="top">Capability</th>
+<th align="left" valign="top" style="width: 60px!important;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" valign="top">User Story 1</td>
+<td align="left" valign="top">Capability</td>
+<td align="left" valign="top">
+<table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">User Story 2</td>
+<td align="left" valign="top">Capability</td>
+<td align="left" valign="top">
+<table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">User Story 3</td>
+<td align="left" valign="top">Capability</td>
+<td align="left" valign="top">
+<table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">User Story 4</td>
+<td align="left" valign="top">Capability</td>
+<td align="left" valign="top">
+<table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+<td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+</tr>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<button type="submit" class="btn-block btn btn-white all-btn" data-dismiss="modal">Cancel</button>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<button type="submit" class="btn-block btn btn-white all-btn">Add</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- </div>
+   </div> -->
+<!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<!--------------------------2nd-Modal Ends---------------->
+<!------------Delete messege Modal Popup Start------->
+<div class="modal fade in sp-map" id="modal-default2">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">Confirm</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="font-size: 32px;">×</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            <div class="paper">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="container-fluid">
+                        <!--  <div class="login-form-content"> -->
+                        <form action="javascript:(0);">
+                           <div class="row">
+                              <p>Are you sure you want to Delete?</p>
+                              <div class="col-md-6">
+                                 <button type="submit" class="btn-block btn btn-white all-btn" >Yes</button>
+                              </div>
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn" data-dismiss="modal">Cancel</button>
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+                  <!-- </div> -->
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!--------------------Delete Message Modal Ends---------------->
+<!------------FeedBack messege Modal Popup Start------->
+<div class="modal fade in sp-map" id="feedback1">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">We value your Feedback</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="font-size: 32px;">×</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            <div class="paper">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="container-fluid">
+                        <!--  <div class="login-form-content"> -->
+                        <form action="javascript:(0);">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                       <td align="left" valign="top">User Name:</td>
+                                       <td align="left" valign="top">Jeo Smith</td>
+                                    </tr>
+                                    <tr>
+                                       <td align="left" valign="top">Date/Time:</td>
+                                       <td align="left" valign="top">11/10/2019</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <div class="col-md-6"></div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-5">
+                                 <label>Feedback Nature:</label>
+                              </div>
+                              <div class="col-md-7 p-t-10">
+                                 <select class="form-control" >
+                                    <option>Irritating Bug</option>
+                                    <option>Tolerance for a while Bug</option>
+                                    <option>Fix It Now Bug!</option>
+                                    <option>Suggestion</option>
+                                    <option>Complaint</option>
+                                    <option>Other</option>
+                                 </select>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <label>Feedback Information:</label>
+                                 <textarea class="form-control" style="height: 150px!important;"></textarea>
+                              </div>
+                              <div class="col-md-12">
+                                 <label>Attachments:</label>
+                                 <div class="attach">
+                        <form action="upload.php" method="POST">
+                        <input type="file" multiple>
+                        <p><i class="icon-upload"></i><br>Drag your files here or Click here</p>
+                        </form>
+                        </div>
+                        </div>
+                        <div class="col-md-12 p-t-b-20">
+                        <span>Fix It Now Bugs will get immediate attention.Please give the Agile Ready Team 24 to 72  hours to provide and initial response to all  other  feedback.</span>
+                        </div>
+                        <div class="col-md-4 offset-md-4">
+                        <button type="submit" class="btn-block btn btn-white all-btn" >Submit</button>
+                        </div>
+                        </div>
+                     </div>
+                  </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+</div>
+<!--------------------FeedBack Message Modal Ends---------------->
+<!------------Help messege Modal Popup Start------->
+<div class="modal fade in sp-map" id="help1">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">Help</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="font-size: 32px;">×</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            <div class="paper">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="container-fluid">
+                        <!--  <div class="login-form-content"> -->
+                        <form action="javascript:(0);">
+                           <div class="table-responsive">
+                              <!-- start Table -->
+                              <table id="example4" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+                                 <thead>
+                                    <tr class="dnd-moved">
+                                       <th align="left" valign="top" class="itrid">Titles</th>
+                                       <th align="left" valign="top" class="itrds">Details</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td align="left" valign="top">Topic</td>
+                                       <td align="left" valign="top">Dashboard</td>
+                                    </tr>
+                                    <tr>
+                                       <td align="left" valign="top">Description</td>
+                                       <td align="left" valign="top">Dashboard Page</td>
+                                    </tr>
+                                    <tr>
+                                       <td align="left" valign="top">Information</td>
+                                       <td align="left" valign="top">This Page Provides All Details.</td>
+                                    </tr>
+                                    <tr>
+                                       <td align="left" valign="top">Useful Links</td>
+                                       <td align="left" valign="top">
+                                          <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                                             <tr>
+                                                <td align="left" valign="top">Link 1 </td>
+                                             </tr>
+                                             <tr>
+                                                <td align="left" valign="top">Link 2</td>
+                                             </tr>
+                                             <tr>
+                                                <td align="left" valign="top">Link 3 </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <!---Table Ends---->
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+                  <!-- </div> -->
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!--------------------Help Message Modal Ends---------------->
+<script src="assets/js/app.js"></script>
+<script src="assets/js/sidebar-accordian.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+   $(document).ready(function() {
+       $('#example').DataTable();
+   } );
+</script>
+<script type="text/javascript">
+   $(document).ready(function() {
+       $('#example1').DataTable();
+   } );
+</script>
+<script type="text/javascript">
+   jQuery(function () {
+     $('#select-country').change(function () {
+         $('#tbl_div > div').css('display', 'none');
+         if (this.value) {
+             $('#' + this.value).css('display', 'block');
+         }
+     }).change()
+   })
+</script>
+<script type="text/javascript">
+   $(document).ready(function(){
+   $('.attach input').change(function () {
+    $('.attach p').text(this.files.length + " file(s) selected");
+   });
+   });
+</script>
+{% endblock %}

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="{% static "img/basic/favicon.png" %}" type="image/x-icon">
+<link rel="icon" href='{% static "img/basic/favicon.png" %}' type="image/x-icon">
 <title>Agile | DashBoard</title>
-<link rel="stylesheet" href="{% static "css/panel.css" %}">
+<link rel="stylesheet" href='{% static "css/panel.css" %}'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -100,48 +100,48 @@ thead input {
 <div id="app" class="paper-loading"><a href="#" data-toggle="offcanvas" class="paper-nav-toggle fixed left"><i></i></a>
    <aside class="main-sidebar fixed offcanvas scroll">
       <section class="sidebar">
-    <div class="jquery-accordion-menu-header text-center"><a href="dashboard.html"><img src="{% static "img/basic/logo.png" %}"></a></div>
+    <div class="jquery-accordion-menu-header text-center"><a href="{{BASE_URL}}dashboard"><img src='{% static "img/basic/logo.png" %}'></a></div>
      <ul class="sidebar-menu scroll sp-menu">
 
-      <li class="treeview"><a class="active" href="dashboard.html"><span>Dashboard</span><i class="icon icon-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-                     <li><a href="product-view.html"><i class="fa fa-cog"></i>Product View</a></li>
-                     <li><a href="backlog-view.html"><i class="fa fa-cog"></i>Backlog View </a></li>
-                     <li><a href="{{BASE_URL}}user-story-view"><i class="fa fa-cog"></i>User Story View</a></li>
-                     <li><a href="{{BASE_URL}}invite-user"><i class="fa fa-cog"></i>Iteration View</a></li>
+     <li class="treeview dashboard_menu" ><a href="{{BASE_URL}}dashboard" data-page="dashboard"><span>Dashboard</span><i class="icon icon-angle-left pull-right"></i></a>
+                  <ul class="treeview-menu ">
+                     <li ><a class="" data-page="product_view" href="{{BASE_URL}}dashboard"><i class="fa fa-cog"></i>Product View</a></li>
+                     <li><a href="{{BASE_URL}}dashboard" data-page="backlog view"><i class="fa fa-cog"></i>Backlog View </a></li>
+                     <li><a href="{{BASE_URL}}user-story-view" data-page="user_story_view" ><i class="fa fa-cog"></i>User Story View</a></li>
+                     <li><a href="{{BASE_URL}}dashboard" data-page="iteration_view" ><i class="fa fa-cog"></i>Iteration View</a></li>
                   </ul>
                 </li>
 
-            <li class="treeview"><a href="manageacct.html"> <span>Manage Account</span><i class="icon icon-angle-left pull-right"></i></a>
+            <li class="treeview manage_account_menu"><a href="{{BASE_URL}}dashboard" data-page="manage_account"> <span>Manage Account</span><i class="icon icon-angle-left pull-right"></i></a>
 
 
 
-      <ul class="treeview-menu active">
-                        <li><a href="manageusers.html"><i class="fa fa-cog"></i><span>Manage Users</span> <i class="icon icon-angle-left pull-right"></i></a>
+      <ul class="treeview-menu ">
+                        <li  class="manage_users_menu"><a href="{{BASE_URL}}dashboard" data-page="manage_user"><i class="fa fa-cog"></i><span>Manage Users</span> <i class="icon icon-angle-left pull-right"></i></a>
                           <ul class="treeview-menu">
-                                <li><a href="manageuserrolespermissions.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage User Profile</a></li>
-                                <li><a href="{{BASE_URL}}invite-user"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Invite New User</a>
+                                <li><a href="{{BASE_URL}}dashboard" data-page="manage_user_profile"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage User Profile</a></li>
+                                <li><a href="{{BASE_URL}}invite-user" data-page="invite_new_user"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Invite New User</a>
                                 </li>
                     </ul></li>
-                    <li><a href="manageenv.html"><i class="fa fa-cog"></i><span>Manage Environment</span> <i class="icon icon-angle-left pull-right"></i></a>
-                    <ul class="treeview-menu active">
-                        <li><a href="manageenv-capabilities.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Epic Capability</a></li>
-                        <li><a href="manageenv-feature.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Features </a></li>
-                        <li><a href="{{BASE_URL}}manage-products"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Products</a></li>
-                        <li><a href="{{BASE_URL}}manage-team"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Teams</a></li>
-                        <li><a href="manageenv-team-member.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Team Members</a></li>
-                        <li ><a href="manageenv-backlog.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Backlogs</a></li>
-                        <li><a href="manageenv-Iterations.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Iterations</a></li>
-                        <li><a href="manageenv-roles.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Roles</a></li>
-                        <li><a href="manageenv-goals.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Goals</a></li>
-                        <li><a href="manageenv-benefits.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Benefits</a></li>
-                        <li><a href="manageenv-userstory.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage User Story Points</a></li>
+                    <li class="nmanage_environment_menu"><a href="{{BASE_URL}}dashboard " data-page="nmanage_environment"><i class="fa fa-cog"></i><span>Manage Environment</span> <i class="icon icon-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu ">
+                        <li><a href="{{BASE_URL}}manage-epic-capabilities" data-page="manage_epic_capability"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Epic Capability</a></li>
+                        <li><a href="{{BASE_URL}}manage-feature" data-page="manage_features"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Features </a></li>
+                        <li><a href="{{BASE_URL}}manage-products" data-page="manage_products"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Products</a></li>
+                        <li><a href="{{BASE_URL}}manage-team" data-page="manage_team"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Teams</a></li>
+                        <li><a href="{{BASE_URL}}dashboard" data-page="manage_team_member"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Team Members</a></li>
+                        <li ><a href="{{BASE_URL}}manage-backlog" data-page="manage_backlogs"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Backlogs</a></li>
+                        <li><a href="{{BASE_URL}}dashboard" data-page="manage_iterations"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Iterations</a></li>
+                        <li><a href="{{BASE_URL}}dashboard" data-page="manage_roles"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Roles</a></li>
+                        <li><a href="{{BASE_URL}}dashboard" data-page="manage_goals"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Goals</a></li>
+                        <li><a href="{{BASE_URL}}dashboard" data-page="manage_benefits"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Benefits</a></li>
+                        <li><a href="{{BASE_URL}}dashboard" data-page="manage_user_story_point"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage User Story Points</a></li>
                     </ul>
                     </li>
-                    <li><a href="dataxfer.html"><i class="fa fa-cog"></i><span>Data Exchange</span> <i class="icon icon-angle-left pull-right"></i></a>
+                    <li class="data_exchange_menu"><a href="d{{BASE_URL}}dashboard " data-page="data_exchange"><i class="fa fa-cog"></i><span>Data Exchange</span> <i class="icon icon-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="import-data.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Import Data</a></li>
-                        <li><a href="export-data.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Export Data</a></li>
+                        <li><a href="{{BASE_URL}}dashboard" data-page="manage_import_data"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Import Data</a></li>
+                        <li><a href="{{BASE_URL}}dashboard" data-page="manage_export_data"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Export Data</a></li>
                     </ul>
                     </li>
                   </ul>
@@ -186,14 +186,7 @@ thead input {
                   </li>
                </ul>
             </div>
-            <div class="container-fluid text-white">
-               <div class="row p-t-b-10 ">
-                  <div class="col">
-                     <h1>Dashboard ({{user_name}})</h1>
-                  </div>
-               </div>
-            </div>
-         </header>
+
          {% block content %}
 	     {% endblock %}
       </div>
@@ -365,13 +358,13 @@ thead input {
         <!--------------------Help Message Modal Ends---------------->
 
 
-<script src="{% static "js/app.js" %}"></script>
+<script src='{% static "js/app.js" %}'></script>
 <!-- <script src="{% static "js/sidebar-accordian.js" %}"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
-
+<script src='{% static "js/custom.js" %}'></script>
 
 <script type="text/javascript">
    $('.count').each(function () {
@@ -454,8 +447,48 @@ $(document).ready(function() {
 // datatables JS END========================================
 
  
+var token = '{{csrf_token}}';
+$(document).on("change","#id_CE_ID", function(){
+  var id=$(this).val();
+  var geturl = window.location.href;
+  var url_in_array = geturl.split("/");
+  var set_url = url_in_array[2];
+  // console.log(url_in_array);
+  // console.log(set_url+"/manage-feature/get-data");
+  // console.log(id);
+  // console.log(geturl);
+  $.ajax({
+    method:"POST",
+    headers: { "X-CSRFToken": token },
+    url: "http://"+set_url+"/manage-feature/get-data",
+    data:{'check':id},
+    dataType:"json",
+    success:function(data)
+    {
+      console.log(data);
+      $("#feature_list").html('');
+      for(var i=0; i<data.check_project.length; i++)
+      {
+        $("#feature_list").append('<tr>  <td align="left" valign="top">'+data.check_project[i].Feature_key+'</td><td align="left" valign="top">'+data.check_project[i].Feature_desc+'</td><td align="left" valign="top"><table width="100%" border="0" align="left" cellpadding="0" cellspacing="0"><tr><td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td><td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td></tr></table></td> </tr>');
+      }
+    }
+  })
+
+});
+
+
 
 </script>
+
+{% for backlog_edit in backlog_edit %}
+<!-- {% if backlog_edit != "" %} -->
+<script>
+  $(document).ready(function(){
+    $('#modal-default').modal('show')
+  });
+  </script>
+  <!-- {% endif %} -->
+{% endfor %}
 
 {% block script %}
       {% endblock %}

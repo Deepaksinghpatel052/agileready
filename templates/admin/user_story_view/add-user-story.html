@@ -1,0 +1,198 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load static %}
+{% block cssstyle %}
+
+<style type="text/css">
+  span.select2.select2-container.select2-container--default.select2-container--below.select2-container--focus {
+    width: 100% !important;
+}
+
+</style>
+    {% endblock %}
+
+
+
+<div class="container-fluid text-white">
+               <div class="row p-t-b-10 ">
+                  <div class="col">
+                     <h1>User Story View({{user_name}})</h1>
+                  </div>
+               </div>
+            </div>
+            </header>
+<div class="container-fluid">
+           
+            <div class="row p-t-b-20">
+               <div class="col-md-12">
+                  <!-- <div class="card no-b"> -->
+                     <!-- {{ ar_user_story_form.errors }} -->
+{% if ar_user_story_form.errors %}
+    {% for field in ar_user_story_form %}
+        {% for error in field.errors %}
+             <div class="alert alert-danger alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>Erorr</strong>  <p>{{field.label}}  {{ error }} </p>
+                    </div>
+
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+
+          <div class="login-form-card edit">
+                   <!--  <div class="login-form-content"> -->
+                        <form onsubmit="doSomething();" action="{{BASE_URL}}user-story-view/add-new" method="POST" enctype="multipart/form-data">
+                          {% csrf_token %}
+                                   <div class="row">
+                                      <div class="col-md-8"></div>
+                                      <div class="col-md-6">
+                                     <!-- start login -->
+                                      <div class="form-group">
+                                        <label>Title</label>
+                                        {{ar_user_story_form.title}}        
+                                </div>
+                                     <div class="form-group">
+                                        <label>Owner</label>
+                                        {{ar_user_story_form.owner}}         
+                                </div>
+                               
+                                <div class="form-group">
+                                        <label>User Story Type</label>
+                                        {{ar_user_story_form.UST_ID}}         
+                                </div>
+                                <div class="form-group">
+                                        <label>Story Tri Part Text</label>
+                                        {{ar_user_story_form.story_tri_part_text}}     
+                                </div>
+                <div class="form-group">
+                  <label>Label</label>
+                  <input type="text" class="form-control login-frm-input" id="fillinput" readonly="readonly">
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>As a</label>
+                      <select class="form-control selectbox" name="" id="">
+                        <option value="">Select</option>
+                        <option value="Role">Role1</option>
+                        <option value="Role">Role2</option>
+                        <option value="Role">Role3</option>
+                        <option value="Role">Role4</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>I want to</label>
+                      <select class="form-control selectbox">
+                        <option value="">Select</option>
+                        <option value="Goal">Goal1</option>
+                        <option value="Goal">Goal2</option>
+                        <option value="Goal">Goal3</option>
+                        <option value="Goal">Goal4</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>So that</label><button type="submit" class="btn all-btn" style="float: right;">Save</button>
+                      <select class="form-control selectbox">
+                        <option value="">Select</option>
+                        <option value="Benefit">Benefit</option>
+                        <option value="Benefit">Benefit1</option>
+                        <option value="Benefit">Benefit2</option>
+                        <option value="Benefit">Benefit3</option>
+                        <option value="Benefit">Benefit4</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              
+                                <div class="form-group">
+                                        <label>User</label>
+                                        {{ar_user_story_form.ar_user}}         
+                                </div>
+                                 
+                                
+                                 <div class="form-group " style="margin-bottom: 0rem; margin-top: -10px;">
+                                        <label>Convo Readability Score</label>
+                                        {{ar_user_story_form.convo_readability_score}} 
+                                </div>
+
+                                <div class="form-group " style="margin-bottom: 0rem; margin-top: -10px;">
+                                        <label>AutoScoring</label>
+                                        {{ar_user_story_form.autoscoring_on}} 
+                                </div>
+                                
+                                </div>
+                              <div class="col-md-6">
+                                     <div class="form-group">
+                                        <label>Acceptance Criteria</label>
+                                        {{ar_user_story_form.acceptance_criteria}}        
+                                </div>
+                                    <div class="form-group">
+                                        <label>Conversations</label>
+                                        {{ar_user_story_form.conversation}}        
+                                </div>
+                                <div class="form-group">
+                                        <label>Backlogs Parents</label>
+                                       {{ar_user_story_form.backlog_parent}}
+                                </div>
+                              <div class="form-group">
+                                        <label>Readiness Quality Score</label>
+                                        {{ar_user_story_form.readiness_quality_score}}
+                                </div>
+                                <div class="form-group">
+                                        <label>Readability Score</label>
+                                        {{ar_user_story_form.ac_readability_score}}
+                                </div>
+                
+                                
+                                <div class="form-group">
+                                        <label>User Story Status</label>
+                                         {{ar_user_story_form.user_story_status}}
+                                </div>
+                                
+                                <div class="form-group">
+                                        <label>Story Point</label>
+                                       {{ar_user_story_form.story_points}}
+                                </div>
+                                  <div class="form-group">
+                                        <label>Attachments</label>
+                                        {{ar_user_story_form.attachments}}         
+                                </div>
+                                <div class="form-group" style="margin-bottom: 0rem; margin-top: -10px;">
+                                        <label>Archive Indicator</label>
+                                       {{ar_user_story_form.archive_indicator}}
+                                </div>
+                              </div>
+                            </div>
+                                <div class="row">
+                                  <div class="col-md-6 text-center">
+                                    <button type="reset" class="btn btn-block btn-white all-btn" onclick="goBack()">Cancel</button>
+                                  </div>
+                                 <div class="col-md-6">
+                                    <button type="submit" class="btn btn-block btn-white all-btn">Add</button>
+                                  </div>
+                               
+                             </div>
+                             </form></div>  
+                         
+                       <!-- </div> -->
+             </div>
+          <!-- </div> -->
+               </div>
+          </div>
+          
+{% endblock %}
+
+
+
+
+{% block script %}
+<script type="text/javascript">
+   function doSomething() {
+    $(".se-pre-con").css("display","block");
+}
+</script>
+{% endblock %}

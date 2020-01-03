@@ -5,28 +5,7 @@ import django
 
 # Create your models here.
 
-class Ar_user(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    user_name = models.CharField(max_length=50, default=None,blank=True)
-    address = models.CharField(max_length=255, default="", blank=True)
-    city = models.CharField(max_length=255, default="", blank=True)
-    state = models.CharField(max_length=255, default="", blank=True)
-    zip = models.IntegerField(default="", blank=True)
-    country = models.CharField(max_length=50, default="", blank=True)
-    phone = models.BigIntegerField(default="", blank=True)
-    backup_email = models.EmailField(max_length=50, default="", blank=True)
-    user_type = models.CharField(max_length=50, default="Root")
-    login_status = models.BooleanField(default=False)
-    activate_status = models.BooleanField(default=False)
-    org_id = models.IntegerField(default=0)
-    verification_status = models.BooleanField(default=False)
-    created_by = models.IntegerField(default=0)
-    created_dt = models.DateTimeField(default=django.utils.timezone.now)
-    updated_by = models.IntegerField(default=0)
-    updated_dt = models.DateTimeField(default=django.utils.timezone.now)
 
-    def __str__(self):
-        return str(self.user_name)
 
 
 class AR_organization_status(models.Model):
@@ -55,3 +34,37 @@ class AR_organization(models.Model):
 
     def __str__(self):
         return str(self.organization_name)
+
+
+class Ar_user(models.Model):
+    user = models.OneToOneField(User,  on_delete=models.CASCADE, null=True, blank=True)
+    user_name = models.CharField(max_length=50, default=None,blank=True)
+    address = models.CharField(max_length=255, default="", blank=True)
+    city = models.CharField(max_length=255, default="", blank=True)
+    state = models.CharField(max_length=255, default="", blank=True)
+    zip = models.IntegerField(default="", blank=True)
+    country = models.CharField(max_length=50, default="", blank=True)
+    phone = models.BigIntegerField(default="", blank=True)
+    backup_email = models.EmailField(max_length=50, default="", blank=True)
+    user_type = models.CharField(max_length=50, default="Root")
+    login_status = models.BooleanField(default=False)
+    activate_status = models.BooleanField(default=False)
+    org_id = models.ForeignKey(AR_organization, on_delete=models.SET_NULL, null=True, blank=True)
+    verification_status = models.BooleanField(default=False)
+    created_by = models.IntegerField(default=0)
+    created_dt = models.DateTimeField(default=django.utils.timezone.now)
+    updated_by = models.IntegerField(default=0)
+    updated_dt = models.DateTimeField(default=django.utils.timezone.now)
+
+    def __str__(self):
+        return str(self.user_name)
+
+class ArShowcolumns(models.Model):
+    Table_name = models.CharField(max_length=50)
+    user = models.ForeignKey(Ar_user,on_delete=models.CASCADE)
+    ORG = models.ForeignKey(AR_organization, on_delete=models.SET_NULL, null=True, blank=True)
+    columnName = models.TextField()
+
+
+    def _str__(self):
+        return str(self.Table_name)

@@ -5,7 +5,7 @@
                                    <!-- <div class="card no-b"> -->
           <!-- <div class="login-form-card"> -->
                      <div class="login-form-content">
-                                    <form action="{{BASE_URL}}manage-team/edit-team/{{ids}}" method="POST">
+                                    <form onsubmit="doSomething();" action="{{BASE_URL}}manage-team/edit-team/{{ids}}" method="POST">
                                     {% csrf_token %}
                                     <div class="row">
                                       <div class="col-md-6"></div>
@@ -18,11 +18,11 @@
                                       <div class="col-md-12">
                                      <!-- start login -->
                                     <div class="form-group">
-                                        <label>Team</label>
+                                        <label>Team<samp style="color: red">*</samp></label>
                                       {{TeamForm.Team_name}}
                                 </div>
                                 <div class="form-group">
-                                    <label>Description</label>
+                                    <label>Description<samp style="color: red">*</samp></label>
                                     {{TeamForm.Team_description}}
                                 </div>
                                 <div class="form-group">
@@ -41,7 +41,7 @@
                                   </div>
                                   <div class="col-md-6">
                                 <div class="form-group">
-                                    <button type="submit" class="btn-block btn btn-white all-btn">Add</button>
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Update</button>
                                </div>
                              </div>
                              <!-- </div> -->
@@ -54,9 +54,10 @@
                             </div>
 {% block script %}
  <script type="text/javascript">
- 	$(document).on("click","button[type='submit']",function(){
-$(".se-pre-con").css("display","block");
-  });
+ 
+  function doSomething() {
+    $(".se-pre-con").css("display","block");
+}
  	  $(document).ready(function(){
   
    // $("#id_Team_member_list").addClass("form-control");

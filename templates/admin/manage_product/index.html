@@ -1,7 +1,14 @@
 {% extends 'admin/dashboard-template.html' %}
 {% block content %}
 {% load static %}
-
+<div class="container-fluid text-white">
+               <div class="row p-t-b-10 ">
+                  <div class="col">
+                     <h1>Manage Product({{user_name}})</h1>
+                  </div>
+               </div>
+            </div>
+            </header>
 <div class="container-fluid">
            
             <div class="row p-t-b-20">
@@ -11,14 +18,14 @@
                      {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
                     <div class="alert alert-success alert-dismissible">
                       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                      <strong>!</strong> {{message}}
+                      <strong>{{message}}</strong> 
                     </div>
                        {% endif %}
 
                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
                     <div class="alert alert-danger alert-dismissible">
                       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                      <strong>Erorr!</strong> {{message}}
+                      <strong>Erorr</strong> {{message}}
                     </div>
                        {% endif %}
 
@@ -69,7 +76,7 @@
                     <td align="center" valign="top"><a href="{{BASE_URL}}manage-products/edit-product/{{project.id}}"><i class="icon-pencil"></i></a></td>
                     <td align="center" valign="top">
 <!--  -->
-                      <a href="javascript:;" onclick="remove_product('{{BASE_URL}}manage-products/remove-product/{{project.id}}','Do you want to remove project.','Project remove successfully','Project not remove.');"><i class="icon-delete"></i></a>
+                      <a href="javascript:;" onclick="remove_product('{{BASE_URL}}manage-products/remove-product/{{project.id}}','Do you want to removed product.','Product removed successfully','Product not removed.');"><i class="icon-delete"></i></a>
                     </td>
                    </tr>
                 </tbody></table>

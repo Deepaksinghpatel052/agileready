@@ -175,10 +175,11 @@
                   <form id="login_form">
                      <span id="show_login_form_error"></span>
                      <div class="form-group has-icon"><i class="icon-envelope-o"></i>
-                        <input type="text" required="" name="email" class="form-control form-control-lg" placeholder="Email Address">
+                        <input type="text" required="" name="email" class="form-control form-control-lg" placeholder="Email Address *">
                      </div>
                      <div class="form-group has-icon"><i class="icon-user-secret"></i>
-                        <input type="password" required="" name="password" class="form-control form-control-lg" placeholder="Password">
+                        <input type="password" required="" name="password" class="form-control form-control-lg" placeholder="Password *">
+
                      </div>
                      <button type="submit" id="login_form_button" class="btn btn-primary btn-lg btn-block">Log In</button>
                      <small class="forget-pass" ><a href="http://203.190.153.20/password_reset">Did you forgot your password ?</a></small>
@@ -199,37 +200,40 @@
                   <div class="col-lg-12">
                      <div class="p-t-b-40">
                         <div class="p-10"  id="show_message_dome_when_registration_is_done">
-                           <h2 class="p-b-20 text-center">Create New User Account</h2>
-                              <div class="row"><div class="col-md-6 float-left"><div class="form-group has-icon"><i class="icon-user-circle"></i>
-                                 <input type="text" name="yourname" required="" class="form-control form-control-lg" placeholder="Your Name">
-                              </div></div>
-                              <div class="col-md-6 float-right"><div class="form-group has-icon"><i class="icon-envelope-o"></i>
-                                 <input type="email" name="user_email" required="" class="form-control form-control-lg" placeholder="Email Address">
-                              </div></div></div>
+                           <h2 class="text-center">Create New User Account</h2>
+                           <h6 class="text-center"><span style="color: red; font-size: 17px;">All * Fields are Mandatory</span></h6>
 
-							  <div class="row"><div class="col-md-6 float-left"><div class="form-group has-icon"><i class="icon-user-circle"></i>
-                                 <input type="password" name="password" required="" class="form-control form-control-lg" placeholder="Password">
-                              </div></div>
-                              <div class="col-md-6 float-right"><div class="form-group has-icon"><i class="icon-envelope-o"></i>
-                                 <input type="text" name="city" required="" class="form-control form-control-lg" placeholder="Your City">
-                              </div></div></div>
-
-							  <div class="row"><div class="col-md-6 float-left"><div class="form-group has-icon"><i class="icon-user-circle"></i>
-                                 <input type="text" name="state" required="" class="form-control form-control-lg" placeholder="Your state">
-                              </div></div>
-                              <div class="col-md-6 float-right"><div class="form-group has-icon"><i class="icon-envelope-o"></i>
-                                 <input type="text" name="zip_code" required="" class="form-control form-control-lg" placeholder="Zip code">
-                              </div></div></div>
-
-							  <div class="row"><div class="col-md-6 float-left"><div class="form-group has-icon"><i class="icon-user-circle"></i>
-                                 <input type="text" name="country" required="" class="form-control form-control-lg" placeholder="Country">
-                              </div></div>
-                              <div class="col-md-6 float-right"><div class="form-group has-icon"><i class="icon-envelope-o"></i>
-                                 <input type="text" name="number" maxlength="12" required="" class="form-control form-control-lg" placeholder="Phone number">
-                              </div></div></div>
 
                               <div class="row"><div class="col-md-6 float-left"><div class="form-group has-icon"><i class="icon-user-circle"></i>
-                                 <input type="text" name="organization" required="" class="form-control form-control-lg" placeholder="Organization Name">
+                                 <input type="text" name="yourname" required="" class="form-control form-control-lg" placeholder="Your Name * ">
+                              </div></div>
+                              <div class="col-md-6 float-right"><div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                                 <input type="email" name="user_email" required="" class="form-control form-control-lg" placeholder="Email Address *">
+                              </div></div></div>
+
+							  <div class="row"><div class="col-md-6 float-left"><div class="form-group has-icon"><i class="icon-user-circle"></i>
+                                 <input type="password" name="password" required="" class="form-control form-control-lg" placeholder="Password *">
+                              </div></div>
+                              <div class="col-md-6 float-right"><div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                                 <input type="text" name="city" required="" class="form-control form-control-lg" placeholder="Your City *">
+                              </div></div></div>
+
+							  <div class="row"><div class="col-md-6 float-left"><div class="form-group has-icon"><i class="icon-user-circle"></i>
+                                 <input type="text" name="state" required="" class="form-control form-control-lg" placeholder="Your state *">
+                              </div></div>
+                              <div class="col-md-6 float-right"><div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                                 <input type="text" name="zip_code" required="" class="form-control form-control-lg" placeholder="Zip code *">
+                              </div></div></div>
+
+							  <div class="row"><div class="col-md-6 float-left"><div class="form-group has-icon"><i class="icon-user-circle"></i>
+                                 <input type="text" name="country" required="" class="form-control form-control-lg" placeholder="Country *">
+                              </div></div>
+                              <div class="col-md-6 float-right"><div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                                 <input type="text" name="number" maxlength="12" required="" class="form-control form-control-lg" placeholder="Phone number *">
+                              </div></div></div>
+
+                              <div class="row"><div class="col-md-6 float-left"><div class="form-group has-icon"><i class="icon-user-circle"></i>
+                                 <input type="text" name="organization" required="" class="form-control form-control-lg" placeholder="Organization Name *">
                               </div></div>
                               <div class="col-md-6 float-right"><div class="form-group has-icon"><i class="icon-envelope-o"></i>
                                  <input type="text" name="organization_url" onkeyup="check_url_pettorn(this.value)" class="form-control form-control-lg" placeholder="organization site URL">
@@ -401,7 +405,7 @@ var email=$("#email_get").val();
  $("#set_error_message").html('');
 if(email=="")
 {
- $("#set_error_message").html('<span class="label label-danger" style="color:red;">Enter register E-mail.</span>');
+ $("#set_error_message").html('<span class="label label-danger" style="color:red;">Enter register E-mail !</span>');
 }
 else
 {
@@ -480,11 +484,11 @@ $("#set_sign_up_button").html('<img src="http://voq-ptc.com/voq/assets/download2
                $("#set_sign_up_button").prop("disabled", false);
                  if(data.status=="0")
                  {
-                    $("#show_message").html('<div class="alert alert-danger"><strong><i class="icon-close"></i></strong> '+data.message+'</div>');
+                    $("#show_message").html('<div class="alert alert-danger"><strong></strong> '+data.message+'</div>');
                  }
                  else
                  {
-                   $("#show_message_dome_when_registration_is_done").html('<div class="alert alert-success"><strong><i class="icon-check"></i></strong> '+data.message+'</div>');
+                   $("#show_message_dome_when_registration_is_done").html('<div class="alert alert-success"><strong></strong> '+data.message+'</div>');
 
                  }
                 }

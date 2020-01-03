@@ -2211,6 +2211,11 @@ a.btn.disabled, fieldset[disabled] a.btn {
 	background-color:#03a9f4;
 	border-color:#03a9f4
 }
+.btn-primary a{
+	color: white !important;
+	text-decoration: none!important;
+}
+
 .btn-primary:hover {
 	color:#fff;
 	background-color:#038fce;
@@ -21917,6 +21922,11 @@ div#example1_filter{
      /*margin: 20px 0px 0px 0px;*/
      border-radius: 8px; 
 }
+.all-btn a{
+	color: white !important;
+	text-decoration: none!important;
+}
+
 .all-btn:hover{
 	background: #333333; 
 }

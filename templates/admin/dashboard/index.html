@@ -1,7 +1,14 @@
 {% extends 'admin/dashboard-template.html' %}
 {% block content %}
 {% load static %}
-
+            <div class="container-fluid text-white">
+               <div class="row p-t-b-10 ">
+                  <div class="col">
+                     <h1>Dashboard ({{user_name}})</h1>
+                  </div>
+               </div>
+            </div>
+         </header>
 <div class="container-fluid">
 
             <div class="row p-t-b-20">
@@ -16,43 +23,43 @@
                                     <div class="row">
                                        <div class="col-md-1"></div>
                                        <div class="col-md-2 p-4 b-r">
-                                         <a href="manageenv-teams.html"> <span class="text-center">
+                                         <a href="{{BASE_URL}}manage-team"> <span class="text-center">
                                              <i class="fas text-themecolor icon-users"></i>
                                           </span>
-                                          <h1 class="font-light count">51</h1>
+                                          <h1 class="font-light count">{{team}}</h1>
                                            <h5>Teams</h5></a>
                                        </div>
                                        <div class="col-md-2 p-4 b-r">
-                                          <a href="product-view.html"><span class="text-center"><i class="fas text-themecolor icon-heartbeat"></i>
+                                          <a href="{{BASE_URL}}manage-products"><span class="text-center"><i class="fas text-themecolor icon-heartbeat"></i>
                                           </span>
-                                          <h1 class="font-light count">99</h1>
+                                          <h1 class="font-light count">{{product}}</h1>
                                           <h5>Products</h5></a>
                                        </div>
 
                                        <div class="col-md-2 p-4 b-r">
-                                          <a href="iteration-view.html">
+                                          <a href="{{BASE_URL}}dashboard">
                                           <span class="text-center">
                                              <i class="fas text-themecolor icon-gift"></i>
                                           </span>
-                                          <h1 class="font-light count">20</h1>
+                                          <h1 class="font-light count">{{itearations}}</h1>
                                           <h5>Iterations</h5>
                                        </a>
                                        </div>
                                        <div class="col-md-2 p-4 b-r">
-                                          <a href="backlog-view.html">
+                                          <a href="{{BASE_URL}}manage-backlog">
                                           <span class="text-center">
                                              <i class="fas text-themecolor icon-gift"></i>
                                           </span>
-                                          <h1 class="font-light count">73</h1>
+                                          <h1 class="font-light count">{{backlog}}</h1>
                                           <h5>Backlogs</h5>
                                        </a>
                                        </div>
                                        <div class="col-md-2 p-4 b-r">
-                                          <a href="user-story-view.html">
+                                          <a href="{{BASE_URL}}user-story-view">
                                           <span class="text-center">
                                              <i class="fas text-themecolor icon-book"></i>
                                           </span>
-                                          <h1 class="font-light count">121</h1>
+                                          <h1 class="font-light count">{{user_storyes}}</h1>
                                           <h5>User Stories</h5></a>
                                        </div>
                                        <div class="col-md-1"></div>

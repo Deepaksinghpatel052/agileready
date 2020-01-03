@@ -14,7 +14,7 @@ def index(request):
         all_project_get = AR_product.objects.filter(ORG_ID=org_ins).order_by("-id")
     else:
         all_project_get = {}
-    return render(request, 'admin/manage_product/index.html', {'user_name':request.session['org_id'],'BASE_URL':settings.BASE_URL,"all_project_get":all_project_get})
+    return render(request, 'admin/manage_product/index.html', {'user_name':request.session['user_name'],'BASE_URL':settings.BASE_URL,"all_project_get":all_project_get})
 
 @login_required
 def add_product(request):
@@ -31,9 +31,9 @@ def add_product(request):
             product.update_by = ar_user_insta
             product.save()
             product_form.save_m2m()
-            messages.info(request, "Product add successfully.")
+            messages.info(request, "Product added successfully!")
         else:
-            messages.info(request, product_form.error)
+            messages.info(request, product_form.errors)
         return redirect(settings.BASE_URL + "manage-products/add-product")
     else:
         product_form = ProductForm(request.user,request.session['org_id'])
@@ -41,9 +41,12 @@ def add_product(request):
 
 @login_required
 def remove_product(request,id):
-    project = get_object_or_404(AR_product, pk=id)
-    project.delete()
-    messages.info(request, "Product remove successfully.")
+    try:
+        project = get_object_or_404(AR_product, pk=id)
+        project.delete()
+        messages.info(request, "Product removed successfully!")
+    except(TypeError, OverflowError): 
+        messages.error(request, "Maybe this project is used in another table so we can not remove that!")
     return redirect(settings.BASE_URL+'manage-products')
 
 @login_required
@@ -57,7 +60,7 @@ def edit_product(request,id):
             product.update_by = ar_user_insta
             product.save()
             product_form.save_m2m()
-            messages.info(request, "Product updase successfully.")
+            messages.info(request, "Product updated successfully!")
         else:
             messages.error(request, product_form.error)
         return redirect(settings.BASE_URL + "manage-products")

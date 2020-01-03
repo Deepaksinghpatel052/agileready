@@ -26,6 +26,7 @@ SECRET_KEY = 'lq*$5ez16@j7^c$cmkd5jj9x)-tulf!abdvwtr^nd7*%it@b0q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -43,9 +44,13 @@ INSTALLED_APPS = [
     'account',
     'account_settings',
     'invite_user',
-    'ar_user_story',
+    'user_story_view',
     'manage_product',
     'manage_team',
+    'manage_epic_capability',
+    'manage_features',
+    'manage_backlogs',
+    'manage_iterations',
 ]
 
 MIDDLEWARE = [

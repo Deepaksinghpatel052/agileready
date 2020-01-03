@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Ar_user,AR_organization,AR_organization_status
+from .models import Ar_user,AR_organization,AR_organization_status,ArShowcolumns
 # Register your models here.
 
 class Ar_userAdmin(admin.ModelAdmin):
     date_hierarchy = 'created_dt'
     search_fields = ['user_name']
-    list_display = ('user_name','city','state','zip','country','phone','backup_email','user_type','login_status','created_dt')
+    list_display = ('user_name','city','state','zip','country','phone','backup_email','org_id','user_type','login_status','created_dt')
 
 
 class AR_organization_statusAdmin(admin.ModelAdmin):
@@ -19,7 +19,12 @@ class AR_organizationAdmin(admin.ModelAdmin):
     search_fields = ['organization_name']
     list_display = ('organization_name','subscription_level','organization_status','created_by','created_dt')
 
+class AArShowcolumnsAdmin(admin.ModelAdmin):
+    search_fields = ['user_id']
+    list_display = ('user','ORG','Table_name','columnName')
+
 admin.site.register(Ar_user,Ar_userAdmin)
 admin.site.register(AR_organization,AR_organizationAdmin)
 admin.site.register(AR_organization_status,AR_organization_statusAdmin)
+admin.site.register(ArShowcolumns,AArShowcolumnsAdmin)
 

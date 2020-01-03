@@ -4,7 +4,7 @@ from account.models import Ar_user,AR_organization
 from django.db.models import Q,Subquery
 
 class ManageTeamForm(forms.ModelForm):
-    Team_name  = forms.CharField(widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Team Name",}))
+    Team_name  = forms.CharField(widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Team Name *",}))
     Team_description  = forms.CharField(widget=forms.Textarea(attrs={"class":"form-control login-frm-input","style":"height: 100px; padding: 11px;","placeholder":"Description",}))
     class Meta:
         model = AR_team

@@ -27,17 +27,17 @@ class AR_product(models.Model):
     Team_parent = models.ManyToManyField(AR_team,blank=True, related_name='user_favourite')
     Children_backlog_list = models.ManyToManyField(AR_team,blank=True, related_name='backlog_favourite')
     Business_unit = models.CharField(max_length=100)
-    Product_size = models.IntegerField()
-    Product_score  = models.IntegerField()
+    Product_size = models.IntegerField(default=0)
+    Product_score  = models.IntegerField(default=0)
     US_quality_threshold  = models.IntegerField(default=0)
-    ORG_ID = models.ForeignKey(AR_organization,on_delete='models.CASCADE')
+    ORG_ID = models.ForeignKey(AR_organization,on_delete='models.SET_NULL')
     create_by = models.ForeignKey(Ar_user, on_delete='models.SET_NULL',related_name='create_by_product')
     create_dt = models.DateTimeField(default=django.utils.timezone.now)
     update_by = models.ForeignKey(Ar_user, on_delete='models.SET_NULL',related_name='update_by_product')
     update_dt = models.DateTimeField(default=django.utils.timezone.now)
 
     def __str__(self):
-        return str(self.Procduct_name)
+        return self.Procduct_name
 
 
 

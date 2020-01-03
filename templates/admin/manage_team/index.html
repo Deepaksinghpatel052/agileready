@@ -2,6 +2,7 @@
 {% block content %}
 {% load static %}
 {% block cssstyle %}
+
 <style type="text/css">
   span.select2.select2-container.select2-container--default.select2-container--below.select2-container--focus {
     width: 100% !important;
@@ -25,6 +26,14 @@
         </div>
     {% endfor %}
 {% endif %}
+<div class="container-fluid text-white">
+               <div class="row p-t-b-10 ">
+                  <div class="col">
+                     <h1>Manage Team({{user_name}})</h1>
+                  </div>
+               </div>
+            </div>
+            </header>
 <div class="container-fluid">
            
             <div class="row p-t-b-20">
@@ -34,14 +43,14 @@
                      {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
                     <div class="alert alert-success alert-dismissible">
                       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                      <strong>!</strong> {{message}}
+                      <strong>{{message}}</strong> 
                     </div>
                        {% endif %}
 
                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
                     <div class="alert alert-danger alert-dismissible">
                       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                      <strong>Erorr!</strong> {{message}}
+                      <strong>Erorr</strong> {{message}}
                     </div>
                        {% endif %}
 
@@ -84,7 +93,7 @@
                 <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
                    <tbody><tr>
                     <td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#team_edit" class="edit_team" data-team_id="{{team.id}}"><i class="icon-pencil"></i></a></td>
-                    <td align="center" valign="top"><a href="javascript:;"  onclick="remove_product('{{BASE_URL}}manage-team/remove-team/{{team.id}}','Do you want to remove this team.','Team remove successfully','Team not remove.');"><i class="icon-delete"></i></a><a></a></td>
+                    <td align="center" valign="top"><a href="javascript:;"  onclick="remove_product('{{BASE_URL}}manage-team/remove-team/{{team.id}}','Do you want to removed this team.','Team removed successfully','Team not removed.');"><i class="icon-delete"></i></a><a></a></td>
                    </tr>
                 </tbody></table>
                 </td>
@@ -126,7 +135,7 @@
                                    <!-- <div class="card no-b"> -->
           <!-- <div class="login-form-card"> -->
                      <div class="login-form-content">
-                                    <form action="#" method="POST">
+                                    <form action="#" method="POST" onsubmit="doSomething();">
                                       {% csrf_token %}
                                     <div class="row">
                                       <div class="col-md-6"></div>
@@ -139,11 +148,12 @@
                                       <div class="col-md-12">
                                      <!-- start login -->
                                     <div class="form-group">
-                                        <label>Team</label>
+
+                                        <label>Team<samp style="color: red">*</samp></label>
                                       {{TeamForm.Team_name}}
                                 </div>
                                 <div class="form-group">
-                                    <label>Description</label>
+                                    <label>Description<samp style="color: red">*</samp></label>
                                     {{TeamForm.Team_description}}
                                 </div>
                                 <div class="form-group">
@@ -232,7 +242,7 @@ $.ajax({
    
     
      $("#team_edit .modal-body").html(data);
-   $("#team_edit #id_Team_member_list").addClass("form-control");
+   // $("#team_edit #id_Team_member_list").addClass("form-control");
    $('#team_edit #id_Team_member_list').select2();
      // $("#team_edit").modal("show");
   }
@@ -244,8 +254,10 @@ $.ajax({
    $('#id_Team_member_list').select2();
 });
 
-   $(document).on("click","button[type='submit']",function(){
-$(".se-pre-con").css("display","block");
-  });
+  
+
+   function doSomething() {
+    $(".se-pre-con").css("display","block");
+}
 </script>
 {% endblock %}

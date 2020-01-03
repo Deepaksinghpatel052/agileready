@@ -34,9 +34,9 @@ def index(request):
             try:
                 team.save()
                 TeamForm.save_m2m()
-                messages.info(request, "Team add successfully.")
+                messages.info(request, "Team added successfully!")
             except IntegrityError:
-                messages.error(request, "The team name is alread exists.")
+                messages.error(request, "The team name is alread exists!")
             return redirect(settings.BASE_URL+"manage-team")
     TeamForm = ManageTeamForm(request.user, request.session['org_id'],user_objects)
     return render(request, 'admin/manage_team/index.html', {'user_name':request.session['user_name'],'BASE_URL':settings.BASE_URL,'TeamForm':TeamForm,'team_get':AR_team_get})
@@ -45,7 +45,7 @@ def index(request):
 def remove_team(request,id):
     team = get_object_or_404(AR_team, pk=id)
     team.delete()
-    messages.info(request, "Team remove successfully.")
+    messages.info(request, "Team removed successfully!")
     return redirect(settings.BASE_URL + 'manage-team')
 
 @login_required
@@ -73,7 +73,7 @@ def edit_team(request,id):
             team.update_dt =  datetime.now()
             team.save()
             TeamForm.save_m2m()
-            messages.info(request, "Team update successfully.")
+            messages.info(request, "Team updated successfully!")
         else:
             messages.error(request, product_form.error)
         return redirect(settings.BASE_URL + "manage-team")

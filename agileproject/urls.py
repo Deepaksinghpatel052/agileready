@@ -31,11 +31,12 @@ urlpatterns = [
     path('password/', include('django.contrib.auth.urls')),
 
     path('dashboard/', include('dashboard.urls')),
-
+    path('dashboard', include('dashboard.urls')),
+    
     path('account/', include('account.urls')),
     path('account', include('account.urls')),
 
-    path('dashboard', include('dashboard.urls')),
+    
 
     path('account-settings', include('account_settings.urls')),
     path('account-settings/', include('account_settings.urls')),
@@ -47,10 +48,19 @@ urlpatterns = [
     path('manage-products', include('manage_product.urls')),
     path('manage-products/', include('manage_product.urls')),
 
-    path('user-story-view', include('ar_user_story.urls')),
-    path('user-story-view/', include('ar_user_story.urls')),
-
+    path('user-story-view', include('user_story_view.urls')),
+    path('user-story-view/', include('user_story_view.urls')),
+    
     path('manage-team', include('manage_team.urls')),
     path('manage-team/', include('manage_team.urls')),
+
+    path('manage-epic-capabilities', include('manage_epic_capability.urls')),
+    path('manage-epic-capabilities/', include('manage_epic_capability.urls')),
+
+    path('manage-feature', include('manage_features.urls')),
+    path('manage-feature/', include('manage_features.urls')),
+
+    path('manage-backlog', include('manage_backlogs.urls')),
+    path('manage-backlog/', include('manage_backlogs.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

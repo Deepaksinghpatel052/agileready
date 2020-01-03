@@ -1,0 +1,142 @@
+ubuntu
+sudo -i -u postgres
+psql
+ \c samurai_database
+\dt
+
+
+Insert into projectmap (project_id,user_id,user_type,project,date) VALUES ('3','9','user','PROJECT!','19-09-2019');
+
+
+
+sudo systemctl restart gunicorn
+
+
+
+251800da8d338eb82819105d5f3c7629
+
+
+source samuraienv/bin/activate
+
+
+
+ python manage.py collectstatic
+
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Deepaksinghpatel052/samurai.git
+git push -u origin master
+git push -f origin master
+
+
+git status
+git branch "branch_name"
+git branch --list
+git checkout "new_branch_name"
+git branch
+
+
+
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+source myprojectenv/bin/activate
+
+
+
+CASCADE: When the referenced object is deleted, also delete the objects that have references to it (When you remove a blog post for instance, you might want to delete comments as well). SQL equivalent: CASCADE.
+
+PROTECT: Forbid the deletion of the referenced object. To delete it you will have to delete all objects that reference it manually. SQL equivalent: RESTRICT.
+
+SET_NULL: Set the reference to NULL (requires the field to be nullable). For instance, when you delete a User, you might want to keep the comments he posted on blog posts, but say it was posted by an anonymous (or deleted) user. SQL equivalent: SET NULL.
+
+SET_DEFAULT: Set the default value. SQL equivalent: SET DEFAULT.
+SET(...): Set a given value. This one is not part of the SQL standard and is entirely handled by Django.
+DO_NOTHING: Probably a very bad idea since this would create integrity issues in your database (referencing an object that actually doesn't exist). SQL equivalent: NO ACTION.
+
+
+
+===============================================================================================
+==================== =AGIL=========================
+
+WORK FLOW
+https://docs.google.com/spreadsheets/d/1RA36JpMNABiS4G61zHF2_ra6mOJa-dUcpEZzDXNysBo/edit#gid=915700840
+
+
+DATABASES
+https://docs.google.com/spreadsheets/d/1P08KYgT_SdLG-fbS4HEFa9SWcBg-F2oGESgQtKTBfqw/edit#gid=618472963
+
+DATABASE ER
+https://www.draw.io/#G1Pv6pw5VNkl51YRA_av-YiGLs6kpZGEHo
+
+
+
+https://www.youtube.com/watch?v=g5DTIiFAiSk
+
+https://www.youtube.com/watch?v=Gb5ACR0jUyw
+
+================================================================================
+git 
+
+git confin --global user.email "deepaksinghpatel052@gmail.com"
+
+git config --global user.name "Deepak Patel"
+============================================================================
+
+
+*************************search *********************************
+https://www.youtube.com/watch?v=0tHDRJ7ud6o***********************************************************************************************************************
+
+===========================================================================
+
+============== CA LOGN ================
+
+Link is  https://rally1.rallydev.com/
+user is neelam@digimonk.in
+Pwd: Passw0rd
+
+=============================================
+
+
+
+=====================================================================================================================================================
+   # image_1 = cv.imread(filepath)
+        # hight , width = image_1.shape
+        # matrix = cv.getRotationMatrix2D((hight/2,width/2),90)
+        # new_image = cv.wrapAffine(image_1,matrix,(hight,width))
+        # path = BASE_DIR + "/media/"
+        # cv.imwrite(os.path.join(path , 'waka.jpg'), new_image)
+        # cv.waitKey(0)
+        # for orientation in ExifTags.TAGS.keys():
+        #     if ExifTags.TAGS[orientation] == 'Orientation':
+        #         break
+
+        # exif = image_1._getexif()
+        # image_rotate = 0
+        # if exif:
+        #     exif = dict(image_1._getexif().items())
+        #     if exif[orientation] == 3:
+        #         image_rotate = 180
+        #         # image_rotate = image_1.rotate()
+        #     elif exif[orientation] == 6:
+        #         image_rotate = 270
+        #         # image = image_1.rotate(270)
+        #     elif exif[orientation] == 8:
+        #         image_rotate = 90
+        #         # image = image_1.rotate(90)
+
+        #     image = image_1.rotate(image_rotate,resample=0, expand=1, center=None, translate=None, fillcolor=None)        
+        #     image.save(filepath)
+        #     image.close()
+
+        ############# add thum image code start##############
+        # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        # filepath = BASE_DIR + "/media/" + file_name
+        # image = Image.open(filepath)
+        # image.resize((600, 600), Image.ANTIALIAS).save('media/' + file_name_thumb_is, quality=100)
+        # image.thumbnail(300, 300)
+        # image.save('dog_thumbnail.jpg')
+        ############# add thum image code end############## "Photo add successfully"
+=====================================================================================================================================================

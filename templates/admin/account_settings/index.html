@@ -1,7 +1,14 @@
 {% extends 'admin/dashboard-template.html' %}
 {% block content %}
 {% load static %}
-
+  <div class="container-fluid text-white">
+               <div class="row p-t-b-10 ">
+                  <div class="col">
+                     <h1>Account Setting ({{user_name}})</h1>
+                  </div>
+               </div>
+            </div>
+         </header>
 <div class="container-fluid">
              <div class="row p-t-b-20">
                <div class="col-md-8 offset-md-2">
@@ -45,7 +52,7 @@
                                 </div>
                               </div>
                               <div class="col-md-6">
-
+                                
                                 <div class="form-group">
                                         <label>State</label>
                                         <input type="text" class="form-control form-control-lg" placeholder="">
@@ -130,4 +137,5 @@
                </div>
              </div>
 
+            </div>
 {% endblock %}
