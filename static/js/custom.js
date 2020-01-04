@@ -69,7 +69,31 @@ console.log($(this).data("page"))
 	        	 $(this).addClass('active');
 	        	 for_dashboard = true;
 	        }
-	      break;      
+	      break; 
+	    	case "product_view" :
+        		if(jQuery.inArray("product-view", url_in_array) != -1) 
+        		{
+        	 		$(this).addClass('active');
+        	 		for_dashboard = true;
+        		}
+        
+      		break;
+      		case "backlog_view" :
+        		if(jQuery.inArray("backlog-view", url_in_array) != -1) 
+        		{
+        	 		$(this).addClass('active');
+        	 		for_dashboard = true;
+        		}
+        
+      		break;
+      		case "manage_user_profile" :
+        		if(jQuery.inArray("user-profile", url_in_array) != -1) 
+        		{
+        	 		$(this).addClass('active');
+        	 		for_manage_user = true;
+        		}
+        
+      		break;    
      
 
     }

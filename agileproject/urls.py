@@ -63,4 +63,13 @@ urlpatterns = [
     path('manage-backlog', include('manage_backlogs.urls')),
     path('manage-backlog/', include('manage_backlogs.urls')),
 
+    path('product-view', include('product_view.urls')),
+    path('product-view/', include('product_view.urls')),
+
+    path('backlog-view', include('backlog_view.urls')),
+    path('backlog-view/', include('backlog_view.urls')),
+
+    path('user-profile', include('manage_user_profile.urls')),
+    path('user-profile/', include('manage_user_profile.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

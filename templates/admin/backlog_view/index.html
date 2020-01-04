@@ -1,0 +1,404 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load static %}
+            <div class="container-fluid text-white">
+               <div class="row p-t-b-10 ">
+                  <div class="col">
+                     <h1>Backlog View({{user_name}})</h1>
+                  </div>
+               </div>
+               <!-- <div class="row ">
+                  <ul class="nav">
+                     <li class="nav-item"> <a class="nav-link active s-12" href="#">Today</a></li>
+                     <li class="nav-item"> <a class="nav-link s-12" href="#">Yesterday</a></li>
+                     <li class="nav-item"> <a class="nav-link s-12" href="#">By Date</a></li>
+                     <li class="nav-item"> <a class="nav-link s-12" href="#">By Progress</a></li>
+                  </ul>
+               </div> -->
+            </div>
+         </header>
+         <div class="container-fluid">
+           
+            <div class="row p-t-b-20">
+               <div class="col-md-12">
+                 <!--  <div class="card no-b"> -->
+              <div class="login-form-card">
+                   <!-- <div class="login-form-content"> -->
+                        <form action="javascript:(0);">
+                          <div class="row">
+                      <div class="col-md-12 mb-2">
+                        <button class="btn-primary add-data" data-toggle="modal" data-target="#modal-default1">Add Backlog</button>
+              <button class="btn-primary import-data" data-toggle="modal" data-target="#myModal5">Show Columns</button>
+			  <button class="btn-primary import-data">Import</button>
+            </div>
+            <div class="col-md-12">
+			<div class="row">
+                        <!-- <div class="slct-role-1">
+              <label style="">Iteration &nbsp;</label>
+                <input type="search" name="" class="form-control" style="width: 69%;">
+                    </div> -->
+                 
+                  <div class="col-md-3">
+                     <div class="slct-role-1">
+              <label style="">Team &nbsp;</label>
+                <input type="search" name="" class="form-control" >
+                    </div>
+                  </div>
+                    <div class="col-md-3">
+                    <div class="slct-role-2">
+              <label style="">Product &nbsp;</label>
+                <input type="search" name="" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                  <div class="table-responsive hdinpt">
+                     <!-- <label class="switch">
+                         <input type="checkbox" checked>
+                         <span class="slider round"></span>
+                     </label>
+                     <label style="margin: 15px;">Auto Score</label> -->
+                                     <!-- start Table -->
+                          
+                    
+                                     <table id="example" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+        <thead>
+            <tr class="dnd-moved">
+                <th align="left" valign="top">Priority</th>
+                <th align="left" valign="top">Backlog Name</th>
+                <th align="left" valign="top">Backlog Score</th>
+                <th align="left" valign="top">Size</th>
+                <th align="left" valign="top">Team</th>
+                <th align="left" valign="top">Product</th>
+                <th align="left" valign="top">Iteration</th>
+                <th align="left" valign="top">User Story</th>
+                <th align="left" valign="top">Conversation</th>
+                <th align="left" valign="top">Acceptance criteria</th>
+                <th align="left" valign="top">Owner</th>
+                <th align="left" valign="top">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+          {% for backlog in backlog_data %}
+            <tr class="dnd-moved">
+                <td align="left" valign="top">{{backlog.title}} Error</td>
+                <td align="left" valign="top">{{backlog.title}}</td>
+                <td align="left" valign="top">
+                     <div class="progress">
+                         <div class="barOverflow">
+                            <div class="bar"></div>
+                         </div>
+                         <span>{{backlog.backlog_score}}</span>%
+                     </div>
+                </td>
+                <td align="left" valign="top">{{backlog.Backlog_size}}</td>
+                <td align="left" valign="top">{{backlog.team_list}}</td>
+                <td align="left" valign="top">{{backlog.product_parent}} </td>
+                <td align="left" valign="top">{{backlog.iteration}}</td>
+                <td align="left" valign="top">{{backlog.user_story_list}}</td>
+                <td align="left" valign="top">{{backlog.title}} Error</td>
+                <td align="left" valign="top">{{backlog.title}} Error</td>
+                 <td align="left" valign="top">{{backlog.owner}}</td>
+                <td align="left" valign="top">
+                <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tr>
+                    <td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+                    <td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+                   </tr>
+                </table>
+                </td>
+            </tr>
+{% endfor %}
+
+        </tbody>
+    </table>
+                                     <!---Table Ends---->
+</div>
+                                    
+                         </form>
+                     <!--  </div> -->
+             </div>
+              <!-- </div> -->
+               </div>
+         </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
+<!-----------2nd Modal Popup Start------>
+<div class="modal fade in sp-map" id="modal-default1">
+          <div class="modal-dialog">
+            <div class="modal-content" style="width: 150%!important;">
+              <div class="modal-header">
+
+                <h4 class="modal-title">Add Backlog</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span></button>
+                
+              </div>
+              <div class="modal-body">
+                <div class="paper">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container-fluid">
+                                   <!-- <div class="card no-b"> -->
+          <!-- <div class="login-form-card"> -->
+                     <div class="login-form-content">
+                                    <form action="{{BASE_URL}}manage-backlog/add-backlog" method="POST">
+                                      {% csrf_token %}
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                     <!-- start login -->
+                                    <div class="form-group">
+                                        <label>Title<span style="color: red;"> *</span></label>
+
+                                        {{ar_backlog_form.title}}
+                                        <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="title" name="login">         -->
+                                </div>
+                                <div class="form-group">
+                                    <label>Score<span style="color: red;"> *</span></label>
+                                    {{ar_backlog_form.backlog_score}}
+                                    <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="0" name="login"> -->
+                                    
+                                </div>
+                                <div class="form-group">
+                                        <label>Size<span style="color: red;"> *</span></label>
+                                        {{ar_backlog_form.Backlog_size}}
+                                        <!-- <input class="form-control login-frm-input" type="text" value="" placeholder="0" aid="login" name="login"> -->
+                                </div>
+                                <div class="form-group">
+                                        <label>Status<span style="color: red;"> *</span></label>
+                                        {{ar_backlog_form.BL_STATUS}}
+                                        <!-- <select class="form-control" name="list" placeholder="select Team Member">
+                                 <option>Active</option>
+                              </select> -->
+                                </div>
+                                <div class="form-group">
+                                        <label>Team<span style="color: red;"> *</span></label>
+                                        {{ar_backlog_form.team_list}}
+                                        <!-- <select class="form-control" name="list" placeholder="select Team Member">
+                                 <option>Team Newton</option>
+                              </select> -->
+                                </div>
+
+                                                                <div class="form-group" style="margin-bottom: 0rem; margin-top: -10px;">
+                                        <label>Auto Score Flag</label>
+                                        {{ar_backlog_form.auto_score_flag}}
+                                        <!-- <input class="login-frm-input" type="checkbox" value="" placeholder="Type ShortCode" aid="login" name="login"> -->
+                                </div>
+                                </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                        <label>Product Parent<span style="color: red;"> *</span></label>
+                                        {{ar_backlog_form.product_parent}}
+                                        <!-- <input class="form-control login-frm-input" type="text" value="" placeholder="BookMine" aid="login" name="login"> -->
+                                </div>
+                                <div class="form-group">
+                                        <label>User Story List</label>
+                                        {{ar_backlog_form.user_story_list}}
+                                        <!-- <select class="form-control" name="list" placeholder="select Team Member">
+                                 <option>Link Stories Here</option>
+                              </select> -->
+                                </div>
+                              
+                                <div class="form-group">
+                                        <label>Owner<span style="color: red;"> *</span></label>
+                                        {{ar_backlog_form.owner}}
+                                        <!-- <input class="form-control login-frm-input" type="text" value="" placeholder="User" aid="login" name="login"> -->
+                                </div>
+                                <div class="form-group">
+                                        <label>Iteration<span style="color: red;"> *</span></label>
+                                        {{ar_backlog_form.iteration}}
+                                        <!-- <select class="form-control" name="list" placeholder="select Team Member">
+                                 <option>Iteration 1</option>
+                              </select> -->
+                                </div>
+                                                                <!-- <div class="form-group"> -->
+                                        <!-- <label>Product ID</label> -->
+                                        <!-- {{ar_backlog_form.product_id}} -->
+                                        <!-- <textarea class="form-control login-frm-input" style="height: 100px;    padding: 11px;" placeholder="History"></textarea> -->
+                                <!-- </div> -->
+                                <div class="form-group">
+                                        <label>Scoring History</label>
+                                        {{ar_backlog_form.bl_scoring_history}}
+                                        <!-- <textarea class="form-control login-frm-input" style="height: 100px;    padding: 11px;" placeholder="History"></textarea> -->
+                                </div>
+
+
+
+                              </div>
+                            </div>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <button type="reset" class="btn-block btn btn-white all-btn" >Cancel</button>
+                                  </div>
+                                  <div class="col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Add</button>
+                               </div>
+                             </div>
+                             </div>
+                        </form></div>
+             </div>
+          </div>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                        
+                        </div>
+                </div>
+              <!-- </div>
+            </div> -->
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!--------------------2nd Modal Ends---------------->
+<!-- Modal -->
+<div id="myModal5" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="margin-top:60px;">
+      <div class="modal-header">
+		<h4 class="modal-title" style="width: 100%;">Backlog View </h4>
+        <button type="button" class="close" data-dismiss="modal" style="margin: 0; padding: 0 !important; color: #000 !important;">&times;</button>
+      </div>
+      <div class="modal-body ">
+		
+			<div class="container">
+				<select id="selectDefaults" multiple="multiple">
+					<option value="Audi">Audi</option>
+					<option value="BMW">BMW</option>
+					<option value="Buick">Buick</option>
+					<option value="Cadillac">Cadillac</option>
+					<option value="Chevrolet">Chevrolet</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+				</select>
+			</div>
+	  
+	  </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger getvalue" data-dismiss="modal">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+		$('.table').dragableColumns({
+			drag:true,
+			dragClass:'drag',
+			overClass:'over',
+			movedContainerSelector:'.dnd-moved'
+		});
+	</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+<script type="text/javascript">
+  $(".progress").each(function(){
+  
+  var $bar = $(this).find(".bar");
+  var $val = $(this).find("span");
+  var perc = parseInt( $val.text(), 10);
+
+  $({p:0}).animate({p:perc}, {
+    duration: 3000,
+    easing: "swing",
+    step: function(p) {
+      $bar.css({
+        transform: "rotate("+ (45+(p*1.8)) +"deg)", // 100%=180° so: ° = % * 1.8
+        // 45 is to add the needed rotation to have the green borders at the bottom
+      });
+      $val.text(p|0);
+    }
+  });
+});
+</script>
+<script>
+$(document).ready(function() {
+/*$('#selectDefaults').lwMultiSelect();*/
+$('#selectDefaults').lwMultiSelect({
+  addAllText:"Select All",
+  removeAllText:"Remove All",
+  selectedLabel:"Values accepted",
+  maxSelect: 0,//0 = no restrictions
+  maxText:'',
+});
+});
+
+
+/*Fire a custom function on each change.
+ 
+$('#selector').lwMultiSelect({
+  onChange:function() {
+    //do something
+  }
+  
+API methods.
+// gets current values.
+$('#selector').val();
+// up<a href="https://www.jqueryscript.net/time-clock/">date</a>s the select list
+$('#selector').data('plugin_lwMultiSelect').updateList();
+// selects all visible item
+$('#selector').data('plugin_lwMultiSelect').selectAll();
+// removes all selected items
+$('#selector').data('plugin_lwMultiSelect').removeAll();//remove all selected  items
+});*/
+
+</script>
+
+{% endblock %}

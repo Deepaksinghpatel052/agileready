@@ -105,8 +105,8 @@ thead input {
 
      <li class="treeview dashboard_menu" ><a href="{{BASE_URL}}dashboard" data-page="dashboard"><span>Dashboard</span><i class="icon icon-angle-left pull-right"></i></a>
                   <ul class="treeview-menu ">
-                     <li ><a class="" data-page="product_view" href="{{BASE_URL}}dashboard"><i class="fa fa-cog"></i>Product View</a></li>
-                     <li><a href="{{BASE_URL}}dashboard" data-page="backlog view"><i class="fa fa-cog"></i>Backlog View </a></li>
+                     <li ><a class="" data-page="product_view" href="{{BASE_URL}}product-view"><i class="fa fa-cog"></i>Product View</a></li>
+                     <li><a href="{{BASE_URL}}backlog-view" data-page="backlog_view"><i class="fa fa-cog"></i>Backlog View </a></li>
                      <li><a href="{{BASE_URL}}user-story-view" data-page="user_story_view" ><i class="fa fa-cog"></i>User Story View</a></li>
                      <li><a href="{{BASE_URL}}dashboard" data-page="iteration_view" ><i class="fa fa-cog"></i>Iteration View</a></li>
                   </ul>
@@ -119,7 +119,7 @@ thead input {
       <ul class="treeview-menu ">
                         <li  class="manage_users_menu"><a href="{{BASE_URL}}dashboard" data-page="manage_user"><i class="fa fa-cog"></i><span>Manage Users</span> <i class="icon icon-angle-left pull-right"></i></a>
                           <ul class="treeview-menu">
-                                <li><a href="{{BASE_URL}}dashboard" data-page="manage_user_profile"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage User Profile</a></li>
+                                <li><a href="{{BASE_URL}}user-profile" data-page="manage_user_profile"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage User Profile</a></li>
                                 <li><a href="{{BASE_URL}}invite-user" data-page="invite_new_user"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Invite New User</a>
                                 </li>
                     </ul></li>
@@ -424,7 +424,7 @@ $(document).ready(function() {
     // } );
  
     // DataTable
-    $('table').DataTable();
+    $('#example').DataTable();
     // var table = $('table').DataTable();
  
     // Apply the search
@@ -475,6 +475,50 @@ $(document).on("change","#id_CE_ID", function(){
   })
 
 });
+
+
+// manage user profile function for index page
+
+var token = '{{csrf_token}}';
+$(document).on("change","#profile_key_id", function(){
+  var id=$(this).val();
+  var geturl = window.location.href;
+  var url_in_array = geturl.split("/");
+  var set_url = url_in_array[2];
+  $.ajax({
+    method:"POST",
+    headers: { "X-CSRFToken": token },
+    url: "http://"+set_url+"/user-profile/get-data",
+    data:{'check':id},
+    dataType:"json",
+    success:function(data)
+    {
+      $(".checkbox").attr('checked',false);
+      console.log(data);
+      // $("#feature_list").html('');
+      for(var i=0; i<data.check_project.length; i++)
+      {
+        if(data.check_project[i].editor == true)
+        {
+        $("#editor"+i+"").attr('checked', true);  
+        }
+        else{
+         $("#editor"+i+"").attr('checked', false); 
+        }
+
+        if(data.check_project[i].viewer == true)
+        {
+        $("#viewer"+i+"").attr('checked', true);  
+        }
+        else{
+         $("#viewer"+i+"").attr('checked', false); 
+        }
+      }
+    }
+  })
+
+});
+
 
 
 

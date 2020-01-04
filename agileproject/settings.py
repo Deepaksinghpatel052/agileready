@@ -47,10 +47,14 @@ INSTALLED_APPS = [
     'user_story_view',
     'manage_product',
     'manage_team',
+    'manage_iterations',
     'manage_epic_capability',
     'manage_features',
+    'story_view',
     'manage_backlogs',
-    'manage_iterations',
+    'product_view',
+    'backlog_view',
+    'manage_user_profile',
 ]
 
 MIDDLEWARE = [

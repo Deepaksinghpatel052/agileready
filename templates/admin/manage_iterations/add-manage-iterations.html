@@ -1,0 +1,406 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load static %}
+<div class="container-fluid text-white">
+               <div class="row p-t-b-10 ">
+                  <div class="col">
+                     <h1>Add Iteration({{user_name}})</h1>
+                  </div>
+               </div>
+            </div>
+            </header>
+         <div class="container-fluid">
+           
+            <div class="row p-t-b-20">
+               <div class="col-md-12">
+                 <!--  <div class="card no-b"> -->
+				   <div class="login-form-card">
+                                  <!-- <div class="login-form-content"> -->
+                  <form action="javascript:(0);">
+                                     <!-- start login -->
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Iteration Name</label>
+                            {{ar_iterations_form.Feature_key}}
+                            <input type="text" class="form-control login-frm-input" styl placeholder="name">
+                          </div>
+                          <div class="form-group">
+                            <label>Iteration Id</label>
+                            {{ar_iterations_form.Feature_key}}
+                            <input type="text" class="form-control login-frm-input" styl placeholder="id">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>Start Date</label>
+                                    {{ar_iterations_form.Feature_key}}
+                                    <input type="Date" class="form-control login-frm-input" styl placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>End Date</label>
+                                    {{ar_iterations_form.Feature_key}}
+                                    <input type="Date" class="form-control login-frm-input" styl placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>Iteration Score</label>
+                                    {{ar_iterations_form.Feature_key}}
+                                    <input type="text" class="form-control login-frm-input" styl placeholder="5">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>Iteration Size</label>
+                                    {{ar_iterations_form.Feature_key}}
+                                    <input type="text" class="form-control login-frm-input" styl placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    {{ar_iterations_form.Feature_key}}
+                                    <textarea class="form-control login-frm-input" style="height: 100px!important;" placeholder="Description"></textarea>
+                                </div>
+                                <div class="form-group">
+                                        <label>Associated Team</label>
+                                        {{ar_iterations_form.Feature_key}}
+                                        <select class="form-control" name="list" placeholder="select Team Member">
+                      <option>Select Team</option>
+                    </select>
+                                </div>
+                                <div class="form-group">
+                                        <label>Associated Product</label>
+                                        {{ar_iterations_form.Feature_key}}
+                                        <select class="form-control" name="list" placeholder="select Team Member">
+                      <option>Select Product</option>
+                    </select>
+                                </div>
+                                <div class="form-group">
+                                        <label>Associated Backlog</label>
+                                        {{ar_iterations_form.Feature_key}}
+                                        <select class="form-control" name="list" placeholder="select Team Member">
+                      <option>Select Backlog</option>
+                    </select>
+                                </div>
+                                <div class="form-group">
+                                        <label>Associated User Story List</label>
+                                        {{ar_iterations_form.Feature_key}}
+                                        <select class="form-control" name="list" placeholder="select Team Member">
+                                        <option>select userstory</option>
+                                        </select>
+                                </div>
+                                <div class="form-group">
+                                        <label>Owner</label>
+                                        {{ar_iterations_form.Feature_key}}
+                                        <input type="text" name="" class="form-control" name="list" placeholder="">
+                                </div>
+                              </div>
+                                </div>
+                            </div>
+                                <div class="row">
+
+                                
+                                  <div class="col-md-6">
+                                    <button type="reset" class="btn-block btn btn-white all-btn" >Cancel</button>
+                                  </div>
+                                  <div class="col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Add</button>
+                               </div>
+                             </div>
+                             </div>
+                        </form>
+                      </div>
+             </div>
+				  <!-- </div> -->
+               </div>
+			    </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+ <!------------FeedBack messege Modal Popup Start------->
+<div class="modal fade in sp-map" id="feedback1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title">We value your Feedback</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span>
+          </button>
+                
+      </div>
+      <div class="modal-body">
+        <div class="paper">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="container-fluid">
+               
+                                   <!--  <div class="login-form-content"> -->
+                <form action="javascript:(0);">
+                  <div class="row">
+                     <div class="col-md-6">
+                      <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tr>
+                    <td align="left" valign="top">User Name:</td>
+                    <td align="left" valign="top">Jeo Smith</td>
+                   </tr>
+                   <tr>
+                    <td align="left" valign="top">Date/Time:</td>
+                    <td align="left" valign="top">11/10/2019</td>
+                   </tr>
+                </table>
+             </div>
+             <div class="col-md-6"></div>
+          </div>
+          <div class="row">
+             <div class="col-md-5">
+               <label>Feedback Nature:</label>
+             </div>
+             <div class="col-md-7 p-t-10">
+                 <select class="form-control" >
+                    <option>Irritating Bug</option>
+                    <option>Tolerance for a while Bug</option>
+                    <option>Fix It Now Bug!</option>
+                    <option>Suggestion</option>
+                    <option>Complaint</option>
+                    <option>Other</option>
+                 </select>
+             </div>
+          </div>
+          <div class="row">
+             <div class="col-md-12">
+                <label>Feedback Information:</label>
+                <textarea class="form-control" style="height: 150px!important;"></textarea>
+             </div>
+             <div class="col-md-12">
+               <label>Attachments:</label>
+               <div class="attach">
+                    
+                    <form action="upload.php" method="POST">
+
+                        <input type="file" multiple>
+                        <p><i class="icon-upload"></i><br>Drag your files here or Click here</p>
+                    </form>
+               </div>
+             </div>
+             <div class="col-md-12 p-t-b-20">
+               <span>Fix It Now Bugs will get immediate attention.Please give the Agile Ready Team 24 to 72  hours to provide and initial response to all  other  feedback.</span>
+             </div>
+                  <div class="col-md-4 offset-md-4">
+                        <button type="submit" class="btn-block btn btn-white all-btn" >Submit</button>
+                    </div>
+          </div>
+                 </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!------------FeedBack messege Modal Popup Start------->
+<div class="modal fade in sp-map" id="feedback1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title">We value your Feedback</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span>
+          </button>
+                
+      </div>
+      <div class="modal-body">
+        <div class="paper">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="container-fluid">
+               
+                                   <!--  <div class="login-form-content"> -->
+                <form action="javascript:(0);">
+                  <div class="row">
+                     <div class="col-md-6">
+                      <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tr>
+                    <td align="left" valign="top">User Name:</td>
+                    <td align="left" valign="top">Jeo Smith</td>
+                   </tr>
+                   <tr>
+                    <td align="left" valign="top">Date/Time:</td>
+                    <td align="left" valign="top">11/10/2019</td>
+                   </tr>
+                </table>
+             </div>
+             <div class="col-md-6"></div>
+          </div>
+          <div class="row">
+             <div class="col-md-5">
+               <label>Feedback Nature:</label>
+             </div>
+             <div class="col-md-7 p-t-10">
+                 <select class="form-control" >
+                    <option>Irritating Bug</option>
+                    <option>Tolerance for a while Bug</option>
+                    <option>Fix It Now Bug!</option>
+                    <option>Suggestion</option>
+                    <option>Complaint</option>
+                    <option>Other</option>
+                 </select>
+             </div>
+          </div>
+          <div class="row">
+             <div class="col-md-12">
+                <label>Feedback Information:</label>
+                <textarea class="form-control" style="height: 150px!important;"></textarea>
+             </div>
+             <div class="col-md-12">
+               <label>Attachments:</label>
+               <div class="attach">
+                    
+                    <form action="upload.php" method="POST">
+
+                        <input type="file" multiple>
+                        <p><i class="icon-upload"></i><br>Drag your files here or Click here</p>
+                    </form>
+               </div>
+             </div>
+             <div class="col-md-12 p-t-b-20">
+               <span>Fix It Now Bugs will get immediate attention.Please give the Agile Ready Team 24 to 72  hours to provide and initial response to all  other  feedback.</span>
+             </div>
+                  <div class="col-md-4 offset-md-4">
+                        <button type="submit" class="btn-block btn btn-white all-btn" >Submit</button>
+                    </div>
+          </div>
+                 </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!--------------------FeedBack Message Modal Ends---------------->
+                <!------------Help messege Modal Popup Start------->
+<div class="modal fade in sp-map" id="help1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title">Help</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span>
+          </button>
+                
+      </div>
+      <div class="modal-body">
+        <div class="paper">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="container-fluid">
+                                   <!--  <div class="login-form-content"> -->
+                <form action="javascript:(0);">
+                 <div class="table-responsive">
+                                     <!-- start Table -->
+                                     <table id="example4" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+                                       <thead>
+            <tr class="dnd-moved">
+              <th align="left" valign="top" class="itrid">Titles</th>
+                <th align="left" valign="top" class="itrds">Details</th>
+             </tr>
+          </thead>
+        <tbody>
+            <tr>
+                <td align="left" valign="top">Topic</td>
+                <td align="left" valign="top">Dashboard</td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">Description</td>
+                <td align="left" valign="top">Dashboard Page</td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">Information</td>
+                <td align="left" valign="top">This Page Provides All Details.</td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">Useful Links</td>
+                <td align="left" valign="top">
+                   <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tr>
+                    <td align="left" valign="top">Link 1 </td>
+                   </tr>
+                   <tr>
+                   <td align="left" valign="top">Link 2</td>
+                   </tr>
+                   <tr>
+                   <td align="left" valign="top">Link 3 </td>
+                   </tr>
+                </table>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+                                     <!---Table Ends---->
+</div>
+                              
+
+
+
+                </form>
+              </div>
+            </div>
+                  
+                       <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!--------------------Help Message Modal Ends---------------->
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#example1').DataTable();
+} );
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#example2').DataTable();
+} );
+</script>
+<script>
+function goBack() {
+  window.history.back()
+}
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#example4').DataTable();
+} );
+</script>
+<script type="text/javascript">
+   $(document).ready(function(){
+  $('.attach input').change(function () {
+    $('.attach p').text(this.files.length + " file(s) selected");
+  });
+});
+</script>
+{% endblock %}
