@@ -1,0 +1,15 @@
+title,story_tri_part_text,acceptance_criteria,ac_readability_score,conversation,backlog_parent,convo_readability_score,autoscoring_on,archive_indicator,readiness_quality_score,story_points,user_story_status,UST_ID,ar_user,owner,created_by,updated_dt,created_dt,updated_by
+Bird takes flight Part 8,so that I can fly,,0,,5,0,1,0,25,,7,1,6,,6,########,########,6
+Bird takes flight Part 7,I want to flap my wings,,0,,5,0,1,0,30,,7,1,6,,6,########,########,6
+Bird takes flight Part 6,As a bird I want to flap my wings so that I can fly south for the winter &&&&,,0,,5,0,1,0,50,,7,1,6,,6,########,########,6
+Bird takes flight Part 5,As a bird I want to flap my wings so that I can fly south for the winter,,0,,5,0,1,0,50,,7,1,6,,6,########,########,6
+Bird takes flight Part 4,As a bird I want to flap my wings so that I can fly,,0,,5,0,1,0,55,,7,1,6,,6,########,########,6
+Bird takes flight Part 3,As a Bird I want to flap my wings,,0,,5,0,1,0,45,,7,1,6,,6,########,########,6
+Bird takes flight Part 2,As a bird,,0,,5,0,1,0,30,,7,1,6,6,6,########,########,6
+Bird takes flight,Bird takes flight,,0,,5,0,1,0,15,,7,1,6,,6,########,########,6
+worst user story just waiting for refinement,build api,,0,,4,0,1,0,15,7,7,4,6,6,6,########,########,6
+Not quite as bad a user story,As a rep I want to display account customer id,,0,,4,0,1,0,55,7,6,5,6,6,6,########,########,6
+Bad User Story,Create a display screen,,0,,4,0,1,0,25,9,6,1,6,,6,########,########,6
+Phone Id lookup,As a Customer Service Rep I want to display phone id so that I can do a customer lookup by phone,,0,,10,0,1,0,80,10,7,1,6,6,6,########,########,6
+Phone Id lookup 2,As a Customer Service Rep I want to display phone id,,0,,10,0,1,0,65,,7,1,6,6,6,########,########,6
+Test,As a Business_Stakeholder I want to log my book so that it is captured in BookMIne,,0,,1,0,1,0,80,2,2,3,1,1,1,########,########,1

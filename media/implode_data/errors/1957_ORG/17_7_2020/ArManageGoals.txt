@@ -1,0 +1,4 @@
+Success : ArManageGoals : row no. : 2 : 'select' Goal add successfully : 2020-07-17 12:00:52.605946
+Success : ArManageGoals : row no. : 3 : 'display' Goal add successfully : 2020-07-17 12:00:52.626738
+Success : ArManageGoals : row no. : 4 : 'view' Goal add successfully : 2020-07-17 12:00:52.647508
+Success : ArManageGoals : row no. : 5 : 'glide' Goal add successfully : 2020-07-17 12:00:52.669620

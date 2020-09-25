@@ -1,0 +1,2 @@
+Error : ArIterations : row no. : 2 : This  is not a CSV file. : 2020-02-21 14:15:54.394959
+Success : ArIterations : row no. : 3 : This  is not a CSV file. : 2020-02-21 14:15:54.421846

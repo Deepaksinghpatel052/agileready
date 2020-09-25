@@ -1,0 +1,12 @@
+role_id,title,description,use,create_by,create_dt,update_by,update_dt,organization_name
+AR_ROLE_11,Customer Service Rep,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:22:44.307290+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:22:44.307298+00:00,arp test company
+AR_ROLE_12,Account Manager,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:23:07.521805+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:23:07.521814+00:00,arp test company
+AR_ROLE_13,Partner Manager,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:24:03.325765+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:24:03.325773+00:00,arp test company
+AR_ROLE_14,Loan Supervisor,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:24:41.983146+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:24:41.983154+00:00,arp test company
+AR_ROLE_15,Underwriter,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:24:59.200078+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:24:59.200087+00:00,arp test company
+AR_ROLE_16,Auditor (Fed Reserve),(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:25:18.161648+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:25:18.161657+00:00,arp test company
+AR_ROLE_17,Systems Analyst,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:25:38.108335+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:25:38.108343+00:00,arp test company
+AR_ROLE_18,Business Analyst,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:26:00.384966+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:26:00.384975+00:00,arp test company
+AR_ROLE_19,VP Finance,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:26:15.582376+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:26:15.582385+00:00,arp test company
+AR_ROLE_20,Director Finance,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:26:33.942701+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:26:33.942709+00:00,arp test company
+AR_ROLE_21,PSR,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:26:58.846896+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:26:58.846904+00:00,arp test company

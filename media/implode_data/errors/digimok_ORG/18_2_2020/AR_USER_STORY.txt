@@ -1,0 +1,12 @@
+Success : AR_USER_STORY : row no. : 2 : Book Capture : Notification object (79) : 2020-02-18 08:32:05.264750
+Success : AR_USER_STORY : row no. : 3 : ISBN Scan : Notification object (79) : 2020-02-18 08:32:06.089441
+Success : AR_USER_STORY : row no. : 4 : FindPODShop : Notification object (79) : 2020-02-18 08:32:06.987297
+Success : AR_USER_STORY : row no. : 5 : Bird takes flight Part 7 : Notification object (79) : 2020-02-18 08:32:07.013570
+Success : AR_USER_STORY : row no. : 6 : Bird takes flight Part 6 : Notification object (79) : 2020-02-18 08:32:07.039997
+Success : AR_USER_STORY : row no. : 7 : Bird takes flight Part 5 : Notification object (79) : 2020-02-18 08:32:07.066489
+Success : AR_USER_STORY : row no. : 8 : Bird takes flight Part 3 : Notification object (79) : 2020-02-18 08:32:07.092790
+Success : AR_USER_STORY : row no. : 9 : Bird takes flight Part 2 : Notification object (79) : 2020-02-18 08:32:07.119724
+Success : AR_USER_STORY : row no. : 10 : Not quite as bad a user story : Notification object (79) : 2020-02-18 08:32:07.146812
+Success : AR_USER_STORY : row no. : 11 : Phone Id lookup 2 : Notification object (79) : 2020-02-18 08:32:07.981038
+Success : AR_USER_STORY : row no. : 12 : Test : Notification object (79) : 2020-02-18 08:32:08.007976
+Success : AR_USER_STORY : row no. : 13 : Test Stroy : Notification object (79) : 2020-02-18 08:32:08.034898

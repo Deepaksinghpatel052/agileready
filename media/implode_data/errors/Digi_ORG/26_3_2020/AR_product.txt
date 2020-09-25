@@ -1,0 +1,4 @@
+Error : AR_product : row no. : 2 : None : Product already exists. : 2020-03-26 06:41:54.911700
+Error : AR_product : row no. : 3 : Something was wrong in this file : 2020-03-26 06:41:54.917604
+Error : AR_product : row no. : 4 : Something was wrong in this file : 2020-03-26 06:41:54.922293
+Error : AR_product : row no. : 5 : Something was wrong in this file : 2020-03-26 06:41:54.926987

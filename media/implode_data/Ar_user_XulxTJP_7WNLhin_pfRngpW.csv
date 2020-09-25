@@ -1,0 +1,3 @@
+user_name(M),address(O),email(M),is_active(O),city(O),state(O),zip(O),country(O),phone(int)(M),backup_email(O),user_type(O),subscription_level(O),active_user(O),user_to_invite(O),status(O),profile_permission(O),login_status(O),activate_status(O),organization_name(O),verification_status(O),created_by(O),created_dt(O),updated_by(O),updated_dt(O)
+Shubham,,shubhamupadhyay_dsp1014@gmail.com,,,,,,8109724408,,,,,,,,,,,,,,,
+digital,,shubhamupadhyay_dsp10@yahoo.in,,,,,,7845784671,,,,,,,,,,,,,,,

@@ -1,0 +1,8 @@
+user_name,address,email,is_active,city,state,zip,country,phone,backup_email,user_type,subscription_level,active_user,user_to_invite,status,profile_permission,login_status,activate_status,organization_name,verification_status,created_by,created_dt,updated_by,updated_dt
+jitendra narvaria ,,jitendra.n@digimonk.in,True,gwalior ,mp ,474004,india,9617279518,,Root,Free trial,0,0,Active,,False,False,digimok,False,,2020-02-04 08:01:06.713738+00:00,,2020-02-04 08:01:06.713748+00:00
+kartik,,kartikkas00@gmail.com,True,MORENA,Madhya Pradesh,476001,india,9806189539,,User,Free trial,0,0,Active,,False,False,digimok,False,kartik,2020-02-04 08:02:55.295533+00:00,kartik,2020-02-04 08:02:55.295541+00:00
+Aman,,amansharma0520@gmail.com,True,City,Madhya pradesh,474020,India,7000907233,,User,Free trial,0,0,Active,view only permeation 1,False,False,digimok,False,kartik,2020-02-04 09:16:02.208657+00:00,kartik,2020-02-04 09:16:02.208667+00:00
+,,singh.umesh470@gmail.com,False,,state,0,,0,,User,Free trial,0,0,Active,,False,False,digimok,False,kartik,2020-02-13 12:50:57.060188+00:00,kartik,2020-02-13 12:50:57.060199+00:00
+ravi baghel,,ravi.baghel@digimonk.in,True,gwalior,Madhya Pradesh,476001,india,8963930150,,User,Free trial,0,0,Active,,False,False,digimok,False,kartik,2020-02-04 09:37:27.817737+00:00,kartik,2020-02-04 09:37:27.817745+00:00
+Gulshan Singh,,gulshan@digimonk.in,False,gwalior,Madhya Pradesh,476001,india,0,,User,Free trial,0,0,Active,,False,False,digimok,False,kartik,2020-02-15 07:41:07.530513+00:00,kartik,2020-02-15 07:41:07.530527+00:00
+Shubham,,shubham@digimonk.in,False,gwalior,Madhya Pradesh,476001,india,0,,User,Free trial,0,0,Active,,False,False,digimok,False,kartik,2020-02-15 07:41:07.629760+00:00,kartik,2020-02-15 07:41:07.629771+00:00

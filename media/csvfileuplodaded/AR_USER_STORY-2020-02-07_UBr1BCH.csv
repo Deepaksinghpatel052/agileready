@@ -1,0 +1,23 @@
+title,story_tri_part_text,acceptance_criteria,ac_readability_score,conversation,backlog_parent,convo_readability_score,autoscoring_on,archive_indicator,readiness_quality_score,story_points,user_story_status,UST_ID,ar_user,owner,created_by,updated_dt,created_dt,updated_by
+Book Capture,As a Book Lover I want to log my book so that it is captured in BookMIne,TBD,0,TBD,2,0,1,0,80,,Ideation,2,4,4,4,2/7/2020 8:03,2/6/2020 15:19,4
+Book Capture,As a Book Lover I want to log my book so that it is captured in BookMIne,TBD,0,TBD,BookMineCore,0,1,0,80,,3,Discovery,4,4,4,2/7/2020 8:04,2/6/2020 15:19,4
+Book Capture,As a Book Lover I want to log my book so that it is captured in BookMIne,TBD,0,TBD,2,0,1,0,80,,3,2,4,4,4,2/7/2020 8:04,2/6/2020 15:19,4
+Book Capture,As a Book Lover I want to log my book so that it is captured in BookMIne,TBD,0,TBD,BookMineCore,0,1,0,80,,Ideation,2,jitendra,4,4,2/7/2020 8:05,2/6/2020 15:19,4
+ISBN Scan,As a Book Lover I want to scan the ISBN code so that I can log in my book faster,TBD,0,TBD,14,0,1,0,80,Extra Extra Large (XXL),4,1,4,4,jitendra,2/7/2020 8:05,2/6/2020 15:19,4
+Book Capture,As a Book Lover I want to log my book so that it is captured in BookMIne,TBD,0,TBD,2,0,1,0,80,,3,Discovery,4,4,4,2/7/2020 8:06,2/6/2020 15:19,4
+FindPODShop,TBD,TBD,0,TBD,Backlog 2,0,1,0,15,,Ideation,1,4,jitendra,4,2/7/2020 8:06,2/6/2020 15:19,4
+FindTrader(Spike),As a Team Member I want to research trading APIs so that we can connect to other systems,TBD,0,TBD,14,0,1,0,88,10,3,2,4,4,4,2/7/2020 8:07,2/6/2020 15:19,4
+ISBN Scan,As a Book Lover I want to scan the ISBN code so that I can log in my book faster,TBD,0,TBD,15,0,1,0,80,8,4,Functional,4,4,4,2/7/2020 8:11,2/6/2020 15:19,4
+Bird takes flight Part 8,so that I can fly,,0,,BookTrader-1,0,0,0,25,4,2,1,6,4,6,2/7/2020 8:11,2/6/2020 15:19,4
+Bird takes flight Part 7,I want to flap my wings,,0,,,0,0,0,30,,,Functional,6,4,6,2/6/2020 15:19,2/6/2020 15:19,Aman
+Bird takes flight Part 6,As a bird I want to flap my wings so that I can fly south for the winter &&&&,,0,,18,0,0,0,50,,2,1,6,4,Aman,2/7/2020 8:11,2/6/2020 15:19,4
+Bird takes flight Part 5,As a bird I want to flap my wings so that I can fly south for the winter,,0,,,0,0,0,50,,,1,6,4,6,2/6/2020 15:19,2/6/2020 15:19,6
+Bird takes flight Part 3,,,0,,,0,0,0,0,,,,4,4,6,2/6/2020 15:19,2/6/2020 15:19,6
+Bird takes flight Part 2,,,0,,,0,0,0,0,,,,4,4,6,2/6/2020 15:19,2/6/2020 15:19,6
+Bird takes flight,,,0,,,0,0,0,0,,,,jitendra,4,6,2/6/2020 15:19,2/6/2020 15:19,6
+worst user story just waiting for refinement,,,0,,,0,0,0,0,,,,4,jitendra,6,2/6/2020 15:19,2/6/2020 15:19,6
+Not quite as bad a user story,,,0,,,0,0,0,0,,,,4,4,6,2/6/2020 15:19,2/6/2020 15:19,6
+Bad User Story,,,0,,,0,0,0,0,,,,4,4,Aman,2/6/2020 15:19,2/6/2020 15:19,6
+Phone Id lookup,,,0,,,0,0,0,0,,,,4,4,6,2/6/2020 15:19,2/6/2020 15:19,6
+Phone Id lookup 2,,,0,,,0,0,0,0,,,,4,4,6,2/6/2020 15:19,2/6/2020 15:19,6
+Test,,,0,,,0,0,0,0,,,,4,4,6,2/6/2020 15:19,2/6/2020 15:19,6

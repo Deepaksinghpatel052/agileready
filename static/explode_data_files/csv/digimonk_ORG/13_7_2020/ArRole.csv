@@ -1,0 +1,19 @@
+role_id,title,description,use,create_by,create_dt,update_by,update_dt,organization_name
+AR_ROLE_635,Product Owner,(example),,Praveen,2020-07-10 11:03:52.539047+00:00,Praveen,2020-07-10 11:03:52.539050+00:00,Digimonk
+AR_ROLE_636,Scrum Master,(example),,Praveen,2020-07-10 11:03:52.560951+00:00,Praveen,2020-07-10 11:03:52.560954+00:00,Digimonk
+AR_ROLE_637,Product Manager,(example),,Praveen,2020-07-10 11:03:52.582719+00:00,Praveen,2020-07-10 11:03:52.582721+00:00,Digimonk
+AR_ROLE_638,Business Owner,(example),,Praveen,2020-07-10 11:03:52.603372+00:00,Praveen,2020-07-10 11:03:52.603375+00:00,Digimonk
+AR_ROLE_639,Role J (Broker),(edit as needed),,Praveen,2020-07-10 11:03:52.623943+00:00,Praveen,2020-07-10 11:03:52.623945+00:00,Digimonk
+AR_ROLE_640,Role J (Seller),(edit as needed),,Praveen,2020-07-10 11:03:52.644519+00:00,Praveen,2020-07-10 11:03:52.644521+00:00,Digimonk
+AR_ROLE_641,Role J (Buyer),(edit as needed),,Praveen,2020-07-10 11:03:52.666363+00:00,Praveen,2020-07-10 11:03:52.666366+00:00,Digimonk
+AR_ROLE_642,Role J (Participant),(edit as needed),,Praveen,2020-07-10 11:03:52.688129+00:00,Praveen,2020-07-10 11:03:52.688132+00:00,Digimonk
+AR_ROLE_643,Role J (Consumer),(edit as needed),,Praveen,2020-07-10 11:03:52.708594+00:00,Praveen,2020-07-10 11:03:52.708597+00:00,Digimonk
+AR_ROLE_644,Role I (Trainer),(edit as needed),,Praveen,2020-07-10 11:03:52.730999+00:00,Praveen,2020-07-10 11:03:52.731002+00:00,Digimonk
+AR_ROLE_645,Role H (Member),(edit as needed),,Praveen,2020-07-10 11:03:52.751599+00:00,Praveen,2020-07-10 11:03:52.751601+00:00,Digimonk
+AR_ROLE_646,Role G (Visitor),(edit as needed),,Praveen,2020-07-10 11:03:52.772658+00:00,Praveen,2020-07-10 11:03:52.772662+00:00,Digimonk
+AR_ROLE_647,Role F (Applicant),(edit as needed),,Praveen,2020-07-10 11:03:52.795426+00:00,Praveen,2020-07-10 11:03:52.795429+00:00,Digimonk
+AR_ROLE_648,Role E (Staff),(edit as needed),,Praveen,2020-07-10 11:03:52.816721+00:00,Praveen,2020-07-10 11:03:52.816723+00:00,Digimonk
+AR_ROLE_649,Role D (Analyst),(edit as needed),,Praveen,2020-07-10 11:03:52.837243+00:00,Praveen,2020-07-10 11:03:52.837245+00:00,Digimonk
+AR_ROLE_650,Role C (Admin),(edit as needed),,Praveen,2020-07-10 11:03:52.858428+00:00,Praveen,2020-07-10 11:03:52.858431+00:00,Digimonk
+AR_ROLE_651,Role B (Agent of Record),(edit as needed),,Praveen,2020-07-10 11:03:52.879385+00:00,Praveen,2020-07-10 11:03:52.879387+00:00,Digimonk
+AR_ROLE_652,Role A (Customer Service Rep),(edit as needed),,Praveen,2020-07-10 11:03:52.900305+00:00,Praveen,2020-07-10 11:03:52.900308+00:00,Digimonk

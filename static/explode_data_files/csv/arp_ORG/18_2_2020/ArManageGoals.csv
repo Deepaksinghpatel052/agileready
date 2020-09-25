@@ -1,0 +1,17 @@
+Goal_id,Goal_title,Gole_description,Use_in,created_by,created_dt,update_by,update_dt,organization_name
+AR_GOAL_12,show loan totals,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:27:31.966371+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:27:31.966379+00:00,arp test company
+AR_GOAL_13,list phone ids by geography,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:27:57.094241+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:27:57.094249+00:00,arp test company
+AR_GOAL_14,display loan sales by Director,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:28:19.097211+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:28:19.097219+00:00,arp test company
+AR_GOAL_15,enroll a business partner,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:28:54.167891+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:28:54.167901+00:00,arp test company
+AR_GOAL_16,qualify a business partner,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:29:21.068308+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:29:21.068317+00:00,arp test company
+AR_GOAL_17,update phone id,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:29:53.700877+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:29:53.700890+00:00,arp test company
+AR_GOAL_18,display phone id,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:30:11.059231+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:30:11.059240+00:00,arp test company
+AR_GOAL_19,choose phone type,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:30:31.660031+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:30:31.660040+00:00,arp test company
+AR_GOAL_20,choose phone id,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:30:56.684965+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:30:56.684974+00:00,arp test company
+AR_GOAL_21,identify,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:31:16.092886+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:31:16.092895+00:00,arp test company
+AR_GOAL_22,write,(example),"Book Capture digimonk , FindTrader(Spike) digimonk",Tony (root user 1 DM) Timbol,2020-02-11 01:31:33.884939+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:31:33.884948+00:00,arp test company
+AR_GOAL_23,display,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:31:54.599906+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:31:54.599914+00:00,arp test company
+AR_GOAL_24,list,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:32:18.097861+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:32:18.097870+00:00,arp test company
+AR_GOAL_25,print,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:32:40.789451+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:32:40.789459+00:00,arp test company
+AR_GOAL_26,summarize,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:33:01.799483+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:33:01.799492+00:00,arp test company
+AR_GOAL_27,crosstab,(example),,Tony (root user 1 DM) Timbol,2020-02-11 01:33:25.065171+00:00,Tony (root user 1 DM) Timbol,2020-02-11 01:33:25.065180+00:00,arp test company

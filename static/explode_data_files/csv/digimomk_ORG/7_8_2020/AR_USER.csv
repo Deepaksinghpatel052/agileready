@@ -1,0 +1,2 @@
+user_name,address,email,is_active,city,state,zip,country,phone,backup_email,user_type,subscription_level,active_user,user_to_invite,status,profile_permission,login_status,activate_status,organization_name,verification_status,created_by,created_dt,updated_by,updated_dt
+jitendra N,,jitendra.n@digimonk.in,True,gwalior,Madhya Pradesh,474004,India,9617279518,,Root,Free trial,0,0,Active,,False,False,digimomk,False,,2020-07-08 15:01:02+00:00,,2020-07-08 15:01:02+00:00

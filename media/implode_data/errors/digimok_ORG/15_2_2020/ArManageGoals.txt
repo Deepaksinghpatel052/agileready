@@ -1,0 +1,9 @@
+Error : ArManageGoals : row no. : 2 : AR_GOAL_6 : Goal already exists.  : 2020-02-15 15:14:52.624649
+Error : ArManageGoals : row no. : 3 : AR_GOAL_7 : Goal already exists.  : 2020-02-15 15:14:52.625478
+Error : ArManageGoals : row no. : 4 : AR_GOAL_8 : Goal already exists.  : 2020-02-15 15:14:52.626298
+Error : ArManageGoals : row no. : 5 : AR_GOAL_9 : Goal already exists.  : 2020-02-15 15:14:52.627115
+Error : ArManageGoals : row no. : 6 : AR_GOAL_10 : Goal already exists.  : 2020-02-15 15:14:52.628058
+Error : ArManageGoals : row no. : 7 : AR_GOAL_11 : Goal already exists.  : 2020-02-15 15:14:52.628881
+Error : ArManageGoals : row no. : 8 : AR_GOAL_12 : Goal already exists.  : 2020-02-15 15:14:52.629708
+Error : ArManageGoals : row no. : 9 : AR_GOAL_13 : Goal already exists.  : 2020-02-15 15:14:52.630535
+Error : ArManageGoals : row no. : 10 : AR_GOAL_14 : Goal already exists.  : 2020-02-15 15:14:52.631362

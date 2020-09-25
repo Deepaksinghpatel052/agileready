@@ -1,0 +1,10 @@
+Error : ArUserStoryPoints : row no. : 2 : User story points already exists.  : 2020-02-29 07:27:14.523464
+Success : ArUserStoryPoints : row no. : 3 : 'tiny' user story point add successfully : 2020-02-29 07:27:14.534651
+Success : ArUserStoryPoints : row no. : 4 : 'small' user story point add successfully : 2020-02-29 07:27:14.546432
+Success : ArUserStoryPoints : row no. : 5 : 'medium-medium' user story point add successfully : 2020-02-29 07:27:14.559204
+Success : ArUserStoryPoints : row no. : 6 : 'medium-large' user story point add successfully : 2020-02-29 07:27:14.570906
+Success : ArUserStoryPoints : row no. : 7 : 'medium-small' user story point add successfully : 2020-02-29 07:27:14.582590
+Success : ArUserStoryPoints : row no. : 8 : 'large' user story point add successfully : 2020-02-29 07:27:14.594226
+Success : ArUserStoryPoints : row no. : 9 : 'XL' user story point add successfully : 2020-02-29 07:27:14.605730
+Success : ArUserStoryPoints : row no. : 10 : 'XX Large' user story point add successfully : 2020-02-29 07:27:14.617402
+Success : ArUserStoryPoints : row no. : 11 : 'XXX Large' user story point add successfully : 2020-02-29 07:27:14.629201

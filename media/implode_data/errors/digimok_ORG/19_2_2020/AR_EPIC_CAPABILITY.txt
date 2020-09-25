@@ -1,0 +1,12 @@
+Error : AR_EPIC_CAPABILITY : row no. : 2 : Store and Organize Book Based Library : Epic capability already exists.  : 2020-02-19 12:12:56.087964
+Error : AR_EPIC_CAPABILITY : row no. : 3 : Trade and Exchange : Epic capability already exists.  : 2020-02-19 12:12:56.088805
+Error : AR_EPIC_CAPABILITY : row no. : 4 : Production Capability : Epic capability already exists.  : 2020-02-19 12:12:56.089657
+Error : AR_EPIC_CAPABILITY : row no. : 5 : Next Quarter Enhancements : Epic capability already exists.  : 2020-02-19 12:12:56.090512
+Error : AR_EPIC_CAPABILITY : row no. : 6 : Next Year Enhancements : Epic capability already exists.  : 2020-02-19 12:12:56.091352
+Error : AR_EPIC_CAPABILITY : row no. : 7 : Digimonk Store and Organize Book Based Library : Epic capability already exists.  : 2020-02-19 12:12:56.092186
+Error : AR_EPIC_CAPABILITY : row no. : 8 : digimonk Trade and Exchange : Epic capability already exists.  : 2020-02-19 12:12:56.093012
+Error : AR_EPIC_CAPABILITY : row no. : 9 : digimonk Production Capability : Epic capability already exists.  : 2020-02-19 12:12:56.093839
+Error : AR_EPIC_CAPABILITY : row no. : 10 : digimonk Next Quarter Enhancements : Epic capability already exists.  : 2020-02-19 12:12:56.094664
+Error : AR_EPIC_CAPABILITY : row no. : 11 : digimonk Next Year Enhancements : Epic capability already exists.  : 2020-02-19 12:12:56.095501
+Error : AR_EPIC_CAPABILITY : row no. : 12 : digimonk Next Year Enhancements-1 : Epic capability already exists.  : 2020-02-19 12:12:56.096329
+Error : AR_EPIC_CAPABILITY : row no. : 13 : None : Epic capability already exists.  : 2020-02-19 12:12:56.097151

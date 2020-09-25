@@ -1,0 +1,57 @@
+                <div class="paper">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container-fluid">
+                                   <!-- <div class="card no-b"> -->
+          <!-- <div class="login-form-card"> -->
+                     <div class="login-form-content">
+                                     <form onsubmit="doSomething();" action="{{BASE_URL}}manage-role/edit-role/{{role_id}}" method="POST">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                      <div class="col-md-6"></div>
+                                      <!-- <div class="col-md-3">
+                                        <button class="all-btn btn">Add New</button>
+                                      </div>
+                                      <div class="col-md-3">
+                                        <button class="all-btn btn">Delete</button>
+                                      </div> -->
+                                      <div class="col-md-12">
+                                     <!-- start login -->
+                                    <div class="form-group">
+                                        <label>Role Title</label>
+                                        {{role_form.title}}
+                                     <!--    <select class="form-control" name="list" placeholder="select Team Member">
+                                 <option>select member product</option>
+                              </select> -->
+                                </div>
+                                <div class="form-group">
+                                    <label>Role Description</label>
+                                        {{role_form.desc}}
+                                    
+                                    <!-- <select class="form-control" name="list" placeholder="select Team Member">
+                                 <option>select role validation</option>
+                              </select> -->
+                                </div>
+                                                                <div class="form-group">
+                                    <label>In Use</label>
+                                    {{role_form.use}}
+                                    <!-- <input class="form-control" disabled="" type="textarea" name="in_use" value="role use"> -->
+                                    <!-- <select class="form-control" name="list" placeholder="select Team Member">
+                                     <option>select role validation</option>
+                                    </select> -->
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <a href="{{BASE_URL}}manage-role" class="btn-block btn btn-white all-btn" > Cancel</a>
+                                  </div>
+                                  <div class="col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Update</button>
+                               </div>
+                             </div>
+                             </div>
+                        </form></div>
+             </div>
+          </div>
+                            </div>
+                        </div>

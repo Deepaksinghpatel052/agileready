@@ -1,0 +1,14 @@
+<option value="" selected="">Please select scenario or None</option>
+
+
+{% if select_scenario_default %}
+{% for data in select_scenario_default %}
+<option value="{{data.id}}">{{data}}</option>
+{% endfor %}
+{% endif %}
+
+{% if scenario_data %}
+{% for data in scenario_data %}
+<option value="{{data.id}}">{{data}}</option>
+{% endfor %}
+{% endif %}

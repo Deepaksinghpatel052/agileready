@@ -1,0 +1,4 @@
+Error : AR_product : row no. : 2 : None : Product already exists. : 2020-07-24 06:06:11.351844
+Success : AR_product : row no. : 3 : Product add successfully. : 2020-07-24 06:06:11.366273
+Success : AR_product : row no. : 4 : Product add successfully. : 2020-07-24 06:06:11.380594
+Success : AR_product : row no. : 5 : Product add successfully. : 2020-07-24 06:06:11.394910

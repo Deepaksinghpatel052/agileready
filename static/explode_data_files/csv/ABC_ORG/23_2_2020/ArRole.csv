@@ -1,0 +1,3 @@
+role_id,title,description,use,create_by,create_dt,update_by,update_dt,organization_name
+AR_ROLE_1,User,user role,,Harry,2020-02-04 10:36:28.186830+00:00,Harry,2020-02-04 10:36:28.186838+00:00,ABC
+AR_ROLE_2,Administrator,Administrator,,Harry,2020-02-04 10:36:46.084036+00:00,Harry,2020-02-04 10:36:46.084044+00:00,ABC

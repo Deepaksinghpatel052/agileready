@@ -1,0 +1,6 @@
+{% if user_story_data %}
+
+{% for data in user_story_data %}
+<option value="{{data.id}}">{{data.title}}</option>
+{% endfor %}
+{% endif %}

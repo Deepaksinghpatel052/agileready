@@ -1,0 +1,3 @@
+user_name,address,email,is_active,city,state,zip,country,phone,backup_email,user_type,subscription_level,active_user,user_to_invite,status,profile_permission,login_status,activate_status,organization_name,verification_status,created_by,created_dt,updated_by,updated_dt
+Shubham,,shubhamupadhyay1014@gmail.com,True,GWALIOR,MADHYA PRADESH,474001,India,8109724408,,Root,Free trial,0,0,Active,,False,False,digimonk,False,,2020-03-12 09:06:33.129955+00:00,,2020-03-12 09:06:33.129965+00:00
+digital,,shubhamupadhyay10@yahoo.in,False,GWALIOR,MADHYA PRADESH,474001,India,7845784671,,Root,Free trial,0,0,Active,,False,False,digimonk,False,,2020-03-12 09:19:56.782525+00:00,,2020-03-12 09:19:56.782532+00:00

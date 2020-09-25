@@ -1,0 +1,22 @@
+role_id,title,description,use,create_by,create_dt,update_by,update_dt,organization_name
+AR_ROLE_675,QA Tester,(example),,jitendra,2020-07-11 11:09:08.073774+00:00,jitendra,2020-07-11 11:09:08.073777+00:00,digimomk
+AR_ROLE_676,Developer,(example),,jitendra,2020-07-11 11:09:08.094450+00:00,jitendra,2020-07-11 11:09:08.094452+00:00,digimomk
+AR_ROLE_677,Product Owner,(example),,jitendra,2020-07-11 11:09:08.115100+00:00,jitendra,2020-07-11 11:09:08.115102+00:00,digimomk
+AR_ROLE_678,Scrum Master,(example),,jitendra,2020-07-11 11:09:08.136337+00:00,jitendra,2020-07-11 11:09:08.136340+00:00,digimomk
+AR_ROLE_679,Product Manager,(example),,jitendra,2020-07-11 11:09:08.158149+00:00,jitendra,2020-07-11 11:09:08.158152+00:00,digimomk
+AR_ROLE_680,Business Owner,(example),,jitendra,2020-07-11 11:09:08.179856+00:00,jitendra,2020-07-11 11:09:08.179859+00:00,digimomk
+AR_ROLE_681,Role J (Broker),(edit as needed),,jitendra,2020-07-11 11:09:08.201358+00:00,jitendra,2020-07-11 11:09:08.201361+00:00,digimomk
+AR_ROLE_682,Role J (Seller),(edit as needed),,jitendra,2020-07-11 11:09:08.223281+00:00,jitendra,2020-07-11 11:09:08.223284+00:00,digimomk
+AR_ROLE_683,Role J (Buyer),(edit as needed),,jitendra,2020-07-11 11:09:08.245059+00:00,jitendra,2020-07-11 11:09:08.245062+00:00,digimomk
+AR_ROLE_684,Role J (Participant),(edit as needed),,jitendra,2020-07-11 11:09:08.267046+00:00,jitendra,2020-07-11 11:09:08.267048+00:00,digimomk
+AR_ROLE_685,Role J (Consumer),(edit as needed),,jitendra,2020-07-11 11:09:08.288941+00:00,jitendra,2020-07-11 11:09:08.288944+00:00,digimomk
+AR_ROLE_686,Role I (Trainer),(edit as needed),,jitendra,2020-07-11 11:09:08.312429+00:00,jitendra,2020-07-11 11:09:08.312431+00:00,digimomk
+AR_ROLE_687,Role H (Member),(edit as needed),,jitendra,2020-07-11 11:09:08.334416+00:00,jitendra,2020-07-11 11:09:08.334419+00:00,digimomk
+AR_ROLE_688,Role G (Visitor),(edit as needed),,jitendra,2020-07-11 11:09:08.355027+00:00,jitendra,2020-07-11 11:09:08.355030+00:00,digimomk
+AR_ROLE_689,Role F (Applicant),(edit as needed),,jitendra,2020-07-11 11:09:08.377926+00:00,jitendra,2020-07-11 11:09:08.377930+00:00,digimomk
+AR_ROLE_690,Role E (Staff),(edit as needed),,jitendra,2020-07-11 11:09:08.399210+00:00,jitendra,2020-07-11 11:09:08.399213+00:00,digimomk
+AR_ROLE_691,Role D (Analyst),(edit as needed),,jitendra,2020-07-11 11:09:08.419998+00:00,jitendra,2020-07-11 11:09:08.420001+00:00,digimomk
+AR_ROLE_692,Role C (Admin),(edit as needed),,jitendra,2020-07-11 11:09:08.441905+00:00,jitendra,2020-07-11 11:09:08.441909+00:00,digimomk
+AR_ROLE_693,Role B (Agent of Record),(edit as needed),,jitendra,2020-07-11 11:09:08.463114+00:00,jitendra,2020-07-11 11:09:08.463116+00:00,digimomk
+AR_ROLE_694,Role A (Customer Service Rep),(edit as needed),,jitendra,2020-07-11 11:09:08.484026+00:00,jitendra,2020-07-11 11:09:08.484028+00:00,digimomk
+AR_ROLE_695,Eagle,(example),"""Disenroll Partner-1 ",jitendra,2020-07-11 11:09:08.504935+00:00,jitendra,2020-07-11 11:09:08.504937+00:00,digimomk

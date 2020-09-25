@@ -1,0 +1,46 @@
+{% extends 'web/base-template.html' %}
+{% block content %}
+{% load static %}
+
+<style type="text/css">
+  .service-featured-content p {
+    white-space: normal;
+}
+</style>
+
+   <main>
+      {% if contect == "" %}
+      <section>
+         <div class="xv-slider-wrap text-white">
+            <div class="container-fluid">
+                     
+
+                     <div class="container-fluid">
+                     
+                     <div class="row"><img src="{{BASE_URL}}media/img/demo/coming-soon.gif" class="img-responsive center" alt="SS"></div>
+                  </div>
+                  </div>
+         </div>
+      </section>
+
+  {% else %}
+
+<section class="p-t-b-40 service-blocks animatedParent animateOnce">
+         <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-12">
+                  <div class="service-featured-content p-t-b-40">
+                     <h3 class="fadeInUpShort animated text-center go">{{title}}</h3>
+                     <br>
+                    {{contect  | safe }}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+     {% endif %}
+   </main>
+<!----------------------------------------->
+
+
+{% endblock %}

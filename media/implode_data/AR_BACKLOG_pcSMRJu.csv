@@ -1,0 +1,9 @@
+title,owner,backlog_score,Backlog_size,team_list,product_parent,BL_STATUS,created_by,created_dt,updated_by,updated_dt,organization_name
+None,None,0,0,,None,None,jitendra,2020-07-11 11:09:07.585117+00:00,jitendra,2020-07-11 11:09:07.585142+00:00,digimomk
+Backlog One for P1 (example),jitendra,15,0,Team-T1 (example),None,New,jitendra,2020-07-11 11:09:07.790611+00:00,jitendra,2020-07-11 11:09:07.790608+00:00,digimomk
+Backlog Two for P1 (example),jitendra,0,0,,None,New,jitendra,2020-07-11 11:09:07.819100+00:00,jitendra,2020-07-11 11:09:07.819098+00:00,digimomk
+Backlog for P2 (example),jitendra,0,0,Team-T1 (example),None,New,jitendra,2020-07-11 11:09:07.835159+00:00,jitendra,2020-07-11 11:09:07.835156+00:00,digimomk
+FlexTeam BL 1 (example),jitendra,0,0,FlexTeam (example),None,New,jitendra,2020-07-11 11:09:07.863279+00:00,jitendra,2020-07-11 11:09:07.863276+00:00,digimomk
+FlexTeam BL 2 (example),jitendra,0,0,FlexTeam (example),None,New,jitendra,2020-07-11 11:09:07.891496+00:00,jitendra,2020-07-11 11:09:07.891493+00:00,digimomk
+Ticket Masters BL (example),jitendra,0,0,Ticket Masters Kanban (example),None,New,jitendra,2020-07-11 11:09:07.919656+00:00,jitendra,2020-07-11 11:09:07.919653+00:00,digimomk
+Mmasters API Pilot (example),jitendra,65,0,Mechanic Masters (example),None,New,jitendra,2020-07-11 11:09:07.947836+00:00,jitendra,2020-07-11 11:09:07.947833+00:00,digimomk

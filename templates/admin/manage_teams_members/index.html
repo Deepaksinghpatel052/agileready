@@ -1,0 +1,650 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load static %}
+{% block cssstyle %}
+
+<style type="text/css">
+  span.select2.select2-container.select2-container--default.select2-container--below.select2-container--focus {
+    width: 100% !important;
+}
+
+</style>
+    {% endblock %}
+            <div class="container-fluid text-white">
+               <div class="row p-t-b-8 ">
+                  <div class="col">
+                     <h1>Manage Team Members</h1>
+                  </div>
+               </div>
+                 <div class="row p-t-b-8">
+         <p class="user-nick"> {{user_name}}</p>
+  </div>
+               <!-- <div class="row ">
+                  <ul class="nav">
+                     <li class="nav-item"> <a class="nav-link active s-12" href="#">Today</a></li>
+                     <li class="nav-item"> <a class="nav-link s-12" href="#">Yesterday</a></li>
+                     <li class="nav-item"> <a class="nav-link s-12" href="#">By Date</a></li>
+                     <li class="nav-item"> <a class="nav-link s-12" href="#">By Progress</a></li>
+                  </ul>
+               </div> -->
+            </div>
+         </header>
+         <div class="container-fluid">
+           
+            <div class="row p-t-b-20">
+               <div class="col-md-12">
+                                {% if messages %}
+         {% for message in messages %}
+         {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+         <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+            <strong>{{message}}</strong>
+         </div>
+         {% endif %}
+         {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+         <div class="alert alert-danger alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+            <strong>{{message}}</strong> 
+         </div>
+         {% endif %}
+         {% endfor %}
+         {% endif %}
+                  <!-- <div class="card no-b"> -->
+				  <div class="login-form-card">
+                   <!-- <div class="login-form-content"> -->
+               
+						<div class="table-responsive">
+              {% if get_current_user.user_type == 'Root' %}
+              <button class="btn-success add-data" data-toggle="modal" data-target="#modal-default_set_root_user2">Change Your Root User</button>
+              {% endif %}
+              <!-- <button class="btn-primary import-data">Export</button> -->
+                                     <!-- start Table --><br><br>
+
+                                     <table id="example" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+        <thead>
+            <tr>
+                <th align="left" valign="top">Name</th>
+                <th align="left" valign="top">User Profile</th>
+                <th align="left" valign="top">User Type</th>
+                <th align="left" valign="top">Teams</th>
+                <th align="left" style=" width: 60px!important;" valign="top">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+                        {% for user_data in user %}
+                        {% if user_data.user_name != "" %}
+            <tr>
+                <td align="left" valign="top">{{user_data.user_name}}</td>
+                <td align="left" valign="top">
+ {% if user_data.user_type == 'Root' %}
+                  All Permissions Alow
+                  {% else %}
+                  {{ user_data.profile_permission.all|join:" |<br>" }}
+                  {% endif %}
+                </td>
+                <td align="left" valign="top">{{user_data.user_type}}</td>
+                <td align="left" valign="top">{{user_data.user_data.all|join:" |<br>" }}</td>
+                <td align="left" valign="top">
+             
+                   {% if user_data.user_type == 'Root' %}
+                  Not Edit
+                  {% else %}
+                  
+                   {% if check_edit_permition %}
+                  
+                    {% if user_id == user_data.id  %}
+
+                    Not Edit
+                    {% else %}
+ <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tr>
+
+                     <!-- <td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#team_member_edit" class="member_edit" data-member_id="{{user_data.id}}"><i class="icon-pencil"></i></a></td> -->
+
+                     <td align="center" valign="top"><a href="{{BASE_URL}}manage-team-member/edit-team-member/{{user_data.id}}"  class="member_edit" ><i class="icon-pencil"></i></a></td>
+
+                     <td align="center" valign="top"><a href="javascript:;" onclick="remove_product('{{BASE_URL}}manage-team-member/delete-team-member/{{user_data.id}}','{{Remove_Request_msg}}','{{Remove_done_msg}}','{{Not_Remove_msg}}');"><i class="icon-delete"></i></a></td>
+
+
+                     <!-- <td align="center" valign="top"><a href="" data-toggle="modal" data-target="#modal-default2"><i class="icon-delete"></i><a></td> -->
+                   </tr>
+                </table>
+                    {% endif %}
+                 
+                  {% endif %}
+
+                  {% endif %} 
+                
+                </td>
+            </tr>
+
+            {% endif %}
+
+            {% endfor %}
+            
+            
+        </tbody>
+    </table>
+                                     <!---Table Ends---->
+</div>
+                                    
+                
+                      <!-- </div> -->
+             </div>
+				  <!-- </div> -->
+               </div>
+			</div>
+         </div>
+      </div>
+   </div>
+</div>
+<!------------Modal Popup------->
+
+<div class="modal fade in sp-map" id="team_member_edit">
+          <div class="modal-dialog">
+            <div class="modal-content" style="width: 150%!important;">
+              <div class="modal-header">
+
+                <h4 class="modal-title">Manage Team Member</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px; color: red;">×</span></button>
+                
+              </div>
+              <div class="modal-body">
+
+
+
+
+
+                    </div>
+                            </div>
+                        
+                        </div>
+                </div>
+<!------------Modal Popup------->
+<div class="modal fade in sp-map" id="modal-team">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+
+                <h4 class="modal-title">Manage Team </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span></button>
+                
+              </div>
+              <div class="modal-body">
+                <div class="paper">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container-fluid">
+                                   <!-- <div class="card no-b"> -->
+          <!-- <div class="login-form-card"> -->
+                     <div class="login-form-content">
+                                    <form onsubmit="doSomething();" action="javascript:(0);">
+                                    <div class="row">
+                                      <div class="col-md-6"></div>
+                                      <div class="col-md-3">
+                                        <button class="all-btn btn">Add New</button>
+                                      </div>
+                                      <div class="col-md-3">
+                                        <button class="all-btn btn">Delete</button>
+                                      </div>
+                                      <div class="col-md-12">
+                                     <!-- start login -->
+                                    <div class="form-group">
+                                        <label>Name</label>
+
+
+                                        <label>User Profile</label>
+
+
+
+
+                                        <select class="form-control" name="list" placeholder="select Team Member">
+                                          <option>Team Newton</option>
+                                          <option>Team Kelvin</option>
+                                          <option>Team DaVinci</option>
+                                          <option>Team Capernicus</option>
+                                        </select>
+                                    </div>
+                                
+                                </div>
+                                <!-- <div class="row"> -->
+                                  <div class="col-md-6">
+                                    <button type="submit" class="btn-block btn btn-white all-btn" data-dismiss="modal">Cancel</button>
+                                  </div>
+                                  <div class="col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Update</button>
+                               </div>
+                             </div>
+                             <!-- </div> -->
+                                </div>
+                              
+                            
+                        </form></div>
+             </div>
+          </div>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                        
+                        </div>
+                </div>
+              <!-- </div>
+            </div> -->
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!---------------------------Modal Ends---------------->
+        <!------------2nd Modal Popup--start----->
+<div class="modal fade in sp-map" id="modal-default1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+
+                <h4 class="modal-title">Add Team </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span></button>
+                
+              </div>
+              <div class="modal-body">
+                <div class="paper">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container-fluid">
+                                   <!-- <div class="card no-b"> -->
+          <!-- <div class="login-form-card"> -->
+                     <div class="login-form-content">
+                                    <form onsubmit="doSomething();" action="javascript:(0);">
+                                    <div class="row">
+                                      <div class="col-md-6"></div>
+                                      <div class="col-md-3">
+                                        <button class="all-btn btn">Add New</button>
+                                      </div>
+                                      <div class="col-md-3">
+                                        <button class="all-btn btn">Delete</button>
+                                      </div>
+                                      <div class="col-md-12">
+                                     <!-- start login -->
+                                    <div class="form-group">
+                                        <label>Team</label>
+                                         <select class="form-control" name="list" placeholder="select Team Member">
+                      <option>Team Newton</option>
+                      <option>Team Kelvin</option>
+                      <option>Team DaVinci</option>
+                      <option>Team Capernicus</option>
+                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea class="form-control login-frm-input" style="height: 100px;    padding: 11px;" placeholder="Description"></textarea>
+                                </div>
+                                <div class="form-group">
+                                        <label>Team Members</label>
+                                        <div class="table-responsive">
+                                           <a href="#" id="insert-more" style="float:left;position: relative;top: 18px;">Add</a>
+                               <table id="example2" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+        <thead>
+            <tr>
+                <th align="left" valign="top">Team Members</th>
+                <th align="left" valign="top" style="width: 60px!important;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="left" valign="top">Tony Timbol</td>
+                <td align="left" valign="top">
+                   <a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+                   </tr>
+                   <tr>
+                <td align="left" valign="top">James Cox</td>
+                <td align="left" valign="top">
+                   <a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+                   </tr>
+                   <tr>
+                <td align="left" valign="top">Shandi Pettine</td>
+                <td align="left" valign="top">
+                   <a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+                   </tr>
+             <tr>
+                <td align="left" valign="top">Apple Timbol</td>
+                <td align="left" valign="top">
+                    <a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a>
+                </td>
+            </tr>
+             
+           </tbody>
+                              </table>
+                                </div>
+                                </div>
+               
+                                </div>
+                                <!-- <div class="row"> -->
+                                  <div class="col-md-6">
+                                    <button type="submit" class="btn-block btn btn-white all-btn" data-dismiss="modal">Cancel</button>
+                                  </div>
+                                  <div class="col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Add</button>
+                               </div>
+                             </div>
+                             <!-- </div> -->
+                                </div>
+                              
+                            </div>
+                        </form></div>
+             </div>
+          </div>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                        
+                        </div>
+                </div>
+              <!-- </div>
+            </div> -->
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!----------------------2nd Modal Ends---------------->
+
+        <!------------Delete messege Modal Popup Start------->
+<div class="modal fade in sp-map" id="modal-default_set_root_user2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="color: #fff;background-color: #c52241;}">
+          <h4 class="modal-title">Change Root User</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span>
+          </button>
+                
+      </div>
+      <div class="modal-body">
+        <div class="paper">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="container-fluid">
+                                   <!--  <div class="login-form-content"> -->
+  
+                  <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                           <label>New Root User Is :</label>
+                       </div>
+                   </div>
+                        <div class="col-md-7">
+                          <div class="form-group">
+                           <select name="get_new_root_user" id="get_new_root_user" class="form-control" required="true" >
+                              <option value="">Select New Root User</option>
+                               {% for user_data in user %}
+                                {% if user_data.user_name != "" %}
+                                {% if user_data.user_type != "Root" %}
+                                <option value="{{user_data.id}}">{{user_data.user_name}}</option>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+                              
+                           </select>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <button type="button" class="btn-block btn btn-white all-btn set_new_root_user" >Yes</button>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                          <button type="button"  data-dismiss="modal" aria-label="Close"  class="btn-block btn btn-white all-btn" >Cancel</button>
+                      </div>
+                    </div>
+                  </div>
+    
+              </div>
+            </div>
+                  
+                      <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        
+        <!------------Delete messege Modal Popup Start------->
+<div class="modal fade in sp-map" id="modal-default2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title">Change Root User</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span>
+          </button>
+                
+      </div>
+      <div class="modal-body">
+        <div class="paper">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="container-fluid">
+                                   <!--  <div class="login-form-content"> -->
+                <form onsubmit="doSomething();" action="javascript:(0);">
+                  <div class="row">
+                  	<div class="col-md-4">
+                        <div class="form-group">
+                           <label>User</label>
+                       </div>
+                   </div>
+                        <div class="col-md-8">
+                        	<div class="form-group">
+                           <select name="root_user" class="form-control" required>
+                              <option>Block</option>
+                              <option>Unblock</option>
+                              <option selected="">Block</option>
+                           </select>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <button type="submit" class="btn-block btn btn-white all-btn" >Yes</button>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                          <button type="submit" class="btn-block btn btn-white all-btn" data-dismiss="modal">Cancel</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+                  
+                      <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!--------------------Delete Message Modal Ends---------------->
+          <!------------FeedBack messege Modal Popup Start------->
+
+        <!--------------------FeedBack Message Modal Ends---------------->
+                <!------------Help messege Modal Popup Start------->
+<div class="modal fade in sp-map" id="help1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title">Help</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span>
+          </button>
+                
+      </div>
+      <div class="modal-body">
+        <div class="paper">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="container-fluid">
+                                   <!--  <div class="login-form-content"> -->
+                <form onsubmit="doSomething();" action="javascript:(0);">
+                 <div class="table-responsive">
+                                     <!-- start Table -->
+                                     <table id="example4" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+                                       <thead>
+            <tr class="dnd-moved">
+              <th align="left" valign="top" class="itrid">Titles</th>
+                <th align="left" valign="top" class="itrds">Details</th>
+             </tr>
+          </thead>
+        <tbody>
+            <tr>
+                <td align="left" valign="top">Topic</td>
+                <td align="left" valign="top">Dashboard</td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">Description</td>
+                <td align="left" valign="top">Dashboard Page</td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">Information</td>
+                <td align="left" valign="top">This Page Provides All Details.</td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">Useful Links</td>
+                <td align="left" valign="top">
+                   <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tr>
+                    <td align="left" valign="top">Link 1 </td>
+                   </tr>
+                   <tr>
+                   <td align="left" valign="top">Link 2</td>
+                   </tr>
+                   <tr>
+                   <td align="left" valign="top">Link 3 </td>
+                   </tr>
+                </table>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+                                     <!---Table Ends---->
+</div>
+                              
+
+
+
+                </form>
+              </div>
+            </div>
+                  
+                       <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!--------------------Help Message Modal Ends---------------->
+
+<!-- <script src="assets/js/app.js"></script> -->
+<!-- <script src="assets/js/sidebar-accordian.js"></script> -->
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
+<!-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#example1').DataTable();
+} );
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#example2').DataTable();
+} );
+</script>
+<script type="text/javascript">
+   $("#insert-more").click(function () {
+     $("#example1").each(function () {
+         var tds = '<tr>';
+         jQuery.each($('tr:last td', this), function () {
+             tds += '<td>' + $(this).html() + '</td>';
+         });
+         tds += '</tr>';
+         if ($('tbody', this).length > 0) {
+             $('tbody', this).append(tds);
+         } else {
+             $(this).append(tds);
+         }
+     });
+});
+
+</script>
+<script type="text/javascript">
+   $(document).ready(function(){
+  $('.attach input').change(function () {
+    $('.attach p').text(this.files.length + " file(s) selected");
+  });
+});
+</script>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+
+$(document).on("click",".member_edit",function(){
+var id = $(this).data("member_id");
+
+$.ajax({
+  method:"GET",
+  url :"{{BASE_URL}}manage-team-member/edit-team-member/"+id,
+  dataType:"html",
+  success:function(data)
+  {
+   
+    
+     $("#team_member_edit .modal-body").html(data);
+   $('#team_member_edit #id_profile_permission').select2();
+  }
+});
+});
+   $(document).ready(function(){
+  
+  // $("#id_profile_permission").addClass("form-control");
+   $('#id_profile_permission').select2();
+});
+
+  
+
+   function doSomething() {
+    $(".se-pre-con").css("display","block");
+}
+
+
+$(document).on("click",".set_new_root_user",function(){
+var id= $("#get_new_root_user").val();
+
+if(id== "")
+{
+alert("Please select user.");
+}
+else
+{
+
+remove_product('{{BASE_URL}}manage-team-member/update_root_user/'+id,'Are you sure you want to change root user?','Root user update successfully.','Root user is not updated.');
+}
+
+});
+
+</script>
+{% endblock %}

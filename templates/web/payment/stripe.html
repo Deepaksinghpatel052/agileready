@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+ <!-- Mount the instance within a <label> -->
+<label>Card
+  <div id="card-element"></div>
+</label>
+
+<!--
+  Or create a <label> with a 'for' attribute,
+  referencing the ID of your container.
+-->
+<label for="card-element">Card</label>
+<div id="card-element"></div>
+
+<script>
+  cardElement.mount('#card-element');
+</script>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript">
+	var stripe = Stripe('pk_test_L0ulEDmn0cvNv8UPBP1PdVuL00eR2PtxrH');
+	var elements = stripe.elements();
+	var cardElement = elements.create('card');
+	var cardElement = elements.getElement('card');
+
+
+cardElement.on('change', function(event) {
+  if (event.complete) {
+    // enable payment button
+  } else if (event.error) {
+    // show validation to customer
+  }
+});	
+</script>
+</body>
+</html>

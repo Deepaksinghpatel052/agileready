@@ -1,0 +1,4 @@
+title,story_tri_part_text,acceptance_criteria,ac_readability_score,conversation,backlog_parent,convo_readability_score,autoscoring_on,archive_indicator,readiness_quality_score,story_points,user_story_status,User_story_type,ar_user,owner,created_by,created_dt,updated_dt,updated_by,organization_name,attachments
+Eagle Soars-2_test,,,0,,Backlog for P2 (example),0,False,False,15,None,Pending,Pending,jitendra N,jitendra N,jitendra N,2020-07-29 07:52:40.639886+00:00,2020-08-07 06:10:19.104641+00:00,jitendra N,digimomk,
+Eagle Soars-1,As an Eagle I want to glide,,0,,Backlog for P2 (example),0,False,False,65,None,Pending,None,None,jitendra N,jitendra N,2020-07-29 07:11:41.265946+00:00,2020-07-29 07:11:41.265941+00:00,jitendra N,digimomk,
+Eagle Soars,As an Eagle,,0,,Backlog for P2 (example),0,False,False,40,None,Pending,None,None,jitendra N,jitendra N,2020-07-29 07:11:41.230141+00:00,2020-07-29 07:11:41.230135+00:00,jitendra N,digimomk,

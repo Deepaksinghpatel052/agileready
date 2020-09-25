@@ -1,0 +1,102 @@
+{% extends 'web/base-template.html' %}
+{% block content %}
+{% load static %}
+
+   <main>
+      <section>
+         <div class="xv-slider-wrap text-white">
+            <div class="container-fluid">
+                      <div class="row"><img src="{{BASE_URL}}media/img/dummy/b1.jpg" class="img-responsive center" alt="SS"></div>
+
+                  </div>
+         </div>
+      </section>
+      <section class="p-t-b-40 animatedParent animateOnce responsive">
+         <div class="container">
+            <div class="row">
+               <div class="col-12 col-lg-6">
+                  <div class="service-featured-thumbs">
+                     <div class="service-thumb animated fadeInUpShort"> <a href="#" class="img-link"><img src="{{BASE_URL}}media/img/demo/female1.jpg" alt="service"></a></div>
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6">
+                  <div class="service-featured-content p-t-b-40">
+                     <h3 class="fadeInUpShort animated">A Day in the life of an Agile Ready User</h3>
+                     <br>
+                     <p class="fadeInUpShort animated">9:30 am:After a few minutes checking emails, Shannon logs into Agile Ready and her Product Owner Dashboard displays the status of her three teams</p>
+                     <br>
+                     <!-- <p class="fadeInUpShort animated">Globally harness resource maximizing sources without backend communities.</p> -->
+                     <br>
+                     <a href="{{BASE_URL}}view-information/A-Day-in-the-life-of-an-Agile-Ready-User" class="btn btn-primary btn-lg fadeInUpShort animated">View More information</a></div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="p-b-40 p-t-40 animatedParent animateOnce responsive">
+         <div class="container">
+            <div class="row">
+               <div class="col-12 col-lg-6">
+                  <div class="service-featured-content p-t-b-40">
+                     <h3 class="fadeInUpShort animated">Team Edition help you get User Stories Ready Fast</h3>
+                     <br>
+                     <p class="fadeInUpShort animated">Write better user stories using Agile Ready’s Rating System. Write User Stories Faster as a team. Invite other users to join your team.</p>
+                     <br>
+                     <!-- <p class="fadeInUpShort animated">Globally harness resource maximizing sources without backend communities.</p> -->
+                     <br>
+                     <a href="{{BASE_URL}}view-information/Team-Edition-help-you-get-User-Stories-Ready-Fast" class="btn btn-primary btn-lg fadeInUpShort animated">View More information</a></div>
+               </div>
+               <div class="col-12 col-lg-6">
+                  <div class="service-featured-thumbs">
+                     <div class="service-thumb animated fadeInUpShort"> <a href="#" class="img-link"><img src="{{BASE_URL}}media/img/demo/female2.jpg" alt="service"></a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+
+<!----------------------------------------->
+<!--Footer Start-->
+   <footer>
+      <section class="p-t-b-20 service-blocks animatedParent animateOnce">
+      <div class="container">
+         <div class="row">
+            <!-- <div class=" col-lg-2 col-xl-3 col-12 responsive-phone"> <a href="#" class="brand"><img src="assets/img/basic/logo.png" alt="Knowledge"><span class="circle"></span></a></div> -->
+
+         <!-- <div class="container">
+            <div class="row"> -->
+               <div class="col-lg-4 ">
+                  <div class="service-block clearfix">
+                     <div class="service-icon"><i class="icon icon-dollar"></i></div>
+                     <div class="service-content">
+                        <h3><a href="#">Reduce User Story Lifecycle Costs</a></h3>
+                        <p>Drop your user story lifecycle costs 33% to 70%. Save time (thus money) getting stories ready faster.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4">
+                  <div class="service-block">
+                     <div class="service-icon"><i class="icon icon-graduation"></i></div>
+                     <div class="service-content">
+                        <h3><a href="#">Save on Training Costs</a></h3>
+                        <p>On-Board new Product Owners faster. Continuous rating system feedback tutors everyone on good user story writing.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4">
+                  <div class="service-block clearfix">
+                     <div class="service-icon"><i class="icon icon-cloud-upload"></i></div>
+                     <div class="service-content">
+                        <h3><a href="#">Import/Export</a></h3>
+                        <p>Import user stories and rate them. Export Backlogs and their user stories. Export to external systems such as Rally, Jira and VersionOne.</p>
+                     </div>
+                  </div>
+               </div>
+           <!--  </div>
+         </div> -->
+         </div>
+      </div>
+   </section>
+   </footer>
+
+{% endblock %}

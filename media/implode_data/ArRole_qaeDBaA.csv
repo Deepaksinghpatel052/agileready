@@ -1,0 +1,5 @@
+role_id,title,description,use,create_by,create_dt,update_by,update_dt,organization_name
+AR_ROLE_29,Team Member,Test,FindTrader(Spike),jitendra narvaria ,2020-02-05 11:32:49.856101+00:00,jitendra narvaria ,2020-02-05 11:32:49.856109+00:00,digimok
+AR_ROLE_30,software developer,software developer,,jitendra narvaria ,2020-02-07 06:43:31.186581+00:00,jitendra narvaria ,2020-02-07 06:43:31.186590+00:00,digimok
+AR_ROLE_31,software developer,software developer,"ISBN Scan digimonk , FindTrader(Spike) digimonk",jitendra narvaria ,2020-02-07 06:42:31.186581+00:00,jitendra narvaria ,2020-02-07 06:42:31.186590+00:00,digimok
+AR_ROLE_32,software developer DSP,software developer,,jitendra narvaria ,2020-02-07 06:42:31.186581+00:00,jitendra narvaria ,2020-02-07 06:42:31.186590+00:00,digimok

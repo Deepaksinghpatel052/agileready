@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from xvelopers.com/demos/html/paper-1.8.2/dashboard3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Sep 2019 10:27:27 GMT -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="assets/img/basic/favicon.png" type="image/x-icon">
+<title>Agile | Manage User</title>
+<link rel="stylesheet" href="assets/css/panel.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+<div id="app" class="paper-loading"><a href="#" data-toggle="offcanvas" class="paper-nav-toggle fixed left"><i></i></a>
+   <aside class="main-sidebar fixed offcanvas scroll shadow">
+      <section class="sidebar">
+      <div class="jquery-accordion-menu-header text-center"><a href="dashboard.html"><img src="assets/img/basic/logo.png"></a></div>
+       <ul class="sidebar-menu scroll sp-menu">
+            
+         <li class="treeview"><a href="dashboard.html"><span>Dashboard</span><i class="icon icon-angle-left pull-right"></i></a>
+                  <ul class="treeview-menu">
+                     <li><a href="product-view.html"><i class="fa fa-cog"></i>Product View</a></li>
+                     <li><a href="backlog-view.html"><i class="fa fa-cog"></i>Backlog View </a></li>
+                     <li><a href="user-story-view.html"><i class="fa fa-cog"></i>User Story View</a></li>
+                     <li><a href="iteration-view.html"><i class="fa fa-cog"></i>Iteration View</a></li>
+                  </ul>
+                </li>
+            
+            <li class="treeview active"><a href="manageacct.html"> <span>Manage Account</span><i class="icon icon-angle-left pull-right"></i></a>
+         
+         
+         
+         <ul class="treeview-menu active">
+                        <li><a class="active" href="manageusers.html"><i class="fa fa-cog"></i><span>Manage Users</span> <i class="icon icon-angle-left pull-right"></i></a>
+                          <ul class="treeview-menu">
+                                <li><a href="manageuserrolespermissions.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage User Profile</a></li>
+                                <li><a href="invitenewuser.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Invite New User</a>
+                                </li>
+                    </ul></li>
+                    <li><a href="manageenv.html"><i class="fa fa-cog"></i><span>Manage Environment</span> <i class="icon icon-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="manageenv-capabilities.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Epic Capability</a></li>
+                        <li><a href="manageenv-feature.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Features </a></li>
+                        <li><a href="manageenv-products.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Products</a></li>
+                        <li><a href="manageenv-teams.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Teams</a></li>
+                        <li><a href="manageenv-team-member.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Team Members</a></li>
+                        <li><a href="manageenv-backlog.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Backlogs</a></li>
+                        <li><a href="manageenv-Iterations.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Iterations</a></li>
+                        <li><a href="manageenv-roles.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Roles</a></li>
+                        <li><a href="manageenv-goals.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Goals</a></li>
+                        <li><a href="manageenv-benefits.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Benefits</a></li>
+                        <li><a href="manageenv-userstory.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage User Story Points</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="dataxfer.html"><i class="fa fa-cog"></i><span>Data Exchange</span> <i class="icon icon-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="import-data.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Import Data</a></li>
+                        <li><a href="export-data.html"><i class="fa fa-cog"></i><i class="fa fa-cog"></i>Manage Export Data</a></li>
+                    </ul>
+                    </li>
+                  </ul>
+         
+         
+            </li>
+            
+         </ul>
+       
+       
+         
+      </section>
+   </aside>
+   <div class="page light offcanvas-page">
+      <div class="pos-f-t">
+         <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+               <div class="search-bar">
+                  <input class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50" type="text" placeholder="start typing...">
+               </div>
+               <a href="#" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" class="paper-nav-toggle paper-nav-white active "><i></i></a></div>
+         </div>
+      </div>
+      <div>
+         <header class="blue accent-3 relative">
+            <div class="navbar navbar-expand navbar-dark d-flex justify-content-end bd-navbar" style="float: right;">
+               <ul class="navbar-nav p-t-10">
+                  <li class="nav-item liwht">
+                     <a href="help.html" class="nav-item nav-link" title="Help" data-toggle="modal" data-target="#help1"><i class="icon-help"></i></a>
+                  </li>
+                <li class="nav-item liwht"><a href="" class="nav-item nav-link" title="Feedback" data-toggle="modal" data-target="#feedback1"><i class="icon-list"></i></a> 
+                </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-item nav-link  mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-user-circle" style="font-size: 25px; color: #fff;"></i></a>
+                     <div class="dropdown-menu dropdown-menu-right b-0 shadow1">
+                        <a class="dropdown-item" href="dashboard.html"><i class="icon-dashboard"></i>Dashboard</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="setting.html"><i class="icon-cog"></i> Account Setting</a>
+                        
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="index.html"><i class="icon-power-off"></i> Logout</a></div>
+                  </li>
+               </ul>
+            </div>
+            <div class="container-fluid text-white">
+               <div class="row p-t-b-10 ">
+                  <div class="col">
+                     <h1>Manage Users</h1>
+                  </div>
+               </div>
+               <!-- <div class="row ">
+                  <ul class="nav">
+                     <li class="nav-item"> <a class="nav-link active s-12" href="#">Today</a></li>
+                     <li class="nav-item"> <a class="nav-link s-12" href="#">Yesterday</a></li>
+                     <li class="nav-item"> <a class="nav-link s-12" href="#">By Date</a></li>
+                     <li class="nav-item"> <a class="nav-link s-12" href="#">By Progress</a></li>
+                  </ul>
+               </div> -->
+            </div>
+         </header>
+         <div class="container-fluid">
+           
+            <div class="row p-t-b-20">
+               <div class="col-md-12">
+                  <img src="assets/img/demo/coming-soon.gif">
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog width-400" role="document">
+         <div class="modal-content no-r "><a href="#" data-dismiss="modal" aria-label="Close" class="paper-nav-toggle active"><i></i></a>
+            <div class="modal-body no-p">
+               <div class="text-center p-40 p-b-0"> <img src="assets/img/dummy/u4.png" alt="">
+                  <h3>Welcome Back</h3>
+                  <p class="p-t-b-20">Hey Soldier welcome back signin now there is lot of new stuff waiting for you</p>
+               </div>
+               <div class="light p-40 b-t-b">
+                  <form onsubmit="doSomething();" action="https://xvelopers.com/demos/html/paper-1.8.2/dashboard2.html">
+                     <div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                        <input type="text" class="form-control form-control-lg" placeholder="Email Address">
+                     </div>
+                     <div class="form-group has-icon"><i class="icon-user-secret"></i>
+                        <input type="text" class="form-control form-control-lg" placeholder="Password">
+                     </div>
+                     <input type="submit" class="btn btn-primary btn-lg btn-block" value="Log In">
+                     <small class="forget-pass">Have you forgot your username or password ?</small>
+                  </form>
+               </div>
+               <div class="p-40"><a href="#" class="btn btn-lg btn-block btn-social facebook"><i class="icon-facebook"></i> Login with Facebook</a><a href="#" class="btn btn-lg btn-block btn-social twitter"><i class="icon-twitter"></i> Login with Twitter</a></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+         <div class="modal-content no-r "><a href="#" data-dismiss="modal" aria-label="Close" class="paper-nav-toggle active"><i></i></a>
+            <div class="modal-body no-p">
+               <div class="row">
+                  <div class="col-lg-5 grid">
+                     <div class="p-40">
+                        <h5 class="p-t-40">Sign Up Using Social Account</h5>
+                        <p class="p-t-b-20">Hey Soldier welcome back signin now there is lot of new stuff waiting for you</p>
+                        <a href="#" class="btn btn-lg btn-block btn-social facebook"><i class="icon-facebook"></i> Login with Facebook</a><a href="#" class="btn btn-lg btn-block btn-social twitter"><i class="icon-twitter"></i> Login with Twitter</a></div>
+                  </div>
+                  <div class="col-lg-7">
+                     <div class="light p-t-b-40">
+                        <div class="p-40">
+                           <h5 class="p-b-20">Create New User Account</h5>
+                           <form onsubmit="doSomething();" action="https://xvelopers.com/demos/html/paper-1.8.2/dashboard2.html">
+                              <div class="form-group has-icon"><i class="icon-user-circle"></i>
+                                 <input type="text" class="form-control form-control-lg" placeholder="Your Name">
+                              </div>
+                              <div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                                 <input type="text" class="form-control form-control-lg" placeholder="Email Address">
+                              </div>
+                              <div class="form-group has-icon"><i class="icon-user-secret"></i>
+                                 <input type="text" class="form-control form-control-lg" placeholder="Password">
+                              </div>
+                              <div class="form-group has-icon"><i class="icon-repeat"></i>
+                                 <input type="text" class="form-control form-control-lg" placeholder="Confirm Password">
+                              </div>
+                              <input type="submit" class="btn btn-primary btn-lg btn-block" value="Sign Up Now">
+                              <p class="forget-pass">A verification email wil be sent to you</p>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/sidebar-accordian.js"></script>
+
+</body>
+<!-- Mirrored from xvelopers.com/demos/html/paper-1.8.2/dashboard3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Sep 2019 10:27:28 GMT -->
+</html>

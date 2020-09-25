@@ -1,0 +1,22 @@
+role_id,title,description,use,create_by,create_dt,update_by,update_dt,organization_name
+AR_ROLE_442,QA Tester,(example),,Praveen,2020-06-24 10:00:43.905869+00:00,Praveen,2020-06-24 10:00:43.905872+00:00,Digimonk
+AR_ROLE_443,Developer,(example),,Praveen,2020-06-24 10:00:43.926582+00:00,Praveen,2020-06-24 10:00:43.926585+00:00,Digimonk
+AR_ROLE_444,Product Owner,(example),,Praveen,2020-06-24 10:00:43.946522+00:00,Praveen,2020-06-24 10:00:43.946525+00:00,Digimonk
+AR_ROLE_445,Scrum Master,(example),,Praveen,2020-06-24 10:00:43.966475+00:00,Praveen,2020-06-24 10:00:43.966478+00:00,Digimonk
+AR_ROLE_446,Product Manager,(example),,Praveen,2020-06-24 10:00:43.994311+00:00,Praveen,2020-06-24 10:00:43.994314+00:00,Digimonk
+AR_ROLE_447,Business Owner,(example),,Praveen,2020-06-24 10:00:44.014583+00:00,Praveen,2020-06-24 10:00:44.014586+00:00,Digimonk
+AR_ROLE_448,Role J (Broker),(edit as needed),,Praveen,2020-06-24 10:00:44.035946+00:00,Praveen,2020-06-24 10:00:44.035949+00:00,Digimonk
+AR_ROLE_449,Role J (Seller),(edit as needed),,Praveen,2020-06-24 10:00:44.057110+00:00,Praveen,2020-06-24 10:00:44.057113+00:00,Digimonk
+AR_ROLE_450,Role J (Buyer),(edit as needed),,Praveen,2020-06-24 10:00:44.077198+00:00,Praveen,2020-06-24 10:00:44.077200+00:00,Digimonk
+AR_ROLE_451,Role J (Participant),(edit as needed),,Praveen,2020-06-24 10:00:44.097592+00:00,Praveen,2020-06-24 10:00:44.097595+00:00,Digimonk
+AR_ROLE_452,Role J (Consumer),(edit as needed),,Praveen,2020-06-24 10:00:44.118790+00:00,Praveen,2020-06-24 10:00:44.118795+00:00,Digimonk
+AR_ROLE_453,Role I (Trainer),(edit as needed),,Praveen,2020-06-24 10:00:44.140278+00:00,Praveen,2020-06-24 10:00:44.140283+00:00,Digimonk
+AR_ROLE_454,Role H (Member),(edit as needed),,Praveen,2020-06-24 10:00:44.161383+00:00,Praveen,2020-06-24 10:00:44.161386+00:00,Digimonk
+AR_ROLE_455,Role G (Visitor),(edit as needed),,Praveen,2020-06-24 10:00:44.182528+00:00,Praveen,2020-06-24 10:00:44.182533+00:00,Digimonk
+AR_ROLE_456,Role F (Applicant),(edit as needed),,Praveen,2020-06-24 10:00:44.203976+00:00,Praveen,2020-06-24 10:00:44.203981+00:00,Digimonk
+AR_ROLE_457,Role E (Staff),(edit as needed),,Praveen,2020-06-24 10:00:44.225663+00:00,Praveen,2020-06-24 10:00:44.225668+00:00,Digimonk
+AR_ROLE_458,Role D (Analyst),(edit as needed),,Praveen,2020-06-24 10:00:44.247065+00:00,Praveen,2020-06-24 10:00:44.247070+00:00,Digimonk
+AR_ROLE_459,Role C (Admin),(edit as needed),,Praveen,2020-06-24 10:00:44.268444+00:00,Praveen,2020-06-24 10:00:44.268449+00:00,Digimonk
+AR_ROLE_460,Role B (Agent of Record),(edit as needed),,Praveen,2020-06-24 10:00:44.289854+00:00,Praveen,2020-06-24 10:00:44.289859+00:00,Digimonk
+AR_ROLE_461,Role A (Customer Service Rep),(edit as needed),,Praveen,2020-06-24 10:00:44.311213+00:00,Praveen,2020-06-24 10:00:44.311217+00:00,Digimonk
+AR_ROLE_462,Eagle,(example),"""Disenroll Partner-1 ",Praveen,2020-06-24 10:00:44.332731+00:00,Praveen,2020-06-24 10:00:44.332735+00:00,Digimonk

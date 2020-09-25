@@ -1,0 +1,10 @@
+title,owner,backlog_score,Backlog_size,team_list,product_parent,BL_STATUS,created_by,created_dt,updated_by,updated_dt,organization_name
+None,deepak,72,3,,None,Archive,Praveen,2020-06-24 10:00:43+00:00,Praveen,2020-06-24 10:00:43+00:00,Digimonk
+Backlog One for P1 (example),Praveen,39,3,Team-T1 (example),None,New,Praveen,2020-06-24 10:00:43.623081+00:00,Praveen,2020-06-24 10:00:43.623078+00:00,Digimonk
+Backlog Two for P1 (example),Praveen,80,1,,None,New,Praveen,2020-06-24 10:00:43.652075+00:00,Praveen,2020-06-24 10:00:43.652072+00:00,Digimonk
+Backlog for P2 (example),Praveen,60,0,Team-T1 (example),None,New,Praveen,2020-06-24 10:00:43.666267+00:00,Praveen,2020-06-24 10:00:43.666264+00:00,Digimonk
+FlexTeam BL 1 (example),Praveen,0,0,FlexTeam (example),None,New,Praveen,2020-06-24 10:00:43.692986+00:00,Praveen,2020-06-24 10:00:43.692983+00:00,Digimonk
+FlexTeam BL 2 (example),Praveen,0,0,FlexTeam (example),None,New,Praveen,2020-06-24 10:00:43.720136+00:00,Praveen,2020-06-24 10:00:43.720133+00:00,Digimonk
+Ticket Masters BL (example),Praveen,0,0,Ticket Masters Kanban (example),None,New,Praveen,2020-06-24 10:00:43.747546+00:00,Praveen,2020-06-24 10:00:43.747544+00:00,Digimonk
+Mmasters API Pilot (example),Praveen,65,0,Mechanic Masters (example),None,New,Praveen,2020-06-24 10:00:43.774698+00:00,Praveen,2020-06-24 10:00:43.774695+00:00,Digimonk
+Mmasters Phone ID (example),Praveen,0,0,Mechanic Masters (example),None,New,Praveen,2020-06-24 10:00:43.801806+00:00,Praveen,2020-06-24 10:00:43.801803+00:00,Digimonk

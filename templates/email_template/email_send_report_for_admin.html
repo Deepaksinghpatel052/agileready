@@ -1,0 +1,237 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+      <meta name="viewport" content="width=device-width">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="x-apple-disable-message-reformatting">
+      <title>Agile | New Registration</title>
+      <style>html,body{background-color:#fff!important;margin:0 auto !important;padding:0 !important;height:100% !important;width:100% !important;color:#888!important}td{color:#000;}.email-container{max-width:900px!important;margin:0 auto!important}*{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}div[style*="margin: 16px 0"]{margin:0 !important}table,td{mso-table-lspace:0pt !important;mso-table-rspace:0pt !important}table{width:100%;border-spacing:0 !important;border-collapse:collapse !important;table-layout:fixed !important;margin:0 auto !important}img{-ms-interpolation-mode:bicubic}a{text-decoration:none!important}*[x-apple-data-detectors], .unstyle-auto-detected-links *,.aBn{border-bottom:0 !important;cursor:default !important;color:inherit !important;text-decoration:none !important;font-size:inherit !important;font-weight:inherit !important;line-height:inherit !important}@media only screen and (min-device-width: 320px) and (max-device-width: 374px){u ~ div .email-container{min-width:320px !important}}@media only screen and (min-device-width: 375px) and (max-device-width: 413px){u ~ div .email-container{min-width:375px !important}}@media only screen and (min-device-width: 414px){u ~ div .email-container{min-width:414px !important}}</style>
+   </head>
+   <body>
+      <div class="email-container">
+         <table style="border-bottom: 2px solid #c52241; ">
+            <tr>
+               <td>
+                  <h2 style="color:#c52241; padding-top: 62px; margin-bottom: 0px;"> Agileready Report</h2>
+               </td>
+               <td> <img src="{{logo_image}}" style="width: 60%; float: right;"></td>
+            </tr>
+         </table>
+         <table style="color: #000;font-size: 20px;">
+            <tr>
+               <td style="padding: 10px 0px;">Dear {{user_name}},</td>
+            </tr>
+           ` <tr>
+               <td style="padding: 10px 0px;">There is some new account info.</td>
+            </tr>           
+            
+         </table>
+         <!-- SET BEEDBACK DATA START -->
+            {% if get_new_root_user %}
+          <h2>New Root Accountes</h2>
+          <table style="border: 1px solid;font-size: 18px;"> 
+                     <thead>
+                        <tr>
+                        <th style="border: 1px solid;width: 30%;">Username</th>
+                        <th style="border: 1px solid;">Organization</th>
+                        <th style="border: 1px solid;">Create Date</th>
+                        <th style="border: 1px solid;">Account Status</th>
+                     </tr>
+
+                     </thead>
+                     <tbody>
+                     {% for item in get_new_root_user %}
+                        <tr>
+                        <td style="border: 1px solid;width: 30%; white-space: nowrap;">
+                           {{item.User_Email}}
+                           
+                        </td>
+                        <td style="border: 1px solid;">{{item.ORG_ID}}</td>
+                        <td style="border: 1px solid;">{{item.created_dt}}</td>
+                        <td style="border: 1px solid;">
+                         {% if item.Ar_user.user.is_active %}
+                        Account Activate
+                        {% else %}
+                        Account Inactivate
+                        {% endif %}
+
+                           </td>
+                     </tr>
+                    {% endfor %}
+                     </tbody>                       
+                    
+                  </table>  
+                {% endif %}   
+                  <br>
+                  
+                  {% if get_root_user_active %}
+                  <hr>
+                  <h2>Root Accountes Activate</h2>
+                     <table style="border: 1px solid;font-size: 18px;"> 
+                     <thead>
+                        <tr>
+                        <th style="border: 1px solid;width: 30%;">Username</th>
+                        <th style="border: 1px solid;">Organization</th>
+                        <th style="border: 1px solid;">Create Date</th>
+                        <th style="border: 1px solid;">Account Status</th>
+                     </tr>
+
+                     </thead>
+                     <tbody>
+                     {% for item in get_root_user_active %}
+                        <tr>
+                        <td style="border: 1px solid;width: 30%; white-space: nowrap;">
+                           {{item.User_Email}}
+                           
+                        </td>
+                        <td style="border: 1px solid;">{{item.ORG_ID}}</td>
+                        <td style="border: 1px solid;">{{item.created_dt}}</td>
+                        <td style="border: 1px solid;">
+                         {% if item.Ar_user.user.is_active %}
+                        Account Activate
+                        {% else %}
+                        Account Inactivate
+                        {% endif %}
+
+                           </td>
+                     </tr>
+                    {% endfor %}
+                     </tbody>                       
+                    
+                  </table>  
+
+                  {% endif%}
+                  <br>
+
+                  {% if get_invite_new_user %}
+                  <hr>
+                  <h2>Invite New Users</h2>
+                     <table style="border: 1px solid;font-size: 18px;"> 
+                     <thead>
+                        <tr>
+                        <th style="border: 1px solid;width: 30%;">Username</th>
+                        <th style="border: 1px solid;">Organization</th>
+                        <th style="border: 1px solid;">Create Date</th>
+                        <th style="border: 1px solid;">Account Status</th>
+                        <th style="border: 1px solid;">Invited By</th>
+                     </tr>
+
+                     </thead>
+                     <tbody>
+                     {% for item in get_invite_new_user %}
+                        <tr>
+                        <td style="border: 1px solid;width: 30%; white-space: nowrap;">
+                           {{item.User_Email}}
+                           
+                        </td>
+                        <td style="border: 1px solid;">{{item.ORG_ID}}</td>
+                        <td style="border: 1px solid;">{{item.created_dt}}</td>
+                        <td style="border: 1px solid;">
+                         {% if item.Ar_user.user.is_active %}
+                        Account Activate
+                        {% else %}
+                        Account Inactivate
+                        {% endif %}
+
+                           </td>
+                           <td style="border: 1px solid;">{{item.invited_by}}</td>
+                     </tr>
+                    {% endfor %}
+                     </tbody>                       
+                    
+                  </table>  
+
+                  {% endif %}
+                  <br>
+                  {% if get_invite_active_user %}
+                  <hr>
+                  <h2>Activated Invite Users</h2>
+                     <table style="border: 1px solid;font-size: 18px;"> 
+                     <thead>
+                        <tr>
+                        <th style="border: 1px solid;width: 30%;">Username</th>
+                        <th style="border: 1px solid;">Organization</th>
+                        <th style="border: 1px solid;">Create Date</th>
+                        <th style="border: 1px solid;">Account Status</th>
+                     </tr>
+
+                     </thead>
+                     <tbody>
+                     {% for item in get_invite_active_user %}
+                        <tr>
+                        <td style="border: 1px solid;width: 30%; white-space: nowrap;">
+                           {{item.User_Email}}
+                           
+                        </td>
+                        <td style="border: 1px solid;">{{item.ORG_ID}}</td>
+                        <td style="border: 1px solid;">{{item.created_dt}}</td>
+                        <td style="border: 1px solid;">
+                         {% if item.Ar_user.user.is_active %}
+                        Account Activate
+                        {% else %}
+                        Account Inactivate
+                        {% endif %}
+
+                           </td>
+                          
+                     </tr>
+                    {% endfor %}
+                     </tbody>                       
+                    
+                  </table>  
+
+                  {% endif %}
+                     <br>
+                  {% if get_upgrate_memvership %}
+                  <hr>
+                  <h2>Subscription upgraded</h2>
+                     <table style="border: 1px solid;font-size: 18px;"> 
+                     <thead>
+                        <tr>
+                        <th style="border: 1px solid;width: 30%;">Username</th>
+                        <th style="border: 1px solid;">Organization</th>
+                        <th style="border: 1px solid;">Create Date</th>
+                        <th style="border: 1px solid;">Subscription Plan</th>
+                     </tr>
+
+                     </thead>
+                     <tbody>
+                     {% for item in get_upgrate_memvership %}
+                        <tr>
+                        <td style="border: 1px solid;width: 30%; white-space: nowrap;">
+                           {{item.User_Email}}
+                           
+                        </td>
+                        <td style="border: 1px solid;">{{item.ORG_ID}}</td>
+                        <td style="border: 1px solid;">{{item.created_dt}}</td>
+                        <td style="border: 1px solid;">
+                        {{item.Subscription_Plan}}
+                           </td>
+                          
+                     </tr>
+                    {% endfor %}
+                     </tbody>                       
+                    
+                  </table>  
+
+                  {% endif %}
+                  <br>
+
+
+                  <!-- SET BEEDBACK DATA END -->
+         <table style="border-top: 1px solid #000; color: #000; font-size: 20px;">
+           
+           
+          
+            <tr>
+               <td style="font-weight: bold;padding-bottom: 30px;">The Agile Ready Team</td>
+            </tr>
+         </table>
+         <table style="background-color: #f2f2f2; font-size: 20px;">
+            <tr>
+               <td style="padding: 35px 30px; text-align: center;">Agile Ready Partners, LLC, Copyright 2020, Jacksonville, FL 32246</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

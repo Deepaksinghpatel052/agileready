@@ -1,0 +1,10 @@
+title,owner,backlog_score,Backlog_size,team_list,product_parent,BL_STATUS,created_by,created_dt,updated_by,updated_dt,organization_name
+None,None,0,0,,None,None,Praveen,2020-02-21 06:46:04.803792+00:00,Praveen,2020-02-21 06:46:04.803807+00:00,Digimonk Organization
+Backlog One for P1 (example),Praveen,47,0,Team-T1 (example)|Team-T2 (example),Product-P1 (example),New,Praveen,2020-02-21 07:25:14.785925+00:00,Praveen,2020-02-21 07:25:14.785938+00:00,Digimonk Organization
+Backlog Two for P1 (example),Praveen,0,0,Team-T2 (example),Product-P1 (example),New,Praveen,2020-02-21 07:26:08.542732+00:00,Praveen,2020-02-21 07:26:08.542766+00:00,Digimonk Organization
+Backlog for P2 (example),Praveen,65,0,Team-T1 (example),Product-P2 (example),New,Praveen,2020-02-21 07:26:44.543466+00:00,Praveen,2020-02-21 07:26:44.543478+00:00,Digimonk Organization
+FlexTeam BL 1 (example),Praveen,0,0,FlexTeam (example),Product-P1 (example),New,Praveen,2020-02-21 07:30:51.824100+00:00,Praveen,2020-02-21 07:30:51.824116+00:00,Digimonk Organization
+FlexTeam BL 2 (example),Praveen,0,0,FlexTeam (example),Product-P1 (example),New,Praveen,2020-02-21 07:32:57.523763+00:00,Praveen,2020-02-21 07:32:57.523776+00:00,Digimonk Organization
+Ticket Masters BL (example),Praveen,0,0,Ticket Masters Kanban (example),BestEverMortgage 2020 Enhancements (example),New,Praveen,2020-02-21 07:34:16.316535+00:00,Praveen,2020-02-21 07:34:16.316548+00:00,Digimonk Organization
+Mmasters API Pilot (example),Praveen,74,13,Mechanic Masters (example),BestEverMortgage 2020 Enhancements (example),New,Praveen,2020-02-21 07:34:39.209712+00:00,Praveen,2020-02-21 07:34:39.209729+00:00,Digimonk Organization
+Mmasters Phone ID (example),Praveen,0,0,Mechanic Masters (example),BestEverMortgage 2020 Enhancements (example),New,Praveen,2020-02-21 07:38:01.560188+00:00,Praveen,2020-02-21 07:38:01.560209+00:00,Digimonk Organization

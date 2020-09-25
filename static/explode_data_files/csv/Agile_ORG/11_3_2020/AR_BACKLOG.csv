@@ -1,0 +1,10 @@
+title,owner,backlog_score,Backlog_size,team_list,product_parent,BL_STATUS,created_by,created_dt,updated_by,updated_dt,organization_name
+None,None,0,0,,None,None,Antonio V Timbol,2020-03-08 20:33:41.947572+00:00,Antonio V Timbol,2020-03-08 20:33:41.947589+00:00,Agile Ready LLC
+Backlog One for P1 (example),Antonio V Timbol,0,0,Team-T1 (example),None,New,Antonio V Timbol,2020-02-21 07:25:14.785925+00:00,Antonio V Timbol,2020-02-21 07:25:14.785938+00:00,Agile Ready LLC
+Backlog Two for P1 (example),Antonio V Timbol,0,0,,None,New,Antonio V Timbol,2020-02-21 07:26:08.542732+00:00,Antonio V Timbol,2020-02-21 07:26:08.542766+00:00,Agile Ready LLC
+Backlog for P2 (example),Antonio V Timbol,0,0,Team-T1 (example),Product-P2 (example),New,Antonio V Timbol,2020-02-21 07:26:44.543466+00:00,Antonio V Timbol,2020-02-21 07:26:44.543478+00:00,Agile Ready LLC
+FlexTeam BL 1 (example),Antonio V Timbol,0,20,FlexTeam (example),None,New,Antonio V Timbol,2020-02-21 07:30:51.824100+00:00,Antonio V Timbol,2020-02-21 07:30:51.824116+00:00,Agile Ready LLC
+FlexTeam BL 2 (example),Antonio V Timbol,0,0,FlexTeam (example),None,New,Antonio V Timbol,2020-02-21 07:32:57.523763+00:00,Antonio V Timbol,2020-02-21 07:32:57.523776+00:00,Agile Ready LLC
+Ticket Masters BL (example),Antonio V Timbol,0,0,Ticket Masters Kanban (example),BestEverMortgage 2020 Enhancements (example),New,Antonio V Timbol,2020-02-21 07:34:16.316535+00:00,Antonio V Timbol,2020-02-21 07:34:16.316548+00:00,Agile Ready LLC
+Mmasters API Pilot (example),Antonio V Timbol,42,160,FlexTeam (example)|Mechanic Masters (example),BestEverMortgage 2020 Enhancements (example),New,Antonio V Timbol,2020-02-21 07:34:39.209712+00:00,Antonio V Timbol,2020-03-08 21:58:47.698777+00:00,Agile Ready LLC
+Mmasters Phone ID (example),Antonio V Timbol,0,0,Mechanic Masters (example),BestEverMortgage 2020 Enhancements (example),New,Antonio V Timbol,2020-02-21 07:38:01.560188+00:00,Antonio V Timbol,2020-02-21 07:38:01.560209+00:00,Agile Ready LLC

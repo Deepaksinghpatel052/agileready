@@ -1,0 +1,2 @@
+Error : Ar_user : row no. : 2 : shubhamupadhyay1014@gmail.com : E-mail already exists ! : 2020-03-14 14:55:15.752678
+Error : Ar_user : row no. : 3 : shubhamupadhyay10@yahoo.in : E-mail already exists ! : 2020-03-14 14:55:15.753862

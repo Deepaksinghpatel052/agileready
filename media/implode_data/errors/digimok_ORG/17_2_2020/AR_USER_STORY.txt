@@ -1,0 +1,12 @@
+Error : AR_USER_STORY : row no. : 2 : Book Capture : User story already exists.  : 2020-02-17 18:59:53.556664
+Error : AR_USER_STORY : row no. : 3 : ISBN Scan : User story already exists.  : 2020-02-17 18:59:53.557521
+Error : AR_USER_STORY : row no. : 4 : FindPODShop : User story already exists.  : 2020-02-17 18:59:53.558348
+Error : AR_USER_STORY : row no. : 5 : Bird takes flight Part 7 : User story already exists.  : 2020-02-17 18:59:53.559185
+Error : AR_USER_STORY : row no. : 6 : Bird takes flight Part 6 : User story already exists.  : 2020-02-17 18:59:53.560042
+Error : AR_USER_STORY : row no. : 7 : Bird takes flight Part 5 : User story already exists.  : 2020-02-17 18:59:53.560872
+Error : AR_USER_STORY : row no. : 8 : Bird takes flight Part 3 : User story already exists.  : 2020-02-17 18:59:53.561705
+Error : AR_USER_STORY : row no. : 9 : Bird takes flight Part 2 : User story already exists.  : 2020-02-17 18:59:53.562534
+Error : AR_USER_STORY : row no. : 10 : Not quite as bad a user story : User story already exists.  : 2020-02-17 18:59:53.563361
+Error : AR_USER_STORY : row no. : 11 : Phone Id lookup 2 : User story already exists.  : 2020-02-17 18:59:53.564208
+Error : AR_USER_STORY : row no. : 12 : Test : User story already exists.  : 2020-02-17 18:59:53.565036
+Error : AR_USER_STORY : row no. : 13 : Test Stroy : User story already exists.  : 2020-02-17 18:59:53.565864

@@ -1,0 +1,13 @@
+title,owner,backlog_score,Backlog_size,team_list,product_parent,BL_STATUS,created_by,created_dt,updated_by,updated_dt,organization_name
+None,None,0,0,,None,None,Praveen,2020-07-30 10:35:06.953427+00:00,Praveen,2020-07-30 10:35:06.953442+00:00,Digimonk
+Backlog One for P1 (example),Praveen,40,0,,None,New,Praveen,2020-07-30 10:35:07.015206+00:00,Praveen,2020-07-30 10:35:07.015203+00:00,Digimonk
+Backlog Two for P1 (example),Praveen,15,0,,Praveen Test,New,Praveen,2020-07-30 10:35:07.034482+00:00,Praveen,2020-08-01 12:12:40.205544+00:00,Digimonk
+Backlog for P2 (example),Praveen,65,0,,None,New,Praveen,2020-07-30 10:35:07.052126+00:00,Praveen,2020-07-30 10:35:07.052124+00:00,Digimonk
+FlexTeam BL 1 (example),Praveen,0,0,,None,New,Praveen,2020-07-30 10:35:07.070548+00:00,Praveen,2020-07-30 10:35:07.070545+00:00,Digimonk
+FlexTeam BL 2 (example),Praveen,0,0,,None,New,Praveen,2020-07-30 10:35:07.088931+00:00,Praveen,2020-07-30 10:35:07.088928+00:00,Digimonk
+Ticket Masters BL (example),Praveen,0,0,,None,New,Praveen,2020-07-30 10:35:07.107414+00:00,Praveen,2020-07-30 10:35:07.107412+00:00,Digimonk
+Mmasters API Pilot (example),Praveen,65,0,,None,New,Praveen,2020-07-30 10:35:07.125684+00:00,Praveen,2020-07-30 10:35:07.125682+00:00,Digimonk
+Mmasters Phone ID (example),Praveen,0,0,,test product,New,Praveen,2020-07-30 10:35:07.144303+00:00,Praveen,2020-08-01 12:15:14.220396+00:00,Digimonk
+test backlog,Praveen,0,0,Test Team,Praveen Test,Active,Praveen,2020-07-30 11:58:28.741180+00:00,Praveen,2020-07-31 10:21:27.312473+00:00,Digimonk
+Backlog test,Praveen,0,0,Test Team,Praveen Test,Active,Praveen,2020-07-31 14:01:22.255894+00:00,Praveen,2020-07-31 14:01:22.255916+00:00,Digimonk
+test1,Praveen,0,0,Test Team,Product Test,Active,Praveen,2020-07-31 14:02:13.105421+00:00,Praveen,2020-08-01 12:11:51.665220+00:00,Digimonk

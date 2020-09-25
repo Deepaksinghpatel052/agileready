@@ -1,0 +1,10 @@
+Point_Key,Point_Description,Point_score,create_by,create_by,create_dt,update_by,update_dt,organization_name
+1,tiny,1,Tony (root user 1 DM) Timbol,2020-02-11 22:32:51.685866+00:00,Tony (root user 1 DM) Timbol,2020-02-11 22:32:51.685876+00:00,arp test company
+2,small,2,Tony (root user 1 DM) Timbol,2020-02-11 22:33:14.008965+00:00,Tony (root user 1 DM) Timbol,2020-02-11 22:33:14.008975+00:00,arp test company
+3,medium-small,3,Tony (root user 1 DM) Timbol,2020-02-11 22:33:33.382809+00:00,Tony (root user 1 DM) Timbol,2020-02-11 22:33:33.382819+00:00,arp test company
+5,medium-medium,5,Tony (root user 1 DM) Timbol,2020-02-11 22:33:58.819534+00:00,Tony (root user 1 DM) Timbol,2020-02-11 22:33:58.819544+00:00,arp test company
+8,medium-large,8,Tony (root user 1 DM) Timbol,2020-02-11 22:34:10.067192+00:00,Tony (root user 1 DM) Timbol,2020-02-11 22:34:10.067201+00:00,arp test company
+13,large,13,Tony (root user 1 DM) Timbol,2020-02-11 22:34:20.484918+00:00,Tony (root user 1 DM) Timbol,2020-02-11 22:34:20.484928+00:00,arp test company
+20,XL (Xtra Large),20,Tony (root user 1 DM) Timbol,2020-02-11 22:34:52.748924+00:00,Tony (root user 1 DM) Timbol,2020-02-11 22:34:52.748934+00:00,arp test company
+40,XXL (Extra-Extra Large),40,Tony (root user 1 DM) Timbol,2020-02-11 22:35:13.651972+00:00,Tony (root user 1 DM) Timbol,2020-02-11 22:35:13.651982+00:00,arp test company
+100,XXXL (Extra-Extra-Extra Large),100,Tony (root user 1 DM) Timbol,2020-02-11 22:35:53.888574+00:00,Tony (root user 1 DM) Timbol,2020-02-11 22:35:53.888583+00:00,arp test company

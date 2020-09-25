@@ -1,0 +1,6 @@
+Product_name,Product_description,Team_parent,Business_unit,Product_size,Product_score,Children_Backlog_List,US_quality_threshold,organization_name,create_by,create_dt,update_by,update_dt
+BestEverMortgage 2020 Enhancements (example)_test,gkykrfxkxg,,Sales Division,Product_size,0,,11,digimomk,jitendra N,2020-08-06 06:07:32.676567+00:00,jitendra N,2020-08-07 14:10:32.912014+00:00
+Product-P2 (example)_test,,,,Product_size,0,,0,digimomk,jitendra N,2020-08-06 06:07:32.660715+00:00,jitendra N,2020-08-06 06:07:32.660728+00:00
+Product-P1 (example)_test,,agile,,Product_size,0,Mmasters Phone ID (example),0,digimomk,jitendra N,2020-08-06 06:07:32.644809+00:00,jitendra N,2020-08-06 06:07:32.644821+00:00
+None_test,,,,Product_size,0,,0,digimomk,jitendra N,2020-08-06 06:07:32.628450+00:00,jitendra N,2020-08-06 06:07:32.628463+00:00
+Praveen Test,test data,,data,Product_size,0,,14,digimomk,jitendra N,2020-07-30 08:12:05+00:00,jitendra N,2020-07-30 08:12:05+00:00

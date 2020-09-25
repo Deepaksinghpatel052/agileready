@@ -1,0 +1,9 @@
+Success : AR_FEATURE : row no. : 2 : None_TEST : Feature added successfully !  : 2020-04-25 20:27:45.274826
+Success : AR_FEATURE : row no. : 3 : Feature-F1 (example)_test : Feature added successfully !  : 2020-04-25 20:27:45.285863
+Success : AR_FEATURE : row no. : 4 : Feature-F2 (example)_test : Feature added successfully !  : 2020-04-25 20:27:45.296890
+Success : AR_FEATURE : row no. : 5 : Feature-F3 (example)_test : Feature added successfully !  : 2020-04-25 20:27:45.307969
+Success : AR_FEATURE : row no. : 6 : Store Customer Phone # (example)_test : Feature added successfully !  : 2020-04-25 20:27:45.319013
+Success : AR_FEATURE : row no. : 7 : Retrieve Customer Phone # (example)_test : Feature added successfully !  : 2020-04-25 20:27:45.330121
+Success : AR_FEATURE : row no. : 8 : Enroll Partner (example)_test : Feature added successfully !  : 2020-04-25 20:27:45.341226
+Success : AR_FEATURE : row no. : 9 : Disenroll Partner # (example)_test : Feature added successfully !  : 2020-04-25 20:27:45.352342
+Success : AR_FEATURE : row no. : 10 : Submit FedRes ReportType1 (example)_test : Feature added successfully !  : 2020-04-25 20:27:45.363447

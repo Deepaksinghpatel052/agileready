@@ -1,0 +1,8 @@
+Error : AR_team : row no. : 2 : Something was wrong. : 2020-02-18 08:32:03.176740
+Error : AR_team : row no. : 3 : Something was wrong. : 2020-02-18 08:32:03.190754
+Error : AR_team : row no. : 4 : Something was wrong. : 2020-02-18 08:32:03.204891
+Error : AR_team : row no. : 5 : Something was wrong. : 2020-02-18 08:32:03.219035
+Error : AR_team : row no. : 6 : Something was wrong. : 2020-02-18 08:32:03.233358
+Error : AR_team : row no. : 7 : Something was wrong. : 2020-02-18 08:32:03.248744
+Error : AR_team : row no. : 8 : Something was wrong. : 2020-02-18 08:32:03.262738
+Error : AR_team : row no. : 9 : Something was wrong. : 2020-02-18 08:32:03.275671

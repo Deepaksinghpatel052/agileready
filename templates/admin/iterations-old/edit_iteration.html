@@ -1,0 +1,242 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load static %}
+
+{% block cssstyle %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" integrity="sha256-yMjaV542P+q1RnH6XByCPDfUFhmOafWbeLPmqKh11zo=" crossorigin="anonymous" />
+    {% endblock %}
+<div class="container-fluid text-white">
+               <div class="row p-t-b-10 ">
+                  <div class="col">
+                     <h1>Manage Backlog({{user_name}})</h1>
+                  </div>
+               </div>
+            </div>
+            </header>
+
+<div class="container-fluid">
+           
+            <div class="row p-t-b-20">
+               <div class="col-md-12">
+                 {% if messages %}
+                   {% for message in messages %}
+                     {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                    <div class="alert alert-success alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>{{message}}</strong> 
+                    </div>
+                       {% endif %}
+
+                   {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <div class="alert alert-danger alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>Erorr</strong> {{message}}
+                    </div>
+                       {% endif %}
+
+                   {% endfor %}
+               {% endif %}
+                 <!--  <div class="card no-b"> -->
+                   {{ IterationForm.errors }}
+{% if IterationForm.errors %}
+    {% for field in IterationForm %}
+        {% for error in field.errors %}
+            <p> {{ error }} </p>
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+           <div class="login-form-card">
+                                  <!-- <div class="login-form-content"> -->
+                  <form action="#" method="POST" onsubmit="doSomething();">
+                    {% csrf_token %}
+                                     <!-- start login -->
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Iteration Name <samp style="color: red">*</samp></label>
+                            {{IterationForm.IterationName}}
+                           
+                          </div>
+                           <div class="form-group">
+                                        <label>Owner <samp style="color: red">*</samp></label>
+                                       {{IterationForm.owner}}
+                                </div>
+                       
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>Start Date <samp style="color: red">*</samp></label>
+                                   <input type="text" name="StartDate" class="form-control datetimepicker-input" data-target="#datetimepicker1" required="" id="id_StartDate" value="{{start_data}}">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>End Date <samp style="color: red">*</samp></label>
+                                   <input type="text" name="EndDate" class="form-control datetimepicker-input" data-target="#datetimepicker1" required="" id="id_EndDate" value="{{end_data}}">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                           <div class="form-group">
+                                    <label>Description <samp style="color: red">*</samp></label>
+                                   {{IterationForm.Description}}
+                                </div>
+                        </div>
+                     
+                      <div class="col-md-12">
+                           <div class="form-group">
+                                        <label>Associated Product <samp style="color: red">*</samp></label>
+                                        {{IterationForm.Product}}
+                                </div>
+                        </div>
+                     
+                     <div class="col-md-12">
+                            <div class="form-group">
+                                        <label>Associated Backlog <samp style="color: red">*</samp></label>
+                                      {{IterationForm.Backlog.errors.error}}
+                                      {{IterationForm.Backlog}}
+                                </div>
+                        </div>
+
+                        <div class="col-md-12">
+                         <div class="form-group">
+                                        <label>Associated User Story List</label>
+                                       {{IterationForm.UserStory}}
+                                </div>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>Iteration Score</label>
+                                    {{IterationForm.IterationScore}}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>Iteration Size</label>
+                                    {{IterationForm.IterationSize}}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                               
+                                <div class="form-group">
+                                        <label>Associated Team <samp style="color: red">*</samp></label>
+                                         {{IterationForm.Team}}
+                                </div>
+                               
+                             
+                              </div>
+                                </div>
+                            <div class="row">
+
+                                
+                                  <div class="col-md-6">
+                                    <button type="reset" class="btn-block btn btn-white all-btn" onclick="goBack()">Cancel</button>
+                                  </div>
+                                  <div class="col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Update</button>
+                               </div>
+                             </div>
+                             </div>     
+                            </form></div>
+                               
+                        
+                      </div>
+             </div>
+          <!-- </div> -->
+               </div>
+
+{% endblock %}
+
+
+
+{% block script %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha256-5YmaxAwMjIpMrVlK84Y/+NjCpKnFYa8bWWBbUHSBGfU=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+function doSomething() {
+    $(".se-pre-con").css("display","block");
+}
+
+$(function () {
+             
+$('#id_StartDate').datetimepicker();
+$('#id_EndDate').datetimepicker({
+            useCurrent: false //Important! See issue #1075
+        });
+
+$("#id_StartDate").on("dp.change", function (e) {
+            $('#id_EndDate').data("DateTimePicker").minDate(e.date);
+        });
+        $("#id_EndDate").on("dp.change", function (e) {
+            $('#id_StartDate').data("DateTimePicker").maxDate(e.date);
+        });
+  });
+
+  $(document).ready(function(){
+
+   
+   $("#id_UserStory").addClass("form-control");
+  $(".select2-container").css("width","100%");
+   $('#id_UserStory').select2({
+    placeholder: "Please select user storyes"
+});
+
+$("#id_Product").change(function(){
+
+  var get_prodict_id = $(this).val();
+  if(get_prodict_id)
+  {
+     $.ajax({
+      method:"POST",
+      url:"{{BASE_URL}}iteration-view/get_backlogs",
+      data:{"product_id":get_prodict_id},
+      dataType:"html",
+      success:function(data){
+          $("#id_Backlog").html(data);
+         
+      }
+     });
+  }
+  else
+  {
+   
+  }
+
+});
+
+
+  });
+
+ $(document).on("change","#id_Backlog",function(){
+  var get_backlog_id = $(this).val();
+  if(get_backlog_id)
+  {
+     $.ajax({
+      method:"POST",
+      url:"{{BASE_URL}}iteration-view/get_user_story",
+      data:{"get_backlog_id":get_backlog_id},
+      dataType:"html",
+      success:function(data){
+          $("#id_UserStory").html(data);
+         
+      }
+     });
+  }
+  else
+  {
+     
+    
+  }
+  
+ }); 
+
+</script>
+
+
+{% endblock %}

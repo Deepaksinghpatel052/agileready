@@ -1,0 +1,88 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+      <meta name="viewport" content="width=device-width">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="x-apple-disable-message-reformatting">
+      <title>Agile | New Registration</title>
+      <style>html,body{background-color:#fff!important;margin:0 auto !important;padding:0 !important;height:100% !important;width:100% !important;color:#888!important}td{color:#000;}.email-container{max-width:600px!important;margin:0 auto!important}*{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}div[style*="margin: 16px 0"]{margin:0 !important}table,td{mso-table-lspace:0pt !important;mso-table-rspace:0pt !important}table{width:100%;border-spacing:0 !important;border-collapse:collapse !important;table-layout:fixed !important;margin:0 auto !important}img{-ms-interpolation-mode:bicubic}a{text-decoration:none!important}*[x-apple-data-detectors], .unstyle-auto-detected-links *,.aBn{border-bottom:0 !important;cursor:default !important;color:inherit !important;text-decoration:none !important;font-size:inherit !important;font-weight:inherit !important;line-height:inherit !important}@media only screen and (min-device-width: 320px) and (max-device-width: 374px){u ~ div .email-container{min-width:320px !important}}@media only screen and (min-device-width: 375px) and (max-device-width: 413px){u ~ div .email-container{min-width:375px !important}}@media only screen and (min-device-width: 414px){u ~ div .email-container{min-width:414px !important}}</style>
+   </head>
+   <body>
+      <div class="email-container">
+         <table style="border-bottom: 2px solid #c52241; ">
+            <tr>
+               <td>
+                  <h2 style="color:#c52241; padding-top: 62px; margin-bottom: 0px;"> User Feedback</h2>
+               </td>
+               <td> <img src="{{logo_image}}" style="width: 60%; float: right;"></td>
+            </tr>
+         </table>
+         <table style="color: #000;font-size: 20px;">
+            <tr>
+               <td style="padding: 10px 0px;">Dear {{user_name}},</td>
+            </tr>
+            <tr>
+               <td style="padding: 10px 0px;">Agileready users are sent some feedback.</td>
+            </tr>           
+            
+         </table>
+         <!-- SET BEEDBACK DATA START -->
+         {% for item in get_data %} 
+         <b>{{item.feedback_id}} </b>
+                  <table style="border: 1px solid;font-size: 18px;"> 
+                     <tr>
+                        <td style="border: 1px solid;width: 18%;">Username</td>
+                        <td style="border: 1px solid;">{{item.feedback_id.created_by}}</td>
+                     </tr>
+                     <tr>
+                        <td style="border: 1px solid;width: 18%;">Organization</td>
+                        <td style="border: 1px solid;">{{item.feedback_id.created_by.org_id}}</td>
+                     </tr>
+                     <tr>
+                        <td style="border: 1px solid;width: 18%;">Date/Time</td>
+                        <td style="border: 1px solid;">{{item.feedback_id.created_dt}}</td>
+                     </tr>
+                     <tr>
+                        <td style="border: 1px solid;width: 18%;">Feedback For</td>
+                        <td style="border: 1px solid;">{{item.feedback_id}}</td>
+                     </tr>
+                     <tr>
+                        <td style="border: 1px solid;width: 18%;">Feedback Nature</td>
+                        <td style="border: 1px solid;">{{item.feedback_id.feedback_nature}}</td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="border: 1px solid;width: 15%;">
+ <h3>Feedback Information</h3>
+                           <p>
+                              {{item.feedback_id.feedback_information}}
+                              <hr>
+                              {% if item.feedback_id.attachments %}
+                              <img src="{{BASE_URL}}{{item.feedback_id.attachments.url}}" style="width: 200px; height: 200px;"> 
+                              {% endif %}
+                           </p>
+
+                        </td>
+                        
+                     </tr>
+                  </table>
+
+                  <br>
+
+              {% endfor %}    
+                  <!-- SET BEEDBACK DATA END -->
+         <table style="border-top: 1px solid #000; color: #000; font-size: 20px;">
+           
+           
+          
+            <tr>
+               <td style="font-weight: bold;padding-bottom: 30px;">The Agile Ready Team</td>
+            </tr>
+         </table>
+         <table style="background-color: #f2f2f2; font-size: 20px;">
+            <tr>
+               <td style="padding: 35px 30px; text-align: center;">Agile Ready Partners, LLC, Copyright 2020, Jacksonville, FL 32246</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

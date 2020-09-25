@@ -1,0 +1,8 @@
+title,owner,backlog_score,Backlog_size,team_list,product_parent,BL_STATUS,created_by,created_dt,updated_by,updated_dt,organization_name
+Mmasters API Pilot (example),jitendra N,65,0,,None,New,jitendra N,2020-07-29 07:11:39+00:00,jitendra N,2020-07-29 07:11:39+00:00,digimomk
+Ticket Masters BL (example),jitendra N,0,0,,None,New,jitendra N,2020-07-29 07:11:39+00:00,jitendra N,2020-07-29 07:11:39+00:00,digimomk
+FlexTeam BL 2 (example),jitendra N,0,0,,None,New,jitendra N,2020-07-29 07:11:39+00:00,jitendra N,2020-07-29 07:11:39+00:00,digimomk
+FlexTeam BL 1 (example),jitendra N,15,0,,None,New,jitendra N,2020-07-29 07:11:39+00:00,jitendra N,2020-07-29 07:11:39+00:00,digimomk
+Backlog for P2 (example),jitendra N,55,0,,None,New,jitendra N,2020-07-29 07:11:39+00:00,jitendra N,2020-07-29 07:11:39+00:00,digimomk
+Backlog Two for P1 (example),jitendra N,15,0,,None,New,jitendra N,2020-07-29 07:11:39+00:00,jitendra N,2020-07-29 07:11:39+00:00,digimomk
+Backlog One for P1 (example),jitendra N,35,0,,None,New,jitendra N,2020-07-29 07:11:39+00:00,jitendra N,2020-07-29 07:11:39+00:00,digimomk

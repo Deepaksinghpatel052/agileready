@@ -1,0 +1,502 @@
+{% extends 'web/base-template.html' %}
+{% block content %}
+{% load static %}
+<style>
+    .stripe-button-el span {
+    background-color: crimson!important;
+    background-image: none;
+    border: 1px solid crimson;
+}
+
+.swal-title{
+  font-size: 15px;
+}
+
+</style>
+   <main>
+      <section>
+         <div class="xv-slider-wrap text-white">
+            <div class="container-fluid">
+
+                     <div class="row"><img src="{{BASE_URL}}media/img/dummy/b1.jpg" class="img-responsive center" alt="SS">
+                     </div>
+                  </div>
+         </div>
+      </section>
+    <section class="p-t-b-20 service-blocks animatedParent animateOnce light">
+         <div class="container">
+            <div class="row">
+<!-- ----------------_____________________________________________-------------- -->
+
+
+
+              {% for data in data %}
+               <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-delay=".5s" style="visibility: visible;-webkit-animation-delay: .5s; -moz-animation-delay: .5s; animation-delay: .5s;">
+                    <div class="plan text-center subscription" style="background-color: #fff;">
+                        <span class="plan-name">{{data.Title}}</span>
+
+                        {% if data.Undefine_price == True %}
+                         <p class="plan-price text-center"><sup class="currency">Q3</sup><strong>2020</strong></p>
+                        {% endif %}
+                        {% if data.Price == 0 and data.Undefine_price == False %}
+                        <p class="plan-price text-center"><sup class="currency">Free</sup><strong></strong></p>
+                        {% elif data.Price != 0 and data.Undefine_price == False  %}
+                        <p class="plan-price text-center"><sup class="currency">${{data.Price}}</sup><strong></strong></p>
+                        {% endif %}
+
+                        <ul class="list-unstyled" style="border-radius: 20px;">
+                          {% if data.Invite_user == 0 %}
+                            <li><b>Multi Admin User can add up to Multi Users  Per Team</b></li>
+                            {% else %}
+                            <li><b>1 Admin User can add up to {{data.Invite_user}} Users  Per Team</b></li>
+                            {% endif %}
+
+                            {% if data.Team == 0 %}
+                           <li><b>Unlimited Teams</b></li>
+                           {% else %}
+                           <li><b>Up to {{data.Team}} Teams</b></li>
+                           {% endif %}
+
+                           {% if data.Role_access_and_security == True %}
+                           <li><b>Role Based User Access and Security</b></li>
+                           {% else %}
+                           <li><b>No Role Based User Access and Security</b></li>
+                           {% endif %}
+
+                           {% if data.Product == 0 %}
+                           <li><b>Unlimited Product Lines</b></li>
+                           {% else %}
+                           <li><b>Up to {{data.Product}} Product Lines</b></li>
+                           {% endif %}
+
+                           {% if data.Backlog_per_Product == 0 %}
+                           <li><b>Unlimited Backlogs</b></li>
+                           {% else %}
+                           <li><b>Up to {{data.Backlog_per_Product}} backlogs per Product Line</b></li>
+                           {% endif %}
+
+                           {% if data.Rating_cycle == 0 %}
+                           <li><b>Unlimited Rating Cycles</b></li>
+                           {% else %}
+                           <li><b>{{data.Rating_cycle}} Rating Cycles</b></li>
+                           {% endif %}
+
+                           {% if data.User_story == 0 %}
+                           <li><b>Unlimited User Stories</b></li>
+                           {% else %}
+                           <li><b>Up to {{data.User_story}} User Stories</b></li>
+                           {% endif %}
+
+
+                        {% if data.Undefine_price == True %}
+                           <li><b>Pricing Available Q3 2020</b></li>
+                        {% endif %}
+                        {% if data.Time_duration_count == 0 and data.Undefine_price == False %}
+                           <li><b>Unlimited day</b></li>
+                        {% elif data.Time_duration_count != 0 and data.Undefine_price == False  %}
+                           <li><b>{{data.Time_duration_count}} {{data.Time_duration_type}} trial ${{data.Price}} cost</b></li>
+                        {% endif %}
+
+
+                           <li>
+                             {% if user.username == ""  %}
+                             <a href="#" data-toggle="modal" class="btn btn-primary nav-btn" onclick="set_url('{{BASE_URL}}subscription');" data-target="#modalLogin">Buy Now</a>
+                             {% else %}
+                             <!-- Start Code for Stripe -->
+                            <!--  <form action="{{BASE_URL}}subscription" method="post">
+                               {% csrf_token %}
+                               <input type="text" style="display:none;" name="amount" value="20000"/>
+                               <input type="text" style="display:none;" name="description" value="Pay for {{data.Title}}"/>
+
+                               <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="{{ key }}"
+    data-description="Pay for {{data.Title}}"
+    data-amount=200
+    data-label="Buy Now"
+    data-name="Agile Ready"
+   data-image = "{{BASE_URL}}static/img/basic/stripelogo.png"
+   data-currency = "{{currency}}"
+    data-locale="auto">
+</script>
+                               </form>
+ -->
+                             <!-- End Code for Stripe -->
+{% if get_package_info.Package_name.id == data.id %}
+           
+  <button disabled="true" class="btn-primary btn get_package"  data-package_id="{{data.id}}">Buy Now   
+{% else %}           
+<button class="btn-primary btn get_package"  data-package_id="{{data.id}}">Buy Now 
+{% endif %}
+                               </button>
+                               {% endif %}
+                          </li>
+                            <!-- <li>
+                                <strong style="text-transform: uppercase; font-size: 1.3em;">Your Earning </strong>
+                                 </li><li>400%</li>
+                                <br><span style="width: 50%; height: 1px; background-color:#000; position: absolute; margin: 10px 0 -15px -25%;"></span><br> -->
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+<!-- ----------------_____________________________________________-------------- -->
+
+
+                <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-delay=".5s" style="visibility: visible;-webkit-animation-delay: .5s; -moz-animation-delay: .5s; animation-delay: .5s;">
+                    <div class="plan text-center subscription">
+                        <span class="plan-name">Enterprise Edition</span>
+                        <p class="plan-price text-center" style="    font-size: 18px;">
+                          Call 904-523-9575 or email us at sales@agileready.net
+                        </p>
+                        <ul class="list-unstyled" style="border-radius: 20px;">
+                            <li><b>Custom implementations available for large organizations with</b></li>
+                           <li><b>20+ teams</b></li>
+                           <li><b>Agile Release Trains</b></li>
+                           <li><b>Solution Trains</b></li>
+                           <li><b>Less or Less Huge</b></li>
+                           <li><b>Implementation roadmap</b></li>
+                           <li><b>Tool on-boarding and Integration</b></li>
+                           <li><b>Training (in-person and remote)</b></li>
+                           <li><b>Agile Product Management Consulting</b></li>
+                           <li><b>Including Product Owner Training</b></li>
+                           <li>
+ {% if user.username == ""  %}
+                             <a href="#" data-toggle="modal" class="btn btn-primary nav-btn" onclick="set_url('{{BASE_URL}}subscription');" data-target="#modalLogin">Buy Now</a>
+{% else %}
+<button class="btn-primary btn get_package" data-package_id="EE">Buy Now</button>
+{% endif %}
+                          </li>
+                            <!-- <li>
+                                <strong style="text-transform: uppercase; font-size: 1.3em;">Your Earning </strong>
+                                 </li><li>400%</li>
+                                <br><span style="width: 50%; height: 1px; background-color:#000; position: absolute; margin: 10px 0 -15px -25%;"></span><br> -->
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+         </div>
+      </section>
+    
+   </main>
+
+
+<button type="button" id="open_login_modal" data-toggle="modal" class="btn btn-primary nav-btn" style="display: none;" data-target="#modalLogin">open modal</button>
+
+{% endblock %}
+
+  {% block set_script %}
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<form class="form-horizontal" method="POST" id="payment-form" style="display: none;">
+
+
+<input type="hidden" id="stripe_amount" name="amount" value="{{amounte_get}}" class="form-control cpy">
+<input type="hidden" id="package_id" name="package_id" value="{{packeg_id_get}}" class="form-control cpy">
+<input type="hidden" id="access_token" name="stripeToken"  class="form-control cpy">
+<input type="hidden" id="description" name="description" value="{{get_package.Package_name}}"  class="form-control cpy">
+
+
+</form>
+<script type="text/javascript">
+  
+
+var handler = StripeCheckout.configure({
+  key: '{{key}}',
+  image: '{{BASE_URL}}static/img/basic/stripelogo.png',
+  locale: 'auto',
+  token: function(token,args) {
+    // You can access the token ID with `token.id`.
+    $('#access_token').val(token.id);
+    $.ajax({
+      url: '{{BASE_URL}}do_payments',
+      data: $('#payment-form').serialize(),     
+      type: 'POST',
+      dataType: 'JSON',
+      success: function(response){
+               console.log(response);
+        if(response.status=="succeeded")
+        {
+          update_payment_status(response.package_id,response.trans_id,"Stripe");
+        }
+        else
+        {
+           var amount = parseInt($("#stripe_amount").val());
+           var description = $("#description").val();
+            set_strip_handler(amount,description); 
+        }
+        
+        // window.location.href = base_url+'user/buy_service/send_stripe_mail/'+response.payment_id;
+      },
+
+      error: function(error){
+        //console.log(error);
+      }
+
+    });
+
+  }
+
+});
+
+
+
+
+
+  $(document).on("click",".get_package",function(){
+// dsfvfd
+ $(".se-pre-con").css("display","block");
+
+  var user_is_root = false;
+
+var het_package_type = $(this).data("package_id");
+$.ajax({
+        method:"POST",
+        url:base_url+"membership/check-user-type",
+        dataTyep:"json",
+        success:function(data)
+        {
+          
+         if(data.type == "user")
+         {
+           
+           swal({
+              title:data.mssgae,
+            });
+           $(".se-pre-con").css("display","none");
+         }
+         else
+         {
+            // if user is root code start
+
+        if(het_package_type == "EE")
+       {
+        $.ajax({
+        method:"POST",
+        url:base_url+"membership/send-request-for-ee",
+        dataTyep:"json",
+        success:function(data)
+        {
+           if(data.staus=="done")
+           {
+             swal({
+              title:data.mssgae,
+            });
+           }
+           else
+           {
+             
+             
+             swal({
+              title:data.mssgae,
+            });
+          }
+          $(".se-pre-con").css("display","none");
+        }
+        });
+
+       }
+       else{
+
+       check_exists_package(het_package_type);
+
+       }
+
+
+            // if user is root code END
+    
+         } 
+        }
+  });
+
+
+  });
+
+
+function update_payment_status(payment_id,tranj_id="",Payment_method="")
+{
+   $.ajax({
+        method:"POST",
+        url:base_url+"membership/update_payment_status",
+        dataTyep:"json",
+        data:{"payment_id":payment_id,"tranj_id":tranj_id,"Payment_method":Payment_method},
+        success:function(data)
+        {
+           $(".se-pre-con").css("display","none");          
+            swal({
+              title:data.mssgae,
+            }) .then((willDelete) => {
+                  
+                  window.location.href = "{{BASE_URL}}subscription"; 
+
+                  });
+              
+             $(".se-pre-con").css("display","none");
+
+        }
+    
+    });
+}
+
+
+function set_strip_handler(amount,description)
+{
+
+var package_id = $("#package_id").val();
+
+ $.ajax({
+        method:"POST",
+        url:base_url+"membership/check_payment_status_data",
+        data:{"package_id":package_id},
+        dataTyep:"json",
+        success:function(data)
+        {
+           if(data.status == "True") 
+           {
+             
+            swal({
+              title:data.message,
+            }) .then((willDelete) => {
+                  
+                 window.location.href = "{{BASE_URL}}subscription";
+
+                  });
+
+             
+           }
+           else
+           {
+
+                 handler.open({
+                  name: "{{BASE_URL}}",
+                  description: description,
+                  amount: amount,
+                  currency:'USD'
+
+                });
+           }  
+        }
+
+      });
+
+
+
+}
+
+
+
+function check_exists_package(package_id)
+{
+	 $.ajax({
+        method:"POST",
+        url:base_url+"membership/check_exists_package",
+        dataTyep:"json",
+        success:function(data)
+        {
+            if(data.status)
+            {
+              $(".se-pre-con").css("display","none");
+                swal({
+                  title: data.message,
+                  icon: "warning",
+                  buttons: true,
+                  dangerMode: true,
+                })
+                  .then((willDelete) => {
+                    if (willDelete) {
+                      $(".se-pre-con").css("display","block");
+                     add_data_in_membership_historty(package_id);
+                    } else {
+                      swal("Package not updated.");
+                    }
+                  });
+            }  
+            else
+            {
+               add_data_in_membership_historty(package_id);
+            }
+           // 
+           
+        }
+    
+    });
+}
+
+
+function add_data_in_membership_historty(package_id)
+{
+     $.ajax({
+        method:"POST",
+        url:base_url+"membership/add-data-in-membership-historty",
+        data:{"pachage_id":package_id},
+        dataTyep:"json",
+        success:function(data)
+        {
+           if(data.data.payment_amount == '0')
+           {
+            
+             update_payment_status(data.data.payment_obj_id);
+           }
+           else
+           {
+            // swal({
+            //   title:"do payment",
+            // });
+            var amount = parseInt(data.data.payment_amount)*100;
+            $("#stripe_amount").val(amount);
+            $("#package_id").val(data.data.payment_obj_id);
+            $("#description").val("Payment for "+data.data.payment_for);
+            set_strip_handler(amount,"Payment for "+data.data.payment_for); 
+           }
+        }
+        });
+}
+
+$(document).ready(function(){
+  var amount = "{{amounte_get}}";
+ 
+
+
+
+
+if(amount != "")
+{
+
+  {% if user.username == ""  %}
+
+var url_set_data = window.location.href;
+
+set_url(url_set_data);
+
+$("#open_login_modal").click(); 
+
+{% else %}
+
+alert(amount);
+ if(amount == "0")
+ {
+$(".se-pre-con").css("display","none");
+  update_payment_status(parseInt("{{packeg_id_get}}"));
+ }
+ else
+ {
+  $(".se-pre-con").css("display","none");
+  set_strip_handler(amount,"Payment for "+"{{get_package.Package_name}}"); 
+ } 
+
+{% endif %}
+
+
+
+}
+
+
+
+
+ 
+  
+});
+
+</script>
+
+  {% endblock %}

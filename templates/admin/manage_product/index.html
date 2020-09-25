@@ -1,0 +1,701 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load team_data %}
+{% load static %}
+{% block cssstyle %}
+<link href='{% static "css/jquery.lwMultiSelect.css" %}'  rel="stylesheet" />
+<style type="text/css">
+  span.select2.select2-container.select2-container--default.select2-container--below.select2-container--focus {
+    width: 100% !important;
+}
+
+</style>
+    {% endblock %}
+
+
+
+<div class="container-fluid text-white">
+               <div class="row p-t-b-8 ">
+                  <div class="col">
+                     <h1><span id="page_name"></span></h1>
+                  </div>
+               </div>
+                 <div class="row p-t-b-8">
+         <p class="user-nick"> {{user_name}}</p>
+  </div>
+            </div>
+            </header>
+
+<div class="container-fluid">
+           
+            <div class="row p-t-b-20">
+               <div class="col-md-12">
+        {% if messages %}
+                   {% for message in messages %}
+                     {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                    <div class="alert alert-success alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+                      <strong>{{message}}</strong> 
+                    </div>
+                       {% endif %}
+
+                   {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <div class="alert alert-danger alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+                     {{message}}
+                    </div>
+                       {% endif %}
+
+                   {% endfor %}
+               {% endif %}
+                  <!-- <div class="card no-b"> -->
+              <div class="login-form-card">
+        
+                       
+                          <div class="row">
+                      <div class="col-md-8 mb-2">
+                        <button class="btn-primary add-data"><a href="{{BASE_URL}}manage-products/add-product">Add Product</a></button>
+          <button id="show_col" class="btn-primary import-data" data-toggle="modal" data-target="#myModal">Show Columns</button>
+          {% if get_permition_for_edit %}
+          <button class="btn-primary import-data" data-toggle="modal" onclick="set_data('AR_product','products-view')" data-target="#myModalImportCSV">Import </button>
+          {% else %}
+          
+          <button class="btn-primary import-data"> You don't have permission to import data </button>
+          {% endif %}
+          <button type="button" class="download-button btn-export1 export_data_btn" data-file_type="CSV"><i class="icon-download"></i> </button>
+      </div>
+<!-- <div class="col-md-4 mb-2">
+          
+         </div> -->
+              </div>
+
+<!--                <div class="row">
+                      <div class="col-md-2 text-center">
+                        <label id="rollabel" roll="Given " >Filters : </label>
+                     </div>
+                      <div class="col-md-3 text-center">
+                      <select class="form-control role_goal_benefits selectbox" name="testcond" onchange="myFunction()" id="mylist">
+                        <option value="">Select Product</option>
+                        {% for data in backlog_data %}
+                        {% if token == data.title %}
+                        <option selected="" value="{{data.title}}">{{data.title}}</option>
+                        {% else %}
+                        <option value="{{data.title}}">{{data.title}}</option>
+                        {% endif%}
+                        {% endfor %}
+                      </select>
+                        
+                      </div>
+                   </div>
+
+ -->
+
+                     <!--             <div class="row">
+               
+              </div> -->
+
+
+               <div class="row">
+                 <div class="col-md-1">
+                        <label id="rollabel" roll="Given " >Filters : </label>
+                     </div>
+{% if get_show_column|length > 0 %}
+
+  {% for v in get_show_column %}
+              {% if v == 'Children_backlog_list' %}
+                      
+                     <!-- Backlog filter data -->
+                      <div class="col-md-3 text-center">
+                      <select class="form-control role_goal_benefits selectbox typeable_filter" name="testcond" onchange="myFunction()" id="backlog_list">
+                        <option value="">Select Backlog</option>
+                        {% for data in backlog_data %}
+                        {% if backlog_token == data.backlog_slug %}
+                        <option selected="" value="backlog={{data.backlog_slug}}">{{data.title}}</option>
+                        {% else %}
+                        <option value="backlog={{data.backlog_slug}}">{{data.title}}</option>
+                        {% endif%}
+                        {% endfor %}
+                      </select>
+                      </div>
+                      {% endif%}
+                      {% if v == 'Team_parent' %}
+                     <!-- Team_parent filter data -->
+                       <div class="col-md-3 text-center">
+                      <select class="form-control role_goal_benefits selectbox typeable_filter" name="testcond" onchange="myFunction()" id="team_list">
+                        <option value="">Select Team</option>
+                        {% for data in team_data %}
+                        {% if team_token == data.team_slug %}
+                        <option selected="" value="team={{data.team_slug}}">{{data.Team_name}}</option>
+                        {% else %}
+                        <option value="team={{data.team_slug}}">{{data.Team_name}}</option>
+                        {% endif%}
+                        {% endfor %}
+                      </select>
+                      </div>
+                                            {% endif%}
+                      {% if v == 'capability' %}
+                     <!-- capability filter data -->
+                       <div class="col-md-3 text-center">
+                      <select class="form-control role_goal_benefits selectbox typeable_filter" name="testcond" onchange="myFunction()" id="epic_capability_list">
+                        <option value="">Select Epic Capability</option>
+                        {% for data in epic_capability_data %}
+                        {% if epic_capability_token == data.epic_capability_slug %}
+                        <option selected="" value="epic-capability={{data.epic_capability_slug}}">{{data.Cepic_key}}</option>
+                        {% else %}
+                        <option value="epic-capability={{data.epic_capability_slug}}">{{data.Cepic_key}}</option>
+                        {% endif%}
+                        {% endfor %}
+                      </select>
+                      </div>
+                                            {% endif%}
+                      {% if v == 'feature' %}
+                    <!-- feature filter data -->
+                       <div class="col-md-3 text-center">
+                      <select class="form-control role_goal_benefits selectbox typeable_filter" name="testcond" onchange="myFunction()" id="feature_list">
+                        <option value="">Select Feature</option>
+                        {% for data in feature_data %}
+                        {% if feature_token == data.feature_slug %}
+                        <option selected="" value="feature={{data.feature_slug}}">{{data.Feature_key}}</option>
+                        {% else %}
+                        <option value="feature={{data.feature_slug}}">{{data.Feature_key}}</option>
+                        {% endif%}
+                        {% endfor %}
+                      </select>
+                        
+                      </div>
+                      <!-- ----------------------------------- -->
+                                            {% endif%}
+                      {% endfor %}
+                      {% else %}
+
+                     <!-- Backlog filter data -->
+                      <div class="col-md-3 text-center">
+                      <select class="form-control role_goal_benefits selectbox typeable_filter" name="testcond" onchange="myFunction()" id="backlog_list">
+                        <option value="">Select Backlog</option>
+                        {% for data in backlog_data %}
+                        {% if backlog_token == data.backlog_slug %}
+                        <option selected="" value="backlog={{data.backlog_slug}}">{{data.title}}</option>
+                        {% else %}
+                        <option value="backlog={{data.backlog_slug}}">{{data.title}}</option>
+                        {% endif%}
+                        {% endfor %}
+                      </select>
+                      </div>
+                     <!-- Business Value filter data -->
+                       <div class="col-md-3 text-center">
+                      <select class="form-control role_goal_benefits selectbox typeable_filter" name="testcond" onchange="myFunction()" id="team_list">
+                        <option value="">Select Team</option>
+                        {% for data in team_data %}
+                        {% if team_token == data.team_slug %}
+                        <option selected="" value="team={{data.team_slug}}">{{data.Team_name}}</option>
+                        {% else %}
+                        <option value="team={{data.team_slug}}">{{data.Team_name}}</option>
+                        {% endif%}
+                        {% endfor %}
+                      </select>
+                      </div>
+                     <!-- User Status filter data -->
+                       <div class="col-md-3 text-center">
+                      <select class="form-control role_goal_benefits selectbox typeable_filter" name="testcond" onchange="myFunction()" id="epic_capability_list">
+                        <option value="">Select Epic Capability</option>
+                        {% for data in epic_capability_data %}
+                        {% if epic_capability_token == data.epic_capability_slug %}
+                        <option selected="" value="epic-capability={{data.epic_capability_slug}}">{{data.Cepic_key}}</option>
+                        {% else %}
+                        <option value="epic-capability={{data.epic_capability_slug}}">{{data.Cepic_key}}</option>
+                        {% endif%}
+                        {% endfor %}
+                      </select>
+                      </div>
+                    <!-- User Type filter data -->
+                       <div class="col-md-3 text-center">
+                      <select class="form-control role_goal_benefits selectbox typeable_filter" name="testcond" onchange="myFunction()" id="feature_list">
+                        <option value="">Select Feature {{feature_token}}</option>
+                        {% for data in feature_data %}
+                        {% if feature_token == data.feature_slug %}
+                        <option selected="" value="feature={{data.feature_slug}}">{{data.Feature_key}}</option>
+                        {% else %}
+                        <option value="feature={{data.feature_slug}}">{{data.Feature_key}}</option>
+                        {% endif%}
+                        {% endfor %}
+                      </select>
+                        
+                      </div>
+                      {% endif %}
+
+                      
+                      <p><b> Note :-</b> If you do not see the desired filter in the dropdown, then you can choose them in the 'Show Columns' button.</p>
+
+                   </div>
+
+
+            <div class="table-responsive">
+            <!-- <div class="table-responsive hdinpt"> -->
+              
+                                     <!-- start Table -->
+                                     <div id="example_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="example_length"><label>Show <select name="example_length" aria-controls="example" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div>
+                                     <!-- example12  -->
+                                     <table id="example" width="auto" border="1" class="table dataTable table-striped table-bordered newpage  no-footer" align="center" cellpadding="0" cellspacing="0" style="font-size: 15px; width: auto; margin:0px;" role="grid" aria-describedby="example_info">
+           <thead>
+            <tr class="dnd-moved" role="row">
+              <th align="left" valign="top">S.No.</th>
+<!--    <th align="left" class="slct" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Select: activate to sort column descending" style="width: 57px;">Select</th> -->
+
+
+<!-- --------------------------------------- -->
+
+  {% if get_show_column|length > 0 %}
+        {% for v in get_show_column %}
+          <th align="left" class="{{v}}" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending">{{ all_column_list|get_item:v  }}  </th>
+          {% endfor %}
+           
+  {% else %}
+
+
+           {% for k , v in all_column_list.items %}
+          <th align="left" class="{{v}}" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending">{{v}}</th>
+          {% endfor %}    
+            
+        
+  {% endif %}
+
+
+
+
+   <th align="left" class="action" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending">Action</th>
+</tr>
+        </thead>
+                <tbody>
+
+
+      
+            
+            {% if all_project_get %}
+            {% for data in all_project_get %}
+
+        
+        <tr class="dnd-moved odd" role="row">
+          <td align="left" valign="top">{{forloop.counter}}</td>
+
+
+
+{% if get_show_column|length > 0 %}
+
+  {% for v in get_show_column %}
+              
+              {% if v == 'Team_parent' %}
+              <td align="left" id="team_val" class="backpa" valign="top">
+{% team_add data.ORG_ID data.id%}
+              <!-- {{ data.Team_parent.all|join:" | "  }} -->
+            </td> 
+              {% endif %}
+
+              {% if v == 'Children_backlog_list' %}
+
+              <td align="left" id="backlog_val" class="backpa" valign="top">
+              {{ data.backlog_by_product.all|join:" |<br>" }}
+              
+            </td> 
+              {% endif %}
+
+              {% if v == 'Children_scenario_list' %}
+
+              <td align="left" class="backpa" valign="top">
+              {{ data.product_by_scenario.all|join:" |<br>" }}
+           
+            </td> 
+              {% endif %}
+
+              {% if v == 'Product_name' %}
+              <td align="left" class="backpa"  valign="top">{{ data.Product_name}}</td> 
+              {% endif %}
+
+              {% if v == 'Product_description' %}
+              <td align="left" class="backpa" valign="top">{{ data.Product_description  }}</td> 
+              {% endif %}
+
+              {% if v == 'Business_unit' %}
+              <td align="left" class="backpa"  valign="top">{{ data.Business_unit  }}</td> 
+              {% endif %}
+
+              {% if v == 'Product_size' %}
+              <td align="left" class="backpa"  valign="top">
+{% size data.ORG_ID_id data.id%}
+
+                <!-- {{ data.Product_size  }} -->
+              </td> 
+              {% endif %}
+
+
+
+              {% if v == 'Product_score' %}
+              <td align="left" class="backpa"  valign="top">
+                
+
+                                        <div class="col-md-1 mb20">
+   <div class="cdev" data-percent="{% mul_add data.ORG_ID_id data.id %}" data-duration="1000" data-color=",#d35400"></div>
+</div>
+                     <!-- </div> -->
+                   </td> 
+              {% endif %}
+
+              {% if v == 'US_quality_threshold' %}
+              <td align="left" class="backpa"  valign="top">{{ data.US_quality_threshold  }}</td> 
+              {% endif %}      
+             
+
+
+             {% if v == 'ORG_ID' %}
+              <td align="left" class="backpa"  valign="top">{{ data.ORG_ID  }}</td> 
+              {% endif %} 
+
+
+              {% if v == 'create_by' %}
+              <td align="left" class="backpa"  valign="top">{{ data.create_by  }}</td> 
+              {% endif %}
+
+
+              {% if v == 'create_dt' %}
+              <td align="left" class="backpa" valign="top">{{ data.create_dt  }}</td> 
+              {% endif %} 
+
+
+              {% if v == 'update_by' %}
+              <td align="left" class="backpa"  valign="top">{{ data.update_by  }}</td> 
+              {% endif %}  
+         
+{% if v == 'update_dt' %}
+              <td align="left" class="backpa"  valign="top">{{ data.update_dt  }}</td> 
+              {% endif %}  
+              
+              {% if v == 'capability' %}
+              <td align="left" class="backpa" id="epic_capability_val" valign="top">{{ data.id|get_capability  }}</td> 
+              {% endif %}  
+
+               {% if v == 'feature' %}
+              <td align="left" class="backpa" id="feature_val"  valign="top">{{ data.id|get_feature  }}</td> 
+              {% endif %}  
+
+
+  {% endfor %}
+
+
+{% else %}
+ <td align="left" class="backpa" id="team_val" valign="top">
+  {% team_add data.ORG_ID data.id%}
+ <!-- {{data.Team_parent.all|join:" | " }} -->
+
+</td>
+             <td align="left" class="backpa" id="backlog_val" style="width: 52px;" valign="top">{{data.backlog_by_product.all|join:" |<br>" }}</td>
+             <td align="left" class="backpa"  style="width: 52px;" valign="top">{{data.product_by_scenario.all|join:" |<br>" }}</td>
+
+             <td align="left" class="usid" valign="top" >{{data.Product_name}}</td>
+              <td align="left" class="usid"  valign="top">{{data.Product_description}}</td>
+              <td align="left" class="usid"  valign="top">{{data.Business_unit}}</td>
+             <td align="left" class="usid"  valign="top">{{data.Product_size}}</td>
+              <td align="left" class="usid"  valign="top">
+                
+                                                             <div class="col-md-1 mb20">
+   <div class="cdev" data-percent="{% mul_add data.ORG_ID_id data.id %}" data-duration="1000" data-color=",#d35400"></div>
+</div>
+                   </td>
+               <td align="left" class="usid"  valign="top">{{data.US_quality_threshold}}</td>
+              <td align="left" class="usid"  valign="top">{{data.ORG_ID}}</td>
+              <td align="left" class="usid"  valign="top">{{data.create_by}}</td>
+              <td align="left" class="usid"  valign="top">{{data.create_dt}}</td>
+               <td align="left" class="usid"  valign="top">{{data.update_by}}</td>
+              <td align="left" class="usid"  valign="top">{{data.update_dt}}</td>
+              <td align="left" class="backpa" id="epic_capability_val" valign="top">{{ data.id|get_capability  }}</td> 
+              <td align="left" class="backpa" id="feature_val"  valign="top">{{ data.id|get_feature  }}</td> 
+
+{% endif %}
+
+
+
+
+                <td align="left" class="action" valign="top">
+                <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tbody><tr>
+                    <td align="center"  class="usid" valign="top"><a href="{{BASE_URL}}manage-products/edit-product/{{data.id}}"><i class="icon-pencil"></i></a></td>
+                    <td align="center"  class="usid" valign="top"><a href="javascript:;" onclick="remove_product('{{BASE_URL}}manage-products/remove-product/{{data.id}}','{{Remove_Request_msg}}','{{Remove_done_msg}}','{{Not_Remove_msg}}');"><i class="icon-delete"></i></a><a></a></td>
+                   </tr>
+                </tbody></table>
+                </td>
+            </tr>
+    {% endfor %}
+            {% endif %}
+
+        </tbody>
+    </table></div>
+                                     <!---Table Ends---->
+</div>
+                                    
+                        
+                      <!-- </div> -->
+             </div>
+              <!-- </div> -->
+               </div>
+             </div>
+         </div>
+
+
+
+
+
+
+
+
+<!-----------------------popup------------start--------------->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="margin-top:60px;">
+      <div class="modal-header">
+    <h4 class="modal-title" style="width: 100%;">Choose Product View </h4>
+        <a href="{{BASE_URL}}products-view" class="close"><span aria-hidden="true" style="font-size: 32px; color: #000;">×</span></a>
+        <!-- <button type="button" class="close" data-dismiss="modal" style="margin: 0; padding: 0 !important; color: #000 !important;">&times;</button> -->
+      </div>
+      <div class="modal-body ">
+    
+      <div class="container">
+        <select id="selectDefaults" multiple="multiple">
+          {% for k , v in all_column_list.items %}   
+       
+          {% if k not in get_show_column %}
+           <option value="{{k}}" >{{v}}</option>
+
+          {% endif %}
+
+
+          {% endfor %}
+          {% for selected_item in get_show_column %}
+           <option value="{{selected_item}}" selected="true">{{ all_column_list|get_item:selected_item  }}</option>
+           {% endfor %}
+        </select>
+      </div>
+    </div>
+      <div class="modal-footer">
+        <a href="{{BASE_URL}}products-view" class="btn btn-default" >Close</a>
+
+        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+        <button type="button" class="btn btn-danger click_to_submit">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!----------------Popup Ends---------------->
+          
+{% endblock %}
+
+
+
+
+{% block script %}
+<script src='{% static "js/jquery.lwMultiSelect.js" %}' ></script>
+<script type="text/javascript">
+  function doSomething() {
+    $(".se-pre-con").css("display","block");
+}
+
+
+
+  $(document).on("click","#create_user_story_copy",function(){
+   var ids = new Array();
+
+  $(".all_project_get_ids:checked").each(function(){
+             
+            ids.push(this.value); 
+        });
+ var urls = "{{BASE_URL}}products-view/create-copys/"; 
+if(ids!="")
+{
+  swal({
+      title: "Are you sure?",
+      text: "Do you want to created copy of selected Storyes",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+       window.location.href = urls+ids;           
+        // swal(done, {
+        //   icon: "success",
+        // });
+      } else {
+        swal(fail);
+      }
+    });
+}
+else
+{
+  swal("Warning", "Select the story that you want to create a copy!", "warning");
+}
+
+
+  });
+</script>
+<script>
+$(document).ready(function() {
+/*$('#selectDefaults').lwMultiSelect();*/
+$('#selectDefaults').lwMultiSelect({
+  addAllText:"Select All",
+  removeAllText:"Remove All",
+  selectedLabel:"Values accepted",
+  maxSelect: 0,//0 = no restrictions
+  maxText:'',
+});
+});
+
+$(document).on("click",".click_to_submit",function(){
+var urls = "{{BASE_URL}}manage-products/update-table-structure/"; 
+var names = new Array();
+$(".lwms-right .lwms-selectli").each(function(){
+  names.push($(this).data("value")); 
+});
+
+if(names=="")
+{
+  swal("Warning", "Select the Columns that you want to show in table!", "warning");
+}
+else{
+  swal({
+      title: "{{Rearrange_Request_msg}}",
+      // text: "Do you want to update the table structure.",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+       window.location.href = urls+names;           
+        // swal(done, {
+        //   icon: "success",
+        // });
+      } else {
+        swal(fail);
+      }
+    });
+}
+
+
+});
+
+//=================================================JS FOR SET COLUMN IN DATABASE============= 
+//=================================================Filter start=============
+function set_short_filter(set_filter="")
+{
+var setfilterURL = "";
+
+// ================color Start================
+
+var backlog_list = "";
+var team_list = "";
+var epic_capability_list = "";
+var feature_list = "";
+if( document.getElementById("backlog_list") ){
+backlog_list = document.getElementById("backlog_list").value;
+}
+if( document.getElementById("team_list") ){
+team_list = document.getElementById("team_list").value;
+}
+if( document.getElementById("epic_capability_list") ){
+epic_capability_list = document.getElementById("epic_capability_list").value;
+}
+if( document.getElementById("feature_list") ){
+feature_list = document.getElementById("feature_list").value;
+}
+
+// --------------------------
+
+if(backlog_list){  setfilterURL = setfilterURL+"&"+backlog_list; }
+if(team_list){  setfilterURL = setfilterURL+"&"+team_list; }
+if(epic_capability_list){  setfilterURL = setfilterURL+"&"+epic_capability_list; }
+if(feature_list){  setfilterURL = setfilterURL+"&"+feature_list; }
+
+// --------------------------
+
+window.location.href = "?"+setfilterURL;
+}
+
+//=================================================JS FOR SET COLUMN IN DATABASE=============
+
+function myFunction() {
+  set_short_filter();
+}
+//=================================================Filter End============= 
+</script>
+
+<!-- -------------------------- modal end -->
+
+
+<script type="text/javascript">
+
+// ============================================================
+  $(document).on("click",".export_data_btn",function(){
+$("#modal-default123 #show_errors").html('');
+var file_type = $(this).data("file_type");
+var tables = new Array();
+  tables.push("AR_PRODUCT"); 
+
+  // ==========================================================
+var backlog_list = "";
+var team_list = "";
+var epic_capability_list = "";
+var feature_list = "";
+if( document.getElementById("backlog_list") ){
+backlog_list = document.getElementById("backlog_list").value;
+}
+if( document.getElementById("team_list") ){
+team_list = document.getElementById("team_list").value;
+}
+if( document.getElementById("epic_capability_list") ){
+epic_capability_list = document.getElementById("epic_capability_list").value;
+}
+if( document.getElementById("feature_list") ){
+feature_list = document.getElementById("feature_list").value;
+}
+
+
+  var backlog_list = backlog_list.split('backlog=').join('');
+  var team_list = team_list.split('team=').join('');
+  var epic_capability_list = epic_capability_list.split('epic-capability=').join('');
+  var feature_list = feature_list.split('feature=').join('');
+  
+  // alert(team_list);
+
+
+ if(tables.join("") == "")
+ { 
+   $("#modal-default123 #show_errors").html('<div class="alert alert-danger"><strong>Warning!</strong> Please select at list one checkbox.</div>');
+ }
+ else
+ {
+    $("#show_hide_button").css("display","none");
+    $("#modal-default123 #show_errors").html('<div class="alert alert-success">Please wait process is running <img src="{% static "img/basic/straight-loader.gif" %}"  style="width:30px;"/></div>');
+   $.ajax({
+    method:"POST",
+    url:base_url+"products-view/get_data_from_database/",
+
+
+    data:{'backlog_list':backlog_list,'team_list':team_list,'epic_capability_list':epic_capability_list,'feature_list':feature_list,'file_type':file_type,"tables":tables.join(",,")},
+     dataType:"json",
+     success:function(data)
+     {
+      if(data.status == "Done")
+     {
+        window.location.href = base_url+"data-exchange/file_download/"+data.id;
+         $("#modal-default123 #show_errors").html('<div class="alert alert-success">Data export successfully.</div>');
+     }
+     }
+   });
+ }
+
+
+
+  });
+// ---------------------------------------------------------------
+</script>
+{% endblock %}

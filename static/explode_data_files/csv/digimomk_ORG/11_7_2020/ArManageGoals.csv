@@ -1,0 +1,5 @@
+Goal_id,Goal_title,Gole_description,Use_in,created_by,created_dt,update_by,update_dt,organization_name
+AR_ROLE_125,select,(example),,jitendra,2020-07-10 11:22:03.733398+00:00,jitendra,2020-07-10 11:22:03.733403+00:00,digimomk
+AR_ROLE_126,display,(example),,jitendra,2020-07-10 11:22:03.754401+00:00,jitendra,2020-07-10 11:22:03.754403+00:00,digimomk
+AR_ROLE_127,view,(example),,jitendra,2020-07-10 11:22:03.775550+00:00,jitendra,2020-07-10 11:22:03.775552+00:00,digimomk
+AR_ROLE_128,glide,(example),,jitendra,2020-07-10 11:22:03.796386+00:00,jitendra,2020-07-10 11:22:03.796388+00:00,digimomk

@@ -1,0 +1,90 @@
+{% extends 'web/base-template.html' %}
+{% block content %}
+{% load static %}
+<style>
+  .p-t-30{
+    padding-top: 30px!important;
+  }
+  .footer-cont p{
+    margin-top: 2px!important;
+    margin-bottom: 2px!important;
+  }
+  .footer-cont li{
+    font-size: 16px!important;
+  }
+</style>
+   <main>
+      <section class="p-t-b-40 animatedParent animateOnce responsive footer-cont">
+         <div class="container">
+            <div class="row">
+               <div class="col-12 col-lg-12">
+                  <div class="service-featured-content p-t-b-40">
+                     <h3 class="fadeInUpShort animated text-center go">Security</h3>
+                     <h4 class="p-t-20">Certifications</h4>
+                     <h5 >GDPR</h5>
+                     <p class="mid-txt">We comply with the European Union’s General Data Protection Regulation, which governs data protection and privacy for all individuals citizens of the European Union and the European Economic Area.</p>
+
+                     <h5 class="p-t-20">Infrastructure Security</h5>
+                     <p class="mid-txt">We contract our digital hardware to cloud vendors that adhere to the applicable data regulations and compliances. Our infrastructure runs on data centers provided by Amazon Web Services (AWS), which is <b><u>SOC2 and PCI Level 1 certified among others</u></b>. AWS, as a platform provider, has a number of <b><u>security and privacy focused features</u></b>, which we leverage wherever applicable.</p>
+                        <p>Our servers run on stable, regularly patched, versions of Amazon Linux with carefully configured security groups, isolated VPC environments with well-defined network segmentation, role-based access control, and advanced web application firewall protection.</p>
+
+
+                     <h5 class="p-t-20">Physical and Environmental Security</h5>
+                     <p class="mid-txt">We do not have in-house data centers. Amazon Web Services (AWS) manages the physical and environmental security of our data centers. Our internal security program covers physical security at our offices.</p>
+
+                     <p>For more details, please review <b><u>AWS' control and security measures.</u></b></p>         
+
+                     <h5 class="p-t-20">Product and Service Security</h5>
+                     <p class="mid-txt">We distribute and serve our products and services exclusively over HTTPS and secure <b><u>WebSockets.</u></b> All network interactions use TLS with 2048-bit digital signatures and 128-bit AES encryption. Additionally, we use HTTP Strict-Transport-Security to ensure the applications never interact with the servers on an insecure network path.</p>
+
+                     <p class="mid-txt">More details are available at <b><u><a href="https://aws.amazon.com/compliance/data-center/controls/"> https://aws.amazon.com/compliance/data-center/controls/</a></u></b></p>
+
+                     <h5 class="p-t-20">Software Security</h5>
+                     <p class="mid-txt">Our applications run on the latest stable version of Node.js. We reduce the attack surface by isolating our processes hardened <b><u>containerization technology.</u></b> Our security team sets architectural guidelines, conducts code reviews, and deploys every software system that can interface with customer data.</p>
+                     <p class="mid-txt">Our developers are trained with specific attention toward security. Our automated and manual code review processes look for any code that could potentially violate security policies. We have also instituted a standardized security stack that complies with software composition analysis tools.</p>
+
+
+
+                     <h5 class="p-t-20">Vulnerability Management</h5>
+                     <p class="mid-txt">Our security team performs Vulnerability Assessment and Penetration Testing (VAPT) of our ongoing releases, interfacing with products and services. </p>   
+
+                       <h5 class="p-t-20">Employee Access</h5>
+                     <p class="mid-txt">To manage employee access, we have implemented an audited security policy (IAM) that includes access control, a secure password policy, BYOD, and secure network access.</p>
+                  <p class="mid-txt">All internal services require single sign-on, with 2FA RSA Authentication. All SSH-based access has a mandatory key-file driven policy that requires storing keys securely, rotating them frequently, and logging all access to them.</p>
+
+                   <h5 class="p-t-20">Data Security</h5>
+                   <p>All customer data is stored in databases on Amazon, which are configured securely. Data is stored with at least dual redundancy, with 15-day backups, and is accessible only within the private cloud. We have also instituted per-service access protection and isolation of data.</p>        
+                   <p>All customer data is stored in databases on Amazon, which are configured securely. Data is stored with at least dual redundancy, with 15-day backups, and is accessible only within the private cloud. We have also instituted per-service access protection and isolation of data.</p>        
+                   <p>We maintain all internal testing and validation data in a production-stack equivalent internal stack populated with fictitious data. Agile Ready, LLC does not distribute actual customer data for internal testing or validation purposes.</p>        
+                   <p>We have instituted a role-based access process to govern access to any customer data required for customer support (or otherwise). This process is audited and recorded and includes a human arbitration done by a core team. Consisting of the founders and CEO. This team validates the requirement hypothesis and ensures data is obfuscated and sanitized before communicating back to customer support or engineering. Customer data classified as sensitive is not accessible by any party except the customer.</p>        
+                   <h5 class="p-t-20">Attack Prevention and Mitigation</h5>
+                   <p>We maintain intelligent, web application firewalls on our load balancers which, along with the elastic scaling capacity of our compute instances, mitigate attacks at the application layer.</p>
+                   <p>We log activity across our platform, from individual API requests to infrastructure configuration changes. Logs are aggregated for monitoring, analysis, and anomaly detection and archived in vaulted storage. We implement measures to detect and prevent log tampering or interruptions. In order to determine security breaches, we monitor access patterns and network data flow patterns using automated systems that alert us in case of an anomaly. We also keep track of private contacts and public channels from our open-source and third-party technology stacks for any security-related reports. In case of a customer-reported breach, the CEO are notified automatically and the report is responded to within a few hours as per set policies.</p>
+                   <h5 class="p-t-20">Incident Response</h5>
+                   <p>We have incident response policies and procedures to address service availability, integrity, security, privacy, and confidentiality issues. As part of our incident response procedures, we have trained our teams to:</p>
+                   <ul type="circle">
+                      <li>Promptly respond to alerts of potential incidents.</li>
+                      <li>Determine the severity of the incident.</li>
+                      <li>Analyze and assess the extent of the incident.</li>
+                      <li>If necessary, execute mitigation and containment measures.</li>
+                      <li>Communicate with relevant internal and external stakeholders, including notifying affected customers so as to comply with relevant laws and regulations and meet contractual obligations around breach or incident notifications.</li>
+                      <li>Gather and preserve evidence for investigative efforts</li>
+                      <li>Conduct and document a postmortem and develop a permanent triage plan.</li>
+                   </ul>
+                   <h5 class="p-t-20">Payment Processing</h5>
+                   <p>We process all payments using STRIPE, which is PCI Certified.</p>
+                   <h5 class="p-t-20">Reach out to Agile Ready Security</h5>
+                   <p>Our security team ensures the security of data stored with Agile Ready, LLC.</p>
+                   <p>If you’ve found a vulnerability in our service or website or want additional information about our security policies, you can reach us at <b><u><a href="mailto:info@agileready.net">info@agileready.net</a></u></b>. We will review it and respond to you within 24 hours. </p>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+    
+   </main>
+<!----------------------------------------->
+
+
+{% endblock %}

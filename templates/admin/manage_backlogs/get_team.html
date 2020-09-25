@@ -1,0 +1,6 @@
+<option value="{{get_team_data}}">{{get_team_name}}</option>
+{% if team_data %}
+{% for data in team_data %}
+<option value="{{data.id}}" >{{data}}</option>
+{% endfor %}
+{% endif %}

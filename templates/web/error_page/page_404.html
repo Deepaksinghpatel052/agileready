@@ -1,0 +1,36 @@
+{% extends 'web/base-template.html' %}
+{% block content %}
+{% load static %}
+<main>
+  
+  <section class="p-t-b-40 animatedParent animateOnce responsive">
+         <div class="container">
+            <div class="row">
+               <div class="col-12 col-lg-6">
+                  <div class="service-featured-thumbs">
+                     <div class="service-thumb animated fadeInUpShort go"> <a href="#" class="img-link"><img src='{% static "img/404-page.jpg" %}' alt="service"></a></div>
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6">
+                  <div class="service-featured-content p-t-b-40">
+                    <h2>Ooops!</h2>
+                    <h4>We can't seem to find the page you're looking for.</h4>
+                    <p>Error Code : 404</p>
+                    <p>Here some helpful links instead:</p>
+                    <ul>
+                       <li><a href="{{BASE_URL}}">Hemo</a></li>
+                       <li><a href="{{BASE_URL}}ar-whyar">Why Agile Ready</a></li>
+                       <li><a href="{{BASE_URL}}ar-company">Company</a></li>
+                       <li><a href="{{BASE_URL}}subscription">Subscriptions</a></li>
+                       <li><a href="{{BASE_URL}}ar-usrating">User Story Rating</a></li>
+                       <li><a href="{{BASE_URL}}dashboard">Go To Dashboard</a></li>
+                    </ul> 
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+</main>
+
+
+{% endblock %}

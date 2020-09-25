@@ -1,0 +1,17 @@
+id,title,story_tri_part_text,acceptance_criteria,ac_readability_score,conversation,backlog_parent,convo_readability_score,attachments,autoscoring_on,archive_indicator,readiness_quality_score,story_points,user_story_status,ORG_id,UST_ID,ar_user,owner,created_by,updated_dt,created_dt,updated_by
+14,Bird takes flight Part 8,so that I can fly,,0,,5,0,None,1,0,25,,7,2,1,6,,6,2/4/2020 10:53,2/4/2020 10:47,6
+13,Bird takes flight Part 7,I want to flap my wings,,0,,5,0,None,1,0,30,,7,2,1,6,,6,2/4/2020 10:53,2/4/2020 10:47,6
+12,Bird takes flight Part 6,"As a bird,,,,
+I want to flap my wings ----
+so that I can fly south for the winter &&&&",,0,,5,0,None,1,0,50,,7,2,1,6,,6,2/4/2020 10:52,2/4/2020 10:47,6
+11,Bird takes flight Part 5,As a bird I want to flap my wings so that I can fly south for the winter,,0,,5,0,None,1,0,50,,7,2,1,6,,6,2/4/2020 10:50,2/4/2020 10:47,6
+10,Bird takes flight Part 4,As a bird I want to flap my wings so that I can fly,,0,,5,0,None,1,0,55,,7,2,1,6,,6,2/4/2020 10:48,2/4/2020 10:47,6
+9,Bird takes flight Part 3,"As a Bird, I want to flap my wings",,0,,5,0,None,1,0,45,,7,2,1,6,,6,2/4/2020 10:46,2/4/2020 10:46,6
+8,Bird takes flight Part 2,As a bird,,0,,5,0,None,1,0,30,,7,2,1,6,6,6,2/4/2020 10:45,2/4/2020 10:45,6
+7,Bird takes flight,Bird takes flight,,0,,5,0,None,1,0,15,,7,2,1,6,,6,2/4/2020 10:44,2/4/2020 10:44,6
+6,worst user story just waiting for refinement,build api,,0,,4,0,None,1,0,15,7,7,2,4,6,6,6,2/4/2020 9:38,2/4/2020 9:38,6
+5,Not quite as bad a user story,As a rep I want to display account customer id,,0,,4,0,None,1,0,55,7,6,2,5,6,6,6,2/4/2020 9:36,2/4/2020 9:36,6
+4,Bad User Story,Create a display screen,,0,,4,0,None,1,0,25,9,6,2,1,6,,6,2/4/2020 9:39,2/4/2020 9:33,6
+3,Phone Id lookup,As a Customer Service Rep I want to display phone id so that I can do a customer lookup by phone,,0,,10,0,None,1,0,80,10,7,2,1,6,6,6,2/4/2020 9:34,2/4/2020 2:54,6
+2,Phone Id lookup 2,As a Customer Service Rep I want to display phone id,,0,,10,0,None,1,0,65,,7,2,1,6,6,6,2/4/2020 2:56,2/4/2020 2:54,6
+1,Test,As a Business_Stakeholder I want to log my book so that it is captured in BookMIne,,0,,1,0,None,1,0,80,2,2,1,3,1,1,1,2/1/2020 12:18,2/1/2020 12:18,1

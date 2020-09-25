@@ -1,0 +1,8 @@
+id,status_key,status_desc,status_shortcode,create_by,create_dt,update_by,update_dt
+7,Ideation,A user story is created with a title only and other  information (system assigned),ID,1,2020-02-01 10:43:59,1,2020-02-01 10:43:59
+6,Not Ready,A user story is available to being worked on (edited and reviewed) by one or more authors (system assigned or Human Input),NR,1,2020-02-01 10:43:35,1,2020-02-01 10:43:35
+5,Refinement,A user story is actively being worked on (edited and reviewed) by one or more authors (system assigned or Human Input),REF,1,2020-02-01 10:43:12,1,2020-02-01 10:43:12
+4,Ready,A user story whose score is >= US_QTS,RDY,1,2020-02-01 10:42:46,1,2020-02-01 10:42:46
+3,In-Progress,A user story assigned to an Iteration,IP,1,2020-02-01 10:42:26,1,2020-02-01 10:42:26
+2,Accepted,A user story completed in an Iteration,AC,1,2020-02-01 10:41:55,1,2020-02-01 10:41:55
+1,Archived,A user story archived for historical purposes.,AR,1,2020-02-01 10:41:13,1,2020-02-01 10:41:13

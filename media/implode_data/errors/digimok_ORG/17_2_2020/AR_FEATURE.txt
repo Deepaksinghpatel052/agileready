@@ -1,0 +1,10 @@
+Error : AR_FEATURE : row no. : 2 : Dashboard : Feature already exists.  : 2020-02-17 15:05:42.859546
+Error : AR_FEATURE : row no. : 3 : Reports : Feature already exists.  : 2020-02-17 15:05:42.860495
+Error : AR_FEATURE : row no. : 4 : Export : Feature already exists.  : 2020-02-17 15:05:42.861322
+Error : AR_FEATURE : row no. : 5 : Imports : Feature already exists.  : 2020-02-17 15:05:42.862151
+Error : AR_FEATURE : row no. : 6 : Summary : Feature already exists.  : 2020-02-17 15:05:42.862977
+Error : AR_FEATURE : row no. : 7 : OrderPrints : Feature already exists.  : 2020-02-17 15:05:42.863813
+Error : AR_FEATURE : row no. : 8 : BookScanner : Feature already exists.  : 2020-02-17 15:05:42.864643
+Error : AR_FEATURE : row no. : 9 : LocatePOD : Feature already exists.  : 2020-02-17 15:05:42.865475
+Error : AR_FEATURE : row no. : 10 : Store : Feature already exists.  : 2020-02-17 15:05:42.866301
+Error : AR_FEATURE : row no. : 11 : Catalog : Feature already exists.  : 2020-02-17 15:05:42.867127

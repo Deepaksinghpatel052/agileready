@@ -1,0 +1,11 @@
+IterationName,owner,StartDate,EndDate,Description,Product,Backlog,UserStory,Team,IterationScore,IterationSize,create_by,create_dt,update_by,update_dt,IterationId,organization_name
+Iteration 1 for Product P1_test,jitendra N,2020-08-07,2020-08-07,,None,None,,None,0,0,jitendra N,2020-08-07 06:00:02.001611+00:00,jitendra N,2020-08-07 06:00:02.001623+00:00,AR_ITER_475,digimomk
+Iteration 2 for Product P1_test,jitendra N,2020-08-07,2020-08-07,,None,None,,None,0,0,jitendra N,2020-08-07 06:00:02.024677+00:00,jitendra N,2020-08-07 06:00:02.024688+00:00,AR_ITER_476,digimomk
+Sprint 1 for Product P2_test,jitendra N,2020-08-07,2020-08-07,,None,None,,None,0,0,jitendra N,2020-08-07 06:00:02.047507+00:00,jitendra N,2020-08-07 06:00:02.047518+00:00,AR_ITER_477,digimomk
+Sprint 2 for Product P2_test,jitendra N,2020-08-07,2020-08-07,,None,None,,None,0,0,jitendra N,2020-08-07 06:00:02.070374+00:00,jitendra N,2020-08-07 06:00:02.070386+00:00,AR_ITER_478,digimomk
+Iteration 1 for BestEverM_test,jitendra N,2020-08-07,2020-08-07,,None,None,,None,0,0,jitendra N,2020-08-07 06:00:02.093335+00:00,jitendra N,2020-08-07 06:00:02.093346+00:00,AR_ITER_479,digimomk
+Iteration 2 for BestEverM_test,jitendra N,2020-08-07,2020-08-07,,None,None,,None,0,0,jitendra N,2020-08-07 06:00:02.116218+00:00,jitendra N,2020-08-07 06:00:02.116231+00:00,AR_ITER_480,digimomk
+Iteration 1 for API_test,jitendra N,2020-08-07,2020-08-07,,None,None,,None,0,0,jitendra N,2020-08-07 06:00:02.139111+00:00,jitendra N,2020-08-07 06:00:02.139122+00:00,AR_ITER_481,digimomk
+Iteration 2 for API_test,jitendra N,2020-08-07,2020-08-07,,None,None,,None,0,0,jitendra N,2020-08-07 06:00:02.161909+00:00,jitendra N,2020-08-07 06:00:02.161920+00:00,AR_ITER_482,digimomk
+Feb Cycle (1) for BestEverM_test,jitendra N,2020-08-07,2020-08-07,,None,None,,None,0,0,jitendra N,2020-08-07 06:00:02.184826+00:00,jitendra N,2020-08-07 06:00:02.184838+00:00,AR_ITER_483,digimomk
+Mar Cycle (2) for BestEverM_test,jitendra N,2020-08-07,2020-08-07,,None,None,,None,0,0,jitendra N,2020-08-07 06:00:02.207583+00:00,jitendra N,2020-08-07 06:00:02.207594+00:00,AR_ITER_484,digimomk

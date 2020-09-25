@@ -1,0 +1,10 @@
+Success : ArIterations : row no. : 2 : Iteration add successfully. : 2020-07-11 12:21:23.934883
+Success : ArIterations : row no. : 3 : Iteration add successfully. : 2020-07-11 12:21:23.962963
+Success : ArIterations : row no. : 4 : Iteration add successfully. : 2020-07-11 12:21:23.997342
+Success : ArIterations : row no. : 5 : Iteration add successfully. : 2020-07-11 12:21:24.032138
+Success : ArIterations : row no. : 6 : Iteration add successfully. : 2020-07-11 12:21:24.061757
+Success : ArIterations : row no. : 7 : Iteration add successfully. : 2020-07-11 12:21:24.088897
+Success : ArIterations : row no. : 8 : Iteration add successfully. : 2020-07-11 12:21:24.116114
+Success : ArIterations : row no. : 9 : Iteration add successfully. : 2020-07-11 12:21:24.145089
+Success : ArIterations : row no. : 10 : Iteration add successfully. : 2020-07-11 12:21:24.172245
+Success : ArIterations : row no. : 11 : Iteration add successfully. : 2020-07-11 12:21:24.199368

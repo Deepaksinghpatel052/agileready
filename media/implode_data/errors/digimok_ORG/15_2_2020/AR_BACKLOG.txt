@@ -1,0 +1,10 @@
+Error : AR_BACKLOG : row no. : 2 : Backlog 2 : Backlog already exists.  : 2020-02-15 15:14:52.511348
+Error : AR_BACKLOG : row no. : 3 : Tony Timbol : Backlog already exists.  : 2020-02-15 15:14:52.512194
+Error : AR_BACKLOG : row no. : 4 : BookTrader-1 : Backlog already exists.  : 2020-02-15 15:14:52.513021
+Error : AR_BACKLOG : row no. : 5 : BookMineDash : Backlog already exists.  : 2020-02-15 15:14:52.513841
+Error : AR_BACKLOG : row no. : 6 : Backlog 1 : Backlog already exists.  : 2020-02-15 15:14:52.514669
+Error : AR_BACKLOG : row no. : 7 : Digimonk BookMineCore : Backlog already exists.  : 2020-02-15 15:14:52.515507
+Error : AR_BACKLOG : row no. : 8 : Digimonk BookMineDash : Backlog already exists.  : 2020-02-15 15:14:52.516354
+Error : AR_BACKLOG : row no. : 9 : Digimonk BookTrader-1 : Backlog already exists.  : 2020-02-15 15:14:52.517200
+Error : AR_BACKLOG : row no. : 10 : backlog name is empty. : 2020-02-15 15:14:52.517212
+Error : AR_BACKLOG : row no. : 11 : Digimonk BookTrader-3 : Backlog already exists.  : 2020-02-15 15:14:52.518050

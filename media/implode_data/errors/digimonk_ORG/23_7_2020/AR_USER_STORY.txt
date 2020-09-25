@@ -1,0 +1,20 @@
+Error : AR_USER_STORY : row no. : 2 : None : User story already exists.  : 2020-07-23 06:34:52.661921
+Success : AR_USER_STORY : row no. : 3 : Enroll Partner : Notification object (79) : 2020-07-23 06:34:52.693950
+Success : AR_USER_STORY : row no. : 4 : Disenroll Partner : Notification object (79) : 2020-07-23 06:34:53.593819
+Success : AR_USER_STORY : row no. : 5 : Disenroll Partner-1 : Notification object (79) : 2020-07-23 06:34:54.060756
+Success : AR_USER_STORY : row no. : 6 : Disenroll Partner-2 : Notification object (79) : 2020-07-23 06:34:54.091856
+Success : AR_USER_STORY : row no. : 7 : Submit Rpt : Notification object (79) : 2020-07-23 06:34:54.123360
+Success : AR_USER_STORY : row no. : 8 : Submit Rpt -1 : Notification object (79) : 2020-07-23 06:34:54.154758
+Success : AR_USER_STORY : row no. : 9 : Submit Rpt -2 : Notification object (79) : 2020-07-23 06:34:54.186409
+Success : AR_USER_STORY : row no. : 10 : Submit Rpt -3 : Notification object (79) : 2020-07-23 06:34:54.217609
+Success : AR_USER_STORY : row no. : 11 : Bird takes flight : Notification object (79) : 2020-07-23 06:34:54.249271
+Success : AR_USER_STORY : row no. : 12 : Enroll Partner-1 : Notification object (79) : 2020-07-23 06:34:54.280677
+Success : AR_USER_STORY : row no. : 13 : Bird takes flight-1 : Notification object (79) : 2020-07-23 06:34:54.314666
+Success : AR_USER_STORY : row no. : 14 : Bird takes flight-2 : Notification object (79) : 2020-07-23 06:34:54.345655
+Success : AR_USER_STORY : row no. : 15 : Bird takes flight-3 : Notification object (79) : 2020-07-23 06:34:54.376695
+Success : AR_USER_STORY : row no. : 16 : Bird takes flight-5 : Notification object (79) : 2020-07-23 06:34:54.408175
+Success : AR_USER_STORY : row no. : 17 : Eagle Soars : Notification object (79) : 2020-07-23 06:34:54.439667
+Success : AR_USER_STORY : row no. : 18 : Eagle Soars-1 : Notification object (79) : 2020-07-23 06:34:54.474925
+Success : AR_USER_STORY : row no. : 19 : Eagle Soars-2 : Notification object (79) : 2020-07-23 06:34:54.505925
+Success : AR_USER_STORY : row no. : 20 : Eagle Soars-3 : Notification object (79) : 2020-07-23 06:34:54.536919
+Success : AR_USER_STORY : row no. : 21 : Bird takes flight-4 : Notification object (79) : 2020-07-23 06:34:55.384809

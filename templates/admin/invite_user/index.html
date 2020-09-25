@@ -1,0 +1,89 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load static %}
+<div class="container-fluid text-white">
+               <div class="row p-t-b-8 ">
+                  <div class="col">
+                     <h1>Invite New User</h1>
+                  </div>
+               </div>
+                 <div class="row p-t-b-8">
+         <p class="user-nick"> {{user_name}}</p>
+  </div>
+            </div>
+            </header>
+<div class="container-fluid">
+             <div class="row p-t-b-20">
+               <div class="col-md-8 offset-md-2">
+
+                {% if messages %}
+                   {% for message in messages %}
+                     {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                    <div class="alert alert-success alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+                      <strong>Success</strong> {{message}}
+                    </div>
+                       {% endif %}
+
+                   {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <div class="alert alert-danger alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+                      <strong>{{message}}</strong> 
+                    </div>
+                       {% endif %}
+
+                   {% endfor %}
+               {% endif %}
+               </div>
+               <div class="col-md-8 offset-md-2">
+                  <!-- <div class="card no-b"> -->
+              <div class="login-form-card">
+                                  <div class="login-form-content">
+                                    <form onsubmit="doSomething();" action="{{BASE_URL}}invite-user" method="post">
+                                      {% csrf_token %}
+                                     <!-- start login -->
+                                    <div class="form-group">
+                                        <label>Email Address <samp style="color: red"> {% if get_edit_permission %}
+                                        *
+                                        {% else %}
+                                        (You are not authorized person.)
+                                        {% endif %}
+                                          </samp></label>
+                                          
+                                        {% if get_edit_permission %}
+                                        <input type="text" required="" name="email" class="form-control form-control-lg" placeholder="Email Address">
+                                        {% else %}
+                                        <input type="text" required="true" name="email" class="form-control form-control-lg" readonly="true" placeholder="You are not authorized person.">
+                                        {% endif %}
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4 col-md-offset-2">
+                                    <button type="reset" class="btn-block btn btn-white all-btn" data-dismiss="modal">Reset</button>
+                                  </div>
+                                  <div class="col-md-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Send Invitations</button>
+                               </div>
+                             </div>
+                             </div>
+                    <div class="note text-center"><h6><strong>Note:- </strong> Use Semicolon ( <strong>;</strong> ) to Separate Email Id. (For Multiple Invitations)</h6></div>
+                        </form></div>
+             </div>
+             <!--  </div> -->
+               </div>
+             </div>
+
+            </div>
+{% endblock %}
+
+
+{% block script %}
+<script type="text/javascript">
+ function doSomething() {
+    $(".se-pre-con").css("display","block");
+}
+//   $(document).on("click","button[type='submit']",function(){
+// 
+//   });
+</script>
+{% endblock %}

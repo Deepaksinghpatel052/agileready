@@ -1,0 +1,627 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load static %}
+            <div class="container-fluid text-white">
+               <div class="row p-t-b-8 ">
+                  <div class="col">
+                     <h1><span id="page_name"></span></h1>
+                  </div>
+               </div>
+               <!-- <div class="row ">
+                  <ul class="nav">
+                     <li class="nav-item"> <a class="nav-link active s-12" href="#">Today</a></li>
+                     <li class="nav-item"> <a class="nav-link s-12" href="#">Yesterday</a></li>
+                     <li class="nav-item"> <a class="nav-link s-12" href="#">By Date</a></li>
+                     <li class="nav-item"> <a class="nav-link s-12" href="#">By Progress</a></li>
+                  </ul>
+               </div> -->
+                 <div class="row p-t-b-8">
+         <p class="user-nick"> {{user_name}}</p>
+
+  </div>
+            </div>
+         </header>
+         <div class="container-fluid">
+           
+            <div class="row p-t-b-20">
+                                 {% if messages %}
+                   {% for message in messages %}
+                     {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                    <div class="alert alert-success alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>{{message}}</strong> 
+                    </div>
+                       {% endif %}
+
+                   {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <div class="alert alert-danger alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>{{message}}</strong> 
+                      
+                    </div>
+                       {% endif %}
+
+                   {% endfor %}
+               {% endif %}
+
+               <div class="col-md-12">
+                 <!--  <div class="card no-b"> -->
+              <div class="login-form-card">
+                   <!-- <div class="login-form-content"> -->
+                        <form action="javascript:(0);">
+                          <div class="row">
+                      <div class="col-md-12 mb-2">
+                        <button class="btn-primary add-data" data-toggle="modal" data-target="#modal-default1">Add Backlog</button>
+                         <button class="btn-primary import-data" data-toggle="modal" data-target="#myModal">Show Columns</button><!-- 
+              <button class="btn-primary import-data" data-toggle="modal" data-target="#myModal5">Show Columns</button> -->
+			  <button class="btn-primary import-data">Import</button>
+            </div>
+            <div class="col-md-12">
+			<div class="row">
+                        <!-- <div class="slct-role-1">
+              <label style="">Iteration &nbsp;</label>
+                <input type="search" name="" class="form-control" style="width: 69%;">
+                    </div> -->
+                 
+                  <div class="col-md-3">
+                     <div class="slct-role-1">
+              <label style="">Team &nbsp;</label>
+                <input type="search" name="" class="form-control" >
+                    </div>
+                  </div>
+                    <div class="col-md-3">
+                    <div class="slct-role-2">
+              <label style="">Product &nbsp;</label>
+                <input type="search" name="" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                  <div class="table-responsive hdinpt">
+                     <!-- <label class="switch">
+                         <input type="checkbox" checked>
+                         <span class="slider round"></span>
+                     </label>
+                     <label style="margin: 15px;">Auto Score</label> -->
+                                     <!-- start Table -->
+                          
+                    
+                                     <table id="example" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+        <thead>
+           <tr class="dnd-moved" role="row">
+   <th align="left" class="slct sorting_asc" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Select: activate to sort column descending" style="width: 57px;">Select</th>
+   
+{% for k , v in all_column_list.items %}   
+       
+          {% if k in get_show_column %}
+  
+         <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{v}}</th>  
+          {% endif %}
+          {% endfor %}
+
+   <th align="left" class="action sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending" style="width: 62px;">Action</th>
+</tr>
+        </thead>
+        <tbody>
+
+         <!--  {% for backlog in backlog_data %}
+            <tr class="dnd-moved">
+                <td align="left" valign="top">{{backlog.title}} Error</td>
+                <td align="left" valign="top">{{backlog.title}}</td>
+                <td align="left" valign="top">
+                     <div class="progress">
+                         <div class="barOverflow">
+                            <div class="bar"></div>
+                         </div>
+                         <span>{{backlog.backlog_score}}</span>%
+                     </div>
+                </td>
+                <td align="left" valign="top">{{backlog.Backlog_size}}</td>
+                <td align="left" valign="top">{{backlog.team_list}}</td>
+                <td align="left" valign="top">{{backlog.product_parent}} </td>
+                <td align="left" valign="top">{{backlog.iteration}}</td>
+                <td align="left" valign="top">{{backlog.user_story_list}}</td>
+                <td align="left" valign="top">{{backlog.title}} Error</td>
+                <td align="left" valign="top">{{backlog.title}} Error</td>
+                 <td align="left" valign="top">{{backlog.owner}}</td>
+                <td align="left" valign="top">
+                <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tr>
+                    <td align="center" valign="top"><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default"><i class="icon-pencil"></i></a></td>
+                    <td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td>
+                   </tr>
+                </table>
+                </td>
+            </tr>
+{% endfor %}
+
+        </tbody> -->
+
+        <!-- --------------------------------------------------------------------------------------- -->
+
+      
+            
+            {% if all_backlog_get %}
+            {% for data in all_backlog_get %}
+
+        
+        <tr class="dnd-moved odd" role="row">
+              <td align="center" class="slct sorting_1" valign="top"><input type="checkbox" class="all_backlog_get_ids" value="{{data.id}}" name=""></td>
+             {% if 'owner' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.owner}}</th> 
+              {% endif %}
+
+              {% if 'title' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.title}}</th> 
+              {% endif %}
+             
+             {% if 'story_tri_part_text' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.story_tri_part_text}}</th> 
+              {% endif %}
+
+             {% if 'acceptance_criteria' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.acceptance_criteria}}</th> 
+              {% endif %}
+              
+              {% if 'ac_readability_score' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.ac_readability_score}}</th> 
+              {% endif %}
+             
+             {% if 'conversation' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.conversation}}</th> 
+              {% endif %}
+              {% if 'backlog_parent' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.backlog_parent}}</th> 
+              {% endif %}
+               {% if 'convo_readability_score' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.convo_readability_score}}</th> 
+              {% endif %}
+             
+             {% if 'attachments' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">
+                {% if data.attachments == 'None' %}
+                 {{data.attachments}}
+                {% else %}
+                <a target="_blank" href="{{data.attachments.url}}"><img style="height: 36px;
+    width: 36px;" src='{% static "img/basic/images.png" %}'>{{data.attachments}}</a>
+               
+                {% endif %}
+                </th> 
+              {% endif %}
+
+              {% if 'autoscoring_on' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.autoscoring_on}}</th> 
+              {% endif %}
+              
+              {% if 'archive_indicator' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.archive_indicator}}</th> 
+              {% endif %}
+              
+
+              {% if 'readiness_quality_score' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.readiness_quality_score}}</th> 
+              {% endif %}
+
+
+              {% if 'story_points' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.story_points}}</th> 
+              {% endif %}
+
+               {% if 'user_story_status' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.user_story_status}}</th> 
+              {% endif %}
+
+              {% if 'ORG_id' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.ORG_id}}</th> 
+              {% endif %}
+
+
+               {% if 'UST_ID' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.UST_ID}}</th> 
+              {% endif %}
+
+               {% if 'ar_user' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.ar_user}}</th> 
+              {% endif %}
+
+              {% if 'created_by' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.created_by}}</th> 
+              {% endif %}
+
+              {% if 'created_dt' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.created_dt}}</th> 
+              {% endif %}
+
+                {% if 'updated_by' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.updated_by}}</th> 
+              {% endif %}
+
+              {% if 'updated_dt' in get_show_column %}  
+              <th align="left" class="usid sorting" valign="top" draggable="true" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{data.updated_dt}}</th> 
+              {% endif %}
+                <td align="left" class="action" valign="top">
+                <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tbody><tr>
+                    <td align="center" valign="top"><a href="{{BASE_URL}}user-story-view/edit-story/{{data.id}}"><i class="icon-pencil"></i></a></td>
+                    <td align="center" valign="top"><a href="javascript:;" onclick="remove_product('{{BASE_URL}}user-story-view/remove-user-story/{{data.id}}','Do you want to removed this user story.','Story removed successfully','Story not removed.');"><i class="icon-delete"></i></a><a></a></td>
+                   </tr>
+                </tbody></table>
+                </td>
+            </tr>
+    {% endfor %}
+            {% endif %}
+            
+<!-- --------------------------------------------------------------------------------------- -->
+
+    </table>
+                                     <!---Table Ends---->
+</div>
+                                    
+                         </form>
+                     <!--  </div> -->
+             </div>
+              <!-- </div> -->
+               </div>
+         </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-----------------------popup------------start--------------->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="margin-top:60px;">
+      <div class="modal-header">
+    <h4 class="modal-title" style="width: 100%;">Choose Backlog View </h4>
+        <button type="button" class="close" data-dismiss="modal" style="margin: 0; padding: 0 !important; color: #000 !important;">&times;</button>
+      </div>
+      <div class="modal-body ">
+    
+      <div class="container">
+        <select id="selectDefaults" multiple="multiple">
+          {% for k , v in all_column_list.items %}   
+       
+          {% if k in get_show_column %}
+          <option value="{{k}}" selected="true">{{v}}</option>
+          {% else %}
+          <option value="{{k}}" >{{v}}</option>
+          {% endif %}
+          {% endfor %}
+          
+        </select>
+      </div>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger click_to_submit">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!----------------Popup Ends---------------->
+
+<!-----------2nd Modal Popup Start------>
+<div class="modal fade in sp-map" id="modal-default1">
+          <div class="modal-dialog">
+            <div class="modal-content" style="width: 150%!important;">
+              <div class="modal-header">
+
+                <h4 class="modal-title">Add Backlog</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span></button>
+                
+              </div>
+              <div class="modal-body">
+                <div class="paper">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container-fluid">
+                                   <!-- <div class="card no-b"> -->
+          <!-- <div class="login-form-card"> -->
+                     <div class="login-form-content">
+                                    <form action="{{BASE_URL}}backlog/add-backlog" method="POST">
+                                      {% csrf_token %}
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                     <!-- start login -->
+                                    <div class="form-group">
+                                        <label>Title<span style="color: red;"> *</span></label>
+
+                                        {{ar_backlog_form.title}}
+                                        <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="title" name="login">         -->
+                                </div>
+                                <div class="form-group">
+                                    <label>Score<span style="color: red;"> *</span></label>
+                                    {{ar_backlog_form.backlog_score}}
+                                    <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="0" name="login"> -->
+                                    
+                                </div>
+                                <div class="form-group">
+                                        <label>Size<span style="color: red;"> *</span></label>
+                                        {{ar_backlog_form.Backlog_size}}
+                                        <!-- <input class="form-control login-frm-input" type="text" value="" placeholder="0" aid="login" name="login"> -->
+                                </div>
+                                <div class="form-group">
+                                        <label>Status<span style="color: red;"> *</span></label>
+                                        {{ar_backlog_form.BL_STATUS}}
+                                        <!-- <select class="form-control" name="list" placeholder="select Team Member">
+                                 <option>Active</option>
+                              </select> -->
+                                </div>
+                                <div class="form-group">
+                                        <label>Team<span style="color: red;"> *</span></label>
+                                        {{ar_backlog_form.team_list}}
+                                        <!-- <select class="form-control" name="list" placeholder="select Team Member">
+                                 <option>Team Newton</option>
+                              </select> -->
+                                </div>
+
+                                                                <div class="form-group" style="margin-bottom: 0rem; margin-top: -10px;">
+                                        <label>Auto Score Flag</label>
+                                        {{ar_backlog_form.auto_score_flag}}
+                                        <!-- <input class="login-frm-input" type="checkbox" value="" placeholder="Type ShortCode" aid="login" name="login"> -->
+                                </div>
+                                </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                        <label>Product Parent<span style="color: red;"> *</span></label>
+                                        {{ar_backlog_form.product_parent}}
+                                        <!-- <input class="form-control login-frm-input" type="text" value="" placeholder="BookMine" aid="login" name="login"> -->
+                                </div>
+                                <div class="form-group">
+                                        <label>User Story List</label>
+                                        {{ar_backlog_form.user_story_list}}
+                                        <!-- <select class="form-control" name="list" placeholder="select Team Member">
+                                 <option>Link Stories Here</option>
+                              </select> -->
+                                </div>
+                              
+                                <div class="form-group">
+                                        <label>Owner<span style="color: red;"> *</span></label>
+                                        {{ar_backlog_form.owner}}
+                                        <!-- <input class="form-control login-frm-input" type="text" value="" placeholder="User" aid="login" name="login"> -->
+                                </div>
+                                <div class="form-group">
+                                        <label>Iteration<span style="color: red;"> *</span></label>
+                                        {{ar_backlog_form.iteration}}
+                                        <!-- <select class="form-control" name="list" placeholder="select Team Member">
+                                 <option>Iteration 1</option>
+                              </select> -->
+                                </div>
+                                                                <!-- <div class="form-group"> -->
+                                        <!-- <label>Product ID</label> -->
+                                        <!-- {{ar_backlog_form.product_id}} -->
+                                        <!-- <textarea class="form-control login-frm-input" style="height: 100px;    padding: 11px;" placeholder="History"></textarea> -->
+                                <!-- </div> -->
+                                <div class="form-group">
+                                        <label>Scoring History</label>
+                                        {{ar_backlog_form.bl_scoring_history}}
+                                        <!-- <textarea class="form-control login-frm-input" style="height: 100px;    padding: 11px;" placeholder="History"></textarea> -->
+                                </div>
+
+
+
+                              </div>
+                            </div>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <button type="reset" class="btn-block btn btn-white all-btn" >Cancel</button>
+                                  </div>
+                                  <div class="col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Add</button>
+                               </div>
+                             </div>
+                             </div>
+                        </form></div>
+             </div>
+          </div>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                        
+                        </div>
+                </div>
+              <!-- </div>
+            </div> -->
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!--------------------2nd Modal Ends---------------->
+<!-- Modal -->
+<div id="myModal5" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="margin-top:60px;">
+      <div class="modal-header">
+		<h4 class="modal-title" style="width: 100%;">Backlog View </h4>
+        <button type="button" class="close" data-dismiss="modal" style="margin: 0; padding: 0 !important; color: #000 !important;">&times;</button>
+      </div>
+      <div class="modal-body ">
+		
+			<div class="container">
+				<select id="selectDefaults" multiple="multiple">
+					<option value="Audi">Audi</option>
+					<option value="BMW">BMW</option>
+					<option value="Buick">Buick</option>
+					<option value="Cadillac">Cadillac</option>
+					<option value="Chevrolet">Chevrolet</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+					<option value="Chrysler">Chrysler</option>
+				</select>
+			</div>
+	  
+	  </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger getvalue" data-dismiss="modal">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+		$('.table').dragableColumns({
+			drag:true,
+			dragClass:'drag',
+			overClass:'over',
+			movedContainerSelector:'.dnd-moved'
+		});
+	</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+<script type="text/javascript">
+  $(".progress").each(function(){
+  
+  var $bar = $(this).find(".bar");
+  var $val = $(this).find("span");
+  var perc = parseInt( $val.text(), 10);
+
+  $({p:0}).animate({p:perc}, {
+    duration: 3000,
+    easing: "swing",
+    step: function(p) {
+      $bar.css({
+        transform: "rotate("+ (45+(p*1.8)) +"deg)", // 100%=180° so: ° = % * 1.8
+        // 45 is to add the needed rotation to have the green borders at the bottom
+      });
+      $val.text(p|0);
+    }
+  });
+});
+</script>
+<script>
+$(document).ready(function() {
+/*$('#selectDefaults').lwMultiSelect();*/
+$('#selectDefaults').lwMultiSelect({
+  addAllText:"Select All",
+  removeAllText:"Remove All",
+  selectedLabel:"Values accepted",
+  maxSelect: 0,//0 = no restrictions
+  maxText:'',
+});
+});
+
+
+/*Fire a custom function on each change.
+ 
+$('#selector').lwMultiSelect({
+  onChange:function() {
+    //do something
+  }
+  
+API methods.
+// gets current values.
+$('#selector').val();
+// up<a href="https://www.jqueryscript.net/time-clock/">date</a>s the select list
+$('#selector').data('plugin_lwMultiSelect').updateList();
+// selects all visible item
+$('#selector').data('plugin_lwMultiSelect').selectAll();
+// removes all selected items
+$('#selector').data('plugin_lwMultiSelect').removeAll();//remove all selected  items
+});*/
+
+</script>
+
+
+<script>
+$(document).ready(function() {
+/*$('#selectDefaults').lwMultiSelect();*/
+$('#selectDefaults').lwMultiSelect({
+  addAllText:"Select All",
+  removeAllText:"Remove All",
+  selectedLabel:"Values accepted",
+  maxSelect: 0,//0 = no restrictions
+  maxText:'',
+});
+});
+
+$(document).on("click",".click_to_submit",function(){
+var urls = "{{BASE_URL}}manage-backlog/update-table-structure/"; 
+var names = new Array();
+$(".lwms-right .lwms-selectli").each(function(){
+  names.push($(this).data("value")); 
+});
+
+if(names=="")
+{
+  swal("Warning", "Select the Columns that you want to show in table!", "warning");
+}
+else{
+  swal({
+      title: "Are you sure?",
+      text: "Do you want to update the table structure.",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+       window.location.href = urls+names;           
+        // swal(done, {
+        //   icon: "success",
+        // });
+      } else {
+        swal(fail);
+      }
+    });
+}
+
+
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'web/base-template.html' %}
+{% block content %}
+{% load static %}
+   <main>
+
+
+
+      <section class="p-b-40 p-t-40 animatedParent animateOnce responsive">
+         <div class="container">
+            <div class="row">
+                <div class=" col-md-2" >
+                  &nbsp;
+               </div>
+               <div class="col-12 col-lg-8 " style="height: 195px;text-align: center;background-color: #b0b8bf;border-radius: 10px; padding-top: 2%;">
+                  {% if message == "0" %}
+                   <h5>Thank you for your email confirmation. Now you are logged in to your account.</h5>
+                  <br>
+                   {% if user.username == ""  %}
+
+
+                   <a href="#" data-toggle="modal" class="btn btn-primary btn-lg " onclick="unset_url();"  data-target="#modalLogin">Do Sign In</a>
+                   {% else %}
+                   <a href="{{BASE_URL}}dashboard" class="btn btn-primary nav-btn" >Go To Dashboard</a>
+                    {% endif %}
+                   {% else %}
+
+                    {% if message == "2" %}
+                     
+                         <h5>{{message_text}}</h5>
+                          <br>
+                  
+
+                     {% else %}
+                      <h5>Your activation link is invalid. To receive a verification link again on your register email click button below.</h5>
+                  <br>
+                    {% if user.username == ""  %}
+                   <a href="#" data-toggle="modal" class="btn btn-primary btn-lg " data-target="#varification_ling">Send varification link</a>
+                   {% else %}
+                   <a href="#" data-toggle="modal" class="btn btn-primary btn-lg " data-target="#varification_ling">Send varification link</a>
+                    {% endif %}
+                     {% endif %}
+
+                   {% endif %}
+               </div>
+
+            </div>
+         </div>
+      </section>
+      
+      <!--<section class="clients">
+         <div class="container">
+            <header class="section-heading">
+               <h3>Trusted Clients</h3>
+               <p>Our Clients love our application here are some clients</p>
+            </header>
+            <div class="clients-slider">
+               <ul class="lightSlider" data-item="5" data-controls="false" data-auto="true" data-item-lg="4" data-item-md="3" data-item-sm="2">
+                  <li> <img src="assets/img/dummy/c1.png" alt=""></li>
+                  <li> <img src="assets/img/dummy/c2.png" alt=""></li>
+                  <li> <img src="assets/img/dummy/c3.png" alt=""></li>
+                  <li> <img src="assets/img/dummy/c4.png" alt=""></li>
+                  <li> <img src="assets/img/dummy/c5.png" alt=""></li>
+                  <li> <img src="assets/img/dummy/c1.png" alt=""></li>
+               </ul>
+            </div>
+         </div>
+      </section>-->
+   </main>
+
+
+{% endblock %}

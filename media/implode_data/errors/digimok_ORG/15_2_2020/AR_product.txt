@@ -1,0 +1,10 @@
+Error : AR_product : row no. : 2 : Product-P1 (example) : Product already exists. : 2020-02-15 15:14:52.553358
+Error : AR_product : row no. : 3 : Product-P2 (example) : Product already exists. : 2020-02-15 15:14:52.554209
+Error : AR_product : row no. : 4 : BestEverMortgage 2020 Enhancements (example) : Product already exists. : 2020-02-15 15:14:52.555038
+Error : AR_product : row no. : 5 : test : Product already exists. : 2020-02-15 15:14:52.555866
+Error : AR_product : row no. : 6 : Product 1 : Product already exists. : 2020-02-15 15:14:52.556687
+Error : AR_product : row no. : 7 : Book@Home : Product already exists. : 2020-02-15 15:14:52.557522
+Error : AR_product : row no. : 8 : BookTrader : Product already exists. : 2020-02-15 15:14:52.558348
+Error : AR_product : row no. : 9 : BookTrader1 : Product already exists. : 2020-02-15 15:14:52.559172
+Error : AR_product : row no. : 10 : BookTrader2 : Product already exists. : 2020-02-15 15:14:52.560005
+Error : AR_product : row no. : 11 : product name is empty. : 2020-02-15 15:14:52.560016

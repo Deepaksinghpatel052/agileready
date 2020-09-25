@@ -1,0 +1,8 @@
+id,Score_for,Score_key,Keyword,Score_one,Score_two,Score_three,Last_Update
+10,Component Scoring Points Table,Benefit_Tag,so That,10,0,0,2020-01-24 07:17:44
+9,Component Scoring Points Table,Goal_Tag,"I want , I require , I need",15,0,0,2020-01-24 07:16:45
+8,Component Scoring Points Table,Role_Tag,"As a, As an",15,0,0,2020-01-24 07:15:05
+7,Component Scoring Points Table,Benefit_text,"Learn, adapt, view, understand",5,1,0,2020-01-23 11:35:30
+6,Component Scoring Points Table,Goal_text,"Read, write, post, reconcile",10,2,0,2020-01-23 11:34:45
+5,Component Scoring Points Table,Role_text,"Developer, Technical Lead, Product Owner, Scrum Master, Manager, Project Manager, Product Manager, Business Person, Business Man, Business Woman, Man, Woman, Child, System, Admin, System Admin, Operator, Merchant, Cardholder, Site Member",10,2,0,2020-01-23 11:34:04
+4,Unitary Scoring Points,Conjunction Set,"for, and, nor, but, yet, after, although, because since, than, though, unless, until, whenever whereas, wherever, while",10,5,1,2020-01-23 11:12:24

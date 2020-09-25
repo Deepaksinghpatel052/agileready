@@ -1,0 +1,199 @@
+/*------------- Sorting for Product table  START ------------------*/
+  th.slct.sorting_asc
+  {
+    visibility: hidden;
+  }
+    th.slct.sorting
+  {
+    visibility: hidden;
+  }
+    th.Procduct.Name.sorting
+  {
+    visibility: hidden;
+  }
+    th.Procduct.Description.sorting
+  {
+    visibility: hidden;
+  }
+    th.Business.Unit.sorting 
+  {
+    visibility: hidden;
+  }
+    th.Product.Size.sorting
+  {
+    visibility: hidden;
+  }
+    th.Product.Score.sorting
+  {
+    visibility: hidden;
+  }
+    th.Us.Quality.Threshold.sorting
+  {
+    visibility: hidden;
+  }
+    th.ORG.Name.sorting
+  {
+    visibility: hidden;
+  }
+    th.Created.By.sorting
+  {
+    visibility: hidden;
+  }
+    th.Created.Date.sorting
+  {
+    visibility: hidden;
+  }
+    th.Updated.By.sorting
+  {
+    visibility: hidden;
+  }
+    th.Updated.Date.sorting
+  {
+    visibility: hidden;
+  }
+    th.action.sorting
+  {
+    visibility: hidden;
+  }
+/*------------- Sorting for Product table  END ------------------*/
+
+/*------------- Sorting for Backlog table  START ------------------*/
+  th.slct.sorting_asc
+
+  {
+    visibility: hidden;
+  }
+    th.slct.sorting
+
+  {
+    visibility: hidden;
+  }
+    th.Title.sorting
+  {
+    visibility: hidden;
+  }
+    th.Children.Us.List.sorting
+  {
+    visibility: hidden;
+  }
+    th.Owner.sorting
+  {
+    visibility: hidden;
+  }
+    th.Backlog.Score.sorting
+  {
+    visibility: hidden;
+  }
+    th.Backlog.Size.sorting
+  {
+    visibility: hidden;
+  }
+    th.Backlog.Status.sorting
+  {
+    visibility: hidden;
+  }
+/*------------- Sorting for Backlog table  END ------------------*/
+
+/*------------- Sorting for User Story table  START ------------------*/
+  th.Story.Tri.Part.Text.sorting
+  {
+    visibility: hidden;
+  }
+    th.Acceptance.Criteria.sorting
+  {
+    visibility: hidden;
+  }
+    th.Ac.Readability.Score.sorting
+  {
+    visibility: hidden;
+  }
+    th.Conversation.sorting
+  {
+    visibility: hidden;
+  }
+    th.Convo.Readability.Score.sorting
+  {
+    visibility: hidden;
+  }
+    th.Attachments.sorting
+  {
+    visibility: hidden;
+  }
+    th.Autoscoring.On.sorting
+  {
+    visibility: hidden;
+  }
+    th.Archive.Indicator.sorting
+  {
+    visibility: hidden;
+  }
+    th.Readiness.Quality.Score.sorting
+  {
+    visibility: hidden;
+  }
+    th.Story.Points.sorting
+  {
+    visibility: hidden;
+  }
+    th.User.Story.Status.sorting
+  {
+    visibility: hidden;
+  }
+    th.User.Story.Type.sorting
+  {
+    visibility: hidden;
+  }
+    th.Updated_By.sorting
+  {
+    visibility: hidden;
+  }
+    th.Ar.User.sorting
+  {
+    visibility: hidden;
+  }
+/*------------- Sorting for User Story table  END ------------------*/
+
+/*------------- Sorting for Iteration table  START ------------------*/
+  th.Iteration.Id.sorting_asc
+
+  {
+    visibility: hidden;
+  }
+    th.Iteration.Id.sorting
+
+  {
+    visibility: hidden;
+  }
+    th.Start.Date.sorting
+  {
+    visibility: hidden;
+  }
+    th.End.Date.sorting
+  {
+    visibility: hidden;
+  }
+    th.Description.sorting
+  {
+    visibility: hidden;
+  }
+    th.User.Story.sorting
+  {
+    visibility: hidden;
+  }
+   /* th.Team.sorting
+  {
+    visibility: hidden;
+  }*/
+    th.Iteration.Score.sorting
+  {
+    visibility: hidden;
+  }
+    th.Iteration.Size.sorting
+  {
+    visibility: hidden;
+  }
+    th.ORG.ID.sorting
+  {
+    visibility: hidden;
+  }
+/*------------- Sorting for Iteration table  END ------------------*/

@@ -1,0 +1,11 @@
+Success : AR_EPIC_CAPABILITY : row no. : 2 : Epic capability add successfully : 2020-02-18 08:32:03.720931
+Success : AR_EPIC_CAPABILITY : row no. : 3 : Epic capability add successfully : 2020-02-18 08:32:03.734044
+Success : AR_EPIC_CAPABILITY : row no. : 4 : Epic capability add successfully : 2020-02-18 08:32:03.747331
+Success : AR_EPIC_CAPABILITY : row no. : 5 : Epic capability add successfully : 2020-02-18 08:32:03.760584
+Success : AR_EPIC_CAPABILITY : row no. : 6 : Epic capability add successfully : 2020-02-18 08:32:03.786342
+Success : AR_EPIC_CAPABILITY : row no. : 7 : Epic capability add successfully : 2020-02-18 08:32:03.799637
+Success : AR_EPIC_CAPABILITY : row no. : 8 : Epic capability add successfully : 2020-02-18 08:32:03.812851
+Success : AR_EPIC_CAPABILITY : row no. : 9 : Epic capability add successfully : 2020-02-18 08:32:03.826103
+Success : AR_EPIC_CAPABILITY : row no. : 10 : Epic capability add successfully : 2020-02-18 08:32:03.838731
+Success : AR_EPIC_CAPABILITY : row no. : 11 : Epic capability add successfully : 2020-02-18 08:32:03.851153
+Success : AR_EPIC_CAPABILITY : row no. : 12 : Epic capability add successfully : 2020-02-18 08:32:03.863609

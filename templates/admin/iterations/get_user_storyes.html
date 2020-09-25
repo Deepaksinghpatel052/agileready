@@ -1,0 +1,10 @@
+{% if user_story_data %}
+
+{% for data in user_story_data %}
+ {% if data.title in selected_user_storyes %}
+<option value="{{data.id}}"selected="" >{{data.title}}</option>
+{% else %}
+<option value="{{data.id}}" >{{data.title}}</option>
+{% endif %}
+{% endfor %}
+{% endif %}

@@ -1,0 +1,4 @@
+Capability_key,Capability_desc,product,created_by,create_dt,update_by,update_dt,organization_name
+Capability 1,Description for capability 1,Product 1,Harry,2020-02-12 08:57:17.913374+00:00,Harry,2020-02-12 08:57:17.913390+00:00,ABC
+Store and Organize Book Based Library,Description of Store and Organize Book Based Library.,BookMine,Harry,2020-02-14 15:43:15.919116+00:00,Harry,2020-02-14 15:43:15.919152+00:00,ABC
+Trade and Exchange,Description of Trade and Exchange,BookMine|BookTrader,Harry,2020-02-14 15:44:03.559225+00:00,Harry,2020-02-14 15:44:03.559248+00:00,ABC

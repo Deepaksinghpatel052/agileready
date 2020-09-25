@@ -1,0 +1,9 @@
+Success : ArManageGoals : row no. : 2 : 'log my book' Goal add successfully : 2020-02-18 08:32:03.978328
+Success : ArManageGoals : row no. : 3 : 'research trading APIs' Goal add successfully : 2020-02-18 08:32:04.000529
+Success : ArManageGoals : row no. : 4 : 'scan the ISBN code' Goal add successfully : 2020-02-18 08:32:04.022819
+Success : ArManageGoals : row no. : 5 : 'read and write the code' Goal add successfully : 2020-02-18 08:32:04.044944
+Success : ArManageGoals : row no. : 6 : 'write the code' Goal add successfully : 2020-02-18 08:32:04.067201
+Success : ArManageGoals : row no. : 7 : 'the code' Goal add successfully : 2020-02-18 08:32:04.089582
+Success : ArManageGoals : row no. : 8 : 'write the code DSP' Goal add successfully : 2020-02-18 08:32:04.112383
+Success : ArManageGoals : row no. : 9 : 'the code DSP' Goal add successfully : 2020-02-18 08:32:04.135310
+Success : ArManageGoals : row no. : 10 : 'write the code DSPatel' Goal add successfully : 2020-02-18 08:32:04.158228

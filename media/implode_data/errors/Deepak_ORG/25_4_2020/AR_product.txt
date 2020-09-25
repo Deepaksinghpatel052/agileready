@@ -1,0 +1,4 @@
+Success : AR_product : row no. : 2 : Product add successfully. : 2020-04-25 20:08:46.486321
+Success : AR_product : row no. : 3 : Product add successfully. : 2020-04-25 20:08:46.498973
+Success : AR_product : row no. : 4 : Product add successfully. : 2020-04-25 20:08:46.511957
+Success : AR_product : row no. : 5 : Product add successfully. : 2020-04-25 20:08:46.525190

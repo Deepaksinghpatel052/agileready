@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/agileready/
+# permissions:
+# - object: /home/ubuntu/agileready/
+#   pattern: "***"
+#    owner: ubuntu
+#    mode: 777 
+#    type:
+#      - directory

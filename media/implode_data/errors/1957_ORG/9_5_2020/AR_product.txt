@@ -1,0 +1,4 @@
+Error : AR_product : row no. : 2 : None : Product already exists. : 2020-05-09 22:08:40.383270
+Error : AR_product : row no. : 3 : Product-P1 (example) : Product already exists. : 2020-05-09 22:08:40.384105
+Error : AR_product : row no. : 4 : Product-P2 (example) : Product already exists. : 2020-05-09 22:08:40.384935
+Error : AR_product : row no. : 5 : BestEverMortgage 2020 Enhancements (example) : Product already exists. : 2020-05-09 22:08:40.385772

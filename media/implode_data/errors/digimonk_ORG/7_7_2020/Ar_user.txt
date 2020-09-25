@@ -1,0 +1,3 @@
+Error : Ar_user : row no. : 2 : praveen.vaidhya04@gmail.com : E-mail already exists ! : 2020-07-07 14:24:03.857487
+Error : Ar_user : row no. : 3 : ram.gautam@digimonk.in : E-mail already exists ! : 2020-07-07 14:24:03.858258
+Error : Ar_user : row no. : 4 : nitesh.biswas@digimonk.in : E-mail already exists ! : 2020-07-07 14:24:03.859018

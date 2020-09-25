@@ -1,0 +1,5 @@
+Benefits_id,Benefits_title,Benefits_description,Use_in,created_by,created_dt,updated_by,updated_dt
+AR_BENEFITE_1,carry out,carry out,,Harry,2020-02-04 10:38:26.055234+00:00,Harry,2020-02-04 10:38:26.055242+00:00,ABC
+AR_BENEFITE_2,order,order,,Harry,2020-02-04 10:38:36.289247+00:00,Harry,2020-02-04 10:38:36.289255+00:00,ABC
+AR_BENEFITE_8,Can order the ietms,Can order items,,Harry,2020-02-11 02:41:38.177077+00:00,Harry,2020-02-11 02:41:38.177087+00:00,ABC
+AR_BENEFITE_9,Can transact properly,Can transact properly,,Harry,2020-02-11 02:44:14.022571+00:00,Harry,2020-02-11 02:44:14.022581+00:00,ABC

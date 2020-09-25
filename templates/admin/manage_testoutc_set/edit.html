@@ -1,0 +1,43 @@
+<div class="paper">
+                   <div class="row">
+                      <div class="col-md-12">
+                         <div class="container-fluid">
+                            <div class="login-form-content">
+                               <form onsubmit="doSomething();" action="{{BASE_URL}}manage-testoutc-set/edit/{{id}}" method="POST">
+                                 {% csrf_token %}
+
+                                  <div class="form-group">
+                                        <label>Outcome Title</label>
+                                         {{ArTestoutcSetForm_get.member_product_list}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Outcome Description</label>
+                                    {{ArTestoutcSetForm_get.testoutc_validation_list}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Test Outcome used in these test stories</label>
+                                    {{ArTestoutcSetForm_get.Use_in}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Scenario list where used</label>
+                                    {{ArTestoutcSetForm_get.member_scenario_list}}
+                                </div>
+                                
+                                
+                                
+                                 <div class="row">
+                                  <div class="col-md-6">
+                                    <a href="{{BASE_URL}}manage-testoutc-set" class="btn-block btn btn-white all-btn" > Cancel</a>
+                                  </div>
+                                  <div class="col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Update</button>
+                               </div>
+                             </div>
+                             </div>
+                               </form>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>

@@ -1,0 +1,4 @@
+user_name,address,email,is_active,city,state,zip,country,phone,backup_email,user_type,subscription_level,active_user,user_to_invite,status,profile_permission,login_status,activate_status,organization_name,verification_status,created_by,created_dt,updated_by,updated_dt
+Harry,,harry@digimonk.in,True,Noida,up,201306,India,1234567890,,Root,Free trial,0,0,Active,,False,False,ABC,False,,2020-02-03 16:55:30.532520+00:00,,2020-02-03 16:55:30.532533+00:00
+,,baghel.hari@gmail.com,True,,state,0,,0,,User,Free trial,0,0,Active,,False,False,ABC,False,jitendra narvaria ,2020-02-04 10:04:31.071932+00:00,jitendra narvaria ,2020-02-04 10:04:31.071942+00:00
+,,baghel_hari@rediffmail.com,False,,state,0,,0,,User,Free trial,0,0,Active,,False,False,ABC,False,jitendra narvaria ,2020-02-04 10:04:35.100734+00:00,jitendra narvaria ,2020-02-04 10:04:35.100743+00:00

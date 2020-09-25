@@ -1,0 +1,82 @@
+{% load static %}
+            <div class="paper">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="container-fluid">
+                        <!-- <div class="card no-b"> -->
+                        <!-- <div class="login-form-card"> -->
+                        <div class="login-form-content">
+                           <form onsubmit="doSomething();" action="{{BASE_URL}}manage-backlog/edit-backlog/{{backlog_id}}" method="POST">
+                              {% csrf_token %}
+                              <div class="row">
+                                 <div class="col-md-8"></div>
+                                 <!-- <div class="col-md-2">
+                                    <button class="all-btn btn">Add New</button>
+                                    </div>
+                                    <div class="col-md-2">
+                                    <button class="all-btn btn">Delete</button>
+                                    </div> -->
+                                 <div class="col-md-6">
+                                    <!-- start login -->
+                                    <div class="form-group">
+                                       <label>Title<span style="color: red;"> *</span></label>
+                                       {{ar_backlog_edit_form.title}}
+                                       <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="title" name="login">         -->
+                                    </div>
+                                    
+
+                                    <div class="form-group">
+                                       <label>Status</label>
+                                       {{ar_backlog_edit_form.BL_STATUS}}
+                                       <!--  <select class="form-control" name="list" placeholder="select Team Member">
+                                          <option>Active</option>
+                                          </select> -->
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                       <label>Product Parent<span style="color: red;"> *</span></label>
+                                       {{ar_backlog_edit_form.product_parent}}
+                                       <!-- <input class="form-control login-frm-input" type="text" value="" placeholder="BookMine" aid="login" name="login"> -->
+                                    </div>
+                                    <div class="form-group">
+                                       <label>Owner<span style="color: red;"> *</span></label>
+                                       {{ar_backlog_edit_form.owner}}
+                                       <!-- <input class="form-control login-frm-input" type="text" value="" placeholder="User" aid="login" name="login"> -->
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-12">
+                                    <div class="form-group">
+                                       <label>Description<span style="color: red;"> *</span></label>
+                                       {{ar_backlog_edit_form.backlog_description}}
+                                       <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="title" name="login">         -->
+                                    </div>
+                                    <div class="form-group">
+                                       <label>Team</label>
+                                       {{ar_backlog_edit_form.team_list}}
+                                       <!--  <select class="form-control" name="list" placeholder="select Team Member">
+                                          <option>Team Newton</option>
+                                          </select> -->
+                                    </div>
+                                    
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-3">
+                                    <a href="{{BASE_URL}}manage-backlog" class="btn-block btn btn-white all-btn" > Cancel</a>
+                                 </div>
+                                 <div class="col-md-3">
+                                    <div class="form-group">
+                                       <button type="submit" class="btn-block btn btn-white all-btn">Update</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            

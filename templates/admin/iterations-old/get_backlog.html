@@ -1,0 +1,6 @@
+<option value="" selected="">Please select backlog</option>
+{% if backlog_data %}
+{% for data in backlog_data %}
+<option value="{{data.id}}">{{data}}</option>
+{% endfor %}
+{% endif %}

@@ -1,0 +1,6 @@
+Error : Ar_user : row no. : 2 : praveen.vaidhya@digimonk.in : E-mail already exists ! : 2020-02-29 09:41:58.572746
+Success : Ar_user : row no. : 3 :  : user add successfully. : 2020-02-29 09:42:02.481217
+Error : Ar_user : row no. : 4 : sagar.srivastava@digimonk.in : E-mail already exists ! : 2020-02-29 09:42:02.483344
+Success : Ar_user : row no. : 5 :  : user add successfully. : 2020-02-29 09:42:06.589939
+Error : Ar_user : row no. : 6 : sagar.shrivastava@digimonk.in : E-mail already exists ! : 2020-02-29 09:42:06.592229
+Error : Ar_user : row no. : 7 : ravi.baghel@digimonk.in : E-mail already exists ! : 2020-02-29 09:42:06.594396

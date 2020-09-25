@@ -1,0 +1,7 @@
+Team_name,Team_description,organization_name,Team_member_list,create_by,create_dt,update_by,update_dt
+None,None,Digimonk,,Praveen,2020-07-10 11:03:52.008553+00:00,Praveen,2020-07-10 11:03:52.008567+00:00
+Team-T1 (example),Agile teams build software products.,Digimonk,,Praveen,2020-07-10 11:03:52.091635+00:00,Praveen,2020-07-10 11:03:52.091633+00:00
+FlexTeam (example),This vendor provided team supplements all existing teams,Digimonk,,Praveen,2020-07-10 11:03:52.107297+00:00,Praveen,2020-07-10 11:03:52.107294+00:00
+Ticket Masters Kanban (example),This team handles all production support tickets for all business units. This is a Kanban Team.,Digimonk,,Praveen,2020-07-10 11:03:52.121992+00:00,Praveen,2020-07-10 11:03:52.121990+00:00
+Mechanic Masters (example),This team implements key strategic initiatives,Digimonk,,Praveen,2020-07-10 11:03:52.136784+00:00,Praveen,2020-07-10 11:03:52.136781+00:00
+Team-T2 (example),"""In Agile Ready",Digimonk,,Praveen,2020-07-10 11:03:52.150997+00:00,Praveen,2020-07-10 11:03:52.150995+00:00

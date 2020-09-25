@@ -1,0 +1,5 @@
+Error : AR_BACKLOG : row no. : 2 : Backlog 1 : Backlog already exists.  : 2020-02-23 08:34:49.594974
+Error : AR_BACKLOG : row no. : 3 : BookMineCore : Backlog already exists.  : 2020-02-23 08:34:49.596239
+Error : AR_BACKLOG : row no. : 4 : BookMineDash : Backlog already exists.  : 2020-02-23 08:34:49.597500
+Error : AR_BACKLOG : row no. : 5 : Tony Timbol : Backlog already exists.  : 2020-02-23 08:34:49.598777
+Error : AR_BACKLOG : row no. : 6 : BookTrader-1 : Backlog already exists.  : 2020-02-23 08:34:49.600043

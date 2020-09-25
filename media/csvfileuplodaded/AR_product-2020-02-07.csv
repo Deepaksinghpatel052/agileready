@@ -1,0 +1,8 @@
+Product_name,Product_description,Team_parent,Business_unit,Product_size,Product_score,US_quality_threshold,create_by,create_dt,update_by,update_dt
+Product-P1 (example),Software products provides benefits to the marketplace and income to the business that owns markets and sell them. Products can also be a collection of services.,"3,5",Internal Business-Unit-Name or External  Business Customer,1,81,0,6,2/5/2020 20:08,4,2/5/2020 20:08
+Product-P2 (example),This is the second product provided for tutorial purposes,,Internal Business-Unit-Name or External Business Customer,0,0,0,Aman,2/5/2020 20:08,6,2/5/2020 20:08
+BestEverMortgage 2020 Enhancements (example),Best Ever Mortgage is upending the antiquated mortgage application process with AI algorithms and good old fashioned customer service.,,Finance Division,0,0,0,6,2/5/2020 20:08,Aman,2/5/2020 20:08
+test,Test,1,Test data,0,0,0,1,2/4/2020 13:43,1,2/4/2020 13:43
+Product 1,Description,,Dev,0,0,0,3,2/4/2020 10:29,3,2/4/2020 10:29
+Book@Home,A home book printing system using local print on demand suppliers,4,Line of Business 2,0,0,0,4,2/4/2020 10:10,4,2/4/2020 10:10
+BookTrader,A book trader and exchange system,3,Sales Division,48,84,0,4,2/4/2020 10:02,4,2/4/2020 10:02

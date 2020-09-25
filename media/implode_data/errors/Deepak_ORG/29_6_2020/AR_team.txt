@@ -1,0 +1,6 @@
+Success : AR_team : row no. : 2 : None_test : Team create successfully, : 2020-06-29 11:18:52.724607
+Success : AR_team : row no. : 3 : Team-T1 (example)_test : Team create successfully, : 2020-06-29 11:18:52.738090
+Success : AR_team : row no. : 4 : FlexTeam (example)_test : Team create successfully, : 2020-06-29 11:18:52.751249
+Success : AR_team : row no. : 5 : Ticket Masters Kanban (example)_test : Team create successfully, : 2020-06-29 11:18:52.764336
+Success : AR_team : row no. : 6 : Mechanic Masters (example)_test : Team create successfully, : 2020-06-29 11:18:52.777845
+Success : AR_team : row no. : 7 : Team-T2 (example)_test : Team create successfully, : 2020-06-29 11:18:52.791501

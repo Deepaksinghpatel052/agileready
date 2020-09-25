@@ -1,0 +1,6 @@
+Team_name,Team_description,organization_name,Team_member_list,create_by,create_dt,update_by,update_dt
+Team-T1 (example),Agile teams build software products.,arp test company,Tony (root user 1 DM) Timbol,Tony (root user 1 DM) Timbol,2020-02-11 00:38:09.675008+00:00,Tony (root user 1 DM) Timbol,2020-02-11 00:38:36.529956+00:00
+Team-T2 (example),"In Agile Ready, one or more teams work to build software products which have capabilities and features.",arp test company,,Tony (root user 1 DM) Timbol,2020-02-11 00:39:43.925888+00:00,Tony (root user 1 DM) Timbol,2020-02-11 00:39:43.925896+00:00
+FlexTeam (example),This vendor provided team supplements all existing teams.,arp test company,Tony (root user 1 DM) Timbol,Tony (root user 1 DM) Timbol,2020-02-11 00:41:07.683409+00:00,Tony (root user 1 DM) Timbol,2020-02-11 00:41:25.665821+00:00
+Ticket Masters Kanban(example),This team handles all production support tickets for all business units. This is a Kanban Team,arp test company,,Tony (root user 1 DM) Timbol,2020-02-11 00:42:05.788567+00:00,Tony (root user 1 DM) Timbol,2020-02-14 12:59:17.332175+00:00
+Mechanic Masters (example),This team implements key strategic initiatives.,arp test company,Tony (root user 1 DM) Timbol,Tony (root user 1 DM) Timbol,2020-02-11 00:42:34.963838+00:00,Tony (root user 1 DM) Timbol,2020-02-11 00:42:34.963846+00:00

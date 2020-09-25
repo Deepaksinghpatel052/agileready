@@ -1,0 +1,439 @@
+{% extends 'admin/dashboard-template.html' %}
+{% load team_data %}
+{% load iteration_story %}
+{% load add_value %}
+ {% block cssstyle %}
+<style type="text/css">
+  #modal-alert-set-profile .modal-header {
+    background-color: #c52241;
+    color: #fff;
+}
+.copy-icon {
+    width: 35px;
+}
+  .scrollbar
+  {
+     /*margin-left: 30px;*/
+     padding: 0 5px;
+      /* margin-left: 30px; */
+      border-radius: 5px;
+      border: 2px solid #000;
+      margin:auto;
+      height: 170px;
+      width: 145px;
+      background: #F5F5F5;
+      overflow-y: scroll;
+      /* margin-bottom: 25px;
+     /*margin-bottom: 25px;*/
+  }
+  
+  .force-overflow
+  {
+     min-height: 162px;
+  }
+  
+  .wrapper
+  {
+     text-align: left;
+     width: auto;
+     margin: auto;
+  }
+  
+  .style-2::-webkit-scrollbar-track
+  {
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     border-radius: 5px;
+     background-color: #F5F5F5;
+  }
+  
+  .style-2::-webkit-scrollbar
+  {
+     width: 10px;
+     background-color: #F5F5F5;
+  }
+  
+  .style-2::-webkit-scrollbar-thumb
+  {
+     border-radius: 5px;
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+     background-color: #D62929;
+  }
+
+  td{
+    font-size: 14px;
+  }
+  #package_history .modal-header {
+    background-color: #c52241;
+    color: #fff;
+}
+</style>{% endblock %} {% block content %} {% load static %}
+<div class="container-fluid text-white">
+  <div class="row p-t-b-8 ">
+    <div class="col">
+      <h1>Dashboard</h1>
+    </div>
+
+
+  </div>
+  <div class="row p-t-b-8">
+         <p class="user-nick"> {{user_name}}</p>
+  </div>
+
+</div>
+</header>
+<div class="container-fluid">
+  <div class="row p-t-b-20">
+    <div class="col-md-12">
+         {% if messages %}
+   {% for message in messages %}
+   {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+   <div class="alert alert-success alert-dismissible">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+      <strong>{{message}}</strong>
+   </div>
+   {% endif %}
+   {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+   <div class="alert alert-danger alert-dismissible">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+      <strong>{{message}}</strong> 
+   </div>
+   {% endif %}
+   {% endfor %}
+   {% endif %}
+   <!--------------------------------------  --------------------------->
+      <div class="card no-b">
+        <div class="collapse show" id="invoiceCard">
+          <div class="card-body p-0">
+            <div class="col--md-12 p-0">
+              <!-- <div class="card widget"> -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-2 p-4 b-r">
+                    <a href="{{BASE_URL}}manage-team"> <span class="text-center">
+                                             <i class="fas text-themecolor icon-users"></i>
+                                          </span>
+                      <h1 class="font-light count">{{team}}</h1>
+                      <h5>Teams</h5>
+                    </a>
+                  </div>
+                  <div class="col-md-2 p-4 b-r"> <a href="{{BASE_URL}}products-view"><span class="text-center"><i class="fas text-themecolor icon-heartbeat"></i>
+                                          </span>
+                                          <h1 class="font-light count">{{product}}</h1>
+                                          <h5>Products</h5></a>
+                  </div>
+                  <div class="col-md-2 p-4 b-r">
+                    <a href="{{BASE_URL}}iteration-view"> <span class="text-center">
+                                             <i class="fas text-themecolor icon-directions_run"></i>
+                                          </span>
+                      <h1 class="font-light count">{{itearations}}</h1>
+                      <h5>Iterations</h5>
+                    </a>
+                  </div>
+                  <div class="col-md-2 p-4 b-r">
+                    <a href="{{BASE_URL}}backlog-view"> <span class="text-center">
+                                             <i class="fas text-themecolor icon-file-text-o"></i>
+                                          </span>
+                      <h1 class="font-light count">{{backlog}}</h1>
+                      <h5>Backlogs</h5>
+                    </a>
+                  </div>
+                  <div class="col-md-2 p-4 b-r">
+                    <a href="{{BASE_URL}}user-story-view"> <span class="text-center">
+                                             <i class="fas text-themecolor icon-book"></i>
+                                          </span>
+                      <h1 class="font-light count">{{user_storyes}}</h1>
+                      <h5>User Stories</h5>
+                    </a>
+                  </div>
+                  <div class="col-md-1"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-2  p-4 l-r">
+                    <div class="wrapper">
+                      <div class="scrollbar style-2" class="">
+                        <div class="force-overflow table-responsive">
+                          <table class="table-bordered">
+                            <tbody>
+                            {% for data in team_data %}
+                              <tr>
+                                <td>{{data.Team_name}}</td>
+                                <!-- <td>{{data.Team_member_list.all.count}} Members</td> -->
+                              </tr>
+                              {% endfor %}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 p-4 l-r">
+                    <div class="wrapper">
+                      <div class="scrollbar style-2" class="">
+                        <div class="force-overflow table-responsive">
+                          <table class=" table-bordered">
+                            <tbody>
+                              {% for data in product_data %}
+                              <tr>
+                                <td>{{data.Product_name}}</td>
+                             
+                              </tr>
+                              {% endfor %}
+                              
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 p-4 l-r">
+                    <div class="wrapper">
+                      <div class="scrollbar style-2" class="">
+                        <div class="force-overflow table-responsive">
+                          <table class=" table-bordered">
+                            <tbody>
+                              {% for data in itearations_data %}
+                              <tr>
+                                <td>{{data.IterationName}}</td>
+                               
+                              </tr>
+                              {% endfor %}
+
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 p-4 l-r">
+                    <div class="wrapper">
+                      <div class="scrollbar style-2" class="">
+                        <div class="force-overflow table-responsive">
+                          <table class=" table-bordered">
+                            <tbody>
+                              {% for data in backlog_data %}
+                              <tr>
+                                <td>{{data.title}}</td>
+                           
+                              
+                              </tr>
+                              {% endfor %}
+
+
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="col-md-2 p-4 l-r">
+                    <div class="wrapper">
+                      <div class="scrollbar style-2" class="">
+                        <div class="force-overflow table-responsive">
+                          <table class=" table-bordered">
+                            <tbody>
+                                
+                              {% for data in user_storyes_data %}
+                              <tr>
+                                <td>{{data.title}}</td>
+                                
+                               <!--  <td>                                                  <div class="col-md-1 mb10">
+                             <div class="cdev" data-percent="{{data.readiness_quality_score}}" data-duration="1000" data-color=",#d35400"></div>
+                                  </div>
+                                </td> -->
+
+                             
+                              </tr>
+                              {% endfor %}
+                              
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                </div>
+
+                 <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-2 p-4 b-r">
+                    <a href="{{BASE_URL}}manage-scenario"> <span class="text-center">
+                                             <i class="fas text-themecolor icon-sitemap"></i>
+                                          </span>
+                      <h1 class="font-light count">{{scenario}}</h1>
+                      <h5>Scenarios</h5>
+                    </a>
+                  </div>
+                  <div class="col-md-2 p-4 b-r"> <a href="{{BASE_URL}}feature-value"><span class="text-center"><i class="fas text-themecolor icon-money"></i>
+                                          </span>
+                                          <h1 class="font-light count">0</h1>
+                                          <h5>Feature Value</h5></a>
+                  </div>
+                  <div class="col-md-2 p-4 b-r">
+                    <a href="{{BASE_URL}}user-story-view"> <span class="text-center">
+                                             <i class="fas text-themecolor icon-money"></i>
+                                          </span>
+                      <h1 class="font-light count">0</h1>
+                      <h5>User Story Value</h5>
+                    </a>
+                  </div>
+                  <div class="col-md-2 p-4 b-r">
+                    <a href="{{BASE_URL}}words-patterns"> <span class="text-center">
+                                             <!-- <i class="fas text-themecolor icon-gift"></i> -->
+                                             <img src="/static/img/basic/brain.png" class="copy-icon">
+                                          </span>
+                      <h1 class="font-light count">0</h1>
+                      <h5>Words & Patterns</h5>
+                    </a>
+                  </div>
+                  <div class="col-md-2 p-4 b-r">
+                    
+                  </div>
+                  <div class="col-md-1"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-2  p-4 l-r">
+                    <div class="wrapper">
+                      <div class="scrollbar style-2" class="">
+                        <div class="force-overflow table-responsive">
+                          <table class="table-bordered">
+                            <tbody>
+                            {% for data in scenario_data %}
+                              <tr>
+                                <td>{{data.scenario_name}}</td>
+                                <!-- <td>{{data.Team_member_list.all.count}} Members</td> -->
+                              </tr>
+                              {% endfor %}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 p-4 l-r">
+                    
+                  </div>
+                  <div class="col-md-2 p-4 l-r">
+                    
+                  </div>
+                  <div class="col-md-2 p-4 l-r">
+                    
+                    
+                  </div>
+                  <div class="col-md-2 p-4 l-r">
+                  
+                  </div>
+                  <div class="col-md-1"></div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+   <div class="modal fade in sp-map" id="package_history">
+         <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h4 class="modal-title">History</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <table class="table table-striped table-bordered newpage dataTable no-footer vertical-align">
+                      <thead>
+                        <tr>
+                          <th>S.No.</th>
+                          <th>Package name</th>
+                          <th>Root user</th>
+                          <th>Buy date</th>
+                          <th>Price</th>
+                          <th>Payment Status</th>
+                          <th>Active</th>
+                          <th>Active date</th>
+                          <!-- <th>Transaction</th> -->
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for item in all_emebership %}
+                        <tr>
+                          <td>{{forloop.counter}}</td>
+                          <td>{{item.Package_name}}</td>
+                          <td>{{item.Root_user}}</td>
+                          <td>{{item.create_dt}}</td>
+                          <td>${{item.Price}}</td>
+                          <td>{{item.Payment_Done}}</td>
+                          <td>{{item.Active}}</td>
+                          <td>{{item.Active_date}}</td>   
+                          <!-- <td>{{item.id|get_transaction_id}}</td> -->
+                         
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+         </div>
+      </div>
+
+
+
+<!-----------2nd Modal Popup Start------>
+<div class="modal fade in sp-map" id="modal-alert-set-profile">
+   <div class="modal-dialog">
+      <div class="modal-content" >
+         <div class="modal-header">
+            <h4 class="modal-title">Profile Alert</h4>
+          
+         </div>
+
+         
+
+                   
+          
+         <div class="modal-body">
+            <div class="paper">
+              <div class="row">
+                
+              </div>
+               <div class="row">
+              <div class="col-md-11" style="border: 2px solid #c52241; margin-left: 4%;">
+              <h5><strong>Note:</strong></h5>
+              <p></p>
+              <p>We recommend you to please update your Profile and  change your password <a href="{{BASE_URL}}account-settings"><u> From here </u></p>
+              
+             
+            </div>
+          </div>
+         
+            </div>
+         </div>
+{% block script %}  
+{% if user_ins.user_name == "" %}       
+<script type="text/javascript">
+
+$('#modal-alert-set-profile').modal({
+    backdrop: 'static',
+    keyboard: false
+});
+   $(window).load(function(){        
+   $('#modal-alert-set-profile').modal('show');
+    }); 
+</script>
+{% endif %}
+{% endblock %}
+{% endblock %}

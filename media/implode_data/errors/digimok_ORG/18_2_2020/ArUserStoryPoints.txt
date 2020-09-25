@@ -1,0 +1,10 @@
+Success : ArUserStoryPoints : row no. : 2 : 'Very small' user story point add successfully : 2020-02-18 08:32:04.263088
+Success : ArUserStoryPoints : row no. : 3 : 'Smallish' user story point add successfully : 2020-02-18 08:32:04.276258
+Success : ArUserStoryPoints : row no. : 4 : 'Small' user story point add successfully : 2020-02-18 08:32:04.289007
+Success : ArUserStoryPoints : row no. : 5 : 'Medium' user story point add successfully : 2020-02-18 08:32:04.301827
+Success : ArUserStoryPoints : row no. : 6 : 'Large' user story point add successfully : 2020-02-18 08:32:04.314534
+Success : ArUserStoryPoints : row no. : 7 : 'Extra Extra Large (XXL)' user story point add successfully : 2020-02-18 08:32:04.327158
+Success : ArUserStoryPoints : row no. : 8 : 'Extra Extra Extra Large (XXXL)' user story point add successfully : 2020-02-18 08:32:04.339562
+Success : ArUserStoryPoints : row no. : 9 : 'Epic' user story point add successfully : 2020-02-18 08:32:04.352360
+Success : ArUserStoryPoints : row no. : 10 : 'Extra Large (XL)' user story point add successfully : 2020-02-18 08:32:04.365264
+Success : ArUserStoryPoints : row no. : 11 : 'New' user story point add successfully : 2020-02-18 08:32:04.379648

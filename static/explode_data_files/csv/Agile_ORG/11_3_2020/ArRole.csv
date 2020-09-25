@@ -1,0 +1,4 @@
+role_id,title,description,use,create_by,create_dt,update_by,update_dt,organization_name
+AR_ROLE_29,Partner Manager,(example),,Antonio V Timbol,2020-02-21 07:51:19.759523+00:00,Antonio V Timbol,2020-02-21 07:51:19.759538+00:00,Agile Ready LLC
+AR_ROLE_30,proxy-test-partner-user,(example),,Antonio V Timbol,2020-02-21 07:53:12.405115+00:00,Antonio V Timbol,2020-02-21 07:53:12.405124+00:00,Agile Ready LLC
+AR_ROLE_31,Eagle,(example),,Antonio V Timbol,2020-02-21 07:53:28.673501+00:00,Antonio V Timbol,2020-02-21 07:53:28.673517+00:00,Agile Ready LLC

@@ -1,0 +1,11 @@
+Feature_key,Feature_desc,Epic_Capanility,User_story,create_by,create_dt,update_by,update_dt,organization_name
+Dashboard,Dashboard Feature,Store and Organize Book Based Library,,jitendra narvaria ,2020-02-05 07:56:30.860223+00:00,jitendra narvaria ,2020-02-05 07:56:30.860237+00:00,digimok
+Reports,Reports Feature,Trade and Exchange,,jitendra narvaria ,2020-02-05 08:00:56.561678+00:00,jitendra narvaria ,2020-02-05 08:00:56.561692+00:00,digimok
+Export,Export Feature,Production Capability,,jitendra narvaria ,2020-02-05 08:01:42.510032+00:00,jitendra narvaria ,2020-02-05 08:01:42.510046+00:00,digimok
+Imports,Import Feature,Next Year Enhancements,,jitendra narvaria ,2020-02-05 08:46:49.105107+00:00,jitendra narvaria ,2020-02-05 08:46:49.105122+00:00,digimok
+Summary,Summary Feature,Store and Organize Book Based Library,,jitendra narvaria ,2020-02-05 08:49:46.736960+00:00,jitendra narvaria ,2020-02-05 08:49:46.736971+00:00,digimok
+OrderPrints,Print on Demand,Trade and Exchange,,jitendra narvaria ,2020-02-05 08:50:52.110997+00:00,jitendra narvaria ,2020-02-05 08:50:52.111008+00:00,digimok
+BookScanner,Scanning Book ISBN,Production Capability,,jitendra narvaria ,2020-02-05 08:52:11.976501+00:00,jitendra narvaria ,2020-02-05 08:52:11.976512+00:00,digimok
+LocatePOD,Locate Print on Demand local shops,Next Quarter Enhancements,,jitendra narvaria ,2020-02-05 08:59:52.539635+00:00,jitendra narvaria ,2020-02-05 08:59:52.539646+00:00,digimok
+Store,Store Items Feature,Next Year Enhancements,,jitendra narvaria ,2020-02-05 09:03:02.249266+00:00,jitendra narvaria ,2020-02-05 09:03:02.249277+00:00,digimok
+Catalog,Catalog Items Feature,Store and Organize Book Based Library,FindPODShop|Bird takes flight Part 8,jitendra narvaria ,2020-02-05 09:03:56.427401+00:00,jitendra narvaria ,2020-02-05 09:03:56.427413+00:00,digimok

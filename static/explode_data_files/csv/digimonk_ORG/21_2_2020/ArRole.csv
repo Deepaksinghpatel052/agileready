@@ -1,0 +1,4 @@
+role_id,title,description,use,create_by,create_dt,update_by,update_dt,organization_name
+AR_ROLE_44,Partner Manager,(example),,Praveen,2020-02-21 07:51:19.759523+00:00,Praveen,2020-02-21 07:51:19.759538+00:00,Digimonk Organization
+AR_ROLE_45,proxy-test-partner-user,(example),,Praveen,2020-02-21 07:53:12.405115+00:00,Praveen,2020-02-21 07:53:12.405124+00:00,Digimonk Organization
+AR_ROLE_46,Eagle,(example),,Praveen,2020-02-21 07:53:28.673501+00:00,Praveen,2020-02-21 07:53:28.673517+00:00,Digimonk Organization

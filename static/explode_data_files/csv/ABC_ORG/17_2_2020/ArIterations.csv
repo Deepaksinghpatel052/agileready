@@ -1,0 +1,2 @@
+IterationName,owner,StartDate,EndDate,Description,Product,Backlog,UserStory,Team,IterationScore,IterationSize,create_by,create_dt,update_by,update_dt,IterationId,organization_name
+Iteration 1,Harry,2020-02-12,2020-02-18,Iteration one to work on user stories.,Product 1,Backlog 1,User story 1,Team1,80.0,5,Harry,2020-02-12 09:01:21.888316+00:00,Harry,2020-02-12 09:01:21.888330+00:00,AR_ITER_40,ABC

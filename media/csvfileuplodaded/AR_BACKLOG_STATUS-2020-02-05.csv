@@ -1,0 +1,4 @@
+id,bl_status_key,bl_status_desc,create_by,create_dt,update_by,update_dt
+3,Active,backlog status is ready,1,2020-02-01 10:40:12,1,2020-02-01 10:40:12
+2,New,A Backlog is created with a title only and other  information,1,2020-02-01 10:39:31,1,2020-02-01 10:39:31
+1,Archive,"A Backlog, and its associated user stories, are NOT available to being workedbut is viewable in the archive repository",1,2020-02-01 10:39:14,1,2020-02-01 10:39:14

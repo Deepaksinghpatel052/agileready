@@ -1,0 +1,11 @@
+Point_Key,Point_Description,Point_score,create_by,create_by,create_dt,update_by,update_dt,organization_name
+None,None,0,Praveen,2020-02-21 06:46:04.847210+00:00,Praveen,2020-02-21 06:46:04.847234+00:00,Digimonk Organization
+1,tiny,1,Praveen,2020-02-21 08:06:05.749018+00:00,Praveen,2020-02-21 08:06:05.749037+00:00,Digimonk Organization
+2,small,3,Praveen,2020-02-21 08:06:34.839507+00:00,Praveen,2020-02-21 08:06:34.839522+00:00,Digimonk Organization
+5,medium-medium,5,Praveen,2020-02-21 08:07:03.792424+00:00,Praveen,2020-02-21 08:07:03.792434+00:00,Digimonk Organization
+8,medium-large,8,Praveen,2020-02-21 08:07:24.648819+00:00,Praveen,2020-02-21 08:07:24.648841+00:00,Digimonk Organization
+3,medium-small,3,Praveen,2020-02-21 08:08:06.821177+00:00,Praveen,2020-02-21 08:08:06.821192+00:00,Digimonk Organization
+13,large,13,Praveen,2020-02-21 08:09:06.246366+00:00,Praveen,2020-02-21 08:09:06.246372+00:00,Digimonk Organization
+20,XL,20,Praveen,2020-02-21 08:49:58.937723+00:00,Praveen,2020-02-21 08:49:58.937746+00:00,Digimonk Organization
+40,XX Large,40,Praveen,2020-02-21 08:51:54.862068+00:00,Praveen,2020-02-21 08:51:54.862079+00:00,Digimonk Organization
+100,XXX Large,100,Praveen,2020-02-21 08:52:21.333485+00:00,Praveen,2020-02-21 08:52:21.333497+00:00,Digimonk Organization

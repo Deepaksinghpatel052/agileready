@@ -1,0 +1,5 @@
+Success : AR_EPIC_CAPABILITY : row no. : 2 : Epic capability add successfully : 2020-04-25 20:20:12.677635
+Success : AR_EPIC_CAPABILITY : row no. : 3 : Epic capability add successfully : 2020-04-25 20:20:12.688305
+Success : AR_EPIC_CAPABILITY : row no. : 4 : Epic capability add successfully : 2020-04-25 20:20:12.698931
+Success : AR_EPIC_CAPABILITY : row no. : 5 : Epic capability add successfully : 2020-04-25 20:20:12.709586
+Success : AR_EPIC_CAPABILITY : row no. : 6 : Epic capability add successfully : 2020-04-25 20:20:12.720129

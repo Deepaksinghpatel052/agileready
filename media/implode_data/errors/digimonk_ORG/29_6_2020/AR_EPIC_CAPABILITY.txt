@@ -1,0 +1,5 @@
+Error : AR_EPIC_CAPABILITY : row no. : 2 : None : Epic capability already exists.  : 2020-06-29 12:18:21.598184
+Error : AR_EPIC_CAPABILITY : row no. : 3 : Capability-C1 (example) : Epic capability already exists.  : 2020-06-29 12:18:21.599031
+Error : AR_EPIC_CAPABILITY : row no. : 4 : Capability-C2 (example) : Epic capability already exists.  : 2020-06-29 12:18:21.599918
+Error : AR_EPIC_CAPABILITY : row no. : 5 : Phone ID Plus (example) : Epic capability already exists.  : 2020-06-29 12:18:21.600757
+Error : AR_EPIC_CAPABILITY : row no. : 6 : BestEverAPI Pilot (example) : Epic capability already exists.  : 2020-06-29 12:18:21.601595

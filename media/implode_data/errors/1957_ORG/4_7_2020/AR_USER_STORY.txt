@@ -1,0 +1,9 @@
+Error : AR_USER_STORY : row no. : 2 : name 'write' is not defined : 2020-07-04 13:19:28.325903
+Error : AR_USER_STORY : row no. : 3 : name 'write' is not defined : 2020-07-04 13:19:28.336162
+Error : AR_USER_STORY : row no. : 4 : name 'write' is not defined : 2020-07-04 13:19:28.346300
+Error : AR_USER_STORY : row no. : 5 : name 'write' is not defined : 2020-07-04 13:19:28.356489
+Error : AR_USER_STORY : row no. : 6 : name 'write' is not defined : 2020-07-04 13:19:28.366610
+Error : AR_USER_STORY : row no. : 7 : name 'write' is not defined : 2020-07-04 13:19:28.376728
+Error : AR_USER_STORY : row no. : 8 : name 'write' is not defined : 2020-07-04 13:19:28.386847
+Error : AR_USER_STORY : row no. : 9 : name 'write' is not defined : 2020-07-04 13:19:28.397015
+Error : AR_USER_STORY : row no. : 10 : name 'write' is not defined : 2020-07-04 13:19:28.407153

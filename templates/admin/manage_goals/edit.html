@@ -1,0 +1,36 @@
+<div class="paper">
+                   <div class="row">
+                      <div class="col-md-12">
+                         <div class="container-fluid">
+                            <div class="login-form-content">
+                               <form onsubmit="doSomething();" action="{{BASE_URL}}manage-goals/edit/{{id}}" method="POST">
+                                 {% csrf_token %}
+                                  <div class="form-group">
+                                        <label>Goal Title</label>
+                                         {{ArManageGoalsForm_get.Goal_title}}
+                                 
+                                </div>
+                                <div class="form-group">
+                                    <label>Goal Description</label>
+                                    {{ArManageGoalsForm_get.Gole_description}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Goal Use in</label>
+                                    {{ArManageGoalsForm_get.Use_in}}
+                                </div>
+                                 <div class="row">
+                                  <div class="col-md-6">
+                                    <a href="{{BASE_URL}}manage-goals" class="btn-block btn btn-white all-btn" > Cancel</a>
+                                  </div>
+                                  <div class="col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Update</button>
+                               </div>
+                             </div>
+                             </div>
+                               </form>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>

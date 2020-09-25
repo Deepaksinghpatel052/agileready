@@ -1,0 +1,6 @@
+Error : AR_team : row no. : 2 : None : Team already exists.  : 2020-02-21 13:34:31.153072
+Error : AR_team : row no. : 3 : Something was wrong. : 2020-02-21 13:34:31.165269
+Error : AR_team : row no. : 4 : Something was wrong. : 2020-02-21 13:34:31.166493
+Error : AR_team : row no. : 5 : Something was wrong. : 2020-02-21 13:34:31.178415
+Error : AR_team : row no. : 6 : Something was wrong. : 2020-02-21 13:34:31.189694
+Error : AR_team : row no. : 7 : Something was wrong. : 2020-02-21 13:34:31.202155

@@ -1,0 +1,10 @@
+Benefits_id,Benefits_title,Benefits_description,Use_in,created_by,created_dt,updated_by,updated_dt
+AR_BENEFITE_10,the customer experience is improved,(example),,Tony (root user 1 DM) Timbol,2020-02-11 02:56:56.708709+00:00,Tony (root user 1 DM) Timbol,2020-02-11 02:56:56.708718+00:00,arp test company
+AR_BENEFITE_11,ticket troubleshooting time is reduced 30%,(example),,Tony (root user 1 DM) Timbol,2020-02-11 02:59:28.729399+00:00,Tony (root user 1 DM) Timbol,2020-02-11 02:59:28.729408+00:00,arp test company
+AR_BENEFITE_12,management can see loan history,(example),,Tony (root user 1 DM) Timbol,2020-02-11 02:59:42.817457+00:00,Tony (root user 1 DM) Timbol,2020-02-11 02:59:42.817467+00:00,arp test company
+AR_BENEFITE_13,partner is removed upon request,(example),,Tony (root user 1 DM) Timbol,2020-02-11 03:00:00.794801+00:00,Tony (root user 1 DM) Timbol,2020-02-11 03:00:00.794811+00:00,arp test company
+AR_BENEFITE_14,partner is added upon qualification,(example),,Tony (root user 1 DM) Timbol,2020-02-11 03:00:17.349731+00:00,Tony (root user 1 DM) Timbol,2020-02-11 03:00:17.349739+00:00,arp test company
+AR_BENEFITE_15,a physical copy is mailed out,(example),,Tony (root user 1 DM) Timbol,2020-02-11 03:00:36.867733+00:00,Tony (root user 1 DM) Timbol,2020-02-11 03:00:36.867745+00:00,arp test company
+AR_BENEFITE_16,report type 1 is submitted,(example),,Tony (root user 1 DM) Timbol,2020-02-11 03:00:53.300457+00:00,Tony (root user 1 DM) Timbol,2020-02-11 03:00:53.300466+00:00,arp test company
+AR_BENEFITE_17,I can do a customer lookup by phone,(example),,Tony (root user 1 DM) Timbol,2020-02-11 03:01:12.463110+00:00,Tony (root user 1 DM) Timbol,2020-02-11 03:01:12.463120+00:00,arp test company
+AR_BENEFITE_18,an audit can be completed,(example),,Tony (root user 1 DM) Timbol,2020-02-11 03:01:29.533558+00:00,Tony (root user 1 DM) Timbol,2020-02-11 03:01:29.533570+00:00,arp test company

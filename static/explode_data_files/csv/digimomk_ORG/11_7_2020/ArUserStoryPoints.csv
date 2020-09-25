@@ -1,0 +1,11 @@
+Point_Key,Point_Description,Point_score,create_by,create_by,create_dt,update_by,update_dt,organization_name
+None,None,0,jitendra,2020-07-10 11:22:02.819267+00:00,jitendra,2020-07-10 11:22:02.819281+00:00,digimomk
+1,tiny,1,jitendra,2020-07-10 11:22:04.077712+00:00,jitendra,2020-07-10 11:22:04.077716+00:00,digimomk
+2,small,3,jitendra,2020-07-10 11:22:04.089365+00:00,jitendra,2020-07-10 11:22:04.089368+00:00,digimomk
+5,medium-medium,5,jitendra,2020-07-10 11:22:04.100665+00:00,jitendra,2020-07-10 11:22:04.100668+00:00,digimomk
+8,medium-large,8,jitendra,2020-07-10 11:22:04.112076+00:00,jitendra,2020-07-10 11:22:04.112079+00:00,digimomk
+3,medium-small,3,jitendra,2020-07-10 11:22:04.124354+00:00,jitendra,2020-07-10 11:22:04.124358+00:00,digimomk
+13,large,13,jitendra,2020-07-10 11:22:04.136898+00:00,jitendra,2020-07-10 11:22:04.136901+00:00,digimomk
+20,XL,20,jitendra,2020-07-10 11:22:04.149457+00:00,jitendra,2020-07-10 11:22:04.149460+00:00,digimomk
+40,XX Large,40,jitendra,2020-07-10 11:22:04.162042+00:00,jitendra,2020-07-10 11:22:04.162046+00:00,digimomk
+100,XXX Large,100,jitendra,2020-07-10 11:22:04.173763+00:00,jitendra,2020-07-10 11:22:04.173765+00:00,digimomk

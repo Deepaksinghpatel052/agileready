@@ -1,0 +1,5 @@
+Error : ArRole : row no. : 2 : Something was wrong in this file : 2020-02-15 15:14:52.645208
+Error : ArRole : row no. : 3 : AR_ROLE_6 : Role already exists.  : 2020-02-15 15:14:52.646125
+Error : ArRole : row no. : 4 : AR_ROLE_7 : Role already exists.  : 2020-02-15 15:14:52.647008
+Error : ArRole : row no. : 5 : AR_ROLE_8 : Role already exists.  : 2020-02-15 15:14:52.647867
+Error : ArRole : row no. : 6 : AR_ROLE_9 : Role already exists.  : 2020-02-15 15:14:52.648728

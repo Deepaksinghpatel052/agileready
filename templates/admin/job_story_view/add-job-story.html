@@ -1,0 +1,518 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load static %}
+{% block cssstyle %}
+
+<style type="text/css">
+  span.select2.select2-container.select2-container--default.select2-container--below.select2-container--focus {
+    width: 100% !important;
+}
+.edit input[type=checkbox] {
+    margin-top: 0px!important;
+    margin-left: 10px!important;
+}
+
+
+#svg circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+  stroke: #666;
+  stroke-width: 0.3em;
+}
+#svg #bar {
+  stroke: #FF9F1E;
+}
+#cont {
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin-top: 18px;
+    box-shadow: 0 0 0.8em #b6b4b4;
+    border-radius: 100%;
+    position: relative;
+}
+#cont:after {
+    position: absolute;
+    display: block;
+    height: 50px;
+    width: 50px;
+    left: 64%;
+    top: 100%;
+    box-shadow: none !important;
+    content: attr(data-pct);
+    margin-top: -50px;
+    margin-left: -32px;
+    border-radius: 100%;
+    line-height: 53px;
+    font-size: 1em;
+    text-shadow: none;
+}
+
+input {
+  color: #000;
+}
+
+</style>
+    {% endblock %}
+
+
+
+<div class="container-fluid text-white">
+               <div class="row p-t-b-8 ">
+                  <div class="col">
+                     <h1>Job Story View</h1>
+                  </div>
+               </div>
+                 <div class="row p-t-b-8">
+         <p class="user-nick"> {{user_name}}</p>
+  </div>
+            </div>
+            </header>
+<div class="container-fluid">
+           
+            <div class="row p-t-b-20">
+               <div class="col-md-12">
+                  <!-- <div class="card no-b"> -->
+                     <!-- {{ ar_job_story_form.errors }} -->
+                              {% if messages %}
+         {% for message in messages %}
+         {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+         <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+            <strong>{{message}}</strong> 
+         </div>
+         {% endif %}
+         {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+         <div class="alert alert-danger alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+            <strong>{{message}}</strong> 
+         </div>
+         {% endif %}
+         {% endfor %}
+         {% endif %}
+
+{% if ar_job_story_form.errors %}
+    {% for field in ar_job_story_form %}
+        {% for error in field.errors %}
+             <div class="alert alert-danger alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>{{field.label}}  {{ error }} </strong>
+                    </div>
+
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+
+
+
+          <div class="login-form-card edit">
+                   <!--  <div class="login-form-content"> -->
+                        <form onsubmit="doSomething();" action="{{BASE_URL}}job-story-view/add-new" method="POST" enctype="multipart/form-data">
+                          {% csrf_token %}
+                                   <div class="row">
+                                      <div class="col-md-8"></div>
+                                      <div class="col-md-6">
+                                     <!-- start login -->
+                                      <div class="form-group">
+                                        <label>Title<span style="color: red;"> *</span></label>
+                                        {{ar_job_story_form.title}}        
+                                </div>
+                                <div class="form-group">
+                                        <label>Story Tri Part Text</label>
+                                        {{ar_job_story_form.story_tri_part_text}}     
+                                </div>
+                                <div class="form-group">
+                                        
+                                      
+                                        <div class="row">
+
+                                          <div class="col-md-8">
+                                          <label>Readiness Quality Score</label>
+                                          {{ar_job_story_form.readiness_quality_score}}
+                                        </div>
+                                          <div class="col-md-2" >
+                                            <canvas id="paper" style="width: 50px; height:50px; margin-top: 18px;"></canvas>
+                                          </div> 
+
+                                          <!-- ------------------------------------- -->
+                                          <div class="col-md-2" style="margin-top: 20px;">
+                                            <div class="question-div">
+
+                                            <a href="#" class="btn all-btn help_text" data-help_id="rqs-rating-explainer" data-toggle="modal"  data-target="#modal-default2">?</span></a>
+                                          </div>
+
+                                          </div>
+                                          <!-- ------------------------------------- -->
+
+                                          <div class="col-md-5" style="margin-top: 28px;">
+                                            <label>AutoScoring</label>
+                                        {{ar_job_story_form.autoscoring_on}} 
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-md-12" id="show_prohress_bar">
+                             
+                                          </div>
+                                          
+                                        </div>
+                                </div>
+                                 <div class="form-group">
+                  <label>Story Builder</label>
+                  <input type="text" name="str_part" class="form-control login-frm-input" id="fillinput" readonly="readonly">
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label id="rollabel" roll="When " >When</label>
+                      <select class="form-control role_goal_benefits selectbox" name="jobsit" id="rol">
+                        <option value="">Job Situation</option>
+                        {% for data in Ar_Job_Sit %}
+                        <option value="{{data.member_product_list}}">{{data.member_product_list}}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label  id="gollabel" goll="I want to " >I want to</label>
+                      <select id = "gol" name="jobmot" class="form-control  role_goal_benefits selectbox">
+                        <option value="">Job Motivation</option>
+                        {% for data in Ar_Job_Mot %}
+                        <option value="{{data.member_product_list}}">{{data.member_product_list}}</option>
+                        {% endfor %}
+<!--                         <option value="Goal">Goal1</option>
+                        <option value="Goal">Goal2</option>
+                        <option value="Goal">Goal3</option>
+                        <option value="Goal">Goal4</option> -->
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label id="benlabel" benl="So I Can " >So I Can</label>
+                      <a id="reset_story" class="btn all-btn" style="float: right;">Reset</a>
+                      <select id="ben" name="joboutc" class="form-control  role_goal_benefits selectbox">
+                        <option value="">Job Outcome</option>
+                        {% for data in Ar_Job_Outc %}
+                        <option value="{{data.member_product_list}}">{{data.member_product_list}}</option>
+                        {% endfor %}
+<!--                         <option value="Benefit">Benefit</option>
+                        <option value="Benefit">Benefit1</option>
+                        <option value="Benefit">Benefit2</option>
+                        <option value="Benefit">Benefit3</option>
+                        <option value="Benefit">Benefit4</option> -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                                        <label>Story Point</label>
+                                       {{ar_job_story_form.story_points}}
+                                </div>
+                                <div class="form-group">
+                                        <label>Job Story Status<span style="color: red;"> *</span></label>
+                                         {{ar_job_story_form.job_story_status}}
+                                </div>
+
+                                <div class="form-group" style=" margin-top: -10px;">
+                                        <label>Archive Indicator</label>
+                                       {{ar_job_story_form.archive_indicator}}
+                                </div>
+                                    
+                               
+                                <div class="form-group">
+                                        <label>Job Story Type<span style="color: red;"> *</span></label>
+                                        {{ar_job_story_form.UST_ID}}         
+                                </div>
+                                
+               
+              
+                                
+                                 
+                                
+                                 
+                                <br>
+
+                                
+                                
+                                </div>
+                              <div class="col-md-6">
+                                     <div class="form-group">
+                                        <label>Acceptance Criteria</label>
+                                        {{ar_job_story_form.acceptance_criteria}}        
+                                </div>
+                                <div class="form-group" style=" margin-top: -10px;">
+                                  <div class="row">
+                                    <div class="col-md-12"><label>Acceptance Criteria Readability Score</label></div>
+                                    <div class="col-md-8">{{ar_job_story_form.ac_readability_score}}</div>
+                                    <div class="col-md-4"><div class="question-div"><a href="#" class="btn all-btn help_text" data-help_id="ac-rating-explainer" data-toggle="modal"  data-target="#modal-default2">?</span></a></div></div>
+                                  </div>
+                                        
+                                        
+                                </div>
+                                    <div class="form-group">
+                                        <label>Conversations</label>
+                                        {{ar_job_story_form.conversation}}        
+                                </div>
+                                <div class="form-group " style="margin-bottom: 0rem; margin-top: -10px;">
+                                      
+                          <div class="row">
+                            <div class="col-md-12"> <label>Conversations Readability Score</label></div>
+                            <div class="col-md-8">{{ar_job_story_form.convo_readability_score}}</div>
+                            <div class="col-md-4"><div class="question-div"><a href="#" class="btn all-btn help_text" data-help_id="cv-rating-explainer" data-toggle="modal"  data-target="#modal-default2">?</span></a></div></div>
+                        </div>
+                                       
+                                         
+                                </div>
+                                <br>
+
+
+<!-- <div class="alert alert-danger alert-dismissible" id="attachment_error" style="display: none;">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>"You can select max 5 attachment."</strong>
+                    </div> -->
+
+
+
+                                <div class="form-group">
+                                        <label>Attachments</label>
+                                        {{ar_job_story_form.attachments}} 
+                                        <label id="attachment_error" style="display: none; color: rgb(197, 34, 65);" >You can select max 5 attachment.</label>        
+                                </div>
+<!-- 
+                                <div class="form-group" id="attachment_error" style="display: none;">
+                                        <label>You can select max 5 attachment.</label>
+                                </div> -->
+                <br>
+                                <div class="form-group">
+                                        <label>Backlogs Parents<span style="color: red;"> *</span></label>
+                                       {{ar_job_story_form.backlog_parent}}
+                                </div>
+                                
+                                <div class="form-group">
+                                        <label>Job Story Business Value<span style="color: red;"> *</span></label>
+                                       {{ar_job_story_form.BV_ID}}
+                                </div>
+                              
+                                 <div class="form-group">
+                                        <label>Team Member Owner - Assigned to</label>
+                                        {{ar_job_story_form.owner}}         
+                                </div>
+                                
+                                <div class="form-group">
+                                        <label>Team Member Author<span style="color: red;"> *</span></label>
+                                        {{ar_job_story_form.ar_user}}         
+                                </div>
+                                
+                                
+                                  
+                                
+                              </div>
+                            </div>
+                                <div class="row">
+                                  <div class="col-md-2 text-center">
+                                    <a href="{{BASE_URL}}job-story-view" class="btn-block btn btn-white all-btn" > Cancel</a>
+                                  </div>
+                                 <div class="col-md-2">
+                                  
+                                    <button type="submit" id="submit_user_story"  class="btn btn-block btn-white all-btn">Add</button>
+                                  </div>
+                               
+                             </div>
+                             </form></div>  
+                         
+                       <!-- </div> -->
+             </div>
+          <!-- </div> -->
+               </div>
+          </div>
+
+                         <!------------help text modal Cost Modal Popup Start------->
+<div class="modal fade in sp-map" id="modal-default2">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title">Help Text</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span>
+          </button>
+      </div>
+      <div class="modal-body">
+        <div class="paper">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="container-fluid">
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <p>Topic : </p>
+                  </div>
+                    <div class="form-group">
+                    <p>Description : </p>
+                  </div>
+                    <div class="form-group">
+                    <p>Information : </p>
+                  </div>
+                  </div>
+                 <div class="col-md-8">
+                  <div class="form-group">
+                    <p id="help_topic"></p>
+                  </div>
+                  <div class="form-group">
+                    <p id="help_desc"></p>
+                  </div>
+                  <div class="form-group">
+                    <p id="help_info"></p>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!--------------------Delete Message Modal Ends---------------->
+          
+{% endblock %}
+
+
+
+
+{% block script %}
+<script src='{% static "css/circal/RadialBar.js" %}'></script>
+
+
+
+<script type="text/javascript">
+   function doSomething() {
+    $(".se-pre-con").css("display","block");
+}
+
+
+$(document).ready(function(){
+
+ 
+
+
+
+
+
+// var get_score = $("#id_readiness_quality_score").val();
+setInterval(function(){ 
+var get_score = $("#id_readiness_quality_score").val();
+var set_class = '#4b86db';
+if(parseInt(get_score)<35)
+{
+  set_class = '#c52241';
+}
+else
+{
+  if(parseInt(get_score)<65)
+  {
+    set_class = '#E1CB28';
+  }
+  else{
+    set_class = '#0DB428';
+  }
+
+}
+
+var canvas = document.getElementById('paper');
+  var ctx = canvas.getContext('2d');
+  canvas.width = 50;
+  canvas.height = 50;
+  
+  var fourthProgressBar = new RadialBar(ctx, {
+    x: 25,
+    y: 25,
+    radius: 20,
+    lineWidth: 8,
+    lineFill: '#4b86db',
+    backLineFill: set_class,  //  change color accourdong to number
+    bgFill: '#fff',
+    isShowInfoText: true,
+    infoFamily: '10px Arial'
+
+  });
+
+  function loop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    fourthProgressBar.set(get_score);
+
+    
+    fourthProgressBar.update();
+
+    requestAnimationFrame(loop);
+  }
+  loop();
+
+
+
+ }, 1000);
+
+});
+
+
+</script>
+
+
+<script>
+var limit = 5;
+$(document).ready(function(){
+    $('#id_attachments').change(function(){
+        var files = $(this)[0].files;
+        $("#attachment_error").css("display","none");
+        if(files.length > limit){
+
+          $("#attachment_error").css("display","block");
+          $("#submit_user_story").prop('disabled', true);
+
+            // alert("You can select max 5 attachment.");
+            $('#id_attachments').val('');
+            return false;
+        }else{
+            $("#attachment_error").css("display","none");
+            $("#submit_user_story").prop('disabled', false);
+            return true;
+        }
+    });
+});
+</script>
+
+
+<!-- help text js -->
+<script type="text/javascript">
+  var token = '{{csrf_token}}';
+
+ $(document).on("click",".help_text",function(){
+  var id = $(this).data("help_id");
+    $.ajax({
+        method: 'POST',
+        headers: { "X-CSRFToken": token },
+        url: '{{BASE_URL}}user-story-view/get-help',
+        dataType: "json",
+        data: {
+            'id': id
+        },
+        success: function (data) {
+          for (var i = 0; i < data.data.length; i++) {
+          $("#help_topic").text(data.data[i].topic);
+          $("#help_desc").text(data.data[i].description);
+          $("#help_info").text(data.data[i].information);
+            }
+        }
+    });
+});
+  </script>
+<!-- ---------- -->
+
+
+
+{% endblock %}

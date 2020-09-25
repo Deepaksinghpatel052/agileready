@@ -1,0 +1,3 @@
+Error : Ar_user : row no. : 2 : harry@digimonk.in : E-mail is already exists ! : 2020-02-23 08:34:49.549081
+Error : Ar_user : row no. : 3 : baghel.hari@gmail.com : E-mail is already exists ! : 2020-02-23 08:34:49.549752
+Error : Ar_user : row no. : 4 : baghel_hari@rediffmail.com : E-mail is already exists ! : 2020-02-23 08:34:49.550413

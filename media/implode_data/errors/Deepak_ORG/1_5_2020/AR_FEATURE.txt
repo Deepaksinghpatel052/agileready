@@ -1,0 +1,9 @@
+Error : AR_FEATURE : row no. : 2 : None : Feature already exists.  : 2020-05-01 13:00:01.153584
+Error : AR_FEATURE : row no. : 3 : Feature-F1 (example) : Feature already exists.  : 2020-05-01 13:00:01.154436
+Error : AR_FEATURE : row no. : 4 : Feature-F2 (example) : Feature already exists.  : 2020-05-01 13:00:01.155276
+Error : AR_FEATURE : row no. : 5 : Feature-F3 (example) : Feature already exists.  : 2020-05-01 13:00:01.156092
+Error : AR_FEATURE : row no. : 6 : Store Customer Phone # (example) : Feature already exists.  : 2020-05-01 13:00:01.156909
+Error : AR_FEATURE : row no. : 7 : Retrieve Customer Phone # (example) : Feature already exists.  : 2020-05-01 13:00:01.157738
+Error : AR_FEATURE : row no. : 8 : Enroll Partner (example) : Feature already exists.  : 2020-05-01 13:00:01.158551
+Error : AR_FEATURE : row no. : 9 : Disenroll Partner # (example) : Feature already exists.  : 2020-05-01 13:00:01.159369
+Error : AR_FEATURE : row no. : 10 : Submit FedRes ReportType1 (example) : Feature already exists.  : 2020-05-01 13:00:01.160187

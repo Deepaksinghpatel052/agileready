@@ -1,0 +1,31 @@
+{% extends 'web/base-template.html' %}
+{% block content %}
+{% load static %}
+<main>
+  
+  <section class="p-t-b-40 animatedParent animateOnce responsive">
+         <div class="container">
+            <div class="row">
+               <div class="col-12 col-lg-6">
+                  <div class="service-featured-thumbs">
+                     <div class="service-thumb animated fadeInUpShort go"> <a href="#" class="img-link"><img src='{% static "img/brightway-500error.jpg" %}' alt="service"></a></div>
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6">
+                  <div class="service-featured-content p-t-b-40">
+                    <h2>Shoot!</h2>
+                    <h4>Well, this is unexpected...</h4>
+                    <p>Error Code : 500</p>
+                    <p>An error has occurred and we're working to fix the proble! We'll be up and running shortly.</p>
+                    <p>Please try to <a href="{{BASE_URL}}dashboard/logout">logout</a> and login again.</p>
+                    <p>if you need immediate help from our customer service team about an ongoing reservation, please contact to <a href="{{BASE_URL}}">Help Center</a> for additional.</p>
+                    <p>Thanks for your patience</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+</main>
+
+
+{% endblock %}

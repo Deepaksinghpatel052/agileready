@@ -1,0 +1,8 @@
+Error : AR_team : row no. : 2 : Team Newton : Team already exists.  : 2020-02-15 15:14:52.573028
+Error : AR_team : row no. : 3 : Team Kelvin : Team already exists.  : 2020-02-15 15:14:52.573879
+Error : AR_team : row no. : 4 : Team DaVinci : Team already exists.  : 2020-02-15 15:14:52.574725
+Error : AR_team : row no. : 5 : Team Capernicus : Team already exists.  : 2020-02-15 15:14:52.575598
+Error : AR_team : row no. : 6 : Team Digimonk : Team already exists.  : 2020-02-15 15:14:52.576417
+Error : AR_team : row no. : 7 : Team Digimonk Second : Team already exists.  : 2020-02-15 15:14:52.577241
+Error : AR_team : row no. : 8 : Team Digimonk Third : Team already exists.  : 2020-02-15 15:14:52.578067
+Error : AR_team : row no. : 9 : Team Digimonk Forth : Team already exists.  : 2020-02-15 15:14:52.578929

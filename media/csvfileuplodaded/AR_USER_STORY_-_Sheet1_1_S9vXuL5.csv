@@ -1,0 +1,27 @@
+title,story_tri_part_text,acceptance_criteria,ac_readability_score,conversation,backlog_parent,convo_readability_score,autoscoring_on,archive_indicator,readiness_quality_score,story_points,user_story_status,UST_ID,ar_user,owner,created_by,updated_dt,created_dt,updated_by
+Test,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Phone Id lookup 2,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Phone Id lookup,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Bad User Story,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Not quite as bad a user story,,,0,,,0,0,0,0,,,,,,6,########,########,6
+worst user story just waiting for refinement,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Bird takes flight,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Bird takes flight Part 2,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Bird takes flight Part 3,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Test,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Phone Id lookup 2,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Phone Id lookup,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Bad User Story,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Not quite as bad a user story,,,0,,,0,0,0,0,,,,,,6,########,########,6
+worst user story just waiting for refinement,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Bird takes flight,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Bird takes flight Part 2,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Bird takes flight Part 3,,,0,,,0,0,0,0,,,,,,6,########,########,6
+Bird takes flight Part 5,As a bird I want to flap my wings so that I can fly south for the winter,,0,,,0,0,0,50,,,1,6,4,6,########,########,6
+Bird takes flight Part 6,As a bird I want to flap my wings so that I can fly south for the winter &&&&,,0,,,0,0,0,50,,,1,6,4,6,########,########,6
+Bird takes flight Part 7,I want to flap my wings,,0,,,0,0,0,30,,,1,6,4,6,########,########,6
+Bird takes flight Part 8,so that I can fly,,0,,,0,0,0,25,,,1,6,4,6,########,########,6
+ISBN Scan,As a Book Lover I want to scan the ISBN code so that I can log in my book faster,TBD,0,TBD,,0,1,0,80,7,4,1,4,4,4,########,########,4
+FindTrader(Spike),As a Team Member I want to research trading APIs so that we can connect to other systems,TBD,0,TBD,,0,1,0,88,9,3,2,4,4,4,########,########,4
+FindPODShop,TBD,TBD,0,TBD,,0,1,0,15,,3,1,4,4,4,########,########,4
+Book Capture,As a Book Lover I want to log my book so that it is captured in BookMIne,TBD,0,TBD,2,0,1,0,80,,3,2,4,4,4,########,########,4

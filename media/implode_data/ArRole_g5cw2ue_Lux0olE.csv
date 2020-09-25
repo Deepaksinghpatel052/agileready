@@ -1,0 +1,22 @@
+role_id,title,description,use,create_by,create_dt,update_by,update_dt,organization_name
+AR_ROLE_110,QA Tester,(example),,Shubham,2020-03-12 11:14:11.989338+00:00,Shubham,2020-03-12 11:14:11.989343+00:00,digimonk
+AR_ROLE_111,Developer,(example),,Shubham,2020-03-12 11:14:53.452759+00:00,Shubham,2020-03-12 11:14:53.452764+00:00,digimonk
+AR_ROLE_112,Product Owner,(example),,Shubham,2020-03-12 11:15:06.214189+00:00,Shubham,2020-03-12 11:15:06.214194+00:00,digimonk
+AR_ROLE_113,Scrum Master,(example),,Shubham,2020-03-12 11:15:21.281965+00:00,Shubham,2020-03-12 11:15:21.281977+00:00,digimonk
+AR_ROLE_114,Product Manager,(example),,Shubham,2020-03-12 11:15:45.096398+00:00,Shubham,2020-03-12 11:15:45.096403+00:00,digimonk
+AR_ROLE_115,Business Owner,(example),,Shubham,2020-03-12 11:15:59.592341+00:00,Shubham,2020-03-12 11:15:59.592346+00:00,digimonk
+AR_ROLE_116,Role J (Broker),(edit as needed),,Shubham,2020-03-12 11:16:11.257789+00:00,Shubham,2020-03-12 11:16:11.257794+00:00,digimonk
+AR_ROLE_117,Role J (Seller),(edit as needed),,Shubham,2020-03-12 11:16:23.647341+00:00,Shubham,2020-03-12 11:16:23.647350+00:00,digimonk
+AR_ROLE_118,Role J (Buyer),(edit as needed),,Shubham,2020-03-12 11:16:34.216044+00:00,Shubham,2020-03-12 11:16:34.216050+00:00,digimonk
+AR_ROLE_119,Role J (Participant),(edit as needed),,Shubham,2020-03-12 11:16:55.603614+00:00,Shubham,2020-03-12 11:16:55.603620+00:00,digimonk
+AR_ROLE_120,Role J (Consumer),(edit as needed),,Shubham,2020-03-12 11:17:09.542343+00:00,Shubham,2020-03-12 11:17:09.542348+00:00,digimonk
+AR_ROLE_121,Role I (Trainer),(edit as needed),,Shubham,2020-03-12 11:17:37.840262+00:00,Shubham,2020-03-12 11:17:37.840271+00:00,digimonk
+AR_ROLE_122,Role H (Member),(edit as needed),,Shubham,2020-03-12 11:17:51.313435+00:00,Shubham,2020-03-12 11:17:51.313440+00:00,digimonk
+AR_ROLE_123,Role G (Visitor),(edit as needed),,Shubham,2020-03-12 11:18:03.799182+00:00,Shubham,2020-03-12 11:18:03.799188+00:00,digimonk
+AR_ROLE_124,Role F (Applicant),(edit as needed),,Shubham,2020-03-12 11:18:19.175872+00:00,Shubham,2020-03-12 11:18:19.175878+00:00,digimonk
+AR_ROLE_125,Role E (Staff),(edit as needed),,Shubham,2020-03-12 11:18:29.803835+00:00,Shubham,2020-03-12 11:18:29.803841+00:00,digimonk
+AR_ROLE_126,Role D (Analyst),(edit as needed),,Shubham,2020-03-12 11:18:40.164710+00:00,Shubham,2020-03-12 11:18:40.164715+00:00,digimonk
+AR_ROLE_127,Role C (Admin),(edit as needed),,Shubham,2020-03-12 11:18:50.636071+00:00,Shubham,2020-03-12 11:18:50.636076+00:00,digimonk
+AR_ROLE_128,Role B (Agent of Record),(edit as needed),,Shubham,2020-03-12 11:19:01.036286+00:00,Shubham,2020-03-12 11:19:01.036292+00:00,digimonk
+AR_ROLE_129,Role A (Customer Service Rep),(edit as needed),,Shubham,2020-03-12 11:19:13.756996+00:00,Shubham,2020-03-12 11:19:13.757001+00:00,digimonk
+AR_ROLE_130,Eagle,(example),"Disenroll Partner-1 , Eagle Soars , Eagle Soars-1 , Eagle Soars-2 , Eagle Soars-3 , Disenroll Partner-1 , Eagle Soars , Eagle Soars-1 , Eagle Soars-2 , Eagle Soars-3 , Disenroll Partner-1 , Eagle Soars , Eagle Soars-1 , Eagle Soars-2 , Eagle Soars-3 , Disenroll Partner-1 , Eagle Soars , Eagle Soars-1 , Eagle Soars-2 , Eagle Soars-3 , Disenroll Partner-1 , Eagle Soars , Eagle Soars-1 , Eagle Soars-2 , Eagle Soars-3",Shubham,2020-03-12 11:19:25.104061+00:00,Shubham,2020-03-12 11:19:25.104075+00:00,digimonk

@@ -1,0 +1,798 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load add_value %}
+{% load static %}
+{% block cssstyle %}
+<link href='{% static "css/jquery.lwMultiSelect.css" %}'  rel="stylesheet" />
+<style type="text/css">
+   span.select2.select2-container.select2-container--default.select2-container--below.select2-container--focus {
+   width: 100% !important;
+   }
+</style>
+{% endblock %}
+<div class="container-fluid text-white">
+   <div class="row p-t-b-8 ">
+      <div class="col">
+         <h1><span id="page_name"></span></h1>
+      </div>
+   </div>
+     <div class="row p-t-b-8">
+         <p class="user-nick"> {{user_name}}</p>
+  </div>
+</div>
+</header>
+<div class="container-fluid">
+   <div class="row p-t-b-20">
+      <div class="col-md-12">
+         {% if messages %}
+         {% for message in messages %}
+         {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+         <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+            <strong>{{message}}</strong> 
+         </div>
+         {% endif %}
+         {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+         <div class="alert alert-danger alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+            <strong>{{message}}</strong> 
+         </div>
+         {% endif %}
+         {% endfor %}
+         {% endif %}
+         <!-- <div class="card no-b"> -->
+         <div class="login-form-card">
+            <form  action="javascript:(0);">
+               <div class="row">
+                  <div class="col-md-12 mb-2">
+                     <button class="btn-success add-data" data-toggle="modal" data-target="#modal-default1">Add Backlog</button>
+                     <button  id="show_col" class="btn-primary import-data" data-toggle="modal" data-target="#myModal">Show Columns</button>
+                     {% if backlog_edit_status %}
+                     <button class="btn-primary import-data" data-toggle="modal" onclick="set_data('AR_BACKLOG','backlog-view')" data-target="#myModalImportCSV">Import</button>
+                     {% else %}
+                     <button class="btn-primary import-data">You don't have permission to import data </button>
+                     {% endif %}
+                     <button type="button" class="download-button btn-export1 export_data_btn" data-file_type="CSV"><i class="icon-download"></i> </button>
+                  </div>
+                </div>
+
+                      <div class="row">
+                      <div class="col-md-1 text-center">
+                        <label id="rollabel" roll="Given " >Filters : </label>
+                     </div>
+{% if get_show_column|length > 0 %}
+
+                     {% for v in get_show_column %}
+           {% if  v == 'product_parent'  %}  
+                      <div class="col-md-3 text-center">
+                      <select class="form-control role_goal_benefits selectbox typeable_filter" name="testcond" onchange="myFunction()" id="product_list">
+                        <option value="">Select Product</option>
+                        {% for data in product_data %}
+                        {% if product_token == data.product_slug %}
+                        <option selected="" value="product-parent={{data.product_slug}}">{{data.Product_name}}</option>
+                        {% else %}
+                        <option value="product-parent={{data.product_slug}}">{{data.Product_name}}</option>
+                        {% endif%}
+                        {% endfor %}
+                      </select>
+                        
+                      </div>
+                      {% endif%}
+                      
+                      {% if  v == 'team_list'  %}
+                      <div class="col-md-3 text-center">
+                      <select class="form-control role_goal_benefits selectbox typeable_filter" name="testcond" onchange="myFunction()" id="team_list">
+                        <option value="">Select Team</option>
+                        {% for data in team_data %}
+                        {% if team_token == data.team_slug %}
+                        <option selected="" value="team={{data.team_slug}}">{{data.Team_name}}</option>
+                        {% else %}
+                        <option value="team={{data.team_slug}}">{{data.Team_name}}</option>
+                        {% endif%}
+                        {% endfor %}
+                      </select>
+                        
+                      </div>
+
+                      {% endif%}
+                        {% endfor %}
+
+
+                         <!--  -->
+{% else %}
+<div class="col-md-3 text-center">
+                      <select class="form-control role_goal_benefits selectbox typeable_filter" name="testcond" onchange="myFunction()" id="product_list">
+                        <option value="">Select Product</option>
+                        {% for data in product_data %}
+                        {% if product_token == data.product_slug %}
+                        <option selected="" value="product-parent={{data.product_slug}}">{{data.Product_name}}</option>
+                        {% else %}
+                        <option value="product-parent={{data.product_slug}}">{{data.Product_name}}</option>
+                        {% endif%}
+                        {% endfor %}
+                      </select>
+                        
+                      </div>
+
+<div class="col-md-3 text-center">
+                      <select class="form-control role_goal_benefits selectbox typeable_filter" name="testcond" onchange="myFunction()" id="team_list">
+                        <option value="">Select Team</option>
+                        {% for data in team_data %}
+                        {% if team_token == data.team_slug %}
+                        <option selected="" value="team={{data.team_slug}}">{{data.Team_name}}</option>
+                        {% else %}
+                        <option value="team={{data.team_slug}}">{{data.Team_name}}</option>
+                        {% endif%}
+                        {% endfor %}
+                      </select>
+                        
+                      </div>
+{% endif%}
+                      <p><b> Note :-</b> If you do not see the desired filter in the dropdown, then you can choose them in the 'Show Columns' button.</p>
+
+
+                   </div>
+
+
+                  <div class="table-responsive ">
+                     <!-- example12 -->
+                    <table id="example" width="auto" border="1" class="table table-striped table-bordered newpage dataTable no-footer" align="center" cellpadding="0" cellspacing="0" style="font-size: 15px; width: auto;  margin:0px;" role="grid" aria-describedby="example_info">
+                        <thead>
+                           <tr class="dnd-moved" role="row">
+                              <!-- <th align="left" class="slct" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Select: activate to sort column descending" style="width: 57px;">Select</th> -->
+                              <th align="left" valign="top">S.No.</th>
+                           
+
+  {% if get_show_column|length > 0 %}
+        {% for v in get_show_column %}
+          <th align="left" class="{{v}}" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{ all_column_list|get_item:v  }}  </th>
+          {% endfor %}
+           
+  {% else %}
+
+
+           {% for k , v in all_column_list.items %}
+          <th align="left" class="{{v}}" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{v}}</th>
+          {% endfor %}    
+            
+        
+  {% endif %}
+                             <!--  {% for k , v in all_column_list.items %}   
+                              
+
+
+                              {% if get_show_column|length > 0 %}
+            {% if k in get_show_column %}
+         <th align="left" class="{{v}}" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{v}}</th>  
+          {% endif %}
+
+           {% else %}
+<th align="left" class="{{v}}" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="width: 52px;">{{v}}</th>
+           {% endif %}
+
+
+
+
+                              {% endfor %} -->
+                              <th align="left" class="action" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending" style="">Action</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           {% if all_backlog_get %}
+                           
+
+
+                           {% for data in all_backlog_get %}
+                           <tr class="dnd-moved odd" role="row">
+                              <td align="left" valign="top">{{forloop.counter}}</td>
+
+
+
+{% if get_show_column|length > 0 %}
+
+       {% for v in get_show_column %}
+           {% if  v == 'team_list'  %}  
+                              <td align="left" class="usid sorting" valign="top" id="team_val" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.team_list.all|join:" |<br>" }}</td>
+                              {% endif %}
+                              {% if v == 'product_parent'  %}  
+                              <td align="left" class="usid sorting" valign="top" id="product_val"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.product_parent}}</td>
+                              {% endif %}
+                              
+                              {% if  v == 'title'  %}  
+                              <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.title}}</td>
+                              {% endif %}
+
+                              {% if  v == 'backlog_description'  %}  
+                              <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.backlog_description}}</td>
+                              {% endif %}
+                              
+                              {% if v == 'children_us_list' %}  
+                              <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.story_by_backlog.all|join:" |<br>" }}</td>
+                              {% endif %}
+                              {% if v == 'owner' %}  
+                              <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.owner}}</td>
+                              {% endif %}
+                              {% if v == 'backlog_score' %}  
+                              <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">
+
+                              <div class="col-md-1 mb20">
+   <div class="cdev" data-percent="{% back_scr data.ORG_ID_id data.id%}" data-duration="1000" data-color=",#d35400"></div>
+</div>
+<!-- 
+                                 <div class="progress">
+                         <div class="barOverflow">
+                            <div class="bar"></div>
+                         </div>
+                         <span>
+ -->
+                          <!-- {{data.backlog_score}} -->
+<!-- 
+                         </span>%
+                     </div> -->
+
+                              </td>
+                              {% endif %}
+                              {% if v == 'Backlog_size' %}  
+                              <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">
+                              	<!-- {{data.Backlog_size}} -->
+{% size data.ORG_ID_id data.id%}
+                              </td>
+                              {% endif %}
+                              {% if  v == 'BL_STATUS' %}  
+                              <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.BL_STATUS}}</td>
+                              {% endif %}
+                              {% if v == 'ORG_ID' %}  
+                              <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.ORG_ID}}</td>
+                              {% endif %}
+                              {% if v == 'created_by'  %}  
+                              <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.created_by}}</td>
+                              {% endif %}
+                              {% if v == 'created_dt' %}  
+                              <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.created_dt}}</td>
+                              {% endif %}
+                              {% if v == 'updated_by'  %}  
+                              <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.updated_by}}</td>
+                              {% endif %}
+                              {% if v == 'updated_dt' %}  
+                              <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.updated_dt}}</td>
+                              {% endif %}
+       {% endfor %}
+
+
+{% else %}
+
+<td align="left" class="usid sorting" valign="top"  tabindex="0" id="team_val" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.team_list.all|join:" |<br>" }}</td>
+ <td align="left" class="usid sorting" valign="top" id="product_val"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.product_parent}}</td>
+ <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.title}}</td>
+  <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.backlog_description}}</td>
+ <td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.story_by_backlog.all|join:" |<br>" }}</td>
+<td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.owner}}</td>
+<td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">
+    <div class="col-md-1 mb20">
+   <div class="cdev" data-percent="{% back_scr data.ORG_ID_id data.id%}" data-duration="1000" data-color=",#d35400"></div>
+</div>
+</td>
+<td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{% size data.ORG_ID_id data.id%}</td>
+<td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.BL_STATUS}}</td>
+<td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.ORG_ID}}</td>
+<td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.created_by}}</td>
+<td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.created_dt}}</td>
+<td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.updated_by}}</td>
+<td align="left" class="usid sorting" valign="top"  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="US ID: activate to sort column ascending" style="">{{data.updated_dt}}</td>
+
+{% endif %}
+
+
+
+
+
+
+
+
+                             
+                              
+                              <td align="left" class="action" valign="top">
+                                 <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                       <tr>
+                                                              <td align="center" valign="top"><a href="#" data-toggle="modal" data-target="#modal-default" class="edit_backlog" data-backlog_id="{{data.id}}"><i class="icon-pencil"></i></a></td>
+
+
+                                          <!-- <td align="center" valign="top"><a href="{{BASE_URL}}manage-backlog/edit-backlog/{{data.id}}"><i class="icon-pencil"></i></a></td> -->
+                                          <td align="center" valign="top"><a href="javascript:;" onclick="remove_product('{{BASE_URL}}manage-backlog/delete-backlog/{{data.id}}','{{Remove_Request_msg}}','{{Remove_done_msg}}','{{Not_Remove_msg}}');"><i class="icon-delete"></i></a><a></a></td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                           </tr>
+                           {% endfor %}
+                           {% endif %}
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+<!------------Modal Popup------->
+<div class="modal fade in sp-map" id="modal-default"  data-backdrop="static" data-keyboard="false">
+   <div class="modal-dialog">
+      <div class="modal-content" style="width: 150%!important;">
+         <div class="modal-header">
+            <h4 class="modal-title">Manage Backlog</h4>
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+            <!-- <span aria-hidden="true" style="font-size: 32px;">×</span></button> -->
+             <a href="{{BASE_URL}}manage-backlog" class="close" ><span aria-hidden="true" style="font-size: 32px; color: #fff;">×</span></a>
+         </div>
+          {% if backlog_edit_status %}
+         <div class="modal-body">
+
+         </div>
+         {% else %}
+
+                         <div class="alert alert-danger">
+                     <strong>Warning!</strong> You are not authorized person.
+         </div>
+                        {% endif %}
+      </div>
+   </div>
+</div>
+<!-- </div>
+   </div> -->
+<!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<!---------------------------Modal Ends---------------->
+<!-----------2nd Modal Popup Start------>
+<div class="modal fade in sp-map" id="modal-default1">
+   <div class="modal-dialog">
+      <div class="modal-content" style="width: 150%!important;">
+         <div class="modal-header">
+            <h4 class="modal-title">Add Backlog</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="font-size: 32px;">×</span></button>
+         </div>
+          {% if backlog_edit_status %}
+         <div class="modal-body">
+            <div class="paper">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="container-fluid">
+                        <!-- <div class="card no-b"> -->
+                        <!-- <div class="login-form-card"> -->
+                        <div class="login-form-content">
+                          
+                           <form  onsubmit="doSomething();" action="{{BASE_URL}}manage-backlog/add-backlog" method="POST">
+                              {% csrf_token %}
+                              <div class="row">
+                                 <div class="col-md-6">
+                                    <!-- start login -->
+                                    <div class="form-group">
+                                       <label>Title<span style="color: red;"> *</span></label>
+                                       {{ar_backlog_form.title}}
+                                       <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="title" name="login">         -->
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                       <label>Status</label>
+                                       {{ar_backlog_form.BL_STATUS}}
+                                       <!-- <select class="form-control" name="list" placeholder="select Team Member">
+                                          <option>Active</option>
+                                          </select> -->
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                       <label>Owner<span style="color: red;"> *</span></label>
+                                       {{ar_backlog_form.owner}}
+                                       <!-- <input class="form-control login-frm-input" type="text" value="" placeholder="User" aid="login" name="login"> -->
+                                    </div>
+                                    <div class="form-group">
+                                       <label>Product Parent<span style="color: red;"> *</span></label>
+                                       {{ar_backlog_form.product_parent}}
+                                       <!-- <input class="form-control login-frm-input" type="text" value="" placeholder="BookMine" aid="login" name="login"> -->
+                                    </div>
+                                    <!-- <div class="form-group"> -->
+                                    <!-- <label>Product ID</label> -->
+                                    <!-- {{ar_backlog_form.product_id}} -->
+                                    <!-- <textarea class="form-control login-frm-input" style="height: 100px;    padding: 11px;" placeholder="History"></textarea> -->
+                                    <!-- </div> -->
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-12">
+                                  <div class="form-group">
+                                       <label>Description<span style="color: red;"> *</span></label>
+                                       {{ar_backlog_form.backlog_description}}
+                                       <!-- <input class="form-control login-frm-input" type="text" id="login" placeholder="title" name="login">         -->
+                                    </div>
+                                    <div class="form-group">
+                                       <label>Team</label>
+                                       {{ar_backlog_form.team_list}}
+                                       <!-- <select class="form-control" name="list" placeholder="select Team Member">
+                                          <option>Team Newton</option>
+                                          </select> -->
+                                    </div>
+                                    
+                                 </div>
+
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-3">
+                                    <a href="{{BASE_URL}}manage-backlog" class="btn-block btn btn-white all-btn" >Cancel</a>
+                                 </div>
+                                 <div class="col-md-3">
+                                    <div class="form-group">
+                                       <button type="submit" class="btn-block btn btn-white all-btn">Add</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
+                          
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+          {% else %}
+                         <div class="alert alert-danger">
+                     <strong>Warning!</strong> You are not authorized person.
+         </div>
+                        {% endif %}
+      </div>
+   </div>
+</div>
+<!-- </div>
+   </div> -->
+<!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<!--------------------2nd Modal Ends---------------->
+<!-----------------------popup------------start--------------->
+<div id="myModal" class="modal fade" role="dialog">
+   <div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content" style="margin-top:60px;">
+         <div class="modal-header">
+            <h4 class="modal-title" style="width: 100%;">Choose Backlog View </h4>
+            <a href="{{BASE_URL}}backlog-view" class="close"><span aria-hidden="true" style="font-size: 32px; color: #000;">×</span></a>
+            <!-- <button type="button" class="close" data-dismiss="modal" style="margin: 0; padding: 0 !important; color: #000 !important;">&times;</button> -->
+         </div>
+         <div class="modal-body ">
+            <div class="container">
+               <select id="selectDefaults" multiple="multiple">
+                 {% for k , v in all_column_list.items %}   
+       
+          {% if k not in get_show_column %}
+           <option value="{{k}}" >{{v}}</option>
+
+          {% endif %}
+
+
+          {% endfor %}
+          {% for selected_item in get_show_column %}
+           <option value="{{selected_item}}" selected="true">{{ all_column_list|get_item:selected_item  }}</option>
+           {% endfor %}
+               </select>
+            </div>
+         </div>
+         <div class="modal-footer">
+                  <a href="{{BASE_URL}}backlog-view" class="btn btn-default" >Close</a>
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+            <button type="button" class="btn btn-danger click_to_submit">Submit</button>
+         </div>
+      </div>
+   </div>
+</div>
+<!----------------Popup Ends---------------->
+{% endblock %}
+{% block script %}
+<script src='{% static "js/jquery.lwMultiSelect.js" %}' ></script>
+<script type="text/javascript">
+   function doSomething() {
+     $(".se-pre-con").css("display","block");
+   }
+   
+   
+   $(document).on("click","#create_user_story_copy",function(){
+    var ids = new Array();
+   
+   $(".all_backlog_get_ids:checked").each(function(){
+              
+             ids.push(this.value); 
+         });
+   var urls = "{{BASE_URL}}backlog-view/create-copys/"; 
+   if(ids!="")
+   {
+   swal({
+       title: "Do you want to created copy of selected Storyes?",
+       // text: "Do you want to created copy of selected Storyes",
+       icon: "warning",
+       buttons: true,
+       dangerMode: true,
+     })
+     .then((willDelete) => {
+       if (willDelete) {
+        window.location.href = urls+ids;           
+         // swal(done, {
+         //   icon: "success",
+         // });
+       } else {
+         swal(fail);
+       }
+     });
+   }
+   else
+   {
+   swal("Warning", "Select the story that you want to create a copy!", "warning");
+   }
+   
+   
+   });
+</script>
+<script>
+   $(document).ready(function() {
+   /*$('#selectDefaults').lwMultiSelect();*/
+   $('#selectDefaults').lwMultiSelect({
+     addAllText:"Select All",
+     removeAllText:"Remove All",
+     selectedLabel:"Values accepted",
+     maxSelect: 0,//0 = no restrictions
+     maxText:'',
+   });
+   });
+   
+   $(document).on("click",".click_to_submit",function(){
+   var urls = "{{BASE_URL}}manage-backlog/update-table-structure/"; 
+   var names = new Array();
+   $(".lwms-right .lwms-selectli").each(function(){
+     names.push($(this).data("value")); 
+   });
+   
+   if(names=="")
+   {
+     swal("Warning", "Select the Columns that you want to show in table!", "warning");
+   }
+   else{
+     swal({
+         title:"{{Rearrange_Request_msg}}",
+         // text: "Do you want to update the table structure.",
+         icon: "warning",
+         buttons: true,
+         dangerMode: true,
+       })
+       .then((willDelete) => {
+         if (willDelete) {
+          window.location.href = urls+names;           
+           // swal(done, {
+           //   icon: "success",
+           // });
+         } else {
+           swal(fail);
+         }
+       });
+   }
+   
+   
+   });
+</script>
+
+<!--------------------Help Message Modal Ends---------------->
+
+<script type="text/javascript">
+
+$(document).on("click",".edit_backlog",function(){
+var id = $(this).data("backlog_id");
+
+$.ajax({
+  method:"GET",
+  url :"{{BASE_URL}}manage-backlog/edit-backlog/"+id,
+  dataType:"html",
+  success:function(data)
+  {
+   
+    
+     $("#modal-default .modal-body").html(data);
+// //    $("#modal-default #id_Team_member_list").addClass("form-control");
+//    $('select').select2({
+//     placeholder: "Please select team Members"
+// });
+     // $("#modal-default").modal("show");
+     $('#modal-default select').select2({
+    placeholder: "Please select Backlog"
+});
+
+  }
+});
+});
+//    $(document).ready(function(){
+  
+//   $("#id_Team_member_list").addClass("form-control");
+//   $(".select2-container").css("width","100%");
+//    $('select').select2({
+//     placeholder: "Please select team Members"
+// });
+// });
+
+  
+
+   function doSomething() {
+    $(".se-pre-con").css("display","block");
+}
+</script>
+
+<script src='{% static "js/capability.js" %}'></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+
+
+
+   // $('#id_PROJECT_ID').prepend('<option value="" selected="">Select Product</option>');
+   $('#id_team_list').addClass("form-control");
+   $('#id_team_list').select2({
+    placeholder: "Please select products"
+});
+   // $('#id_PROJECT_ID').select2();
+  });
+
+
+//=================================================JS FOR SET COLUMN IN DATABASE============= 
+
+//=================================================Filter start=============
+
+function set_short_filter(set_filter="")
+{
+var setfilterURL = "";
+
+
+// ================color Start================
+var product_list = "";
+var team_list = "";
+if( document.getElementById("product_list") ){
+product_list = document.getElementById("product_list").value;
+}
+if( document.getElementById("team_list") ){
+team_list = document.getElementById("team_list").value;
+}
+// ================color End================
+
+// --------------------------
+if(product_list){  setfilterURL = setfilterURL+"&"+product_list; }
+if(team_list){  setfilterURL = setfilterURL+"&"+team_list; }
+
+
+// --------------------------
+
+
+// ================color================
+
+
+
+window.location.href = "?"+setfilterURL;
+}
+
+//=================================================JS FOR SET COLUMN IN DATABASE=============
+
+
+
+function myFunction() {
+
+  set_short_filter();
+
+}
+// -------------------------------------------------------
+
+//=================================================Filter End============= 
+
+// -------------------------------------------------------\
+
+
+</script>
+
+<!-----------2nd Modal Popup Start------>
+<div class="modal fade in sp-map" id="modal-default123">
+   <div class="modal-dialog">
+      <div class="modal-content" style="width: 150%!important;">
+         <div class="modal-header">
+            <h4 class="modal-title">Export data</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="font-size: 32px;">×</span></button>
+         </div>
+          
+
+
+         <div class="modal-body">
+            <div class="paper">
+              <div class="row">
+                <div class="col-md-12" id="show_errors"></div>
+              </div>
+               <div class="row" id="show_hide_button">
+
+                 <div class="col-md-2"></div>
+                 <div class="col-md-4">
+                  
+ <!-- <button type="button" class="btn btn-export1 export_data_btn" data-file_type="CSV"><i class="icon-download"></i> Data export as CSV file </button> -->
+                 </div>
+                 <div class="col-md-4">
+                   
+                   <button type="button" class="btn btn-export2 export_data_btn" data-file_type="xlsx"><i class="icon-download"></i> Data export as Xlsx file</button>
+                 </div>
+               </div>
+            </div>
+         </div>
+
+          
+              <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+   </div>
+</div>
+<!-- -------------------------- modal end -->
+
+
+<script type="text/javascript">
+
+// ============================================================
+  $(document).on("click",".export_data_btn",function(){
+$("#modal-default123 #show_errors").html('');
+var file_type = $(this).data("file_type");
+var tables = new Array();
+  tables.push("AR_BACKLOG"); 
+
+  // ==========================================================
+var product_list = "";
+var team_list = "";
+if( document.getElementById("product_list") ){
+product_list = document.getElementById("product_list").value;
+}
+if( document.getElementById("team_list") ){
+team_list = document.getElementById("team_list").value;
+}
+  var product_list = product_list.split('product-parent=').join('');
+  var team_list = team_list.split('team=').join('');
+  
+  // alert(team_list);
+
+
+ if(tables.join("") == "")
+ { 
+   $("#modal-default123 #show_errors").html('<div class="alert alert-danger"><strong>Warning!</strong> Please select at list one checkbox.</div>');
+ }
+ else
+ {
+    $("#show_hide_button").css("display","none");
+    $("#modal-default123 #show_errors").html('<div class="alert alert-success">Please wait process is running <img src="{% static "img/basic/straight-loader.gif" %}"  style="width:30px;"/></div>');
+   $.ajax({
+    method:"POST",
+    url:base_url+"backlog-view/get_data_from_database/",
+
+
+    data:{'product_list':product_list,'team_list':team_list,'file_type':file_type,"tables":tables.join(",,")},
+     dataType:"json",
+     success:function(data)
+     {
+      if(data.status == "Done")
+     {
+        window.location.href = base_url+"data-exchange/file_download/"+data.id;
+         $("#modal-default123 #show_errors").html('<div class="alert alert-success">Data export successfully.</div>');
+     }
+     }
+   });
+ }
+
+
+
+  });
+// ---------------------------------------------------------------
+</script>
+
+
+
+      {% endblock %}
+

@@ -1,0 +1,21 @@
+Success : ArRole : row no. : 2 : 'QA Tester' Role add successfully : 2020-03-30 06:26:29.980930
+Success : ArRole : row no. : 3 : 'Developer' Role add successfully : 2020-03-30 06:26:30.006017
+Success : ArRole : row no. : 4 : 'Product Owner' Role add successfully : 2020-03-30 06:26:30.030979
+Success : ArRole : row no. : 5 : 'Scrum Master' Role add successfully : 2020-03-30 06:26:30.056114
+Success : ArRole : row no. : 6 : 'Product Manager' Role add successfully : 2020-03-30 06:26:30.081141
+Success : ArRole : row no. : 7 : 'Business Owner' Role add successfully : 2020-03-30 06:26:30.106319
+Success : ArRole : row no. : 8 : 'Role J (Broker)' Role add successfully : 2020-03-30 06:26:30.131333
+Success : ArRole : row no. : 9 : 'Role J (Seller)' Role add successfully : 2020-03-30 06:26:30.156404
+Success : ArRole : row no. : 10 : 'Role J (Buyer)' Role add successfully : 2020-03-30 06:26:30.181366
+Success : ArRole : row no. : 11 : 'Role J (Participant)' Role add successfully : 2020-03-30 06:26:30.206508
+Success : ArRole : row no. : 12 : 'Role J (Consumer)' Role add successfully : 2020-03-30 06:26:30.231366
+Success : ArRole : row no. : 13 : 'Role I (Trainer)' Role add successfully : 2020-03-30 06:26:30.257229
+Success : ArRole : row no. : 14 : 'Role H (Member)' Role add successfully : 2020-03-30 06:26:30.282290
+Success : ArRole : row no. : 15 : 'Role G (Visitor)' Role add successfully : 2020-03-30 06:26:30.307190
+Success : ArRole : row no. : 16 : 'Role F (Applicant)' Role add successfully : 2020-03-30 06:26:30.332252
+Success : ArRole : row no. : 17 : 'Role E (Staff)' Role add successfully : 2020-03-30 06:26:30.357340
+Success : ArRole : row no. : 18 : 'Role D (Analyst)' Role add successfully : 2020-03-30 06:26:30.382259
+Success : ArRole : row no. : 19 : 'Role C (Admin)' Role add successfully : 2020-03-30 06:26:30.408574
+Success : ArRole : row no. : 20 : 'Role B (Agent of Record)' Role add successfully : 2020-03-30 06:26:30.433657
+Success : ArRole : row no. : 21 : 'Role A (Customer Service Rep)' Role add successfully : 2020-03-30 06:26:30.458584
+Success : ArRole : row no. : 22 : 'Eagle' Role add successfully : 2020-03-30 06:26:30.483612

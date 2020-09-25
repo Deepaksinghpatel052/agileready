@@ -1,0 +1,5 @@
+Error : AR_EPIC_CAPABILITY : row no. : 2 : None : Epic capability already exists.  : 2020-03-16 06:39:25.221058
+Success : AR_EPIC_CAPABILITY : row no. : 3 : Epic capability add successfully : 2020-03-16 06:39:25.233247
+Success : AR_EPIC_CAPABILITY : row no. : 4 : Epic capability add successfully : 2020-03-16 06:39:25.245483
+Success : AR_EPIC_CAPABILITY : row no. : 5 : Epic capability add successfully : 2020-03-16 06:39:25.258796
+Success : AR_EPIC_CAPABILITY : row no. : 6 : Epic capability add successfully : 2020-03-16 06:39:25.271561

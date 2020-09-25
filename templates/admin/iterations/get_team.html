@@ -1,0 +1,19 @@
+<option value="">Please select team or None</option>
+{% for data in select_team_default %}
+	{% if  data.id == selected_team %}
+	<option value="{{data.id}}" selected="">{{data}}</option>
+     {% else %}
+     <option value="{{data.id}}" >{{data}}</option>
+     {% endif %}
+
+{% endfor %}
+
+{% for data in get_team %}
+
+	{% if data.id == selected_team %}
+	<option value="{{data.id}}" selected="">{{data}}</option>
+	{% else %}
+	<option value="{{data.id}}" >{{data}}</option>
+	{% endif %}
+
+{% endfor %}

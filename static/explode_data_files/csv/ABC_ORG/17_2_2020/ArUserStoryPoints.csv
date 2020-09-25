@@ -1,0 +1,3 @@
+Point_Key,Point_Description,Point_score,create_by,create_by,create_dt,update_by,update_dt,organization_name
+Small,Small story,5,Harry,2020-02-04 10:38:58.530968+00:00,Harry,2020-02-04 10:38:58.530981+00:00,ABC
+Large,Large story,13,Harry,2020-02-04 10:39:12.582071+00:00,Harry,2020-02-04 10:39:12.582081+00:00,ABC

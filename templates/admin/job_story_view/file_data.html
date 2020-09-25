@@ -1,0 +1,53 @@
+ {% if messages %}
+                   {% for message in messages %}
+                     {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                    <div class="alert alert-success alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>{{message}}</strong> 
+                    </div>
+                       {% endif %}
+
+                   {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <div class="alert alert-danger alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>Erorr</strong> {{message}}
+                    </div>
+                       {% endif %}
+
+                   {% endfor %}
+               {% endif %}
+         
+
+ <div class="table-responsive hdinpt" style="     max-height: 300px; color: #fff;background-color: #000;">
+   <ul id="show_data">
+  
+   </ul>
+</div>
+
+
+
+<script>
+
+$(document).ready(function(){
+
+
+{% if file_name %}
+
+     
+
+ 
+{% for data in file_name %}
+
+var data_check ='{{data.0}}';
+if(data_check != "")
+{
+ $("#show_data").prepend('<li>{{data.0}} , {{data.1}} ,{{data.2}} ,{{data.3}} ,{{data.4}} ,{{data.5}} ,{{data.6}} ,{{data.7}} ,{{data.8}} ,{{data.9}} </li>');
+}
+
+ 
+{% endfor %}
+ 
+{% endif %}
+});  
+
+</script>

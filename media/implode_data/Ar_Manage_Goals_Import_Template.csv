@@ -1,0 +1,5 @@
+Goal_id(M),Goal_title(O),Gole_description(O),Use_in(O),created_by(O),created_dt(O),update_by(O),update_dt(O),organization_name(O)
+,select_test,,,,,,,
+,display_test,,,,,,,
+,view_test,,,,,,,
+,glide_test,,,,,,,

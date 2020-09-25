@@ -1,0 +1,304 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load static %}
+{% block cssstyle %}
+
+<style type="text/css">
+  span.select2.select2-container.select2-container--default.select2-container--below.select2-container--focus {
+    width: 100% !important;
+}
+
+</style>
+    {% endblock %}
+  <div class="container-fluid text-white">
+               <div class="row p-t-b-8 ">
+                  <div class="col">
+                     <h1>Team Member Detail</h1>
+                  </div>
+               </div>
+                 <div class="row p-t-b-8">
+         <p class="user-nick"> {{user_name}}</p>
+  </div>
+            </div>
+         </header>
+<div class="container-fluid">
+             <div class="row p-t-b-20">
+                                 
+
+               <div class="col-md-8 offset-md-2">
+                {% if messages %}
+                   {% for message in messages %}
+                     {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                    <div class="alert alert-success alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+                      <strong>{{message}}</strong> 
+                    </div>
+                       {% endif %}
+
+                   {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <div class="alert alert-danger alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+                      <strong>Erorr</strong> {{message}}
+                    </div>
+                       {% endif %}
+
+                   {% endfor %}
+               {% endif %}
+                  <!-- <div class="card no-b"> -->
+              <div class="login-form-card">
+                                  <div class="login-form-content">
+
+                                    <form onsubmit="doSomething();" action="{{BASE_URL}}manage-team-member/edit-team-member/{{member_id}}" method="POST">
+                                      {% csrf_token %}
+                                     <!-- start login -->
+                                     <div class="row">
+                                      <div class="col-md-6">
+                                        
+
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" required="" name="user_name" class="form-control form-control-lg" placeholder="" value="{{user.user_name}}">
+                                </div>
+                                <div class="form-group">
+                                        <label>Organization</label>
+                                        <input type="text" readonly="" name="organization" class="form-control form-control-lg" placeholder="" value="{{user.org_id}}">
+                                </div>
+                                <div class="form-group">
+                                        <label>Organization Url</label>
+                                        <input type="text" readonly="" name="organization_url" class="form-control form-control-lg" placeholder="" value="{{user.org_id.organization_url}}">
+                                </div>
+
+                                <!-- <div class="form-group">
+                                        <label>Profile Permission</label>
+                                        <select   name="profile_key" class="form-control">
+                                        {% for profile_data in profile %}
+                                        <option value="{{profile_data.profile_key}}">{{profile_data.profile_key}}</option>
+                                        {% endfor %}
+                                      </select>
+                                </div> -->
+
+
+
+                                <div class="form-group">
+                                        <label>Email Address</label>
+                                        <input type="Email"  readonly="" name="email_address" class="form-control form-control-lg" placeholder="" value="{{user.user}}">
+                                </div>
+                                <div class="form-group">
+                                        <label>City</label>
+                                        <input type="text" name="city" class="form-control form-control-lg" placeholder="" value="{{user.city}}">
+                                </div>
+                                                                <div class="form-group">
+                                        <label>State</label>
+                                        <input type="text" name="state" class="form-control form-control-lg" placeholder="" value="{{user.state}}">
+                                </div>
+                              </div>
+                              
+                              <div class="col-md-6">
+                                
+
+                                <div class="form-group">
+                                        <label>Zip</label>
+                                        <input type="text" name="zip" class="form-control form-control-lg" placeholder="" value="{{user.zip}}">
+                                </div>
+                                <div class="form-group">
+                                        <label>Country</label>
+                                        <input type="text" name="country" class="form-control form-control-lg" placeholder="" value="{{user.country}}">
+                                </div>
+                                <div class="form-group">
+                                        <label>Phone</label>
+                                        <input type="text" name="phone" required="" class="form-control form-control-lg" placeholder="" value="{{user.phone}}">
+                                </div>
+<!--                                 <div class="form-group">
+                                        <label>Subscription Level</label>
+                                        <select name="subscription_level"  disabled="" class="form-control">
+                                          <option value="{{user.subscription_level}}">{{user.subscription_level}}</option>
+                                          <option value="Team Edition">Team Edition</option>
+                                          <option value="Enterprise Edition">Enterprise Edition</option>
+                                          <option></option>
+                                        </select>
+                                </div> -->
+                                <div class="form-group">
+                                        <label>Active Users in Account</label>
+                                        <input type="text"  readonly="" name="active_user" class="form-control form-control-lg" placeholder="" value="{{user.active_user}}">
+                                </div>
+                                <div class="form-group">
+                                        <label>Available Users to Invite</label>
+                                        <input type="text"  readonly="" name="user_to_invite" class="form-control form-control-lg" placeholder=""  value="{{user.user_to_invite}}">
+                                </div>
+                                <div class="form-group">
+                                        <label>Status</label>
+                                        <select name="status"   class="form-control">
+
+<!--                                           <option value="{{user.status}}">{{user.status}}</option> -->
+                                          {% if user.status == "Active" %}
+                                          <option selected="" value="Active">Active</option>
+                                          {% else %}
+                                          <option value="Active">Active</option>
+                                          {% endif %}
+                                          {% if user.status == "Not Active" %}
+                                          <option selected="" value="Not Active">Not Active</option>
+                                          {% else %}
+                                          <option value="Not Active">Not Active</option>
+                                          {% endif %}
+                                          {% if user.status == "Not Ready" %}
+                                          <option selected="" value="Not Ready">Not Ready</option>
+                                          {% else %}
+                                          <option value="Not Ready">Not Ready</option>
+                                          {% endif %}
+<!--                                           <option></option> -->
+                                        </select>
+                                </div>
+                              </div>
+                            </div>
+                                                              <div class="row">
+                                                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>User Profile</label>
+                                        <div class="table-responsive">
+                                        {{member_edit_form.profile_permission}}
+                                      </div>
+                                    </div>
+                                  </div>
+                                
+
+                              </div>
+                                <div class="row">
+                               <!--    <div class="col-md-2 btn-new">
+                                    <div class="form-group">
+                                    <button type="reset" class="btn-new btn-block btn btn-white all-btn" data-dismiss="modal">Reset</button>
+                                  </div>
+                                  </div> -->
+                                  <div class="col-md-2 btn-new">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-new btn-block btn btn-white all-btn">Update</button>
+                               </div>
+                             </div>
+
+                         </div>
+                             </form>
+                           <!--        <div class="row">
+                                        <div class="col-md-6">
+                                <div class="form-group btn-new">
+                                    <button disabled="true" class="btn-block btn-new btn btn-white all-btn">Delete Account</button>
+                               </div>
+                             </div>
+                             <div class="col-md-6">
+                                <div class="form-group btn-new">
+                                    <button class="btn-block btn-new btn btn-white all-btn" data-toggle="modal" data-target="#modal-default1">Reset Password</button>
+                               </div>
+                             </div>
+                             <div class="col-md-6">
+                                <div class="form-group btn-new">
+                                    <button type="#" disabled="true" class="btn-block btn-new btn btn-white all-btn">Buy More Capacity-Upgrade<br> Your Subscription</button>
+                               </div>
+                             </div>
+                             <div class="col-md-6">
+                                <div class="form-group btn-new">
+                                    <button type="#" disabled="true" class="btn-block  btn btn-white all-btn">Display-Print Account<br> Master Roadmap</button>
+                               </div>
+                             </div>
+
+                             </div> -->
+                    <!-- <div class="note text-center"><h6><strong>Note:- </strong> Use Separated Email Id For Multiple Invitations</h6></div> -->
+                        
+                      </div>
+             </div>
+             <!--  </div> -->
+               </div>
+             </div>
+
+            </div>
+
+
+                    <!------------Delete messege Modal Popup Start------->
+<div class="modal fade in sp-map" id="modal-default1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title">Reset Password</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span>
+          </button>
+                
+      </div>
+      <div class="modal-body">
+        <div class="paper">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="container-fluid">
+                                   <!--  <div class="login-form-content"> -->
+                <form onsubmit="doSomething();" id="change_password_form" action="javascript:(0);">
+                  <div class="row">
+                                        <div class="col-md-12">
+                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="Password" id="pass_reset" name="password" class="form-control form-control-lg" placeholder="" value="{{user.user.password}}">
+                                </div>
+                            </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                        <label>New Password</label>
+                                        <input type="Password" id="new_pass" disabled="true" name="password" class="form-control form-control-lg" placeholder="" value="{{user.user.password}}">
+                                </div></div>
+                                                    <div class="col-md-12">
+                                                    <div class="form-group">
+                                        <label>Confirm Password</label>
+                                        <input type="Password" id="conf_pass" disabled="true" name="password" class="form-control form-control-lg" placeholder="" value="{{user.user.password}}">
+                                </div>
+                            </div>
+
+                    <div class="col-md-6">
+                        <button type="submit" id="changepassword" disabled="true"  class="btn-block btn btn-white all-btn" >Change</button>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                          <a href="{{BASE_URL}}account-settings" class="btn-block btn btn-white all-btn"> Cancel</a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+                  
+                      <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!--------------------Delete Message Modal Ends---------------->
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+
+$(document).on("click",".member_edit",function(){
+var id = $(this).data("member_id");
+
+$.ajax({
+  method:"GET",
+  url :"{{BASE_URL}}manage-team-member/edit-team-member/"+id,
+  dataType:"html",
+  success:function(data)
+  {
+   
+    
+     $("#team_member_edit .modal-body").html(data);
+   $('#team_member_edit #id_profile_permission').select2();
+  }
+});
+});
+   $(document).ready(function(){
+  
+  // $("#id_profile_permission").addClass("form-control");
+   $('#id_profile_permission').select2();
+});
+
+  
+
+   function doSomething() {
+    $(".se-pre-con").css("display","block");
+}
+</script>
+{% endblock %}

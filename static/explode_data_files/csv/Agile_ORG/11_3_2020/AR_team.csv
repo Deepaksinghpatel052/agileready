@@ -1,0 +1,6 @@
+Team_name,Team_description,organization_name,Team_member_list,create_by,create_dt,update_by,update_dt
+None,None,Agile Ready LLC,,Antonio V Timbol,2020-03-08 20:33:41.933870+00:00,Antonio V Timbol,2020-03-08 20:33:41.933888+00:00
+Team-T1 (example),Agile teams build software products.,Agile Ready LLC,,Antonio V Timbol,2020-02-21 07:16:17.705074+00:00,Antonio V Timbol,2020-02-21 07:16:17.705082+00:00
+FlexTeam (example),This vendor provided team supplements all existing teams,Agile Ready LLC,,Antonio V Timbol,2020-02-21 07:20:58.849623+00:00,Antonio V Timbol,2020-02-21 07:20:58.849628+00:00
+Ticket Masters Kanban (example),This team handles all production support tickets for all business units. This is a Kanban Team.,Agile Ready LLC,,Antonio V Timbol,2020-02-21 07:21:26.179250+00:00,Antonio V Timbol,2020-02-21 07:21:26.179255+00:00
+Mechanic Masters (example),This team implements key strategic initiatives,Agile Ready LLC,,Antonio V Timbol,2020-02-21 07:21:48.049098+00:00,Antonio V Timbol,2020-02-21 07:21:48.049103+00:00

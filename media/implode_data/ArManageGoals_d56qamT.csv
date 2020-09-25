@@ -1,0 +1,4 @@
+Goal_id,Goal_title,Gole_description,Use_in,created_by,created_dt,update_by,update_dt,organization_name
+AR_GOAL_1,Login,login,,Harry,2020-02-04 10:37:02.737355+00:00,Harry,2020-02-04 10:37:02.737363+00:00,ABC
+AR_GOAL_2,read,read,,Harry,2020-02-04 10:37:19.608280+00:00,Harry,2020-02-04 10:37:19.608288+00:00,ABC
+AR_GOAL_28,Order,Order,,Harry,2020-02-11 02:43:03.894631+00:00,Harry,2020-02-11 02:43:03.894640+00:00,ABC

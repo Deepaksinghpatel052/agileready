@@ -1,0 +1,5 @@
+Goal_id,Goal_title,Gole_description,Use_in,created_by,created_dt,update_by,update_dt,organization_name
+AR_ROLE_131,select,(example),,Shubham,2020-02-21 07:54:12.885813+00:00,Shubham,2020-02-21 07:54:12.885830+00:00,digimonk
+AR_ROLE_132,display,(example),,Shubham,2020-02-21 07:55:14.306073+00:00,Shubham,2020-02-21 07:55:14.306084+00:00,digimonk
+AR_ROLE_133,view,(example),,Shubham,2020-02-21 07:56:08.171204+00:00,Shubham,2020-02-21 07:56:08.171210+00:00,digimonk
+AR_ROLE_134,glide,(example),,Shubham,2020-02-21 08:03:27.322501+00:00,Shubham,2020-02-21 08:03:27.322511+00:00,digimonk

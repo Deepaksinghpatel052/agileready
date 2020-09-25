@@ -1,0 +1,10 @@
+Error : ArIterations : row no. : 2 : Iteration 1 for Product P1 : Iteration already exists.  : 2020-03-14 14:55:16.062903
+Error : ArIterations : row no. : 3 : Iteration 2 for Product P1 : Iteration already exists.  : 2020-03-14 14:55:16.064409
+Error : ArIterations : row no. : 4 : Sprint 1 for Product P2 : Iteration already exists.  : 2020-03-14 14:55:16.065896
+Error : ArIterations : row no. : 5 : Sprint 2 for Product P2 : Iteration already exists.  : 2020-03-14 14:55:16.067517
+Error : ArIterations : row no. : 6 : Iteration 1 for BestEverM : Iteration already exists.  : 2020-03-14 14:55:16.069010
+Error : ArIterations : row no. : 7 : Iteration 2 for BestEverM : Iteration already exists.  : 2020-03-14 14:55:16.070501
+Error : ArIterations : row no. : 8 : Iteration 1 for API : Iteration already exists.  : 2020-03-14 14:55:16.072002
+Error : ArIterations : row no. : 9 : Iteration 2 for API : Iteration already exists.  : 2020-03-14 14:55:16.073494
+Error : ArIterations : row no. : 10 : Feb Cycle (1) for BestEverM : Iteration already exists.  : 2020-03-14 14:55:16.075002
+Error : ArIterations : row no. : 11 : Mar Cycle (2) for BestEverM : Iteration already exists.  : 2020-03-14 14:55:16.076501

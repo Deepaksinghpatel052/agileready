@@ -1,0 +1,11 @@
+title,story_tri_part_text,acceptance_criteria,ac_readability_score,conversation,backlog_parent,convo_readability_score,autoscoring_on,archive_indicator,readiness_quality_score,story_points,job_story_status,User_story_type,ar_user,owner,created_by,created_dt,updated_dt,updated_by,organization_name,attachments
+test1,"When kjbbnm, I want to mgnfggm So I Can guftvjhfh g",,0,,Backlog Two for P1 (example),0,True,False,80,1,Pending,Pending,jitendra N,jitendra N,jitendra N,2020-07-29 08:10:13.341161+00:00,2020-07-29 11:32:47.014296+00:00,jitendra N,digimomk,
+test,I want to mgnfggm So I Can guftvjhfh g,,0,,Backlog Two for P1 (example),0,True,False,55,None,in-progress,Pending,jitendra N,jitendra N,jitendra N,2020-07-29 07:57:27.459633+00:00,2020-07-29 07:57:27.459627+00:00,jitendra N,digimomk,
+Submit Rpt -3_test,,,0,,Backlog One for P1 (example),0,False,False,0,None,in-progress,Pending,jitendra N,jitendra N,jitendra N,2020-07-29 06:14:34.337403+00:00,2020-07-29 08:54:26.032915+00:00,jitendra N,digimomk,
+Submit Rpt -3_test,"When kjbbnm, I want to gsx So I Can guftvjhfh g",,0,,Backlog Two for P1 (example),0,False,False,80,None,in-progress,Pending,jitendra N,jitendra N,jitendra N,2020-07-29 06:14:34.337403+00:00,2020-07-29 07:55:57.431870+00:00,jitendra N,digimomk,
+Submit Rpt -2_test,,,0,,None,0,False,False,0,None,None,None,jitendra N,jitendra N,jitendra N,2020-07-29 06:14:34.322278+00:00,2020-07-29 06:14:34.322273+00:00,jitendra N,digimomk,
+Submit Rpt -1_test,,,0,,None,0,False,False,0,None,None,None,jitendra N,jitendra N,jitendra N,2020-07-29 06:14:34.307323+00:00,2020-07-29 06:14:34.307318+00:00,jitendra N,digimomk,
+Submit Rpt_test,,,0,,None,0,False,False,0,None,None,None,jitendra N,jitendra N,jitendra N,2020-07-29 06:14:34.292188+00:00,2020-07-29 06:14:34.292183+00:00,jitendra N,digimomk,
+Disenroll Partner-2_test,,,0,,None,0,False,False,0,None,None,None,jitendra N,jitendra N,jitendra N,2020-07-29 06:14:34.277052+00:00,2020-07-29 06:14:34.277047+00:00,jitendra N,digimomk,
+Disenroll Partner-1_test,,,0,,None,0,False,False,0,None,None,None,jitendra N,jitendra N,jitendra N,2020-07-29 06:14:34.261868+00:00,2020-07-29 06:14:34.261863+00:00,jitendra N,digimomk,
+Disenroll Partner_test,,,0,,None,0,False,False,0,None,None,None,jitendra N,jitendra N,jitendra N,2020-07-29 06:14:34.246888+00:00,2020-07-29 06:14:34.246882+00:00,jitendra N,digimomk,

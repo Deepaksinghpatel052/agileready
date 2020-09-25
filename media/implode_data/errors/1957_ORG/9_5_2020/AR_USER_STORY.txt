@@ -1,0 +1,20 @@
+Error : AR_USER_STORY : row no. : 2 : None : User story already exists.  : 2020-05-09 22:08:40.523891
+Error : AR_USER_STORY : row no. : 3 : Enroll Partner : User story already exists.  : 2020-05-09 22:08:40.524752
+Error : AR_USER_STORY : row no. : 4 : Disenroll Partner : User story already exists.  : 2020-05-09 22:08:40.525620
+Error : AR_USER_STORY : row no. : 5 : Disenroll Partner-1 : User story already exists.  : 2020-05-09 22:08:40.526486
+Error : AR_USER_STORY : row no. : 6 : Disenroll Partner-2 : User story already exists.  : 2020-05-09 22:08:40.527332
+Error : AR_USER_STORY : row no. : 7 : Submit Rpt : User story already exists.  : 2020-05-09 22:08:40.528168
+Error : AR_USER_STORY : row no. : 8 : Submit Rpt -1 : User story already exists.  : 2020-05-09 22:08:40.529008
+Error : AR_USER_STORY : row no. : 9 : Submit Rpt -2 : User story already exists.  : 2020-05-09 22:08:40.529838
+Error : AR_USER_STORY : row no. : 10 : Submit Rpt -3 : User story already exists.  : 2020-05-09 22:08:40.530674
+Error : AR_USER_STORY : row no. : 11 : Bird takes flight : User story already exists.  : 2020-05-09 22:08:40.531506
+Error : AR_USER_STORY : row no. : 12 : Enroll Partner-1 : User story already exists.  : 2020-05-09 22:08:40.532335
+Error : AR_USER_STORY : row no. : 13 : Bird takes flight-1 : User story already exists.  : 2020-05-09 22:08:40.533175
+Error : AR_USER_STORY : row no. : 14 : Bird takes flight-2 : User story already exists.  : 2020-05-09 22:08:40.534007
+Error : AR_USER_STORY : row no. : 15 : Bird takes flight-3 : User story already exists.  : 2020-05-09 22:08:40.534838
+Error : AR_USER_STORY : row no. : 16 : Bird takes flight-5 : User story already exists.  : 2020-05-09 22:08:40.535670
+Error : AR_USER_STORY : row no. : 17 : Eagle Soars : User story already exists.  : 2020-05-09 22:08:40.536499
+Error : AR_USER_STORY : row no. : 18 : Eagle Soars-1 : User story already exists.  : 2020-05-09 22:08:40.537339
+Error : AR_USER_STORY : row no. : 19 : Eagle Soars-2 : User story already exists.  : 2020-05-09 22:08:40.538170
+Error : AR_USER_STORY : row no. : 20 : Eagle Soars-3 : User story already exists.  : 2020-05-09 22:08:40.539000
+Error : AR_USER_STORY : row no. : 21 : Bird takes flight-4 : User story already exists.  : 2020-05-09 22:08:40.539845

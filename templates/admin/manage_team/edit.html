@@ -1,0 +1,73 @@
+<div class="paper">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container-fluid">
+                                   <!-- <div class="card no-b"> -->
+          <!-- <div class="login-form-card"> -->
+                     <div class="login-form-content">
+                                    <form onsubmit="doSomething();" action="{{BASE_URL}}manage-team/edit-team/{{ids}}" method="POST">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                      <div class="col-md-6"></div>
+                                      <!-- <div class="col-md-3">
+                                        <button class="all-btn btn">Add New</button>
+                                      </div>
+                                      <div class="col-md-3">
+                                        <button class="all-btn btn">Delete</button>
+                                      </div> -->
+                                      <div class="col-md-12">
+                                     <!-- start login -->
+                                    <div class="form-group">
+                                        <label>Team<samp style="color: red">*</samp></label>
+                                      {{TeamForm.Team_name}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Description<samp style="color: red">*</samp></label>
+                                    {{TeamForm.Team_description}}
+                                </div>
+                                <div class="form-group">
+                                        <label>Team Members</label>
+                                        <div class="table-responsive">
+                                  {{TeamForm.Team_member_list}}
+
+
+                                </div>
+                                </div>
+               
+                                </div>
+                                <!-- <div class="row"> -->
+                                  <div class="col-md-4">
+
+                                    <a href="{{BASE_URL}}manage-team" class="btn-block btn btn-white all-btn" > Cancel</a>
+                                  </div>
+                                  <div class="col-md-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Update</button>
+                               </div>
+                             </div>
+                             <!-- </div> -->
+                                </div>
+                              
+                            </form></div>
+                        </div>
+             </div>
+          </div>
+                            </div>
+{% block script %}
+ <script type="text/javascript">
+ 
+  function doSomething() {
+    $(".se-pre-con").css("display","block");
+}
+ 	  $(document).ready(function(){
+  
+   // $(".team_member_class").addClass("form-control");
+ // $("#team_edit #id_Team_member_list").addClass("form-control");
+//    $('.team_member_class').select2({
+//     placeholder: "Please select team Members"
+// });
+
+
+});
+ </script>        
+ {% endblock %}                   

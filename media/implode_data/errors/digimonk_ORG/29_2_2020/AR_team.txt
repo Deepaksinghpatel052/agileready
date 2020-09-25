@@ -1,0 +1,6 @@
+Error : AR_team : row no. : 2 : None : Team already exists.  : 2020-02-29 09:42:06.608648
+Error : AR_team : row no. : 3 : Team-T1 (example) : Team already exists.  : 2020-02-29 09:42:06.609493
+Error : AR_team : row no. : 4 : Something was wrong. : 2020-02-29 09:42:06.610649
+Error : AR_team : row no. : 5 : FlexTeam (example) : Team already exists.  : 2020-02-29 09:42:06.611526
+Error : AR_team : row no. : 6 : Ticket Masters Kanban (example) : Team already exists.  : 2020-02-29 09:42:06.612356
+Error : AR_team : row no. : 7 : Mechanic Masters (example) : Team already exists.  : 2020-02-29 09:42:06.613367

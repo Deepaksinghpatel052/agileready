@@ -1,0 +1,9 @@
+Error : AR_FEATURE : row no. : 2 : None : Feature already exists.  : 2020-02-21 13:34:33.652308
+Success : AR_FEATURE : row no. : 3 : Feature-F1 (example) : Feature added successfully !  : 2020-02-21 13:34:33.666024
+Success : AR_FEATURE : row no. : 4 : Feature-F2 (example) : Feature added successfully !  : 2020-02-21 13:34:33.679743
+Success : AR_FEATURE : row no. : 5 : Feature-F3 (example) : Feature added successfully !  : 2020-02-21 13:34:33.693187
+Success : AR_FEATURE : row no. : 6 : Store Customer Phone # (example) : Feature added successfully !  : 2020-02-21 13:34:33.706866
+Success : AR_FEATURE : row no. : 7 : Retrieve Customer Phone # (example) : Feature added successfully !  : 2020-02-21 13:34:33.720472
+Success : AR_FEATURE : row no. : 8 : Enroll Partner (example) : Feature added successfully !  : 2020-02-21 13:34:33.733972
+Success : AR_FEATURE : row no. : 9 : Disenroll Partner # (example) : Feature added successfully !  : 2020-02-21 13:34:33.747591
+Success : AR_FEATURE : row no. : 10 : Submit FedRes ReportType1 (example) : Feature added successfully !  : 2020-02-21 13:34:33.761161

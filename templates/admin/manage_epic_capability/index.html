@@ -1,0 +1,145 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load static %}
+<div class="container-fluid text-white">
+   <div class="row p-t-b-8 ">
+      <div class="col">
+         <h1>Manage Epic Capability</h1>
+      </div>
+   </div>
+                    <div class="row p-t-b-8">
+         <p class="user-nick"> {{user_name}}</p>
+  </div>
+
+</div>
+</header>
+<!-- {% if TeamForm.errors %}
+   {% for field in TeamForm %}
+       {% for error in field.errors %}
+           <div class="alert alert-danger">
+               <strong>{{ error|escape }}</strong>
+           </div>
+       {% endfor %}
+   {% endfor %}
+   {% for error in TeamForm.non_field_errors %}
+       <div class="alert alert-danger">
+           <strong>{{ error|escape }}</strong>
+       </div>
+   {% endfor %}
+   {% endif %} -->
+<div class="container-fluid">
+<!--   {% if messages %}
+   {% for message in messages %}
+   {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+   <div class="alert alert-success alert-dismissible">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>{{message}}</strong>
+   </div>
+   {% endif %}
+   {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+   <div class="alert alert-danger alert-dismissible">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Erorr</strong> {{message}}
+   </div>
+   {% endif %}
+   {% endfor %}
+   {% endif %}
+   -->         <!--------------------------------------  --------------------------->
+<div class="row p-t-b-20">
+<div class="col-md-12">
+   {% if messages %}
+   {% for message in messages %}
+   {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+   <div class="alert alert-success alert-dismissible">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+      <strong>{{message}}</strong>
+   </div>
+   {% endif %}
+   {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+   <div class="alert alert-danger alert-dismissible">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+      <strong>{{message}}</strong> 
+   </div>
+   {% endif %}
+   {% endfor %}
+   {% endif %}
+   <!--------------------------------------  --------------------------->
+   <div class="row p-t-b-20">
+      <div class="col-md-12">
+         <!-- <div class="card no-b"> -->
+         <div class="login-form-card">
+            <!--  <div class="login-form-content"> -->
+           
+               <div class="table-responsive">
+                  <button class="btn-success add-data"><a href="{{BASE_URL}}manage-epic-capabilities/add-epic-capabilities">Add Capability</a></button>
+                  <!-- <button class="btn-primary import-data">Export</button> -->
+                  <!-- start Table --><br>
+                  <table id="example" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+                     <thead>
+                        <tr>
+                           <th align="left" valign="top">S.No.</th>
+                           <th align="left" valign="top">Epic Capability</th>
+                           <th align="left" valign="top">Description</th>
+                           <th align="left" valign="top">Product List</th>
+                           <th align="left"style=" width: 60px!important;" valign="top">Action</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        {% for ar_epic_capability_data in ar_epic_capability %}
+                        <tr>
+                           <td align="left" valign="top">{{forloop.counter}}</td>
+                           <td align="left" valign="top">{{ar_epic_capability_data.Cepic_key}}</td>
+                           <td align="left" valign="top">{{ar_epic_capability_data.Cepic_desc}}</td>
+                           <td align="left" valign="top">{{ar_epic_capability_data.PROJECT_ID.all|join:" | " }}</td>
+                           <td align="left" valign="top">
+                              <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                                 <tr>
+                                    <td align="center" valign="top">
+                                       <a href="{{BASE_URL}}manage-epic-capabilities/edit-epic-capabilities/{{ar_epic_capability_data.id}}"><i class="icon-pencil"></i></a>
+                                    </td>
+                                    <!-- <td align="center" valign="top"><a href=""><i class="icon-delete"></i><a></td> -->
+                                    <td align="center" valign="top"><a href="javascript:;"  onclick="remove_product('{{BASE_URL}}manage-epic-capabilities/delete-epic-capabilities/{{ar_epic_capability_data.id}}','{{Remove_Request_msg}}','{{Remove_done_msg}}','{{Not_Remove_msg}}');"><i class="icon-delete"></i></a><a></a></td>
+                                 </tr>
+                              </table>
+                           </td>
+                        </tr>
+                        {% endfor %}
+                     </tbody>
+                  </table>
+                  <!---Table Ends---->
+               </div>
+      
+            <!--  </div> -->
+         </div>
+         <!-- </div> -->
+      </div>
+   </div>
+</div>
+<!--       </div>
+   </div>
+   </div> -->
+<!------------Modal Popup------->
+<!--------------------Help Message Modal Ends---------------->
+<script type="text/javascript">
+   $(document).ready(function() {
+       $('#example').DataTable();
+   } );
+</script>
+<script type="text/javascript">
+   $(document).ready(function() {
+       $('#example1').DataTable();
+   } );
+</script>
+<script type="text/javascript">
+   $(document).ready(function() {
+       $('#example2').DataTable();
+   } );
+</script>
+<script type="text/javascript">
+   $(document).ready(function(){
+   $('.attach input').change(function () {
+    $('.attach p').text(this.files.length + " file(s) selected");
+   });
+   });
+</script>
+{% endblock %}

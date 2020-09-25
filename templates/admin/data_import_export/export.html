@@ -1,0 +1,497 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load static %}
+{% block cssstyle %}
+
+<style type="text/css">
+  span.select2.select2-container.select2-container--default.select2-container--below.select2-container--focus ,input,li{
+    width: 100% !important;
+}
+.btn-export1{
+  background-color:  #d34836;
+  color: #fff;
+}
+.btn-export2{
+  background-color:  #3b5998;
+  color: #fff;
+}
+.btn-export1:hover{
+  color: #fff;
+  box-shadow: 2px 2px 1px 1px #888888;
+}
+.btn-export2:hover{
+  color: #fff; 
+  box-shadow: 2px 2px 1px 1px #888888;
+}
+.btn-export1:active, .btn-export1:focus{
+  color: #fff; 
+  box-shadow: 2px 2px 1px 1px #888888;
+}
+.btn-export2:active, .btn-export2:focus{
+  color: #fff; 
+  box-shadow: 2px 2px 1px 1px #888888;
+}
+
+
+</style>
+    {% endblock %}
+            <div class="container-fluid text-white">
+               <div class="row p-t-b-8 ">
+                  <div class="col">
+                     <h1>Manage Export Data</h1>
+                  </div>
+               </div>
+                 <div class="row p-t-b-8">
+         <p class="user-nick"> {{user_name}}</p>
+  </div>
+          
+            </div>
+         </header>
+
+         <div class="container-fluid">
+           
+            <div class="row p-t-b-20">
+               <div class="col-md-12">
+                 <!--  <div class="card no-b"> -->
+              <div class="login-form-card">
+                   <!-- <div class="login-form-content"> -->
+                        <form action="javascript:(0);">
+                  <div class="table-responsive">
+              <!-- <p class="note">Select Checkbox to Export</p> -->
+              <button class="import-data export_data_btn_modal"  data-toggle="modal" data-target="#modal-default1">Export</button>
+
+              <button class="import-data export_data_btn_modal" id="select_btn" value="true" onclick="select_all_for_export();" >Select All</button>
+                                     <!-- start Table -->
+                                     
+                                     <table id="example" width="100%" border="1" class="table table-striped table-bordered newpage dataTable no-footer" align="center" cellpadding="0" cellspacing="0" style="font-size: 15px; width: 100%;" role="grid" aria-describedby="example_info">
+        <thead>
+            <tr style="background-color: transparent!important;" role="row">
+
+
+<th align="left" valign="top" class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+                  
+                   
+                    Title
+                    
+                   
+                
+                : activate to sort column descending" style="width: 97px;">
+                  <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tbody><tr style="background-color: transparent!important;">
+                   
+                    <th align="center" valign="top" style="border: 0;">S. No.</th>
+                    <th align="center" valign="top" style="border: 0;"></th>
+                   </tr>
+                </tbody></table>
+                </th>
+
+
+              <th align="left" valign="top" class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+                  
+                   
+                    Title
+                    
+                   
+                
+                : activate to sort column descending" style="width: 97px;">
+                  <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tbody><tr style="background-color: transparent!important;">
+                   
+                    <th align="center" valign="top" style="border: 0;">Users</th>
+                    <th align="center" valign="top" style="border: 0;">
+					{% if page_data_count.user > 0 %}
+					<input type="Checkbox" class="selected_data all_select" name="export_data[]" value="AR_USER" >
+                   {% else %}
+				   <input type="Checkbox" class="selected_data" name="export_data[]" disabled="true" value="AR_USER" >
+				   {% endif %}
+				   </th>
+				   </tr>
+                </tbody></table>
+                </th>
+
+                <th align="left" valign="top" class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="
+                   
+                    Team List
+                    
+                   
+                : activate to sort column ascending" style="width: 142px;"><table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tbody><tr style="background-color: transparent!important;">
+                    <th align="center" valign="top" style="border: 0;">Teams</th>
+                    <th align="center" valign="top" style="border: 0;">
+					{% if page_data_count.team > 0 %}
+					<input type="Checkbox" class="selected_data all_select" name="export_data[]" value="AR_TEAM" >
+					{% else %}
+					<input type="Checkbox" class="selected_data" name="export_data[]" disabled="true" value="AR_TEAM" >
+					{% endif %}
+					</th>
+                   </tr>
+                </tbody></table></th><th align="left" valign="top" class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="
+                
+                   
+                    Product
+                    
+                   
+                : activate to sort column ascending" style="width: 129px;">
+                <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tbody><tr style="background-color: transparent!important;">
+                    <th align="center" valign="top" style="border: 0;">Products</th>
+                    <th align="center" valign="top" style="border: 0;">
+					{% if page_data_count.product > 0 %}
+					<input type="Checkbox"class="selected_data all_select" name="export_data[]" value="AR_PRODUCT" >
+					{% else %}
+					<input type="Checkbox"class="selected_data" name="export_data[]" disabled="true" value="AR_PRODUCT" >
+					{% endif %}
+					
+					</th>
+                   </tr>
+                </tbody></table></th><th align="left" valign="top" class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="
+                   
+                    Iterations
+                    
+                   
+                : activate to sort column ascending" style="width: 141px;"><table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tbody><tr style="background-color: transparent!important;">
+                    <th align="center" valign="top" style="border: 0;">Backlogs</th>
+                    <th align="center" valign="top" style="border: 0;">
+					{% if page_data_count.backlog > 0 %}
+					<input type="Checkbox" class="selected_data all_select" name="export_data[]" value="AR_BACKLOG">
+					{% else %}
+					<input type="Checkbox" class="selected_data" name="export_data[]" disabled="true" value="AR_BACKLOG">
+					{% endif %}
+					
+					</th>
+                   </tr>
+                </tbody></table></th><th align="left" valign="top" class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="
+                   
+                    Score
+                    
+                   
+                : activate to sort column ascending" style="width: 105px;"><table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tbody><tr style="background-color: transparent!important;">
+                    <th align="center" valign="top" style="border: 0;">Epic Capability</th>
+                    <th align="center" valign="top" style="border: 0;">
+					{% if page_data_count.capability > 0 %}
+					<input type="Checkbox" class="selected_data all_select" name="export_data[]" value="AR_EPIC_CAPABILITY">
+					{% else %}
+					<input type="Checkbox" class="selected_data" name="export_data[]" disabled="true" value="AR_EPIC_CAPABILITY">
+					{% endif %}
+					</th>
+                   </tr>
+                </tbody></table></th><th align="left" valign="top" class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="
+                
+                   
+                    Size
+                    
+                   
+                : activate to sort column ascending" style="width: 91px;">
+                <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tbody><tr style="background-color: transparent!important;">
+                    <th align="center" valign="top" style="border: 0;">Features</th>
+                    <th align="center" valign="top" style="border: 0;">
+					{% if page_data_count.features > 0 %}
+					<input type="Checkbox" class="selected_data all_select" name="export_data[]" value="AR_FEATURE">
+					{% else %}
+					<input type="Checkbox" class="selected_data" name="export_data[]"  disabled="true" value="AR_FEATURE">
+					{% endif %}
+					</th>
+                   </tr>
+                </tbody></table></th>
+
+
+ <th align="left" valign="top" class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="
+                   
+                    Owner
+                    
+                   
+                : activate to sort column ascending" style="width: 118px;"><table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tbody>
+
+                    <tr style="background-color: transparent!important;">
+                    <th align="center" valign="top" style="border: 0;">User Story Points</th>
+                    <th align="center" valign="top" style="border: 0;">
+					{% if page_data_count.user_storyes_point > 0 %}
+					<input type="Checkbox" class="selected_data all_select" name="export_data[]" value="AR_USER_STORY_POINTS" >
+					{% else %}
+					<input type="Checkbox" class="selected_data" name="export_data[]" disabled="true" value="AR_USER_STORY_POINTS" >
+					{% endif %}
+					</th>
+                   </tr>
+                </tbody>
+
+              </table></th>
+
+                <th align="left" valign="top" class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="
+                   
+                    Status
+                    
+                   
+                : activate to sort column ascending" style="width: 113px;"><table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tbody><tr style="background-color: transparent!important;">
+                    <th align="center" valign="top" style="border: 0;">User Stories</th>
+                    <th align="center" valign="top" style="border: 0;">
+					
+					{% if page_data_count.user_storyes > 0 %}
+					<input type="Checkbox" class="selected_data all_select" name="export_data[]" value="AR_USER_STORY" >
+					{% else %}
+					<input type="Checkbox" class="selected_data" name="export_data[]" disabled="true" value="AR_USER_STORY" >
+					{% endif %}
+					</th>
+                   
+				   </tr>
+                </tbody></table></th>
+
+                   <th align="left" valign="top" class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="
+                   
+                    Owner
+                    
+                   
+                : activate to sort column ascending" style="width: 118px;"><table width="100%"  border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tbody>
+
+                    <tr style="background-color: transparent!important;">
+                    <th align="center" valign="top" style="border: 0;">Iterations</th>
+                    <th align="center" valign="top" style="border: 0;">
+					{% if page_data_count.iteration > 0 %}
+					<input type="Checkbox" class="selected_data all_select" name="export_data[]" value="AR_ITERATIONS" >
+					{% else %}
+					<input type="Checkbox" class="selected_data" name="export_data[]" disabled="true" value="AR_ITERATIONS" >
+					{% endif %}
+					
+					</th>
+                   </tr>
+                </tbody>
+
+              </table></th>
+
+
+                <th align="left" valign="top" class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="
+                   
+                    Auto Score
+                    
+                   
+                : activate to sort column ascending" style="width: 155px;"><table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tbody><tr style="background-color: transparent!important;">
+                    <th align="center" valign="top" style="border: 0;">Roles</th>
+                    <th align="center" valign="top" style="border: 0;">
+					{% if page_data_count.roles > 0 %}
+					<input type="Checkbox" class="selected_data all_select" name="export_data[]" value="AR_ROLE" >
+					{% else %}
+					<input type="Checkbox" class="selected_data" name="export_data[]" disabled="true" value="AR_ROLE" >
+					{% endif %}
+					</th>
+                   </tr>
+                </tbody></table></th>
+
+
+                <th align="left" valign="top" class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="
+                   
+                    Owner
+                    
+                   
+                : activate to sort column ascending" style="width: 118px;"><table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tbody>
+
+                    <tr style="background-color: transparent!important;">
+                    <th align="center" valign="top" style="border: 0;">Goles</th>
+                    <th align="center" valign="top" style="border: 0;">
+					{% if page_data_count.goles > 0 %}
+					<input type="Checkbox" class="selected_data all_select" name="export_data[]" value="AR_GOALS" >
+					{% else %}
+					<input type="Checkbox" class="selected_data" name="export_data[]"  disabled="true" value="AR_GOALS" >
+					{% endif %}
+					</th>
+                   </tr>
+                </tbody>
+
+              </table></th>
+
+               <th align="left" valign="top" class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="
+                   
+                    Owner
+                    
+                   
+                : activate to sort column ascending" style="width: 118px;"><table width="100%" border="0"  align="left" cellpadding="0" cellspacing="0">
+                   <tbody>
+
+                    <tr style="background-color: transparent!important;">
+                    <th align="center" valign="top" style="border: 0;">Benefits</th>
+                    <th align="center" valign="top" style="border: 0;">
+					{% if page_data_count.Benefits > 0 %}
+					<input type="Checkbox"name="export_data[]"  class="selected_data all_select" value="AR_BENEFITS" >
+					{% else %}
+					<input type="Checkbox"name="export_data[]"  class="selected_data" disabled="true"  value="AR_BENEFITS" >
+					{% endif %}
+					</th>
+                   </tr>
+                </tbody>
+
+              </table></th>
+
+            </tr>
+        </thead>
+        <tbody>
+ {% for data in all_data %} 
+         
+<tr>
+   <td>{{forloop.counter}}</td>
+   {% for items in data %} 
+
+  <td>{{items}}</td>
+
+  {% endfor %}
+  
+</tr>
+
+{% endfor %}
+
+            
+ </tbody>
+    </table></div>
+                                     <!---Table Ends---->
+</div>
+                                    
+                         </form>
+                     <!--  </div> -->
+             </div>
+              <!-- </div> -->
+               </div>
+         </div>
+         </div>
+
+
+
+
+
+
+
+<!-----------2nd Modal Popup Start------>
+<div class="modal fade in sp-map" id="modal-default1">
+   <div class="modal-dialog">
+      <div class="modal-content" style="width: 150%!important;">
+         <div class="modal-header">
+            <h4 class="modal-title">Export data</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="font-size: 32px;">×</span></button>
+         </div>
+          
+          {% if export_data_status %}
+
+         <div class="modal-body">
+            <div class="paper">
+              <div class="row">
+                <div class="col-md-12" id="show_errors"></div>
+              </div>
+               <div class="row" id="show_hide_button">
+
+                 <div class="col-md-2"></div>
+                 <div class="col-md-4">
+                  
+ <button type="button" class="btn btn-export1 export_data_btn" data-file_type="CSV"><i class="icon-download"></i> Data export as CSV file </button>
+                 </div>
+                 <div class="col-md-4">
+                   
+                   <button type="button" class="btn btn-export2 export_data_btn" data-file_type="xlsx"><i class="icon-download"></i> Data export as Xlsx file</button>
+                 </div>
+               </div>
+            </div>
+         </div>
+
+                  {% else %}
+
+                         <div class="alert alert-danger">
+                     <strong>Warning!</strong> You are not authorized person.
+         </div>
+                        {% endif %}
+          
+              <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+   </div>
+</div>
+<!-- </div>
+   </div> -->
+<!-- /.modal-content -->
+{% endblock %}
+
+
+{% block script %}
+
+<script type="text/javascript">
+
+$(document).on("click",".export_data_btn_modal",function(){
+$("#modal-default1 #show_errors").empty();
+$("#show_hide_button").css("display","block");
+});
+
+  $(document).on("click",".export_data_btn",function(){
+$("#modal-default1 #show_errors").html('');
+var file_type = $(this).data("file_type");
+
+var tables = new Array();
+
+  $(".selected_data:checked").each(function(){
+             
+            tables.push(this.value); 
+        });
+// +
+ if(tables.join("") == "")
+ { 
+   $("#modal-default1 #show_errors").html('<div class="alert alert-danger"><strong>Warning!</strong> Please select at list one checkbox.</div>');
+ }
+ else
+ {
+    $("#show_hide_button").css("display","none");
+
+    $("#modal-default1 #show_errors").html('<div class="alert alert-success">Please wait process is running <img src="{% static "img/basic/straight-loader.gif" %}"  style="width:30px;"/></div>');
+   $.ajax({
+    method:"POST",
+    url:base_url+"data-exchange/get_data_from_database",
+    data:{'file_type':file_type,"tables":tables.join(",,")},
+     dataType:"json",
+     success:function(data)
+     {
+      if(data.status == "Done")
+     {
+
+        window.location.href = base_url+"data-exchange/file_download/"+data.id;
+         $("#modal-default1 #show_errors").html('<div class="alert alert-success">Data export successfully.</div>');
+     }
+
+     }
+   });
+
+ }
+
+  });
+</script>
+
+<script>
+  function select_all_for_export(){
+
+    var get = $('#select_btn').val();
+    console.log(get);
+
+    if (get == "true"){
+          $(".all_select").prop('checked', true);
+          $('#select_btn').val('false');
+          $('#select_btn').html('Unselect All');
+    }
+    console.log(get);
+    if (get == "false"){
+      console.log("second");
+          $(".all_select").prop('checked', false);
+          $('#select_btn').val('true');
+          $('#select_btn').html('Select All'); 
+    }
+ 
+  }
+</script>
+
+{% endblock %}
+
+
+
+
+
+

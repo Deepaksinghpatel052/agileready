@@ -1,0 +1,71 @@
+<style type="text/css">
+  .table-bordered {
+    border: 1px solid #ddd !important;
+}
+</style>
+<div class="paper">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="container-fluid">
+                                   <!--  <div class="login-form-content"> -->
+                <form  onsubmit="doSomething();" action="javascript:(0);">
+                 <div class="table-responsive">
+                                     <!-- start Table -->
+                                     <table id="example4" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+                                       <thead>
+            <tr class="dnd-moved">
+              <th align="left" valign="top" class="itrid">Titles</th>
+                <th align="left" valign="top" class="itrds">Details</th>
+             </tr>
+          </thead>
+        <tbody>
+            <tr>
+                <td align="left" valign="top">Topic</td>
+                <td align="left" valign="top">{{get_help_content.Topic}}</td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">Description</td>
+                <td align="left" valign="top">{{get_help_content.Description}}</td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">Information</td>
+                <td align="left" valign="top">{{get_help_content.Information}}</td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">Useful Links</td>
+                <td align="left" valign="top">
+                   <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   {% if get_help_content.Linke_1 %}
+                   <tr>
+                    <td align="left" valign="top"><a href="{{get_help_content.Linke_1}}" target="blank_">{{get_help_content.Linke_1}}</a> </td>
+                   </tr>
+                   {% endif %}
+                   {% if get_help_content.Linke_2 %}
+                   <tr>
+                    <td align="left" valign="top"><a href="{{get_help_content.Linke_2}}" target="blank_">{{get_help_content.Linke_2}}</a> </td>
+                   </tr>
+                   {% endif %}
+                   {% if get_help_content.Linke_3 %}
+                   <tr>
+                    <td align="left" valign="top"><a href="{{get_help_content.Linke_3}}" target="blank_">{{get_help_content.Linke_3}}</a> </td>
+                   </tr>
+                   {% endif %}
+                </table>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+                                     <!---Table Ends---->
+</div>
+
+
+
+
+                </form>
+              </div>
+            </div>
+
+                       <!-- </div> -->
+          </div>
+        </div>

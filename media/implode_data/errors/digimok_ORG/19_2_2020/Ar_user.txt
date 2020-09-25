@@ -1,0 +1,7 @@
+Error : Ar_user : row no. : 2 : jitendra.n@digimonk.in : E-mail is already exists ! : 2020-02-19 12:12:56.009329
+Error : Ar_user : row no. : 3 : kartikkas00@gmail.com : E-mail is already exists ! : 2020-02-19 12:12:56.010030
+Error : Ar_user : row no. : 4 : amansharma0520@gmail.com : E-mail is already exists ! : 2020-02-19 12:12:56.010695
+Error : Ar_user : row no. : 5 : singh.umesh470@gmail.com : E-mail is already exists ! : 2020-02-19 12:12:56.011393
+Error : Ar_user : row no. : 6 : ravi.baghel@digimonk.in : E-mail is already exists ! : 2020-02-19 12:12:56.012061
+Error : Ar_user : row no. : 7 : gulshan@digimonk.in : E-mail is already exists ! : 2020-02-19 12:12:56.012724
+Error : Ar_user : row no. : 8 : shubham@digimonk.in : E-mail is already exists ! : 2020-02-19 12:12:56.013369

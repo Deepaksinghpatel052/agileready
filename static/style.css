@@ -1,0 +1,145 @@
+  
+/*
+jQuery-Circle-Plugin v0.1 by Jamal hassouni
+https://github.com/jamalhassouni
+*/
+
+   .mb20{
+       margin: 7px 20px;
+   }
+   .mb10{
+       margin: 5px 0px;
+   }
+  .cdev {
+  position: relative;
+  height: 65px;
+  width: 50px;
+  margin:0 auto;
+}
+ 
+.cdev div {
+  position: absolute;
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+}
+ 
+.cdev div span {
+    position: absolute;
+    font-family: Arial;
+    font-size: 15px;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    left: 8px;
+    top: 7px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgb(255 255 255 / 80%);
+}
+ 
+.cdev .background { background-color: #b3cef6;
+background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-size: 1rem 1rem;
+ }
+ 
+.cdev .rotate {
+  clip: rect(0 30px 100px 0);
+  background-color: #4b86db;
+  background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-size: 1rem 1rem;
+}
+ 
+.cdev .left {
+  clip: rect(0 30px 100px 0);
+  opacity: 1;
+  background-color: #b3cef6;
+  background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-size: 1rem 1rem;
+}
+ 
+.cdev .right {
+  clip: rect(0 30px 100px 0);
+  transform: rotate(225deg);
+  opacity: 0;
+  background-color: #4b86db;
+  background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-size: 1rem 1rem;
+}
+.slimScrollBar {
+    width: 10px !important;
+}
+ 
+@keyframes
+toggle {  0% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 1;
+}
+}  
+
+/*===========================sunil new csss start=========================*/
+
+.vertical-align th, .vertical-align td {
+    vertical-align: middle !important;
+}
+
+.form-group.has-feedback .input-group span.input-group-addon {
+    background: transparent;
+    border: 0px;
+}
+.btn:focus{
+    box-shadow: none;
+    outline: 0px !important;
+}
+.modal-header .close span {
+    color: #000;
+}
+a.document_name {
+    white-space: normal;
+    word-break: break-all;
+}
+button#reset_edit_story {
+    margin-top: -12px;
+}
+input#attachments-clear_id {
+    position: relative;
+    left: initial;
+}
+button:focus{box-shadow:none !important; outline: 0px !important;}
+.sidebar-collapse a.paper-nav-toggle.fixed.left {
+    background: transparent;
+}
+.paper-nav-toggle.left {
+    top: 20px;
+    left: -4px;
+}
+.paper-nav-toggle.left {
+    top: 20px;
+}
+
+th:focus, td:focus {
+    outline: none;
+}
+.mt-15 {
+    padding-top: 15px;
+}
+
+.mt-15 button {
+    border-radius: 4px !important;
+}
+
+.login-form-card {
+    position: relative;
+}
+.sp-map .modal-header .close span {
+    color: #fff;
+	text-shadow:none;
+	font-size:21px !important;
+}
+@media (min-width: 1200px){
+.modal-xl {
+    min-width: 1140px!important;
+}
+}

@@ -1,0 +1,10 @@
+Success : AR_FEATURE : row no. : 2 : Dashboard : Feature added successfully !  : 2020-02-18 08:32:08.062239
+Success : AR_FEATURE : row no. : 3 : Reports : Feature added successfully !  : 2020-02-18 08:32:08.076914
+Success : AR_FEATURE : row no. : 4 : Export : Feature added successfully !  : 2020-02-18 08:32:08.091541
+Success : AR_FEATURE : row no. : 5 : Imports : Feature added successfully !  : 2020-02-18 08:32:08.106060
+Success : AR_FEATURE : row no. : 6 : Summary : Feature added successfully !  : 2020-02-18 08:32:08.120735
+Success : AR_FEATURE : row no. : 7 : OrderPrints : Feature added successfully !  : 2020-02-18 08:32:08.135330
+Success : AR_FEATURE : row no. : 8 : BookScanner : Feature added successfully !  : 2020-02-18 08:32:08.150007
+Success : AR_FEATURE : row no. : 9 : LocatePOD : Feature added successfully !  : 2020-02-18 08:32:08.164731
+Success : AR_FEATURE : row no. : 10 : Store : Feature added successfully !  : 2020-02-18 08:32:08.179399
+Success : AR_FEATURE : row no. : 11 : Catalog : Feature added successfully !  : 2020-02-18 08:32:08.194016

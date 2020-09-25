@@ -1,0 +1,4 @@
+Error : AR_team : row no. : 2 : Team1 : Team already exists.  : 2020-02-23 08:34:49.563474
+Error : AR_team : row no. : 3 : Team 2 : Team already exists.  : 2020-02-23 08:34:49.564382
+Error : AR_team : row no. : 4 : Team 3 : Team already exists.  : 2020-02-23 08:34:49.565240
+Error : AR_team : row no. : 5 : Team 4 : Team already exists.  : 2020-02-23 08:34:49.566075

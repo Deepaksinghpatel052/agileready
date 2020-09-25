@@ -1,0 +1,4 @@
+Product_name,Product_description,Team_parent,Business_unit,Product_size,Product_score,Children_Backlog_List,US_quality_threshold,organization_name,create_by,create_dt,update_by,update_dt
+Product 1,Product 1,Team1,Dev,Product_size,80.0,Backlog 1,0,ABC,Harry,2020-02-12 08:54:51.314080+00:00,Harry,2020-02-12 08:54:51.314094+00:00
+BookMine,A home library book catalog system,Team1 | Team 2 | Team 3,Binder Division,Product_size,80.0,BookMineCore|BookMineDash,0,ABC,Harry,2020-02-14 15:33:00.037171+00:00,Harry,2020-02-14 15:33:00.037186+00:00
+BookTrader,A book trader and exchange system,,Sales Division,Product_size,0.0,,0,ABC,Harry,2020-02-14 15:33:50.115164+00:00,Harry,2020-02-14 15:33:50.115191+00:00

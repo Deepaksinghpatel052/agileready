@@ -1,0 +1,23 @@
+id,Page_name,Page_slug,Topic,Description,Information,Linke_1,Linke_2,Linke_3,create_dt
+22,manage-iteration/add-iteration,manage-iteration/add-iteration,add iterationv,Description add iteration,Information. add iteration,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 15:15:22
+21,manage-epic-capabilities/add-epic-capabilities,manage-epic-capabilities/add-epic-capabilities,manage-epic-capabilities/add-epic-capabilities,Description,Information.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 15:12:01
+20,user-profile/add-profile,user-profile/add-profile,Add Profile,Dashboard Page user-profile/add-profile,This Page Provides All Details. user-profile/add-profile,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 14:59:58
+19,account-settings,account-settings,account-settings,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:45:01
+18,user-story-points,user-story-points,user-story-points,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:44:15
+17,manage-benefits,manage-benefits,manage-benefits,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:43:56
+16,manage-goals,manage-goals,manage-goals,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:43:37
+15,manage-role,manage-role,manage-role,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:43:11
+14,manage-iteration,manage-iteration,manage-iteration,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:43:04
+13,manage-backlog,manage-backlog,manage-backlog,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:42:46
+12,manage-team-member,manage-team-member,manage-team-member,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:42:32
+11,manage-team,manage-team,manage-team,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:41:18
+10,manage-products,manage-products,manage-products,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:40:53
+9,manage-feature,manage-feature,manage-feature,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:40:41
+8,manage-epic-capabilities,manage-epic-capabilities,manage-epic-capabilities,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:36:32
+7,invite-user,invite-user,invite-user,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:35:45
+6,user-profile,user-profile,user-profile,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:31:37
+5,iteration-view,iteration-view,iteration-view,iteration-view,iteration-view,http://203.190.153.20/,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:30:52
+4,user-story-view,user-story-view,user-story-view,Dashboard Page,This Page Provides All Details.,http://203.190.153.20,http://203.190.153.20,http://203.190.153.20,2020-01-27 13:30:25
+3,backlog-view,backlog-view,backlog view,This Page Provides All Details.,This Page Provides All Details.,http://203.190.153.20,http://203.190.153.20,http://203.190.153.20,2020-01-27 13:28:26
+2,products-view,products-view,product view,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/products-view,http://203.190.153.20/products-view,http://203.190.153.20/,2020-01-27 13:22:44
+1,Dashboard,dashboard,Dashboard,Dashboard Page,This Page Provides All Details.,http://203.190.153.20/dashboard,http://203.190.153.20/,http://203.190.153.20/,2020-01-27 13:16:48

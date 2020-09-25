@@ -1,0 +1,4 @@
+Error : ArManageGoals : row no. : 2 : AR_GOAL_60 : Goal already exists.  : 2020-02-29 09:42:06.715817
+Error : ArManageGoals : row no. : 3 : AR_GOAL_61 : Goal already exists.  : 2020-02-29 09:42:06.716678
+Error : ArManageGoals : row no. : 4 : AR_GOAL_62 : Goal already exists.  : 2020-02-29 09:42:06.717520
+Error : ArManageGoals : row no. : 5 : AR_GOAL_63 : Goal already exists.  : 2020-02-29 09:42:06.718361

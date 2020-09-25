@@ -1,0 +1,6 @@
+Error : ArIterations : row no. : 2 : Sprint 3 : Iteration already exists.  : 2020-02-17 15:05:42.888147
+Error : ArIterations : row no. : 3 : Sprint 4 : Iteration already exists.  : 2020-02-17 15:05:42.888983
+Error : ArIterations : row no. : 4 : Iteration 1 : Iteration already exists.  : 2020-02-17 15:05:42.889813
+Error : ArIterations : row no. : 5 : Sprint 2 : Iteration already exists.  : 2020-02-17 15:05:42.890644
+Error : ArIterations : row no. : 6 : Iteration Digimonk : Iteration already exists.  : 2020-02-17 15:05:42.891481
+Error : ArIterations : row no. : 7 : Test1 : Iteration already exists.  : 2020-02-17 15:05:42.892314

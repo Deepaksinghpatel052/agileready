@@ -1,0 +1,10 @@
+Error : ArIterations : row no. : 2 : This  is not a CSV file. : 2020-03-20 10:39:04.283251
+Success : ArIterations : row no. : 3 : This  is not a CSV file. : 2020-03-20 10:39:04.315173
+Success : ArIterations : row no. : 4 : This  is not a CSV file. : 2020-03-20 10:39:04.346051
+Success : ArIterations : row no. : 5 : This  is not a CSV file. : 2020-03-20 10:39:04.376410
+Success : ArIterations : row no. : 6 : This  is not a CSV file. : 2020-03-20 10:39:04.407469
+Success : ArIterations : row no. : 7 : This  is not a CSV file. : 2020-03-20 10:39:04.438238
+Success : ArIterations : row no. : 8 : This  is not a CSV file. : 2020-03-20 10:39:04.468639
+Success : ArIterations : row no. : 9 : This  is not a CSV file. : 2020-03-20 10:39:04.499073
+Success : ArIterations : row no. : 10 : This  is not a CSV file. : 2020-03-20 10:39:04.529357
+Success : ArIterations : row no. : 11 : This  is not a CSV file. : 2020-03-20 10:39:04.559664

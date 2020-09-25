@@ -1,0 +1,7 @@
+user_name,address,email,is_active,city,state,zip,country,phone,backup_email,user_type,subscription_level,active_user,user_to_invite,status,profile_permission,login_status,activate_status,organization_name,verification_status,created_by,created_dt,updated_by,updated_dt
+Praveen,,praveen.vaidhya@digimonk.in,True,Gwalior,Madhya Pradesh,474006,India,2233223322,,Root,Free trial,0,0,Active,,False,False,Digimonk Organization,False,,2020-02-21 06:46:04.769659+00:00,,2020-02-21 06:46:04.769667+00:00
+,,ravi.bhghel@digimonk.in,False,,state,0,,0,,User,Free trial,0,0,Active,,False,False,Digimonk Organization,False,,2020-02-21 06:55:35.959854+00:00,,2020-02-21 06:55:35.959862+00:00
+,,sagar.srivastava@digimonk.in,False,,state,0,,0,,User,Free trial,0,0,Active,,False,False,Digimonk Organization,False,,2020-02-21 06:55:39.574222+00:00,,2020-02-21 06:55:39.574229+00:00
+,,ravi.bhaghel@digimonk.in,False,,state,0,,0,,User,Free trial,0,0,Active,,False,False,Digimonk Organization,False,,2020-02-21 06:56:19.081963+00:00,,2020-02-21 06:56:19.081970+00:00
+Sagar Shrivastava,,sagar.shrivastava@digimonk.in,True,,state,474002,,987458545,,User,Free trial,0,0,Active,Manager,False,False,Digimonk Organization,False,,2020-02-21 06:57:00.843088+00:00,,2020-02-21 06:57:00.843095+00:00
+Ravi Baghel,,ravi.baghel@digimonk.in,True,GWALIOR,MADHYA PRADESH,474001,India,212451245124,,User,Free trial,0,0,Active,Assistant Manager,False,False,Digimonk Organization,False,,2020-02-21 06:58:29.379447+00:00,,2020-02-21 06:58:29.379454+00:00

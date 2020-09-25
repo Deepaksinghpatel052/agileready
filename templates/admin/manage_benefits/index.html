@@ -1,0 +1,217 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load static %}
+<div class="container-fluid text-white">
+               <div class="row p-t-b-8 ">
+                  <div class="col">
+                     <h1>Manage Benefit</h1>
+                  </div>
+               </div>
+                                <div class="row p-t-b-8">
+         <p class="user-nick"> {{user_name}}</p>
+  </div>
+
+            </div>
+            </header>
+
+<div class="container-fluid">
+           
+            <div class="row p-t-b-20">
+               <div class="col-md-12">
+                    {% if messages %}
+         {% for message in messages %}
+         {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+         <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+            <strong>{{message}}</strong>
+         </div>
+         {% endif %}
+         {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+         <div class="alert alert-danger alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+            <strong>{{message}}</strong> 
+         </div>
+         {% endif %}
+         {% endfor %}
+         {% endif %}
+
+
+     {{ ArManageBenefitsForm_get.errors }}
+{% if ArManageBenefitsForm_get.errors %}
+    {% for field in product_form %}
+        {% for error in field.errors %}
+            <p> {{ error }} </p>
+        {% endfor %}
+    {% endfor %}
+{% endif %}    
+                  <!-- <div class="card no-b"> -->
+              <div class="login-form-card">
+                        <form  action="javascript:(0);">
+                  <div class="table-responsive">
+              <button class="btn-success add-data" data-toggle="modal" data-target="#modal-default1">Add Benefit</button>
+                                     <!-- start Table -->
+                                     <table id="example" width="100%" border="1" class="table table-striped table-bordered newpage" align="center" cellpadding="0" cellspacing="0" style=" font-size: 15px;">
+        <thead>
+            <tr>
+                <th align="left" valign="top">S. No.</th>
+                <th align="left" valign="top">Benefit ID</th>
+                <th align="left" valign="top">Benefit Title</th>
+                <th align="left" valign="top">Benefit Description</th>
+                <th align="left" valign="top">Use In</th>
+                <th align="left" valign="top">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+           {% if get_all_Benefits %}
+           {% for data in get_all_Benefits %}
+            <tr>
+                <td align="left" valign="top">{{forloop.counter}}</td>
+                <td align="left" valign="top">{{data.Benefits_id}}</td>
+                <td align="left" valign="top">{{data.Benefits_title}}</td>
+                <td align="left" valign="top">{{data.Benefits_description}}</td>
+                <td align="left" valign="top">{{data.Use_in}}</td>
+                <td align="left" valign="top">
+                <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                   <tr>
+                    <td align="center" valign="top"><a href="javascript:void(0);" data-goal_id="{{data.id}}" data-toggle="modal" data-target="#modal-edit" class="edit_goal_data"><i class="icon-pencil"></i></a></td>
+                    <td align="center" valign="top"><a onclick="remove_product('{{BASE_URL}}manage-benefits/remove-benefit/{{data.id}}','{{Remove_Request_msg}}','{{Remove_done_msg}}','{{Not_Remove_msg}}');"  href="javascript:void(0);" ><i class="icon-delete"></i><a></td>
+                   </tr>
+                </table>
+                </td>
+
+            </tr>
+           {% endfor %}
+           {% endif %}
+           
+           
+            
+        </tbody>
+    </table>
+                                     <!---Table Ends---->
+</div>
+                                    
+                         </form>
+                      <!-- </div> -->
+             </div>
+              <!-- </div> -->
+               </div>
+         </div>
+         </div>
+
+   <!------------create goal Modal Popup start------->
+<div class="modal fade in sp-map" id="modal-default1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+
+                <h4 class="modal-title">Manage Benefit</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span></button>
+                
+              </div>
+              <div class="modal-body">
+                <div class="paper">
+                   <div class="row">
+                      <div class="col-md-12">
+                         <div class="container-fluid">
+                            <div class="login-form-content">
+                               
+                             {% if benefits_edit_status %}
+                             <form onsubmit="doSomething();" action="#" method="POST">
+                                 {% csrf_token %}
+                                  <div class="form-group">
+                                        <label>Benefit Title</label>
+                                         {{ArManageBenefitsForm_get.Benefits_title}}
+                                 
+                                </div>
+                                <div class="form-group">
+                                    <label>Benefit Description</label>
+                                    {{ArManageBenefitsForm_get.Benefits_description}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Benefit Use in</label>
+                                    {{ArManageBenefitsForm_get.Use_in}}
+                                </div>
+                                 <div class="row">
+                                  <div class="col-md-6">
+                                    <button type="submit" class="btn-block btn btn-white all-btn" data-dismiss="modal">Cancel</button>
+                                  </div>
+                                  <div class="col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Submit</button>
+                               </div>
+                             </div>
+                             </div>
+                               </form>
+                             {% else %}
+
+                              <div class="alert alert-danger">
+                     <strong>Warning!</strong> You are not authorized person.
+         </div>
+                             {% endif %}
+
+                               
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+               </div>
+            </div>
+         </div>
+   </div>
+
+   <!------------create goal Modal Popup end------->
+
+  <!------------edit goal Modal Popup start------->
+<div class="modal fade in sp-map" id="modal-edit">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+
+                <h4 class="modal-title">Manage Benefit</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="font-size: 32px;">×</span></button>
+                
+              </div>
+              <div class="modal-body">
+               {% if benefits_edit_status %}
+               <div id="show_edit_form">
+                   
+                </div>
+               {% else %}
+               <div class="alert alert-danger">
+                     <strong>Warning!</strong> You are not authorized person.
+         </div>
+               {% endif %}
+                
+               </div>
+            </div>
+         </div>
+   </div>
+
+   <!------------edit goal Modal Popup end------->
+
+{% endblock %}
+
+
+{% block script %}
+<script type="text/javascript">
+   $(document).on("click",".edit_goal_data",function(){
+
+ var edit_id = $(this).data("goal_id");
+
+$.ajax({
+  method:"GET",
+  url :"{{BASE_URL}}manage-benefits/edit/"+edit_id,
+  dataType:"html",
+  success:function(data)
+  {
+   
+     $("#modal-edit #show_edit_form").html(data);
+  }
+});
+
+   });
+</script>
+{% endblock %}

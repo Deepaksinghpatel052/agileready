@@ -1,0 +1,119 @@
+{% extends 'admin/dashboard-template.html' %}
+{% block content %}
+{% load add_scenario %}
+{% load static %}
+<div class="container-fluid text-white">
+               <div class="row p-t-b-8 ">
+                  <div class="col">
+                     <h1>Manage Scenario</h1>
+                  </div>
+               </div>
+                 <div class="row p-t-b-8">
+         <p class="user-nick"> {{user_name}}</p>
+  </div>
+            </div>
+            </header>
+
+
+
+<div class="container-fluid">
+           
+            <div class="row p-t-b-20">
+               <div class="col-md-12">
+                  <!-- <div class="card no-b"> -->
+                     {% if messages %}
+                   {% for message in messages %}
+                     {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                    <div class="alert alert-success alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+                      <strong>{{message}}</strong> 
+                    </div>
+                       {% endif %}
+
+                   {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <div class="alert alert-danger alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: crimson!important">&times;</a>
+                      <strong>Erorr</strong> {{message}}
+                    </div>
+                       {% endif %}
+
+                   {% endfor %}
+               {% endif %}
+          <div class="login-form-card">
+
+                   <!-- <div class="login-form-content"> -->
+                        <form action="" onsubmit="doSomething();" method="POST">
+                          <!-- {{status}} sdkjfdfhvj -->
+<!--                           {{ product_form.errors }}
+{% if product_form.errors %}
+    {% for field in product_form %}
+        {% for error in field.errors %}
+            <p> {{ error }} </p>
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+ -->                          {% csrf_token %}
+                                  
+                                    <div class="row">
+                              <div class="col-md-12">
+                                     <!-- start login -->
+                                    <div class="form-group">
+                                        <label>Scenario Name<samp style="color: red">*</samp></label>
+                                        {{scenario_form.scenario_name}}
+                                        
+                                </div>
+                                <div class="form-group">
+                                    <label>Description<samp style="color: red">*</samp></label>
+                                   <!--  <textarea class="form-control login-frm-input" style="height: 100px!important;    padding: 11px;" placeholder="Description"></textarea> -->
+                                   {{scenario_form.scenario_desc}}
+                                   
+
+                                </div>
+                                <div class="form-group">
+                                         <div class="table-responsive">
+                                        <label>Product Parent</label>
+                                        {{scenario_form.product_id}}
+      
+                                </div>
+                              </div>
+                              
+                                <div class="form-group">
+                                        <label>scenario Size(Based on Test Story Sizings)</label>
+                                        <input class="form-control login-frm-input" type="text" value="{% size org_id_value id_value%}" readonly="" placeholder="0" aid="login" name="product_size">
+                                        <!-- <input class="form-control login-frm-input" type="text" value="" placeholder="Binder Divison" aid="login" name="login"> -->
+                                        <!-- {{product_form.Business_unit}} -->
+                                </div>
+
+                                <div class="form-group">
+                                        <label>Scenario Score(Based on sum of all Test Stroy Scores)</label>
+                                        <!-- {{scenario_form.scenario_score}} -->
+                                        <input class="form-control login-frm-input" type="text" value="{% scen_scr org_id_value id_value %}" readonly="" placeholder="0" aid="login" name="product_score">
+                                        <!-- {{product_form.Business_unit}} -->
+                                </div>
+
+
+
+
+                              </div>
+                            
+                                  <div class="col-md-2">
+                                    <a href="{{BASE_URL}}manage-products" class="btn-block btn btn-white all-btn" > Cancel</a>
+                                  </div>
+                                  <div class="col-md-2">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Update</button>
+                               </div>
+                             </div>
+                             </div>
+                                </form></div>
+                              
+                            </div>
+                                    
+                         
+                      <!-- </div> -->
+             </div>
+          <!-- </div> -->
+               </div>
+{% endblock %}
+
+

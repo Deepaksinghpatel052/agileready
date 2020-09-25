@@ -1,0 +1,6 @@
+title,owner,backlog_score,Backlog_size,team_list,product_parent,BL_STATUS,created_by,created_dt,updated_by,updated_dt,organization_name
+Backlog 1,Harry,80.0,5,Team1,Product 1,New,Harry,2020-02-12 08:55:16.636856+00:00,Harry,2020-02-12 08:55:16.636872+00:00,ABC
+BookMineCore,Harry,80.0,18,Team1|Team 2|Team 3,BookMine,New,Harry,2020-02-14 15:35:56.225569+00:00,Harry,2020-02-14 15:35:56.225592+00:00,ABC
+BookMineDash,Harry,0.0,0,Team 2|Team 3,BookMine,Active,Harry,2020-02-14 15:36:33.752156+00:00,Harry,2020-02-14 15:36:33.752165+00:00,ABC
+Tony Timbol,Harry,0.0,0,,None,Active,Harry,2020-02-14 16:01:02.043848+00:00,Harry,2020-02-14 16:01:02.043858+00:00,ABC
+BookTrader-1,Harry,0.0,0,,None,Active,Harry,2020-02-14 16:01:02.059922+00:00,Harry,2020-02-14 16:01:02.059933+00:00,ABC

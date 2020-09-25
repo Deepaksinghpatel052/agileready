@@ -1,0 +1,10 @@
+Error : ArUserStoryPoints : row no. : 2 : User story points already exists.  : 2020-06-24 11:06:59.801362
+Error : ArUserStoryPoints : row no. : 3 : User story points already exists.  : 2020-06-24 11:06:59.802162
+Error : ArUserStoryPoints : row no. : 4 : User story points already exists.  : 2020-06-24 11:06:59.802961
+Error : ArUserStoryPoints : row no. : 5 : User story points already exists.  : 2020-06-24 11:06:59.803781
+Error : ArUserStoryPoints : row no. : 6 : User story points already exists.  : 2020-06-24 11:06:59.804574
+Error : ArUserStoryPoints : row no. : 7 : User story points already exists.  : 2020-06-24 11:06:59.805366
+Error : ArUserStoryPoints : row no. : 8 : User story points already exists.  : 2020-06-24 11:06:59.806159
+Error : ArUserStoryPoints : row no. : 9 : User story points already exists.  : 2020-06-24 11:06:59.806955
+Error : ArUserStoryPoints : row no. : 10 : User story points already exists.  : 2020-06-24 11:06:59.807756
+Error : ArUserStoryPoints : row no. : 11 : User story points already exists.  : 2020-06-24 11:06:59.808550

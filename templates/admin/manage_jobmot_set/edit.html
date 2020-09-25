@@ -1,0 +1,37 @@
+<div class="paper">
+                   <div class="row">
+                      <div class="col-md-12">
+                         <div class="container-fluid">
+                            <div class="login-form-content">
+                               <form onsubmit="doSomething();" action="{{BASE_URL}}manage-jobmot-set/edit/{{id}}" method="POST">
+                                 {% csrf_token %}
+                                  <div class="form-group">
+                                        <label>Motivation Title</label>
+                                         {{ArJobmotSetForm_get.member_product_list}}
+                                 
+                                </div>
+                                <div class="form-group">
+                                    <label>Motivation Description</label>
+                                    {{ArJobmotSetForm_get.jobmot_validation_list}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Job Motivation Use in</label>
+                                    {{ArJobmotSetForm_get.Use_in}}
+                                </div>
+                                
+                                 <div class="row">
+                                  <div class="col-md-6">
+                                    <a href="{{BASE_URL}}manage-jobmot-set" class="btn-block btn btn-white all-btn" > Cancel</a>
+                                  </div>
+                                  <div class="col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn-block btn btn-white all-btn">Update</button>
+                               </div>
+                             </div>
+                             </div>
+                               </form>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>

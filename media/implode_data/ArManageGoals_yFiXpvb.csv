@@ -1,0 +1,5 @@
+Goal_id,Goal_title,Gole_description,Use_in,created_by,created_dt,update_by,update_dt,organization_name
+AR_ROLE_85,select,(example),,Praveen,2020-06-24 10:00:44.366018+00:00,Praveen,2020-06-24 10:00:44.366022+00:00,Digimonk
+AR_ROLE_86,display,(example),,Praveen,2020-06-24 10:00:44.388447+00:00,Praveen,2020-06-24 10:00:44.388452+00:00,Digimonk
+AR_ROLE_87,view,(example),,Praveen,2020-06-24 10:00:44.409799+00:00,Praveen,2020-06-24 10:00:44.409803+00:00,Digimonk
+AR_ROLE_88,glide,(example),,Praveen,2020-06-24 10:00:44.431081+00:00,Praveen,2020-06-24 10:00:44.431085+00:00,Digimonk
